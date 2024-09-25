@@ -21,11 +21,11 @@ public class CursoMySQL implements CursoDAO{
             //String sql="INSERT INTO curso(idCurso,nombre,notaFinal) VALUES (?,?,?)";
             String sql = "{call taProg3.INSERTAR_CURSO(?, ?)}";
             cst=con.prepareCall(sql);
-            cst.registerOutParameter(Integer.parseInt(curso.getIdCurso()), java.sql.Types.NUMERIC);
+            cst.registerOutParameter(1, java.sql.Types.NUMERIC);
             //cst.setInt("_id_curso",Integer.parseInt(curso.getIdCurso()));
             cst.setString(2,curso.getNombre());
             cst.execute();
-            resultado=cst.getInt(1); //Insertó correctamente y devuelve el id
+            resultado=cst.getInt(1); //Insertó correctamente 
         }catch(SQLException ex){
             System.out.println(ex.getMessage());
         }finally{
