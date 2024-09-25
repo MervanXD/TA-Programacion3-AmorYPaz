@@ -1,8 +1,11 @@
+//import pe.edu.pucp.softprog.gestcalendario.model.PlanDeEstudio;
+
 package pe.edu.pucp.softprog.gestcursos.model;
 public class Curso {
     private String idCurso;
     private String nombre;
     private double notaFinal;
+    //private String idPlanEstudios;
     
     public Curso(){}
     public Curso(String idCurso, String nombre, double notaFinal) {
