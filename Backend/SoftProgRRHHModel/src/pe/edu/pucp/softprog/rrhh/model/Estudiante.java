@@ -1,21 +1,20 @@
 package pe.edu.pucp.softprog.rrhh.model;
 import java.util.Date;
 public class Estudiante extends Persona {
-    private int idEstudiante;
     private Persona apoderado;
     private boolean discapacidad;
     private String tipoDiscapacidad;
     private String alergias;
     private String enfermedadesCronicas;
-	private String estado;
-	private String origen;
-
-    public Estudiante(String dni, String nombres, String apellidos, Date fechaNacimiento, String lengua,
+    private String estado;
+    private String origen;
+    
+    public Estudiante(){}
+    public Estudiante(String dni, String nombres, String apellidoPaterno, String apellidoMaterno, Date fechaNacimiento, String lengua,
                       String direccion, char sexo, String religion,
-					  int idEstudiante, Persona apoderado, boolean discapacidad, 
+					   Persona apoderado, boolean discapacidad, 
                       String tipoDiscapacidad, String alergias, String enfermedadesCronicas, String estado, String origen) {
-        super(dni, nombres, apellidos, fechaNacimiento, lengua, direccion, sexo, religion);
-        this.idEstudiante = idEstudiante;
+        super(dni, nombres, apellidoPaterno,apellidoMaterno, fechaNacimiento, lengua, direccion, sexo, religion);
         this.apoderado = apoderado;
         this.discapacidad = discapacidad;
         this.tipoDiscapacidad = tipoDiscapacidad;
@@ -26,13 +25,6 @@ public class Estudiante extends Persona {
     }
 
     
-    public int getIdEstudiante() {
-        return idEstudiante;
-    }
-
-    public void setIdEstudiante(int idEstudiante) {
-        this.idEstudiante = idEstudiante;
-    }
 
     public Persona getApoderado() {
         return apoderado;

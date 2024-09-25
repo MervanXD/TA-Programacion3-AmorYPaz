@@ -3,7 +3,8 @@ public class Curso {
     private String idCurso;
     private String nombre;
     private double notaFinal;
-
+    
+    public Curso(){}
     public Curso(String idCurso, String nombre, double notaFinal) {
         this.idCurso = idCurso;
         this.nombre = nombre;

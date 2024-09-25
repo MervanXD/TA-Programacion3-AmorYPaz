@@ -7,9 +7,9 @@ public class DBManager {
 
     private Connection con;
     private static DBManager dbManager;
-    private static String url = "jdbc:mysql://prog3-labs-1inf30.crfeib685nul.us-east-1.rds.amazonaws.com/laboratorio04";
+    private static String url = "jdbc:mysql://db-prog3-ta.cvkawg88ktuo.us-east-1.rds.amazonaws.com:3306/taProg3";
     private static String username = "admin";
-    private static String password = "labs1inf3020241";
+    private static String password = "amorypaz_psw";
 
     public static String getUrl() {
             return url;

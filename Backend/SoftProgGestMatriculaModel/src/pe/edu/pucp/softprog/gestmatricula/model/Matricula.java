@@ -8,12 +8,13 @@ public class Matricula {
     private Grado gradoMatriculado;
     private String estado;
 
+    public Matricula(){}
     public Matricula(int idMatricula, int anioMatricula, Estudiante estudiante, Grado gradoMatriculado, String estado) {
         this.idMatricula = idMatricula;
         this.anioMatricula = anioMatricula;
         this.estudiante = estudiante;
         this.gradoMatriculado = gradoMatriculado;
-		this.estado = estado;
+        this.estado = estado;
     }
 
     public int getIdMatricula() {
