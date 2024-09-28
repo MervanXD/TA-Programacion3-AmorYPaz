@@ -1,4 +1,3 @@
-
 package pe.edu.pucp.softprog.rrhh.dao;
 import pe.edu.pucp.softprog.rrhh.model.Supervisor;
 import java.util.ArrayList;

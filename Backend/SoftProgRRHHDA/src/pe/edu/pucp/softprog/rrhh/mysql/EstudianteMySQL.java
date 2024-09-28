@@ -5,116 +5,127 @@ import pe.edu.pucp.softprog.rrhh.model.Estudiante;
 import pe.edu.pucp.softprog.config.DBManager;
 
 import java.sql.Connection;
-import java.sql.PreparedStatement;
+import java.sql.CallableStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-public abstract class EstudianteMySQL implements EstudianteDAO {
+public class EstudianteMySQL implements EstudianteDAO {
 
     private Connection con;
-    private PreparedStatement pst;
+    private CallableStatement cs;
     private ResultSet rs;
 
     @Override
     public int insertar(Estudiante estudiante) {
-        int resultado=0;
-        try{
-            con=DBManager.getInstance().getConnection();
-            String sql="INSERT INTO persona(DNI,nombres,apellidoPaterno,apellidoMaterno,"
-                    + "fechaNacimiento,direccion,sexo,religion,lengua) VALUES (?,?,?,?,?,?,?,?,?)";
-            pst=con.prepareStatement(sql);
-            pst.setString(1,estudiante.getDni());
-            pst.setString(2,estudiante.getNombres());
-            pst.setString(3,estudiante.getApellidoPaterno());
-            pst.setString(4,estudiante.getApellidoMaterno());
-            pst.setDate(5,new java.sql.Date(estudiante.getFechaNacimiento().getTime()));
-            pst.setString(6,estudiante.getDireccion());
-            pst.setString(7,String.valueOf(estudiante.getSexo()));
-            pst.setString(8,estudiante.getReligion());
-            pst.setString(9,estudiante.getLengua());
-            pst.executeUpdate();
-            sql="SELECT @@last_insert_id as id";
-            pst=con.prepareStatement(sql);
-            rs=pst.executeQuery();
-            
-            rs.next();
-            estudiante.setIdPersona(rs.getInt("id"));
-            sql="INSERT INTO estudiante(idEstudiante,discapacidad,"
-                    + "tipoDiscapacidad,alergias,enfermedadesCronicas,estado,origen,activo) VALUES(?,?,?,?,?)";
-            pst=con.prepareStatement(sql);
-            pst.setInt(1,estudiante.getIdPersona());
-            pst.setBoolean(2,estudiante.isDiscapacidad());
-            pst.setString(3,estudiante.getTipoDiscapacidad());
-            pst.setString(4,estudiante.getAlergias());
-            pst.setString(5,estudiante.getEnfermedadesCronicas());
-            pst.setString(6,estudiante.getEstado());
-            pst.setString(7,estudiante.getOrigen());
-            pst.setBoolean(8,true);
-            pst.executeUpdate();
-            resultado=estudiante.getIdPersona();
-        }catch(SQLException ex){
+        int resultado = 0;
+        try {
+            con = DBManager.getInstance().getConnection();
+            String sql = "{call INSERTAR_ESTUDIANTE(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}";
+            cs = con.prepareCall(sql);
+            cs.registerOutParameter("_id_Estudiante", java.sql.Types.INTEGER);
+            cs.registerOutParameter("_fid_Persona", java.sql.Types.INTEGER);
+            cs.setString("_alergias", estudiante.getAlergias());
+            cs.setString("_discapacidades", estudiante.getDiscapacidades());
+            cs.setString("_estado", estudiante.getEstado());
+            cs.setString("_dni", estudiante.getDni());
+            cs.setInt("_fid_apoderado", estudiante.getApoderado().getIdPersona());
+            cs.setString("_nombres", estudiante.getNombres());
+            cs.setString("_apellido_paterno", estudiante.getApellidoPaterno());
+            cs.setString("_apellido_materno", estudiante.getApellidoMaterno());
+            cs.setDate("_fecha_nacimiento", new java.sql.Date(estudiante.getFechaNacimiento().getTime()));
+            cs.setString("_lengua", estudiante.getLengua());
+            cs.setString("_religion", estudiante.getReligion());
+            cs.setString("_sexo", String.valueOf(estudiante.getSexo()));
+            cs.setString("_direccion", estudiante.getDireccion());
+            cs.executeUpdate();
+            estudiante.setIdEstudiante(cs.getInt("_id_estudiante"));
+            resultado = estudiante.getIdEstudiante();
+        } catch (SQLException ex) {
             System.out.println(ex.getMessage());
-        }finally{
-            try{con.close();}catch(SQLException ex){System.out.println(ex.getMessage());};
+            try {
+                con.rollback();
+            } catch (SQLException ex1) {
+                Logger.getLogger(EstudianteMySQL.class.getName()).log(Level.SEVERE, null, ex1);
+            }
+        } finally {
+            try {
+                con.close();
+            } catch (SQLException ex) {
+                System.out.println(ex.getMessage());
+            }
         }
-        
         return resultado;
     }
 
     @Override
-    public int modificar(Estudiante estudiante) {
-        int resultado=0;
-        try{
-            con=DBManager.getInstance().getConnection();
-            String sql="UPDATE persona SET DNI=?,nombres=?,apellidoPaterno=?,apellidoMaterno=?,"
-                    + "fechaNacimiento=?,direccion=?,sexo=?,religion=?,lengua=? WHERE"
-                    + "idPersona=?";
-            pst=con.prepareStatement(sql);
-            pst.setString(1,estudiante.getDni());
-            pst.setString(2,estudiante.getNombres());
-            pst.setString(3,estudiante.getApellidoPaterno());
-            pst.setString(4,estudiante.getApellidoMaterno());
-            pst.setDate(5,new java.sql.Date(estudiante.getFechaNacimiento().getTime()));
-            pst.setString(6,estudiante.getDireccion());
-            pst.setString(7,String.valueOf(estudiante.getSexo()));
-            pst.setString(8,estudiante.getReligion());
-            pst.setString(9,estudiante.getLengua());
-            pst.setInt(10,estudiante.getIdPersona());
-            pst.executeUpdate();
-            sql="UPDATE estudiante SET discapacidad=?,tipoDiscapacidad=?,alergias=?,enfermedadesCronicas=?,estado=?,origen=? WHERE idEstudiante=?";
-            pst=con.prepareStatement(sql);
-            pst.setBoolean(1,estudiante.isDiscapacidad());
-            pst.setString(2,estudiante.getTipoDiscapacidad());
-            pst.setString(3,estudiante.getAlergias());
-            pst.setString(4,estudiante.getEnfermedadesCronicas());
-            pst.setString(5,estudiante.getEstado());
-            pst.setString(6,estudiante.getOrigen());
-            pst.setInt(7,estudiante.getIdPersona());
-            resultado=pst.executeUpdate();
-            
-        }catch(SQLException ex){
+    public int modificar(Estudiante estudiante) {//si se quiere modificar al padre, modificar a esa persona primero
+        int resultado = 0;
+        try {
+            con = DBManager.getInstance().getConnection();
+            String sql = "{call MODIFICAR_ESTUDIANTE(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}";
+            cs = con.prepareCall(sql);
+            cs.setInt("_id_estudiante", estudiante.getIdEstudiante());
+            cs.setInt("_fid_persona", estudiante.getIdPersona());
+            cs.setInt("_cantidad_cursos", estudiante.getCantCursos());
+            cs.setDouble("_promedio", estudiante.getPromedio());
+            cs.setString("_alergias", estudiante.getAlergias());
+            cs.setString("_discapacidades", estudiante.getDiscapacidades());
+            cs.setString("_estado", estudiante.getEstado());
+            cs.setInt("_fid_apoderado", estudiante.getApoderado().getIdPersona());
+            cs.setString("_dni", estudiante.getDni());
+            cs.setString("_nombres", estudiante.getNombres());
+            cs.setString("_apellido_paterno", estudiante.getApellidoPaterno());
+            cs.setString("_apellido_materno", estudiante.getApellidoMaterno());
+            cs.setDate("_fecha_nacimiento", new java.sql.Date(estudiante.getFechaNacimiento().getTime()));
+            cs.setString("_lengua", estudiante.getLengua());
+            cs.setString("_religion", estudiante.getReligion());
+            cs.setString("_sexo", String.valueOf(estudiante.getSexo()));
+            cs.setString("_direccion", estudiante.getDireccion());
+            cs.executeUpdate();
+            resultado = estudiante.getIdEstudiante();
+        } catch (SQLException ex) {
             System.out.println(ex.getMessage());
-        }finally{
-            try{con.close();}catch(SQLException ex){System.out.println(ex.getMessage());}
+            try {
+                con.rollback();
+            } catch (SQLException ex1) {
+                Logger.getLogger(EstudianteMySQL.class.getName()).log(Level.SEVERE, null, ex1);
+            }
+        } finally {
+            try {
+                con.close();
+            } catch (SQLException ex) {
+                System.out.println(ex.getMessage());
+            }
         }
-        
-        
         return resultado;
     }
+
     @Override
     public int eliminar(int id) {
-        int resultado=0;
-        try{
+        int resultado = 0;
+        try {
             con = DBManager.getInstance().getConnection();
-            String sql = "UPDATE estudiante SET activo = 0 WHERE idEstudiante = ?";
-            pst = con.prepareStatement(sql);
-            pst.setInt(1,id);
-            resultado = pst.executeUpdate();
-        }catch(SQLException ex){
+            String sql = "{call ELIMINAR_ESTUDIANTE(?)}";
+            cs = con.prepareCall(sql);
+            cs.setInt("_id_Estudiante", id);
+            cs.executeUpdate();
+            resultado = id;
+        } catch (SQLException ex) {
             System.out.println(ex.getMessage());
-        }finally{
-            try{con.close();}catch(SQLException ex){System.out.println(ex.getMessage());}
+            try {
+                con.rollback();
+            } catch (SQLException ex1) {
+                Logger.getLogger(EstudianteMySQL.class.getName()).log(Level.SEVERE, null, ex1);
+            }
+        } finally {
+            try {
+                con.close();
+            } catch (SQLException ex) {
+                System.out.println(ex.getMessage());
+            }
         }
         return resultado;
     }
@@ -122,65 +133,88 @@ public abstract class EstudianteMySQL implements EstudianteDAO {
     @Override
     public Estudiante obtenerPorId(int id) {
         Estudiante estudiante = new Estudiante();
-        try{
-            con = DBManager.getInstance().getConnection();
-            String sql = "SELECT p.id_persona, p.DNI, p.nombres, p.apellidoPaterno,p.apellidoMaterno, "
-                    + "p.fecha_nacimiento,p.lengua,p.religion,p.sexo, s.discapacidad, s.tipoDiscapacidad,s.alergias,s.enfermedadesCronicas,s.estado,s.origen FROM persona p INNER JOIN estudiante s ON p.idPersona = s.idEstudiante WHERE p.id_persona = ?";
-            pst = con.prepareStatement(sql);
-            pst.setInt(1, id);
-            rs = pst.executeQuery();
-            if(rs.next()){
-                estudiante.setIdPersona(rs.getInt("idPersona"));
+        try {
+            con=DBManager.getInstance().getConnection();
+            String sql="{call OBTENER_ESTUDIANTE(?)}";
+            cs=con.prepareCall(sql);
+            cs.setInt("_id_Estudiante", id);
+            rs = cs.executeQuery();
+            if (rs.next()) {
+                estudiante.setIdEstudiante(rs.getInt("id_estudiante"));
+                estudiante.getApoderado().setDni(rs.getString("apdni"));
+                estudiante.getApoderado().setNombres(rs.getString("apnom"));
+                estudiante.getApoderado().setApellidoPaterno(rs.getString("apa"));
+                estudiante.getApoderado().setApellidoMaterno(rs.getString("ama"));
+                estudiante.getApoderado().setIdPersona(rs.getInt("apid"));
+                estudiante.getApoderado().setLengua(rs.getString("aplen"));
+                estudiante.getApoderado().setReligion(rs.getString("aprel"));
+                estudiante.getApoderado().setSexo(rs.getString("apsex").charAt(0));
+                estudiante.getApoderado().setDireccion(rs.getString("apdir"));
+                estudiante.getApoderado().setFechaNacimiento(rs.getDate("apfec"));
+                estudiante.setCantCursos(rs.getInt("cantidad_cursos"));
+                estudiante.setPromedio(rs.getDouble("promedio"));
+                estudiante.setAlergias(rs.getString("alergias"));
+                estudiante.setDiscapacidades(rs.getString("discapacidades"));
+                estudiante.setEstado(rs.getString("estado"));        
+                estudiante.setIdPersona(rs.getInt("id_persona"));
                 estudiante.setDni(rs.getString("DNI"));
                 estudiante.setNombres(rs.getString("nombres"));
-                estudiante.setApellidoPaterno(rs.getString("apellidoPaterno"));
-                estudiante.setApellidoMaterno(rs.getString("apellidoMaterno"));
-                estudiante.setReligion(rs.getString("religion"));
+                estudiante.setApellidoPaterno(rs.getString("apellido_paterno"));
+                estudiante.setApellidoMaterno(rs.getString("apellido_materno"));
+                estudiante.setFechaNacimiento(rs.getDate("fecha_nacimiento"));
                 estudiante.setLengua(rs.getString("lengua"));
+                estudiante.setReligion(rs.getString("religion"));
                 estudiante.setSexo(rs.getString("sexo").charAt(0));
-                estudiante.setFechaNacimiento(rs.getDate("fechaNacimiento"));
-                estudiante.setDiscapacidad(rs.getBoolean("discapacidad"));
-                estudiante.setTipoDiscapacidad(rs.getString("tipoDiscapacidad"));
-                estudiante.setAlergias(rs.getString("alergias"));
-                estudiante.setEnfermedadesCronicas(rs.getString("enfermedadesCronicas"));
-                estudiante.setEstado(rs.getString("estado"));
-                estudiante.setOrigen(rs.getString("origen"));
-                
+                estudiante.setDireccion(rs.getString("direccion"));
             }
-        }catch(SQLException ex){
+        } catch (SQLException ex) {
             System.out.println(ex.getMessage());
-        }finally{
-            try{con.close();}catch(SQLException ex){System.out.println(ex.getMessage());}
+        } finally {
+            try {
+                con.close();
+            } catch (SQLException ex) {
+                System.out.println(ex.getMessage());
+            }
         }
         return estudiante;
     }
 
     @Override
     public ArrayList<Estudiante> listarTodos() {
-        ArrayList<Estudiante> estudiantes=new ArrayList<>();
+        ArrayList<Estudiante> estudiantes = new ArrayList<>();
         try{
             con = DBManager.getInstance().getConnection();
-            String sql = "SELECT p.id_persona, p.DNI, p.nombres, p.apellidoPaterno,p.apellidoMaterno, "
-                    + "p.fecha_nacimiento,p.lengua,p.religion,p.sexo, s.discapacidad, s.tipoDiscapacidad,s.alergias,s.enfermedadesCronicas,s.estado,s.origen FROM persona p INNER JOIN estudiante s ON p.idPersona = s.idEstudiante WHERE p.id_persona = ?";
-            pst = con.prepareStatement(sql);
-            rs = pst.executeQuery();
+            String sql="{call LISTAR_ESTUDIANTES_TODOS()}";
+            cs = con.prepareCall(sql);
+            rs = cs.executeQuery();
             while(rs.next()){
                 Estudiante estudiante = new Estudiante();
-                estudiante.setIdPersona(rs.getInt("idPersona"));
+                estudiante.setIdEstudiante(rs.getInt("id_estudiante"));
+                estudiante.getApoderado().setDni(rs.getString("apdni"));
+                estudiante.getApoderado().setNombres(rs.getString("apnom"));
+                estudiante.getApoderado().setApellidoPaterno(rs.getString("apa"));
+                estudiante.getApoderado().setApellidoMaterno(rs.getString("ama"));
+                estudiante.getApoderado().setIdPersona(rs.getInt("apid"));
+                estudiante.getApoderado().setLengua(rs.getString("aplen"));
+                estudiante.getApoderado().setReligion(rs.getString("aprel"));
+                estudiante.getApoderado().setSexo(rs.getString("apsex").charAt(0));
+                estudiante.getApoderado().setDireccion(rs.getString("apdir"));
+                estudiante.getApoderado().setFechaNacimiento(rs.getDate("apfec"));
+                estudiante.setCantCursos(rs.getInt("cantidad_cursos"));
+                estudiante.setPromedio(rs.getDouble("promedio"));
+                estudiante.setAlergias(rs.getString("alergias"));
+                estudiante.setDiscapacidades(rs.getString("discapacidades"));
+                estudiante.setEstado(rs.getString("estado"));        
+                estudiante.setIdPersona(rs.getInt("id_persona"));
                 estudiante.setDni(rs.getString("DNI"));
                 estudiante.setNombres(rs.getString("nombres"));
-                estudiante.setApellidoPaterno(rs.getString("apellidoPaterno"));
-                estudiante.setApellidoMaterno(rs.getString("apellidoMaterno"));
-                estudiante.setReligion(rs.getString("religion"));
+                estudiante.setApellidoPaterno(rs.getString("apellido_paterno"));
+                estudiante.setApellidoMaterno(rs.getString("apellido_materno"));
+                estudiante.setFechaNacimiento(rs.getDate("fecha_nacimiento"));
                 estudiante.setLengua(rs.getString("lengua"));
+                estudiante.setReligion(rs.getString("religion"));
                 estudiante.setSexo(rs.getString("sexo").charAt(0));
-                estudiante.setFechaNacimiento(rs.getDate("fechaNacimiento"));
-                estudiante.setDiscapacidad(rs.getBoolean("discapacidad"));
-                estudiante.setTipoDiscapacidad(rs.getString("tipoDiscapacidad"));
-                estudiante.setAlergias(rs.getString("alergias"));
-                estudiante.setEnfermedadesCronicas(rs.getString("enfermedadesCronicas"));
-                estudiante.setEstado(rs.getString("estado"));
-                estudiante.setOrigen(rs.getString("origen"));
+                estudiante.setDireccion(rs.getString("direccion"));
                 estudiantes.add(estudiante);
             }
         }catch(SQLException ex){
@@ -188,10 +222,6 @@ public abstract class EstudianteMySQL implements EstudianteDAO {
         }finally{
             try{con.close();}catch(SQLException ex){System.out.println(ex.getMessage());}
         }
-        return estudiantes;
+        return estudiantes;  
     }
 }
-	
-    
-    
-    

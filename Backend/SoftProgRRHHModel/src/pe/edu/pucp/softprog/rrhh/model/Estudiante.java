@@ -1,30 +1,55 @@
 package pe.edu.pucp.softprog.rrhh.model;
+
 import java.util.Date;
+
 public class Estudiante extends Persona {
-    private Persona apoderado;
-    private boolean discapacidad;
-    private String tipoDiscapacidad;
+    private int idEstudiante;
+    private int cantCursos;
+    private double promedio;
     private String alergias;
-    private String enfermedadesCronicas;
+    private String discapacidades;
     private String estado;
-    private String origen;
+    private Persona apoderado;
     
-    public Estudiante(){}
-    public Estudiante(String dni, String nombres, String apellidoPaterno, String apellidoMaterno, Date fechaNacimiento, String lengua,
-                      String direccion, char sexo, String religion,
-					   Persona apoderado, boolean discapacidad, 
-                      String tipoDiscapacidad, String alergias, String enfermedadesCronicas, String estado, String origen) {
-        super(dni, nombres, apellidoPaterno,apellidoMaterno, fechaNacimiento, lengua, direccion, sexo, religion);
+    public Estudiante() {
+        apoderado = new Persona();
+        cantCursos = 0;
+        promedio = 0;
+    }
+    
+    public Estudiante(Persona apoderado, String alergias, String estado, String discapacidades, String dni, String nombres, String apellidoPaterno, String apellidoMaterno, Date fechaNacimiento, String lengua, String religion, char sexo, String direccion) {
+        super(dni, nombres, apellidoPaterno, apellidoMaterno, fechaNacimiento, lengua, religion, sexo, direccion);
         this.apoderado = apoderado;
-        this.discapacidad = discapacidad;
-        this.tipoDiscapacidad = tipoDiscapacidad;
         this.alergias = alergias;
-        this.enfermedadesCronicas = enfermedadesCronicas;
-		this.estado = estado;
-		this.origen = origen;
+        this.estado = estado;
+        this.discapacidades = discapacidades;
+        cantCursos = 0;
+        promedio = 0;
     }
 
-    
+    public int getIdEstudiante() {
+        return idEstudiante;
+    }
+
+    public void setIdEstudiante(int idEstudiante) {
+        this.idEstudiante = idEstudiante;
+    }
+
+    public int getCantCursos() {
+        return cantCursos;
+    }
+
+    public void setCantCursos(int cantCursos) {
+        this.cantCursos = cantCursos;
+    }
+
+    public double getPromedio() {
+        return promedio;
+    }
+
+    public void setPromedio(double promedio) {
+        this.promedio = promedio;
+    }
 
     public Persona getApoderado() {
         return apoderado;
@@ -32,22 +57,6 @@ public class Estudiante extends Persona {
 
     public void setApoderado(Persona apoderado) {
         this.apoderado = apoderado;
-    }
-
-    public boolean isDiscapacidad() {
-        return discapacidad;
-    }
-
-    public void setDiscapacidad(boolean discapacidad) {
-        this.discapacidad = discapacidad;
-    }
-
-    public String getTipoDiscapacidad() {
-        return tipoDiscapacidad;
-    }
-
-    public void setTipoDiscapacidad(String tipoDiscapacidad) {
-        this.tipoDiscapacidad = tipoDiscapacidad;
     }
 
     public String getAlergias() {
@@ -58,28 +67,20 @@ public class Estudiante extends Persona {
         this.alergias = alergias;
     }
 
-    public String getEnfermedadesCronicas() {
-        return enfermedadesCronicas;
+    public String getEstado() {
+        return estado;
     }
 
-    public void setEnfermedadesCronicas(String enfermedadesCronicas) {
-        this.enfermedadesCronicas = enfermedadesCronicas;
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
-	
-	public String getEstado(){
-		return estado;
-	}
-	
-	public void setEstado(String estado){
-		this.estado = estado;
-	}
-	
-	public String getOrigen(){
-		return origen;
-	}
-	
-	public void setOrigen(String origen){
-		this.origen = origen;
-	}
+
+    public String getDiscapacidades() {
+        return discapacidades;
+    }
+
+    public void setDiscapacidades(String discapacidades) {
+        this.discapacidades = discapacidades;
+    }
+    
 }
-

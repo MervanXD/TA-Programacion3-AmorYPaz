@@ -43,9 +43,6 @@ public class SupervisorMySQL implements SupervisorDAO {
                     + "anhosExperiencia,distrito,activo) VALUES(?,?,?,?,?)";
             pst=con.prepareStatement(sql);
             pst.setInt(1,supervisor.getIdPersona());
-            pst.setString(2,supervisor.getEmail());
-            pst.setInt(3,supervisor.getAniosExperienciaSupervisor());
-            pst.setString(4,supervisor.getDistrito());
             pst.setBoolean(5,true);
             pst.executeUpdate();
             resultado=supervisor.getIdPersona();
@@ -80,9 +77,6 @@ public class SupervisorMySQL implements SupervisorDAO {
             pst.executeUpdate();
             sql="UPDATE supervisor SET email=?,anhosExperiencia=?,distrito=? WHERE idSupervisor=?";
             pst=con.prepareStatement(sql);
-            pst.setString(1,supervisor.getEmail());
-            pst.setInt(2,supervisor.getAniosExperienciaSupervisor());
-            pst.setString(3,supervisor.getDistrito());
             pst.setInt(4,supervisor.getIdPersona());
             resultado=pst.executeUpdate();
             
@@ -134,8 +128,6 @@ public class SupervisorMySQL implements SupervisorDAO {
                 supervisor.setLengua(rs.getString("lengua"));
                 supervisor.setSexo(rs.getString("sexo").charAt(0));
                 supervisor.setFechaNacimiento(rs.getDate("fechaNacimiento"));
-                supervisor.setEmail(rs.getString("email"));
-                supervisor.setAniosExperienciaSupervisor(rs.getInt("anhoNacimiento"));
                 supervisor.setDireccion(rs.getString("direccion"));
             }
         }catch(SQLException ex){
@@ -166,8 +158,6 @@ public class SupervisorMySQL implements SupervisorDAO {
                 supervisor.setLengua(rs.getString("lengua"));
                 supervisor.setSexo(rs.getString("sexo").charAt(0));
                 supervisor.setFechaNacimiento(rs.getDate("fechaNacimiento"));
-                supervisor.setEmail(rs.getString("email"));
-                supervisor.setAniosExperienciaSupervisor(rs.getInt("anhoNacimiento"));
                 supervisor.setDireccion(rs.getString("direccion"));
                 supervisores.add(supervisor);
             }
