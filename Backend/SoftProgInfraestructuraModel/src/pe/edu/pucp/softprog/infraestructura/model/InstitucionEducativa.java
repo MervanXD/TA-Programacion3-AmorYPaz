@@ -6,12 +6,30 @@ public class InstitucionEducativa {
     private String nombre;
     private String direccion;
     private ArrayList<Nivel> niveles;
+    private int activo;
+    
+    public InstitucionEducativa(){};
 
+    public InstitucionEducativa(String nombre, String direccion, ArrayList<Nivel> niveles) {
+        this.nombre = nombre;
+        this.direccion = direccion;
+        this.niveles = new ArrayList<>();
+    }
+    
     public InstitucionEducativa(int idSede, String nombre, String direccion, ArrayList<Nivel> niveles) {
         this.idSede = idSede;
         this.nombre = nombre;
         this.direccion = direccion;
         this.niveles = new ArrayList<>();
+    }
+    
+
+    public int getActivo() {
+        return activo;
+    }
+
+    public void setActivo(int activo) {
+        this.activo = activo;
     }
 
     public int getIdSede() {

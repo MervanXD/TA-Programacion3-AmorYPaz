@@ -1,10 +1,12 @@
 package pe.edu.pucp.softprog.infraestructura.model;
-import java.util.ArrayList;
 
 public class Grado {
     private int idGrado;
     private String nombre;
     private Nivel nivel;
+    private InstitucionEducativa institucion;
+    public Grado(){};
+    private int activo;
 
     public Grado(int idGrado, String nombre, Nivel nivel) {
         this.idGrado = idGrado;
@@ -12,8 +14,24 @@ public class Grado {
         this.nivel = nivel;
     }
 
+    public int getActivo() {
+        return activo;
+    }
+
+    public void setActivo(int activo) {
+        this.activo = activo;
+    }
+
     public int getIdGrado() {
         return idGrado;
+    }
+
+    public InstitucionEducativa getInstitucion() {
+        return institucion;
+    }
+
+    public void setInstitucion(InstitucionEducativa institucion) {
+        this.institucion = institucion;
     }
 
     public void setIdGrado(int idGrado) {

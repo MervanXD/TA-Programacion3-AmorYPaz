@@ -1,8 +1,8 @@
 
-package pe.edu.pucp.softprog.Infraestructura.mysql;
+package pe.edu.pucp.softprog.infraestructura.mysql;
 
 import java.util.ArrayList;
-import pe.edu.pucp.softprog.Infraestructura.dao.GradoDAO;
+import pe.edu.pucp.softprog.infraestructura.dao.GradoDAO;
 import pe.edu.pucp.softprog.infraestructura.model.Grado;
 import java.sql.CallableStatement;
 import java.sql.SQLException;

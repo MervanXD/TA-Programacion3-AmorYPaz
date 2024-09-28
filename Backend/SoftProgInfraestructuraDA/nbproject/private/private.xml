@@ -3,10 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/sfeli/OneDrive/Escritorio/2024-2/Progra3/Lab%206/Backend/SoftProgInfraestructuraDA/src/pe/edu/pucp/softprog/Infraestructura/dao/InstitucionEducativaDAO.java</file>
-            <file>file:/C:/Users/sfeli/OneDrive/Escritorio/2024-2/Progra3/Lab%206/Backend/SoftProgInfraestructuraDA/src/pe/edu/pucp/softprog/Infraestructura/mysql/GradoMySQL.java</file>
-            <file>file:/C:/Users/sfeli/OneDrive/Escritorio/2024-2/Progra3/Lab%206/Backend/SoftProgInfraestructuraDA/src/pe/edu/pucp/softprog/Infraestructura/dao/GradoDAO.java</file>
-            <file>file:/C:/Users/sfeli/OneDrive/Escritorio/2024-2/Progra3/Lab%206/Backend/SoftProgInfraestructuraDA/src/pe/edu/pucp/softprog/Infraestructura/mysql/InstitucionEducativaMySQL.java</file>
+            <file>file:/C:/Users/sfeli/OneDrive/Escritorio/2024-2/Progra3/Repositorio/TA-Programacion3-AmorYPaz/Backend/SoftProgInfraestructuraDA/src/pe/edu/pucp/softprog/infraestructura/dao/GradoDAO.java</file>
+            <file>file:/C:/Users/sfeli/OneDrive/Escritorio/2024-2/Progra3/Repositorio/TA-Programacion3-AmorYPaz/Backend/SoftProgInfraestructuraDA/src/pe/edu/pucp/softprog/infraestructura/mysql/GradoMySQL.java</file>
+            <file>file:/C:/Users/sfeli/OneDrive/Escritorio/2024-2/Progra3/Repositorio/TA-Programacion3-AmorYPaz/Backend/SoftProgInfraestructuraDA/src/pe/edu/pucp/softprog/infraestructura/dao/InstitucionEducativaDAO.java</file>
+            <file>file:/C:/Users/sfeli/OneDrive/Escritorio/2024-2/Progra3/Repositorio/TA-Programacion3-AmorYPaz/Backend/SoftProgInfraestructuraDA/src/pe/edu/pucp/softprog/infraestructura/mysql/InstitucionEducativaMySQL.java</file>
         </group>
     </open-files>
 </project-private>

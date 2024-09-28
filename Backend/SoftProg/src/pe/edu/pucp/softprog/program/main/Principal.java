@@ -3,6 +3,9 @@ package pe.edu.pucp.softprog.program.main;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import pe.edu.pucp.softprog.infraestructura.dao.InstitucionEducativaDAO;
+import pe.edu.pucp.softprog.infraestructura.mysql.InstitucionEducativaMySQL;
+import pe.edu.pucp.softprog.infraestructura.model.InstitucionEducativa;
 import pe.edu.pucp.softprog.rrhh.dao.EstudianteDAO;
 import pe.edu.pucp.softprog.rrhh.dao.PersonaDAO;
 import pe.edu.pucp.softprog.rrhh.dao.UsuarioDAO;
@@ -17,7 +20,7 @@ import pe.edu.pucp.softprog.rrhh.mysql.UsuarioMySQL;
 public class Principal {
     public static void main(String[]args)throws Exception{
 //        probarUsuarios();
-//        probarInstitucionEducativa();
+        probarInstitucionEducativa();
 //        probarEstudiante();
 //        probarCurso();
     }
@@ -25,14 +28,14 @@ public class Principal {
     public static void probarUsuarios(){
         System.out.println("--------------PRUEBA DE USUARIOS--------------\n\n");
         ArrayList<Usuario> usuarios;
-        Usuario usuario = new Usuario("admin", "123456");
+        Usuario usuario = new Usuario("admin1", "987656");
         UsuarioDAO daoUsuario = new UsuarioMySQL();
         //INSERT DE USUARIOS
         if(daoUsuario.insertar(usuario)==0) System.out.println("Error en registro\n");
         else System.out.println("Registrado exitosamente: " + usuario.getUsername() +"\n");
-        String anterior = "juangp";
+        String anterior = "rauljp";
         usuario.setUsername(anterior);
-        usuario.setContrasena("123789");
+        usuario.setContrasena("151515");
         if(daoUsuario.insertar(usuario)==0) System.out.println("Error en registro\n");
         else System.out.println("Registrado exitosamente: " + usuario.getUsername() +"\n");
         //OBTENER POR ID Y MODIFICAR
@@ -57,8 +60,41 @@ public class Principal {
         }    
     }
     
-    public static void probarInstitucionEducativa(){
+    public static void probarInstitucionEducativa() throws ParseException{
         System.out.println("--------------PRUEBA DE I.E--------------\n\n");
+        ArrayList<InstitucionEducativa> instituciones;
+        InstitucionEducativa institucion = new InstitucionEducativa("San Antonio de Padua", "Av. San Felipe 802", new ArrayList<>());
+        InstitucionEducativaDAO daoInstitucion = new InstitucionEducativaMySQL();
+        //INSERT DE 2 INSTITUCIONES EDUCATIVAS
+        if(daoInstitucion.insertar(institucion)==0) System.out.println("Error en registro\n");
+        else System.out.println("Registrado exitosamente: " + institucion.getNombre()+"\n");
+        String nombreNuevo  = "San Fransisco de Asis";
+        String direccionNuevo  = "Av. Girasoles Rosarios";
+        institucion.setNombre(nombreNuevo);
+        institucion.setDireccion(direccionNuevo);
+        if(daoInstitucion.insertar(institucion)==0) System.out.println("Error en registro\n");
+        else System.out.println("Registrado exitosamente: " + institucion.getNombre() +"\n");
+        
+        //OBTENER POR ID Y MODIFICAR
+        institucion = daoInstitucion.obtenerPorId(institucion.getIdSede());
+        System.out.println("Obtenido: "+ institucion.getIdSede() + "\n");
+        institucion.setNombre("Salesianos");
+        institucion.setDireccion("Av. Brasil");
+//        if(daoInstitucion.modificar(institucion) == 0) System.out.println("Error en modificar\n");
+//        else System.out.println("Modificado exitosamente: " + nombreNuevo + " -> " + institucion.getNombre()+"\n");
+//No se puede modificar porque el procedure pide fid de otras dos clases que en los demas procedures no pide. 
+        
+        //LISTAR TODOS
+        instituciones = daoInstitucion.listarTodos();
+        System.out.println("\n\nLISTA DE INSTITUCIONES");
+        for(InstitucionEducativa ins : instituciones){
+            System.out.println("ID: " + ins.getIdSede()+ " - Nombre: " + ins.getNombre());
+        }
+        
+        //ELIMINAR
+        if(daoInstitucion.eliminar(institucion.getIdSede()) == 0) System.out.println("Error en eliminar\n");
+        else System.out.println("Eliminado exitosamente: " + institucion.getNombre()+ " con ID: "+ institucion.getIdSede()+ "\n");
+        //Falta tener un id de calendario para "eliminar" la institucion educativa
     }
 
     public static void probarEstudiante() throws ParseException{

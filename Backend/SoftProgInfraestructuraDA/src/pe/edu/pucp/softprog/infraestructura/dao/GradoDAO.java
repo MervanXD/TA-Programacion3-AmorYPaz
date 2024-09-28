@@ -1,5 +1,5 @@
 
-package pe.edu.pucp.softprog.Infraestructura.dao;
+package pe.edu.pucp.softprog.infraestructura.dao;
 import java.util.ArrayList;
 import pe.edu.pucp.softprog.infraestructura.model.Grado;
 

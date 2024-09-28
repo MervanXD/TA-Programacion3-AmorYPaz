@@ -1,7 +1,7 @@
 
-package pe.edu.pucp.softprog.Infraestructura.mysql;
+package pe.edu.pucp.softprog.infraestructura.mysql;
 import java.util.ArrayList;
-import pe.edu.pucp.softprog.Infraestructura.dao.InstitucionEducativaDAO;
+import pe.edu.pucp.softprog.infraestructura.dao.InstitucionEducativaDAO;
 import pe.edu.pucp.softprog.infraestructura.model.InstitucionEducativa;
 import java.sql.CallableStatement;
 import java.sql.SQLException;
@@ -21,12 +21,12 @@ public class InstitucionEducativaMySQL implements InstitucionEducativaDAO{
         try{
             con = DBManager.getInstance().getConnection();
             cs = con.prepareCall("{call INSERTAR_INSTITUCION_EDUCATIVA(?,?,?)}");
-            cs.registerOutParameter("_id_Institucion_Educativa", java.sql.Types.INTEGER);
+            cs.registerOutParameter("_id_institucion_educativa", java.sql.Types.INTEGER);
             cs.setString("_nombre",institucion.getNombre());
             cs.setString("_ubicacion",institucion.getDireccion());
             //cs.setInt("_fid_Superintendente", institucion.get());
             cs.executeUpdate();
-            institucion.setIdSede(cs.getInt("_id_Institucion_Educativa"));
+            institucion.setIdSede(cs.getInt("_id_institucion_educativa"));
             resultado = institucion.getIdSede();
         }catch(SQLException ex){
             System.out.println(ex.getMessage());
@@ -42,8 +42,8 @@ public class InstitucionEducativaMySQL implements InstitucionEducativaDAO{
         try{
             con = DBManager.getInstance().getConnection();
             con.setAutoCommit(false);
-            cs = con.prepareCall("{call MODIFICAR_INSTITUCION_EDUCATIVA(?,?,?,?)}");
-            cs.setInt("_id_Institucion_Educativa", institucion.getIdSede());
+            cs = con.prepareCall("{call MODIFICAR_INSTITUCION_EDUCATIVA(?,?,?,?,?)}");
+            cs.setInt("_id_institucion_educativa", institucion.getIdSede());
             //cs.setInt("_fid_Superintendente", institucion.get());
             cs.setString("_nombre",institucion.getNombre());
             cs.setString("_ubicacion",institucion.getDireccion());
@@ -64,7 +64,7 @@ public class InstitucionEducativaMySQL implements InstitucionEducativaDAO{
         try{
             con = DBManager.getInstance().getConnection();
             cs = con.prepareCall("{call ELIMINAR_INSTITUCION_EDUCATIVA(?)}");
-            cs.setInt("_id_Institucion_Educativa", idInstitucionEducativa);
+            cs.setInt("_id_institucion_educativa", idInstitucionEducativa);
             resultado = cs.executeUpdate();
         }catch(SQLException ex){
             System.out.println(ex.getMessage());
@@ -80,12 +80,12 @@ public class InstitucionEducativaMySQL implements InstitucionEducativaDAO{
         try{
             con = DBManager.getInstance().getConnection();
             cs = con.prepareCall("{call OBTENER_INSTITUCION_EDUCATIVA(?)}");
-            cs.setInt("_id_Institucion_Educativa", idInstitucionEducativa);
+            cs.setInt("_id_institucion_educativa", idInstitucionEducativa);
             rs = cs.executeQuery();
             if(rs.next()){
-               institucion.setIdSede(rs.getInt("id_producto"));
+               institucion.setIdSede(rs.getInt("id_Institucion_Educativa"));
                institucion.setNombre(rs.getString("nombre"));
-               institucion.setDireccion(rs.getString("unidad_medida"));
+               institucion.setDireccion(rs.getString("ubicacion"));
                institucion.setActivo(1);
             }
         }catch(SQLException ex){
@@ -101,13 +101,14 @@ public class InstitucionEducativaMySQL implements InstitucionEducativaDAO{
         ArrayList<InstitucionEducativa> instituciones = new ArrayList<>();
         try{
             con = DBManager.getInstance().getConnection();
-            cs = con.prepareCall("{call LISTAR_INSTITUCIONES_EDUCATIVAS_TODAS(?,?,?)}");
+            cs = con.prepareCall("{call LISTAR_INSTITUCIONES_EDUCATIVAS_TODAS()}");
             rs = cs.executeQuery();
             while(rs.next()){
                 InstitucionEducativa institucion = new InstitucionEducativa();
-                institucion.setIdSede(rs.getInt("id_producto"));
+                institucion.setIdSede(rs.getInt("id_Institucion_Educativa"));
                 institucion.setNombre(rs.getString("nombre"));
-                institucion.setDireccion(rs.getString("unidad_medida"));
+                institucion.setDireccion(rs.getString("ubicacion"));
+                //fid_Director (TBD)
                 institucion.setActivo(1);
                 instituciones.add(institucion);
             }
