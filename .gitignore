@@ -27,10 +27,18 @@ replay_pid*
 /Backend/SoftProgGestCursosModel/build/
 /Backend/SoftProgGestCursosDA/dist/
 /Backend/SoftProgGestCursosModel/dist/
-/Backend/SoftProgRRHHDA/build/
-/Backend/SoftProgRRHHDA/dist/
 /Backend/SoftProgDBManager/dist/
-/Backend/SoftProgRRHHModel/dist/
 /Backend/SoftProgRRHHModel/build/
-/Backend/SoftProgInfraestructuraModel/build/
+/Backend/SoftProgRRHHDA/build/
 /Backend/SoftProgInfraestructuraModel/dist/
+/Backend/SoftProgInfraestructuraModel/build/
+/Backend/SoftProgRRHHModel/dist/
+/Backend/SoftProgRRHHDA/dist/
+/Backend/SoftProgGestCalendarioModel/build/
+/Backend/SoftProgGestMatriculaModel/build/
+/Backend/SoftProgGestMatriculaModel/dist/
+/Backend/SoftProgGestCalendarioModel/dist/
+/Backend/SoftProg/dist/
+
+# ¡Pero no ignores este archivo específico!
+!Backend/SoftProg/src/pe/edu/pucp/softprog/lib/mysql-connector-j-9.0.0.jar
