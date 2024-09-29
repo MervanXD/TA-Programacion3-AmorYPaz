@@ -80,8 +80,10 @@ public class Principal {
         System.out.println("Obtenido: "+ institucion.getIdSede() + "\n");
         institucion.setNombre("Salesianos");
         institucion.setDireccion("Av. Brasil");
-//        if(daoInstitucion.modificar(institucion) == 0) System.out.println("Error en modificar\n");
-//        else System.out.println("Modificado exitosamente: " + nombreNuevo + " -> " + institucion.getNombre()+"\n");
+        if(daoInstitucion.modificar(institucion) == 0) {
+            System.out.println("Error en modificar\n");
+        }
+        else System.out.println("Modificado exitosamente: " + nombreNuevo + " -> " + institucion.getNombre()+"\n");
 //No se puede modificar porque el procedure pide fid de otras dos clases que en los demas procedures no pide. 
         
         //LISTAR TODOS
@@ -91,7 +93,7 @@ public class Principal {
             System.out.println("ID: " + ins.getIdSede()+ " - Nombre: " + ins.getNombre());
         }
         
-        //ELIMINAR
+//        ELIMINAR
         if(daoInstitucion.eliminar(institucion.getIdSede()) == 0) System.out.println("Error en eliminar\n");
         else System.out.println("Eliminado exitosamente: " + institucion.getNombre()+ " con ID: "+ institucion.getIdSede()+ "\n");
         //Falta tener un id de calendario para "eliminar" la institucion educativa
