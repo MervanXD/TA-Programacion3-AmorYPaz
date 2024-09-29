@@ -1,29 +1,55 @@
 package pe.edu.pucp.softprog.infraestructura.model;
 
+import java.util.ArrayList;
+import pe.edu.pucp.softprog.rrhh.model.Estudiante;
+
 public class Grado {
     private int idGrado;
-    private String nombre;
-    private Nivel nivel;
+    private String numero;
+    private TipoNivel nivel;
+    private int alumnosMatriculados;
+    private ArrayList<Estudiante> estudiantes;
     private InstitucionEducativa institucion;
-    public Grado(){};
-    private int activo;
 
-    public Grado(int idGrado, String nombre, Nivel nivel) {
-        this.idGrado = idGrado;
-        this.nombre = nombre;
+    public Grado(){}
+
+    public Grado(String numero, TipoNivel nivel, int alumnosMatriculados, InstitucionEducativa institucion) {
+        this.numero = numero;
         this.nivel = nivel;
-    }
-
-    public int getActivo() {
-        return activo;
-    }
-
-    public void setActivo(int activo) {
-        this.activo = activo;
+        this.alumnosMatriculados = alumnosMatriculados;
+        this.institucion = institucion;
     }
 
     public int getIdGrado() {
         return idGrado;
+    }
+
+    public void setIdGrado(int idGrado) {
+        this.idGrado = idGrado;
+    }
+
+    public String getNumero() {
+        return numero;
+    }
+
+    public void setNumero(String numero) {
+        this.numero = numero;
+    }
+
+    public TipoNivel getNivel() {
+        return nivel;
+    }
+
+    public void setNivel(TipoNivel nivel) {
+        this.nivel = nivel;
+    }
+
+    public int getAlumnosMatriculados() {
+        return alumnosMatriculados;
+    }
+
+    public void setAlumnosMatriculados(int alumnosMatriculados) {
+        this.alumnosMatriculados = alumnosMatriculados;
     }
 
     public InstitucionEducativa getInstitucion() {
@@ -34,23 +60,12 @@ public class Grado {
         this.institucion = institucion;
     }
 
-    public void setIdGrado(int idGrado) {
-        this.idGrado = idGrado;
+    public ArrayList<Estudiante> getEstudiantes() {
+        return estudiantes;
     }
 
-    public String getNombre() {
-        return nombre;
+    public void setEstudiantes(ArrayList<Estudiante> estudiantes) {
+        this.estudiantes = estudiantes;
     }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public Nivel getNivel() {
-        return nivel;
-    }
-
-    public void setNivel(Nivel nivel) {
-        this.nivel = nivel;
-    }
+    
 }

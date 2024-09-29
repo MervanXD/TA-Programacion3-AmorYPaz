@@ -1,43 +1,34 @@
 package pe.edu.pucp.softprog.infraestructura.model;
+
 import java.util.ArrayList;
+import pe.edu.pucp.softprog.rrhh.model.Director;
 
 public class InstitucionEducativa {
-    private int idSede;
+    private int idInstitucion;
     private String nombre;
     private String direccion;
-    private ArrayList<Nivel> niveles;
-    private int activo;
-    
-    public InstitucionEducativa(){};
+    private Director director;
+    private int cantidadGrados;
+    private ArrayList<Grado> grados;
 
-    public InstitucionEducativa(String nombre, String direccion, ArrayList<Nivel> niveles) {
+    public InstitucionEducativa() {
+        grados = new ArrayList<>();
+        cantidadGrados = 0;
+    }
+    
+    public InstitucionEducativa(String nombre, String direccion) {
         this.nombre = nombre;
         this.direccion = direccion;
-        this.niveles = new ArrayList<>();
-    }
-    
-    public InstitucionEducativa(int idSede, String nombre, String direccion, ArrayList<Nivel> niveles) {
-        this.idSede = idSede;
-        this.nombre = nombre;
-        this.direccion = direccion;
-        this.niveles = new ArrayList<>();
-    }
-    
-
-    public int getActivo() {
-        return activo;
+        grados = new ArrayList<>();
+        cantidadGrados = 0;
     }
 
-    public void setActivo(int activo) {
-        this.activo = activo;
+    public int getIdInstitucion() {
+        return idInstitucion;
     }
 
-    public int getIdSede() {
-        return idSede;
-    }
-
-    public void setIdSede(int idSede) {
-        this.idSede = idSede;
+    public void setIdInstitucion(int idInstitucion) {
+        this.idInstitucion = idInstitucion;
     }
 
     public String getNombre() {
@@ -56,11 +47,27 @@ public class InstitucionEducativa {
         this.direccion = direccion;
     }
 
-    public ArrayList<Nivel> getNiveles() {
-        return niveles;
+    public ArrayList<Grado> getGrados() {
+        return grados;
     }
 
-    public void setNiveles(ArrayList<Nivel> niveles) {
-        this.niveles = niveles;
+    public void setGrados(ArrayList<Grado> grados) {
+        this.grados = grados;
+    }
+
+    public int getCantidadGrados() {
+        return cantidadGrados;
+    }
+
+    public void setCantidadGrados(int cantidadGrados) {
+        this.cantidadGrados = cantidadGrados;
+    }
+
+    public Director getDirector() {
+        return director;
+    }
+
+    public void setDirector(Director director) {
+        this.director = director;
     }
 }

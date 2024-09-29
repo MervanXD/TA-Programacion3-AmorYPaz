@@ -26,8 +26,8 @@ public class InstitucionEducativaMySQL implements InstitucionEducativaDAO{
             cs.setString("_ubicacion",institucion.getDireccion());
             //cs.setInt("_fid_Superintendente", institucion.get());
             cs.executeUpdate();
-            institucion.setIdSede(cs.getInt("_id_institucion_educativa"));
-            resultado = institucion.getIdSede();
+            institucion.setIdInstitucion(cs.getInt("_id_institucion_educativa"));
+            resultado = institucion.getIdInstitucion();
         }catch(SQLException ex){
             System.out.println(ex.getMessage());
         }finally{
@@ -43,12 +43,12 @@ public class InstitucionEducativaMySQL implements InstitucionEducativaDAO{
             con = DBManager.getInstance().getConnection();
             con.setAutoCommit(false);
             cs = con.prepareCall("{call MODIFICAR_INSTITUCION_EDUCATIVA(?,?,?,?,?)}");
-            cs.setInt("_id_institucion_educativa", institucion.getIdSede());
+            cs.setInt("_id_institucion_educativa", institucion.getIdInstitucion());
             //cs.setInt("_fid_Superintendente", institucion.get());
             cs.setString("_nombre",institucion.getNombre());
             cs.setString("_ubicacion",institucion.getDireccion());
             cs.executeUpdate();
-            resultado = institucion.getIdSede();
+            resultado = institucion.getIdInstitucion();
             con.commit();
         }catch(SQLException ex){
             System.out.println(ex.getMessage());
@@ -83,10 +83,9 @@ public class InstitucionEducativaMySQL implements InstitucionEducativaDAO{
             cs.setInt("_id_institucion_educativa", idInstitucionEducativa);
             rs = cs.executeQuery();
             if(rs.next()){
-               institucion.setIdSede(rs.getInt("id_Institucion_Educativa"));
+               institucion.setIdInstitucion(rs.getInt("id_Institucion_Educativa"));
                institucion.setNombre(rs.getString("nombre"));
                institucion.setDireccion(rs.getString("ubicacion"));
-               institucion.setActivo(1);
             }
         }catch(SQLException ex){
             System.out.println(ex.getMessage());
@@ -105,11 +104,10 @@ public class InstitucionEducativaMySQL implements InstitucionEducativaDAO{
             rs = cs.executeQuery();
             while(rs.next()){
                 InstitucionEducativa institucion = new InstitucionEducativa();
-                institucion.setIdSede(rs.getInt("id_Institucion_Educativa"));
+                institucion.setIdInstitucion(rs.getInt("id_Institucion_Educativa"));
                 institucion.setNombre(rs.getString("nombre"));
                 institucion.setDireccion(rs.getString("ubicacion"));
                 //fid_Director (TBD)
-                institucion.setActivo(1);
                 instituciones.add(institucion);
             }
         }catch(SQLException ex){

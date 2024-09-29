@@ -1,41 +1,66 @@
 package pe.edu.pucp.softprog.infraestructura.model;
 import java.util.ArrayList;
+import pe.edu.pucp.softprog.rrhh.model.Supervisor;
 
 public class UGEL {
-    private int numUgel;                        
-    private int cantIE;                         
-    private ArrayList<InstitucionEducativa> colegios;  
+    private int idUgel;
+    private int numero;
+    private Supervisor supervisor;
+    private int cantidadIE;
+    private ArrayList<InstitucionEducativa> institucionesEducativas;  
 
-    public UGEL(int numUgel, int cantIE) {
-        this.numUgel = numUgel;
-        this.cantIE = cantIE;  
-        this.colegios = new ArrayList<>();  
+    public UGEL() {
+        institucionesEducativas = new ArrayList<>();
+        cantidadIE = 0;
     }
 
-    // Getters
-    public int getNumUgel() {
-        return numUgel;
+    public UGEL(int numero) {
+        this.numero = numero;
     }
 
-    public int getCantIE() {
-        return cantIE;
+    public UGEL(int numero, int cantidadIE, ArrayList<InstitucionEducativa> institucionesEducativas) {
+        this.numero = numero;
+        this.cantidadIE = cantidadIE;
+        this.institucionesEducativas = institucionesEducativas;
     }
 
-    public ArrayList<InstitucionEducativa> getColegios() {
-        return colegios;
+    public int getIdUgel() {
+        return idUgel;
     }
 
-    // Setters
-    public void setNumUgel(int numUgel) {
-        this.numUgel = numUgel;
+    public void setIdUgel(int idUgel) {
+        this.idUgel = idUgel;
     }
 
-    public void setCantIE(int cantIE) {
-        this.cantIE = cantIE;
+    public int getNumero() {
+        return numero;
     }
 
-    public void setColegios(ArrayList<InstitucionEducativa> colegios) {
-        this.colegios = colegios;
+    public void setNumero(int numero) {
+        this.numero = numero;
     }
 
+    public int getCantidadIE() {
+        return cantidadIE;
+    }
+
+    public void setCantidadIE(int cantidadIE) {
+        this.cantidadIE = cantidadIE;
+    }
+
+    public ArrayList<InstitucionEducativa> getInstitucionesEducativas() {
+        return institucionesEducativas;
+    }
+
+    public void setInstitucionesEducativas(ArrayList<InstitucionEducativa> institucionesEducativas) {
+        this.institucionesEducativas = institucionesEducativas;
+    }
+
+    public Supervisor getSupervisor() {
+        return supervisor;
+    }
+
+    public void setSupervisor(Supervisor supervisor) {
+        this.supervisor = supervisor;
+    }
 }

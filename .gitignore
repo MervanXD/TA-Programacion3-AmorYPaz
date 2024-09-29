@@ -27,3 +27,10 @@ replay_pid*
 /Backend/SoftProgGestCursosModel/build/
 /Backend/SoftProgGestCursosDA/dist/
 /Backend/SoftProgGestCursosModel/dist/
+/Backend/SoftProgRRHHDA/build/
+/Backend/SoftProgRRHHDA/dist/
+/Backend/SoftProgDBManager/dist/
+/Backend/SoftProgRRHHModel/dist/
+/Backend/SoftProgRRHHModel/build/
+/Backend/SoftProgInfraestructuraModel/build/
+/Backend/SoftProgInfraestructuraModel/dist/

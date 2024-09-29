@@ -1,4 +1,3 @@
-
 package pe.edu.pucp.softprog.infraestructura.mysql;
 
 import java.util.ArrayList;
@@ -9,8 +8,6 @@ import java.sql.SQLException;
 import java.sql.ResultSet;
 import java.sql.Connection;
 import pe.edu.pucp.softprog.config.DBManager;
-import pe.edu.pucp.softprog.infraestructura.model.Nivel;
-import pe.edu.pucp.softprog.infraestructura.model.TipoNivel;
 
 public class GradoMySQL implements GradoDAO{
     private Connection con;
@@ -24,8 +21,8 @@ public class GradoMySQL implements GradoDAO{
             con = DBManager.getInstance().getConnection();
             cs = con.prepareCall("{call INSERTAR_GRADO(?,?,?)}");
             cs.registerOutParameter("_id_grado", java.sql.Types.INTEGER);
-            cs.setString("_nivel", grado.getNivel().getNombre());
-            cs.setInt("_fid_institucion_educativa", grado.getInstitucion().getIdSede());
+            cs.setString("_nivel", grado.getNivel().toString());
+            cs.setInt("_fid_institucion_educativa", grado.getInstitucion().getIdInstitucion());
             cs.executeUpdate();
             grado.setIdGrado(cs.getInt("_id_grado"));
             resultado = grado.getIdGrado();
@@ -44,8 +41,8 @@ public class GradoMySQL implements GradoDAO{
             con = DBManager.getInstance().getConnection();
             cs = con.prepareCall("{call MODIFICAR_GRADO(?,?,?)}");
             cs.setInt("_id_grado", java.sql.Types.INTEGER);
-            cs.setString("_nivel", grado.getNivel().getNombre());
-            cs.setInt("_fid_institucion_educativa", grado.getInstitucion().getIdSede());
+            cs.setString("_nivel", grado.getNivel().toString());
+            cs.setInt("_fid_institucion_educativa", grado.getInstitucion().getIdInstitucion());
             resultado = cs.executeUpdate();
         }catch(SQLException ex){
             System.out.println(ex.getMessage());
@@ -105,7 +102,6 @@ public class GradoMySQL implements GradoDAO{
                 grado.setIdGrado(rs.getInt("idGrado"));
                 //grado.set(rs.getString("nombre"));
                //grado.setNivel(rs.getString("nivel"));
-                grado.setActivo(1);
                 grados.add(grado);
             }
         }catch(SQLException ex){
