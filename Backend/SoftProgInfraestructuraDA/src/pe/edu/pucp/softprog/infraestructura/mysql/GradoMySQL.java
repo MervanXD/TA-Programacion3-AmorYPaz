@@ -99,8 +99,8 @@ public class GradoMySQL implements GradoDAO{
             rs = cs.executeQuery();
             while(rs.next()){
                 Grado grado = new Grado();
-                grado.setIdGrado(rs.getInt("idGrado"));
-                //grado.set(rs.getString("nombre"));
+                grado.setIdGrado(rs.getInt("id_Grado"));
+//                grado.setNivel(rs.getString("nivel"));
                //grado.setNivel(rs.getString("nivel"));
                 grados.add(grado);
             }
