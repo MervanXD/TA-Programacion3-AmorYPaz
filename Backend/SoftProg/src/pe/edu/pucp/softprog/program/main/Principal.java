@@ -3,6 +3,9 @@ package pe.edu.pucp.softprog.program.main;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import pe.edu.pucp.softprog.gestcursos.dao.CursoDAO;
+import pe.edu.pucp.softprog.gestcursos.model.Curso;
+import pe.edu.pucp.softprog.gestcursos.mysql.CursoMySQL;
 import pe.edu.pucp.softprog.rrhh.dao.EstudianteDAO;
 import pe.edu.pucp.softprog.rrhh.dao.PersonaDAO;
 import pe.edu.pucp.softprog.gestusuarios.dao.UsuarioDAO;
@@ -18,9 +21,9 @@ public class Principal {
 
     public static void main(String[] args) throws Exception {
 //        probarUsuarios();
-        probarInstitucionEducativa();
+//        probarInstitucionEducativa();
 //        probarEstudiante();
-//        probarCurso();
+        probarCurso();
     }
 
     public static void probarUsuarios() {
@@ -134,5 +137,47 @@ public class Principal {
 
     public static void probarCurso() {
         System.out.println("--------------PRUEBA DE CURSO--------------\n\n");
+        ArrayList<Curso> cursos;
+        Curso curso = new Curso("Matemática 1er grado");
+        CursoDAO daoCurso = new CursoMySQL();
+        //INSERT DE USUARIOS
+        if (daoCurso.insertar(curso) == 0) {
+            System.out.println("Error en registro\n");
+        } else {
+            System.out.println("Registrado exitosamente: ID: " + curso.getIdCurso() + " - Nombre: "+ curso.getNombre()+ "\n");
+        }
+        String anterior = "Fasica 4to grado";
+        curso.setNombre(anterior);
+        if (daoCurso.insertar(curso) == 0) {
+            System.out.println("Error en registro\n");
+        } else {
+            System.out.println("Registrado exitosamente: ID: " + curso.getIdCurso() + " - Nombre: "+ curso.getNombre()+ "\n");
+        }
+        //OBTENER POR ID Y MODIFICAR
+        curso = daoCurso.obtenerPorId(curso.getIdCurso());
+        curso.setNombre("Física 4to grado");
+        if (daoCurso.modificar(curso) == 0) {
+            System.out.println("Error en modificar\n");
+        } else {
+            System.out.println("Modificado exitosamente: " + anterior + " -> " + curso.getNombre()+ "\n");
+        }
+        //LISTAR TODOS
+        cursos = daoCurso.listarTodos();
+        System.out.println("\n\nLISTA DE CURSOS");
+        for (Curso cur : cursos) {
+            System.out.println("ID: " + cur.getIdCurso()+ " - Nombre: " + cur.getNombre());
+        }
+        //ELIMINAR
+        if (daoCurso.eliminar(curso.getIdCurso()) == 0) {
+            System.out.println("Error en eliminar\n");
+        } else {
+            System.out.println("\n\nEliminado exitosamente: " + curso.getNombre()+ "\n");
+        }
+        //LISTAR TODOS
+        System.out.println("\n\nLISTA DE USUARIOS");
+        cursos = daoCurso.listarTodos();
+        for (Curso cur : cursos) {
+            System.out.println("ID: " + cur.getIdCurso()+ " - Nombre: " + cur.getNombre());
+        }
     }
 }

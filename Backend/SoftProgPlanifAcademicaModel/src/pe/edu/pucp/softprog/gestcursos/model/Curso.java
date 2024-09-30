@@ -2,23 +2,22 @@ package pe.edu.pucp.softprog.gestcursos.model;
 
 public class Curso {
 
-    private String idCurso;
+    private int idCurso;
     private String nombre;
     private boolean activo;
     
     public Curso() {
     }
 
-    public Curso(String idCurso, String nombre) {
-        this.idCurso = idCurso;
+    public Curso(String nombre) {
         this.nombre = nombre;
     }
 
-    public String getIdCurso() {
+    public int getIdCurso() {
         return idCurso;
     }
 
-    public void setIdCurso(String idCurso) {
+    public void setIdCurso(int idCurso) {
         this.idCurso = idCurso;
     }
 
@@ -32,6 +31,10 @@ public class Curso {
     
     public boolean isActivo() {
         return activo;
+    }
+
+    public void setActivo(boolean activo) {
+        this.activo = activo;
     }
 
 }

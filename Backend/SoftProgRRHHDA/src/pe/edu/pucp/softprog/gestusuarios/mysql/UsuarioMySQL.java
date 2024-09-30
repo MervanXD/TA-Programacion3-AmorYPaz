@@ -92,7 +92,7 @@ public class UsuarioMySQL implements UsuarioDAO{
                 usuario.setTipoUsuario(TipoUsuario.valueOf(rs.getString("tipo_usuario")));
                 usuario.setContrasena("XXXXXXXX");
                 usuario.setActivo(rs.getBoolean("activo"));
-            } else System.out.println("No se encontró al usuario");
+            }
         }catch(SQLException ex){
             System.out.println(ex.getMessage());
         }finally{

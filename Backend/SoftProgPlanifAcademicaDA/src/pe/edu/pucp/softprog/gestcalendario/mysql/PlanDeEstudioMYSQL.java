@@ -8,7 +8,7 @@ import pe.edu.pucp.softprog.gestcalendario.dao.PlanDeEstudioDAO;
 import pe.edu.pucp.softprog.gestcalendario.model.PlanDeEstudio;
 import pe.edu.pucp.softprog.config.DBManager;
 
-public class PlanDeEstudioMYSQL implements PlanDeEstudioDAO{
+public class PlanDeEstudioMySQL implements PlanDeEstudioDAO{
     
     private Connection con;
     private CallableStatement cs;
@@ -22,7 +22,7 @@ public class PlanDeEstudioMYSQL implements PlanDeEstudioDAO{
             cs = con.prepareCall("{call INSERTAR_PLAN_DE_ESTUDIO(?,?,?,?)}");
             cs.registerOutParameter("_id_Plan_Estudio", java.sql.Types.INTEGER);
             cs.setString("_descripcion",plan.getDescripcion());
-            cs.setInt("_fid_Grado",plan.getGrado().getIdGrado());
+            //cs.setInt("_fid_Grado",plan.getGrado().getIdGrado());
             cs.setInt("_fid_Calendario_Academico",plan.getAnioAcademico().getIdAño());
             cs.executeUpdate();
             plan.setIdPlan(cs.getInt("_id_Plan_Estudio"));
@@ -44,7 +44,7 @@ public class PlanDeEstudioMYSQL implements PlanDeEstudioDAO{
             cs = con.prepareCall("{call MODIFICAR_PLAN_DE_ESTUDIO(?,?,?,?)}");
             cs.registerOutParameter("_id_Plan_Estudio", java.sql.Types.INTEGER);
             cs.setString("_descripcion",plan.getDescripcion());
-            cs.setInt("_fid_Grado",plan.getGrado().getIdGrado());
+            //cs.setInt("_fid_Grado",plan.getGrado().getIdGrado());
             cs.setInt("_fid_Calendario_Academico",plan.getAnioAcademico().getIdAño());
             cs.executeUpdate();
             resultado = plan.getIdPlan();
@@ -86,7 +86,7 @@ public class PlanDeEstudioMYSQL implements PlanDeEstudioDAO{
                plan.setDescripcion(rs.getString("nombre"));
                //plan.setGrado(rs.getInt(""));
                //plan.setAnioAcademico(rs.get);
-               plan.setActivo(1);
+               //plan.setActivo(1);
             }
         }catch(SQLException ex){
             System.out.println(ex.getMessage());
