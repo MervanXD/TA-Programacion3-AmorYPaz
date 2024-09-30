@@ -3,10 +3,10 @@ package pe.edu.pucp.softprog.rrhh.model;
 import java.util.Date;
 
 public class Director extends Persona {
-    private int idDirector;
     private String tipoContrato;
     private Date fechaNombramiento;
     private String email;
+    private boolean activo;
 
     public Director() {
     }
@@ -41,13 +41,9 @@ public class Director extends Persona {
     public void setEmail(String email) {
         this.email = email;
     }
-
-    public int getIdDirector() {
-        return idDirector;
-    }
-
-    public void setIdDirector(int idDirector) {
-        this.idDirector = idDirector;
+    
+    public boolean isActivo() {
+        return activo;
     }
     
 }

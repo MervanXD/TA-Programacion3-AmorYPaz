@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import pe.edu.pucp.softprog.config.DBManager;
 import pe.edu.pucp.softprog.rrhh.dao.UsuarioDAO;
-import pe.edu.pucp.softprog.rrhh.model.Usuario;
+import pe.edu.pucp.softprog.gestusuarios.model.Usuario;
 
 public class UsuarioMySQL implements UsuarioDAO{
 

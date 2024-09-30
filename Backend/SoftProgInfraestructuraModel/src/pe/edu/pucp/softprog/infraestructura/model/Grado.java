@@ -1,6 +1,7 @@
 package pe.edu.pucp.softprog.infraestructura.model;
 
 import java.util.ArrayList;
+import pe.edu.pucp.softprog.gestcalendario.model.PlanDeEstudio;
 import pe.edu.pucp.softprog.rrhh.model.Estudiante;
 
 public class Grado {
@@ -10,16 +11,30 @@ public class Grado {
     private int alumnosMatriculados;
     private ArrayList<Estudiante> estudiantes;
     private InstitucionEducativa institucion;
+    private PlanDeEstudio planDeEstudio;
+    private boolean activo;
 
-    public Grado(){}
+    public Grado(){
+        estudiantes = new ArrayList<>();
+        alumnosMatriculados = 0;
+    }
 
-    public Grado(String numero, TipoNivel nivel, int alumnosMatriculados, InstitucionEducativa institucion) {
+    public Grado(String numero, TipoNivel nivel) {
+        this.numero = numero;
+        this.nivel = nivel;
+        alumnosMatriculados = 0;
+        estudiantes = new ArrayList<>();
+    }
+
+    public Grado(String numero, TipoNivel nivel, int alumnosMatriculados, ArrayList<Estudiante> estudiantes, InstitucionEducativa institucion, PlanDeEstudio planDeEstudio) {
         this.numero = numero;
         this.nivel = nivel;
         this.alumnosMatriculados = alumnosMatriculados;
+        this.estudiantes = estudiantes;
         this.institucion = institucion;
+        this.planDeEstudio = planDeEstudio;
     }
-
+    
     public int getIdGrado() {
         return idGrado;
     }
@@ -66,6 +81,18 @@ public class Grado {
 
     public void setEstudiantes(ArrayList<Estudiante> estudiantes) {
         this.estudiantes = estudiantes;
+    }
+
+    public boolean isActivo() {
+        return activo;
+    }
+
+    public PlanDeEstudio getPlanDeEstudio() {
+        return planDeEstudio;
+    }
+
+    public void setPlanDeEstudio(PlanDeEstudio planDeEstudio) {
+        this.planDeEstudio = planDeEstudio;
     }
     
 }

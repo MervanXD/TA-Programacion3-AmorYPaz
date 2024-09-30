@@ -1,15 +1,19 @@
 package pe.edu.pucp.softprog.infraestructura.model;
 
 import java.util.ArrayList;
+import pe.edu.pucp.softprog.gestcalendario.model.AnioAcademico;
 import pe.edu.pucp.softprog.rrhh.model.Director;
 
 public class InstitucionEducativa {
     private int idInstitucion;
     private String nombre;
     private String direccion;
-    private Director director;
     private int cantidadGrados;
     private ArrayList<Grado> grados;
+    private ArrayList<AnioAcademico> aniosAcademicos;
+    private UGEL ugel;
+    private Director director;
+    private boolean activo;
 
     public InstitucionEducativa() {
         grados = new ArrayList<>();
@@ -70,4 +74,29 @@ public class InstitucionEducativa {
     public void setDirector(Director director) {
         this.director = director;
     }
+
+    public UGEL getUgel() {
+        return ugel;
+    }
+
+    public void setUgel(UGEL ugel) {
+        this.ugel = ugel;
+    }
+
+    public boolean getActivo() {
+        return activo;
+    }
+
+    public ArrayList<AnioAcademico> getAniosAcademicos() {
+        return aniosAcademicos;
+    }
+
+    public void setAniosAcademicos(ArrayList<AnioAcademico> aniosAcademicos) {
+        this.aniosAcademicos = aniosAcademicos;
+    }
+
+    public boolean isActivo() {
+        return activo;
+    }    
+    
 }

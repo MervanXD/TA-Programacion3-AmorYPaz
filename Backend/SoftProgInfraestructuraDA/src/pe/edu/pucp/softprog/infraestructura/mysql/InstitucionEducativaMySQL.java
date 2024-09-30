@@ -1,4 +1,3 @@
-
 package pe.edu.pucp.softprog.infraestructura.mysql;
 import java.util.ArrayList;
 import pe.edu.pucp.softprog.infraestructura.dao.InstitucionEducativaDAO;
@@ -41,7 +40,7 @@ public class InstitucionEducativaMySQL implements InstitucionEducativaDAO{
         int resultado = 0;
         try{
             con = DBManager.getInstance().getConnection();
-            con.setAutoCommit(false);
+            con.setAutoCommit(false);sa
 <<<<<<< HEAD
             cs = con.prepareCall("{call MODIFICAR_INSTITUCION_EDUCATIVA(?,?,?,?,?)}");
             cs.setInt("_id_institucion_educativa", institucion.getIdInstitucion());

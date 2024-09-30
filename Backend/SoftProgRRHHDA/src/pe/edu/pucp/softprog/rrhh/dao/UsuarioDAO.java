@@ -1,5 +1,5 @@
 package pe.edu.pucp.softprog.rrhh.dao;
-import pe.edu.pucp.softprog.rrhh.model.Usuario;
+import pe.edu.pucp.softprog.gestusuarios.model.Usuario;
 import java.util.ArrayList;
 
 public interface UsuarioDAO {

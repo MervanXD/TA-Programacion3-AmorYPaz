@@ -3,12 +3,12 @@ package pe.edu.pucp.softprog.rrhh.model;
 import java.util.Date;
 
 public class Estudiante extends Persona {
-    private int idEstudiante;
     private int cantCursos;
     private double promedio;
-    private String alergias;
+    private String condicionesMedicas;
     private String discapacidades;
     private String estado;
+    private boolean activo;
     private Persona apoderado;
     
     public Estudiante() {
@@ -17,22 +17,14 @@ public class Estudiante extends Persona {
         promedio = 0;
     }
     
-    public Estudiante(Persona apoderado, String alergias, String estado, String discapacidades, String dni, String nombres, String apellidoPaterno, String apellidoMaterno, Date fechaNacimiento, String lengua, String religion, char sexo, String direccion) {
+    public Estudiante(Persona apoderado, String condicionesMedicas, String estado, String discapacidades, String dni, String nombres, String apellidoPaterno, String apellidoMaterno, Date fechaNacimiento, String lengua, String religion, char sexo, String direccion) {
         super(dni, nombres, apellidoPaterno, apellidoMaterno, fechaNacimiento, lengua, religion, sexo, direccion);
         this.apoderado = apoderado;
-        this.alergias = alergias;
+        this.condicionesMedicas = condicionesMedicas;
         this.estado = estado;
         this.discapacidades = discapacidades;
         cantCursos = 0;
         promedio = 0;
-    }
-
-    public int getIdEstudiante() {
-        return idEstudiante;
-    }
-
-    public void setIdEstudiante(int idEstudiante) {
-        this.idEstudiante = idEstudiante;
     }
 
     public int getCantCursos() {
@@ -59,12 +51,12 @@ public class Estudiante extends Persona {
         this.apoderado = apoderado;
     }
 
-    public String getAlergias() {
-        return alergias;
+    public String getCondicionesMedicas() {
+        return condicionesMedicas;
     }
 
-    public void setAlergias(String alergias) {
-        this.alergias = alergias;
+    public void setCondicionesMedicas(String condicionesMedicas) {
+        this.condicionesMedicas = condicionesMedicas;
     }
 
     public String getEstado() {
@@ -81,6 +73,10 @@ public class Estudiante extends Persona {
 
     public void setDiscapacidades(String discapacidades) {
         this.discapacidades = discapacidades;
+    }
+
+    public boolean isActivo() {
+        return activo;
     }
     
 }
