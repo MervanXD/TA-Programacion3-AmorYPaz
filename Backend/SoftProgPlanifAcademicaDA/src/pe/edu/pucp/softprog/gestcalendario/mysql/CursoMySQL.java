@@ -18,14 +18,13 @@ public class CursoMySQL implements CursoDAO{
         int resultado=0;
         try{
             con=DBManager.getInstance().getConnection();
-            //String sql="INSERT INTO curso(idCurso,nombre,notaFinal) VALUES (?,?,?)";
             String sql = "{call taProg3.INSERTAR_CURSO(?, ?)}";
             cst=con.prepareCall(sql);
-            cst.registerOutParameter(1, java.sql.Types.NUMERIC);
+            cst.registerOutParameter(1, java.sql.Types.INTEGER);
             //cst.setInt("_id_curso",Integer.parseInt(curso.getIdCurso()));
-            cst.setString(2,curso.getNombre());
+            cst.setString("_nombre",curso.getNombre());
             cst.execute();
-            resultado=cst.getInt(1); //Insertó correctamente 
+            resultado=cst.getInt("_id_curso"); //Insertó correctamente 
         }catch(SQLException ex){
             System.out.println(ex.getMessage());
         }finally{

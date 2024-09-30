@@ -40,15 +40,19 @@ public class InstitucionEducativaMySQL implements InstitucionEducativaDAO{
         int resultado = 0;
         try{
             con = DBManager.getInstance().getConnection();
+<<<<<<< HEAD
             con.setAutoCommit(false);sa
 <<<<<<< HEAD
             cs = con.prepareCall("{call MODIFICAR_INSTITUCION_EDUCATIVA(?,?,?,?,?)}");
             cs.setInt("_id_institucion_educativa", institucion.getIdInstitucion());
 =======
+=======
+            con.setAutoCommit(false);
+>>>>>>> 914ac6326b59b0e5e8371f373f0e8252dba37469
             cs = con.prepareCall("{call MODIFICAR_INSTITUCION_EDUCATIVA(?,?,?)}");
+            cs.setInt("_id_institucion_educativa", institucion.getIdInstitucion());
 //            cs = con.prepareCall("{call MODIFICAR_INSTITUCION_EDUCATIVA(?,?,?,?,?)}");
-            cs.setInt("_id_institucion_educativa", institucion.getIdSede());
->>>>>>> 531424777f9b0092cbe8ccf43c2f5fd851ad9781
+            cs.setInt("_id_institucion_educativa", institucion.getIdInstitucion());
             //cs.setInt("_fid_Superintendente", institucion.get());
             cs.setString("_nombre",institucion.getNombre());
             cs.setString("_ubicacion",institucion.getDireccion());

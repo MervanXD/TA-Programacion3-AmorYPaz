@@ -17,7 +17,7 @@ public class Principal {
 
     public static void main(String[] args) throws Exception {
 //        probarUsuarios();
-//        probarInstitucionEducativa();
+        probarInstitucionEducativa();
 //        probarEstudiante();
 //        probarCurso();
     }
@@ -68,6 +68,7 @@ public class Principal {
             System.out.println("ID: " + us.getIdUsuario() + " - Username: " + us.getUsername());
         }
     }
+<<<<<<< HEAD
 
     public static void probarInstitucionEducativa() throws ParseException {
 //        System.out.println("--------------PRUEBA DE I.E--------------\n\n");
@@ -151,6 +152,46 @@ public class Principal {
 //            System.out.println("Eliminado exitosamente: " + institucion.getNombre() + " con ID: " + institucion.getIdSede() + "\n");
 //        }
 //        //Falta tener un id de calendario para "eliminar" la institucion educativa
+=======
+    
+    public static void probarInstitucionEducativa() throws ParseException{
+
+        System.out.println("--------------PRUEBA DE I.E--------------\n\n");
+        ArrayList<InstitucionEducativa> instituciones;
+        InstitucionEducativa institucion = new InstitucionEducativa("San Antonio de Padua", "Av. San Felipe 802");
+        InstitucionEducativaDAO daoInstitucion = new InstitucionEducativaMySQL();
+        //INSERT DE 2 INSTITUCIONES EDUCATIVAS
+        if(daoInstitucion.insertar(institucion)==0) System.out.println("Error en registro\n");
+        else System.out.println("Registrado exitosamente: " + institucion.getNombre()+"\n");
+        String nombreNuevo  = "San Fransisco de Asis";
+        String direccionNuevo  = "Av. Girasoles Rosarios";
+        institucion.setNombre(nombreNuevo);
+        institucion.setDireccion(direccionNuevo);
+        if(daoInstitucion.insertar(institucion)==0) System.out.println("Error en registro\n");
+        else System.out.println("Registrado exitosamente: " + institucion.getNombre() +"\n");
+        
+        //OBTENER POR ID Y MODIFICAR
+        institucion = daoInstitucion.obtenerPorId(institucion.getIdInstitucion());
+        System.out.println("Obtenido: "+ institucion.getIdInstitucion() + "\n");
+        institucion.setNombre("Salesianos");
+        institucion.setDireccion("Av. Brasil");
+        if(daoInstitucion.modificar(institucion) == 0) {
+            System.out.println("Error en modificar\n");
+        }
+        else System.out.println("Modificado exitosamente: " + nombreNuevo + " -> " + institucion.getNombre()+"\n");
+        
+        //LISTAR TODOS
+        instituciones = daoInstitucion.listarTodos();
+        System.out.println("\n\nLISTA DE INSTITUCIONES");
+        for(InstitucionEducativa ins : instituciones){
+            System.out.println("ID: " + ins.getIdInstitucion()+ " - Nombre: " + ins.getNombre());
+        }
+        
+//        ELIMINAR
+        if(daoInstitucion.eliminar(institucion.getIdInstitucion()) == 0) System.out.println("Error en eliminar\n");
+        else System.out.println("Eliminado exitosamente: " + institucion.getNombre()+ " con ID: "+ institucion.getIdInstitucion()+ "\n");
+        //Falta tener un id de calendario para "eliminar" la institucion educativa
+>>>>>>> 914ac6326b59b0e5e8371f373f0e8252dba37469
     }
 
     public static void probarEstudiante() throws ParseException {
