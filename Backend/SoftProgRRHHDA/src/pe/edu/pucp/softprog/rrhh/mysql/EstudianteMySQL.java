@@ -23,11 +23,12 @@ public class EstudianteMySQL implements EstudianteDAO {
         int resultado = 0;
         try {
             con = DBManager.getInstance().getConnection();
-            String sql = "{call INSERTAR_ESTUDIANTE(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}";
+            String sql = "{call INSERTAR_ESTUDIANTE(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}";
             cs = con.prepareCall(sql);
-            cs.registerOutParameter("_id_Estudiante", java.sql.Types.INTEGER);
             cs.registerOutParameter("_fid_Persona", java.sql.Types.INTEGER);
-            cs.setString("_alergias", estudiante.getAlergias());
+            cs.setInt("_cantidad_cursos", estudiante.getCantCursos());
+            cs.setDouble("_promedio", estudiante.getPromedio());
+            cs.setString("_condiciones_med", estudiante.getCondicionesMedicas());
             cs.setString("_discapacidades", estudiante.getDiscapacidades());
             cs.setString("_estado", estudiante.getEstado());
             cs.setString("_dni", estudiante.getDni());
@@ -41,8 +42,8 @@ public class EstudianteMySQL implements EstudianteDAO {
             cs.setString("_sexo", String.valueOf(estudiante.getSexo()));
             cs.setString("_direccion", estudiante.getDireccion());
             cs.executeUpdate();
-            estudiante.setIdEstudiante(cs.getInt("_id_estudiante"));
-            resultado = estudiante.getIdEstudiante();
+            estudiante.setIdPersona(cs.getInt("_fid_Persona"));
+            resultado = estudiante.getIdPersona();
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
             try {
@@ -65,13 +66,12 @@ public class EstudianteMySQL implements EstudianteDAO {
         int resultado = 0;
         try {
             con = DBManager.getInstance().getConnection();
-            String sql = "{call MODIFICAR_ESTUDIANTE(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}";
+            String sql = "{call MODIFICAR_ESTUDIANTE(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}";
             cs = con.prepareCall(sql);
-            cs.setInt("_id_estudiante", estudiante.getIdEstudiante());
             cs.setInt("_fid_persona", estudiante.getIdPersona());
             cs.setInt("_cantidad_cursos", estudiante.getCantCursos());
             cs.setDouble("_promedio", estudiante.getPromedio());
-            cs.setString("_alergias", estudiante.getAlergias());
+            cs.setString("_condiciones_med", estudiante.getCondicionesMedicas());
             cs.setString("_discapacidades", estudiante.getDiscapacidades());
             cs.setString("_estado", estudiante.getEstado());
             cs.setInt("_fid_apoderado", estudiante.getApoderado().getIdPersona());
@@ -85,7 +85,7 @@ public class EstudianteMySQL implements EstudianteDAO {
             cs.setString("_sexo", String.valueOf(estudiante.getSexo()));
             cs.setString("_direccion", estudiante.getDireccion());
             cs.executeUpdate();
-            resultado = estudiante.getIdEstudiante();
+            resultado = estudiante.getIdPersona();
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
             try {
@@ -110,7 +110,7 @@ public class EstudianteMySQL implements EstudianteDAO {
             con = DBManager.getInstance().getConnection();
             String sql = "{call ELIMINAR_ESTUDIANTE(?)}";
             cs = con.prepareCall(sql);
-            cs.setInt("_id_Estudiante", id);
+            cs.setInt("_fid_persona", id);
             cs.executeUpdate();
             resultado = id;
         } catch (SQLException ex) {
@@ -137,10 +137,9 @@ public class EstudianteMySQL implements EstudianteDAO {
             con=DBManager.getInstance().getConnection();
             String sql="{call OBTENER_ESTUDIANTE(?)}";
             cs=con.prepareCall(sql);
-            cs.setInt("_id_Estudiante", id);
+            cs.setInt("_fid_persona", id);
             rs = cs.executeQuery();
             if (rs.next()) {
-                estudiante.setIdEstudiante(rs.getInt("id_estudiante"));
                 estudiante.getApoderado().setDni(rs.getString("apdni"));
                 estudiante.getApoderado().setNombres(rs.getString("apnom"));
                 estudiante.getApoderado().setApellidoPaterno(rs.getString("apa"));
@@ -153,7 +152,7 @@ public class EstudianteMySQL implements EstudianteDAO {
                 estudiante.getApoderado().setFechaNacimiento(rs.getDate("apfec"));
                 estudiante.setCantCursos(rs.getInt("cantidad_cursos"));
                 estudiante.setPromedio(rs.getDouble("promedio"));
-                estudiante.setAlergias(rs.getString("alergias"));
+                estudiante.setCondicionesMedicas(rs.getString("condiciones_med"));
                 estudiante.setDiscapacidades(rs.getString("discapacidades"));
                 estudiante.setEstado(rs.getString("estado"));        
                 estudiante.setIdPersona(rs.getInt("id_persona"));
@@ -166,6 +165,7 @@ public class EstudianteMySQL implements EstudianteDAO {
                 estudiante.setReligion(rs.getString("religion"));
                 estudiante.setSexo(rs.getString("sexo").charAt(0));
                 estudiante.setDireccion(rs.getString("direccion"));
+                estudiante.setActivo(rs.getBoolean("activo"));
             }
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
@@ -189,7 +189,6 @@ public class EstudianteMySQL implements EstudianteDAO {
             rs = cs.executeQuery();
             while(rs.next()){
                 Estudiante estudiante = new Estudiante();
-                estudiante.setIdEstudiante(rs.getInt("id_estudiante"));
                 estudiante.getApoderado().setDni(rs.getString("apdni"));
                 estudiante.getApoderado().setNombres(rs.getString("apnom"));
                 estudiante.getApoderado().setApellidoPaterno(rs.getString("apa"));
@@ -202,10 +201,10 @@ public class EstudianteMySQL implements EstudianteDAO {
                 estudiante.getApoderado().setFechaNacimiento(rs.getDate("apfec"));
                 estudiante.setCantCursos(rs.getInt("cantidad_cursos"));
                 estudiante.setPromedio(rs.getDouble("promedio"));
-                estudiante.setAlergias(rs.getString("alergias"));
+                estudiante.setCondicionesMedicas(rs.getString("condiciones_med"));
                 estudiante.setDiscapacidades(rs.getString("discapacidades"));
                 estudiante.setEstado(rs.getString("estado"));        
-                estudiante.setIdPersona(rs.getInt("id_persona"));
+                estudiante.setIdPersona(rs.getInt("fid_persona"));
                 estudiante.setDni(rs.getString("DNI"));
                 estudiante.setNombres(rs.getString("nombres"));
                 estudiante.setApellidoPaterno(rs.getString("apellido_paterno"));
@@ -215,6 +214,7 @@ public class EstudianteMySQL implements EstudianteDAO {
                 estudiante.setReligion(rs.getString("religion"));
                 estudiante.setSexo(rs.getString("sexo").charAt(0));
                 estudiante.setDireccion(rs.getString("direccion"));
+                estudiante.setActivo(rs.getBoolean("activo"));
                 estudiantes.add(estudiante);
             }
         }catch(SQLException ex){

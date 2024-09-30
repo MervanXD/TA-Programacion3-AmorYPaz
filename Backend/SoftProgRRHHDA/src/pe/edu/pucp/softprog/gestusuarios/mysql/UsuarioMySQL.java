@@ -1,4 +1,4 @@
-package pe.edu.pucp.softprog.rrhh.mysql;
+package pe.edu.pucp.softprog.gestusuarios.mysql;
 
 import java.sql.SQLException;
 import java.sql.CallableStatement;
@@ -6,7 +6,8 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import pe.edu.pucp.softprog.config.DBManager;
-import pe.edu.pucp.softprog.rrhh.dao.UsuarioDAO;
+import pe.edu.pucp.softprog.gestusuarios.dao.UsuarioDAO;
+import pe.edu.pucp.softprog.gestusuarios.model.TipoUsuario;
 import pe.edu.pucp.softprog.gestusuarios.model.Usuario;
 
 public class UsuarioMySQL implements UsuarioDAO{
@@ -20,11 +21,12 @@ public class UsuarioMySQL implements UsuarioDAO{
         int resultado=0;
         try{
             con=DBManager.getInstance().getConnection();
-            String sql="{call INSERTAR_USUARIO(?,?,?)}";
+            String sql="{call INSERTAR_USUARIO(?,?,?,?)}";
             cs=con.prepareCall(sql);
             cs.registerOutParameter("_id_usuario", java.sql.Types.INTEGER);
             cs.setString("_nombre_usuario", usuario.getUsername());
             cs.setString("_contrasenha", usuario.getContrasena());
+            cs.setString("_tipo_usuario", usuario.getTipoUsuario().toString());
             cs.executeUpdate();
             usuario.setIdUsuario(cs.getInt("_id_usuario"));
             resultado = usuario.getIdUsuario();
@@ -41,11 +43,12 @@ public class UsuarioMySQL implements UsuarioDAO{
         int resultado=0;
         try{
             con=DBManager.getInstance().getConnection();
-            String sql="{call MODIFICAR_USUARIO(?,?,?)}";
+            String sql="{call MODIFICAR_USUARIO(?,?,?,?)}";
             cs=con.prepareCall(sql);
             cs.setInt("_id_usuario", usuario.getIdUsuario());
             cs.setString("_nombre_usuario", usuario.getUsername());
             cs.setString("_contrasenha", usuario.getContrasena());
+            cs.setString("_tipo_usuario", usuario.getTipoUsuario().toString());
             cs.executeUpdate();
             resultado = usuario.getIdUsuario();
         }catch(SQLException ex){
@@ -86,7 +89,9 @@ public class UsuarioMySQL implements UsuarioDAO{
             if(rs.next()){
                 usuario.setIdUsuario(rs.getInt("id_usuario"));
                 usuario.setUsername(rs.getString("nombre_usuario"));
+                usuario.setTipoUsuario(TipoUsuario.valueOf(rs.getString("tipo_usuario")));
                 usuario.setContrasena("XXXXXXXX");
+                usuario.setActivo(rs.getBoolean("activo"));
             } else System.out.println("No se encontró al usuario");
         }catch(SQLException ex){
             System.out.println(ex.getMessage());
@@ -109,6 +114,8 @@ public class UsuarioMySQL implements UsuarioDAO{
                 usuario.setIdUsuario(rs.getInt("id_usuario"));
                 usuario.setUsername(rs.getString("nombre_usuario"));
                 usuario.setContrasena("XXXXXXXX");
+                usuario.setTipoUsuario(TipoUsuario.valueOf(rs.getString("tipo_usuario")));
+                usuario.setActivo(rs.getBoolean("activo"));
                 usuarios.add(usuario);
             }
         }catch(SQLException ex){

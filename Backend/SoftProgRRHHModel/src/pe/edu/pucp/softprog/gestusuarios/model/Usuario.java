@@ -12,9 +12,10 @@ public class Usuario {
 
     public Usuario(){};
 
-    public Usuario(String username, String contrasena) {
+    public Usuario(String username, String contrasena, TipoUsuario tipoUsuario) {
         this.username = username;
         this.contrasena = contrasena;
+        this.tipoUsuario = tipoUsuario;
     }
 
     public int getIdUsuario() {
@@ -59,6 +60,10 @@ public class Usuario {
     
     public boolean isActivo() {
         return activo;
+    }
+
+    public void setActivo(boolean activo) {
+        this.activo = activo;
     }
 
 }

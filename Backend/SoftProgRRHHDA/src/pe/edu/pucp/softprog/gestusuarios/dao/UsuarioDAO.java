@@ -1,4 +1,4 @@
-package pe.edu.pucp.softprog.rrhh.dao;
+package pe.edu.pucp.softprog.gestusuarios.dao;
 import pe.edu.pucp.softprog.gestusuarios.model.Usuario;
 import java.util.ArrayList;
 
