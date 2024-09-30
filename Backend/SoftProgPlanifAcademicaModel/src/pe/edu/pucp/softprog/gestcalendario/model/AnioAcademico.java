@@ -5,7 +5,7 @@ import java.util.Date;
 
 public class AnioAcademico {
 
-    private int idAño;
+    private int idAnio;
     private int numero;
     private Date fechaInicio;
     private Date fechaFin;
@@ -25,14 +25,14 @@ public class AnioAcademico {
         this.planes = new ArrayList<>();
     }
 
-    public int getIdAño() {
-        return idAño;
+    public int getIdAnio() {
+        return idAnio;
     }
 
-    public void setIdAño(int idAño) {
-        this.idAño = idAño;
+    public void setIdAnio(int idAnio) {
+        this.idAnio = idAnio;
     }
-
+    
     public Date getFechaInicio() {
         return fechaInicio;
     }
@@ -67,6 +67,10 @@ public class AnioAcademico {
 
     public boolean isActivo() {
         return activo;
+    }
+
+    public void setActivo(boolean activo) {
+        this.activo = activo;
     }
 
     public int getNumero() {

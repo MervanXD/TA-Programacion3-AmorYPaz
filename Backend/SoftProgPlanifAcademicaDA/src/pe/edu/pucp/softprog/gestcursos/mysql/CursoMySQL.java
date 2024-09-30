@@ -64,18 +64,22 @@ public class CursoMySQL implements CursoDAO {
 
     @Override
     public int eliminar(int id) {
-        int resultado=0;
-        try{
-            con=DBManager.getInstance().getConnection();
-            String sql="{call ELIMINAR_CURSO(?)}";
-            cs=con.prepareCall(sql);
+        int resultado = 0;
+        try {
+            con = DBManager.getInstance().getConnection();
+            String sql = "{call ELIMINAR_CURSO(?)}";
+            cs = con.prepareCall(sql);
             cs.setInt("_id_curso", id);
             cs.executeUpdate();
             resultado = id;
-        }catch(SQLException ex){
+        } catch (SQLException ex) {
             System.out.println(ex.getMessage());
-        }finally{
-            try{con.close();}catch(SQLException ex){System.out.println(ex.getMessage());}
+        } finally {
+            try {
+                con.close();
+            } catch (SQLException ex) {
+                System.out.println(ex.getMessage());
+            }
         }
         return resultado;
     }
@@ -83,21 +87,25 @@ public class CursoMySQL implements CursoDAO {
     @Override
     public Curso obtenerPorId(int id) {
         Curso curso = new Curso();
-        try{
-            con=DBManager.getInstance().getConnection();
-            String sql="{call OBTENER_CURSO(?)}";
-            cs=con.prepareCall(sql);
+        try {
+            con = DBManager.getInstance().getConnection();
+            String sql = "{call OBTENER_CURSO(?)}";
+            cs = con.prepareCall(sql);
             cs.setInt("_id_curso", id);
             rs = cs.executeQuery();
-            if(rs.next()){
+            if (rs.next()) {
                 curso.setIdCurso(rs.getInt("id_curso"));
                 curso.setNombre(rs.getString("nombre"));
                 curso.setActivo(rs.getBoolean("activo"));
             }
-        }catch(SQLException ex){
+        } catch (SQLException ex) {
             System.out.println(ex.getMessage());
-        }finally{
-            try{con.close();}catch(SQLException ex){System.out.println(ex.getMessage());}
+        } finally {
+            try {
+                con.close();
+            } catch (SQLException ex) {
+                System.out.println(ex.getMessage());
+            }
         }
         return curso;
     }
@@ -105,24 +113,28 @@ public class CursoMySQL implements CursoDAO {
     @Override
     public ArrayList<Curso> listarTodos() {
         ArrayList<Curso> cursos = new ArrayList<>();
-        try{
+        try {
             con = DBManager.getInstance().getConnection();
-            String sql="{call LISTAR_CURSOS_TODOS()}";
+            String sql = "{call LISTAR_CURSOS_TODOS()}";
             cs = con.prepareCall(sql);
             rs = cs.executeQuery();
-            while(rs.next()){
+            while (rs.next()) {
                 Curso curso = new Curso();
                 curso.setIdCurso(rs.getInt("id_curso"));
                 curso.setNombre(rs.getString("nombre"));
                 curso.setActivo(rs.getBoolean("activo"));
                 cursos.add(curso);
             }
-        }catch(SQLException ex){
+        } catch (SQLException ex) {
             System.out.println(ex.getMessage());
-        }finally{
-            try{con.close();}catch(SQLException ex){System.out.println(ex.getMessage());}
+        } finally {
+            try {
+                con.close();
+            } catch (SQLException ex) {
+                System.out.println(ex.getMessage());
+            }
         }
-        return cursos;   
+        return cursos;
     }
 
 }

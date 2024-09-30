@@ -27,6 +27,10 @@ public class PlanDeEstudio {
         return activo;
     }
 
+    public void setActivo(boolean activo) {
+        this.activo = activo;
+    }
+
     public int getIdPlan() {
         return idPlan;
     }
