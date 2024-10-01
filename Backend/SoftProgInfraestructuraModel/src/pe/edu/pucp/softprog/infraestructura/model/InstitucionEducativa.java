@@ -83,10 +83,6 @@ public class InstitucionEducativa {
         this.ugel = ugel;
     }
 
-    public boolean getActivo() {
-        return activo;
-    }
-
     public ArrayList<AnioAcademico> getAniosAcademicos() {
         return aniosAcademicos;
     }
@@ -97,6 +93,10 @@ public class InstitucionEducativa {
 
     public boolean isActivo() {
         return activo;
-    }    
+    }
+
+    public void setActivo(boolean activo) {
+        this.activo = activo;
+    }
     
 }

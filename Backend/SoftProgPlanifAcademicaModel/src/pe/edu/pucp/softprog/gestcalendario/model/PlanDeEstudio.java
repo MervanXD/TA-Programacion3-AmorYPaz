@@ -15,12 +15,14 @@ public class PlanDeEstudio {
     public PlanDeEstudio() {
         this.cursos = new ArrayList<>();
         this.numCursos = 0;
+        this.anioAcademico = new AnioAcademico();
     }
 
     public PlanDeEstudio(String descripcion) {
         this.descripcion = descripcion;
         this.cursos = new ArrayList<>();
         this.numCursos = 0;
+        this.anioAcademico = new AnioAcademico();
     }
 
     public boolean isActivo() {

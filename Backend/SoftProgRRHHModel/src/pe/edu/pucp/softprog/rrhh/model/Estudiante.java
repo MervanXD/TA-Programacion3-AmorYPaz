@@ -12,9 +12,9 @@ public class Estudiante extends Persona {
     private Persona apoderado;
     
     public Estudiante() {
-        apoderado = new Persona();
-        cantCursos = 0;
-        promedio = 0;
+        this.apoderado = new Persona();
+        this.cantCursos = 0;
+        this.promedio = 0;
     }
     
     public Estudiante(Persona apoderado, String condicionesMedicas, String estado, String discapacidades, String dni, String nombres, String apellidoPaterno, String apellidoMaterno, Date fechaNacimiento, String lengua, String religion, char sexo, String direccion) {
@@ -23,8 +23,8 @@ public class Estudiante extends Persona {
         this.condicionesMedicas = condicionesMedicas;
         this.estado = estado;
         this.discapacidades = discapacidades;
-        cantCursos = 0;
-        promedio = 0;
+        this.cantCursos = 0;
+        this.promedio = 0;
     }
 
     public int getCantCursos() {

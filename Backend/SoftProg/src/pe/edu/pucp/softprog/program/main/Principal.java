@@ -16,13 +16,16 @@ import pe.edu.pucp.softprog.gestusuarios.model.Usuario;
 import pe.edu.pucp.softprog.rrhh.mysql.EstudianteMySQL;
 import pe.edu.pucp.softprog.rrhh.mysql.PersonaMySQL;
 import pe.edu.pucp.softprog.gestusuarios.mysql.UsuarioMySQL;
+import pe.edu.pucp.softprog.infraestructura.dao.InstitucionEducativaDAO;
+import pe.edu.pucp.softprog.infraestructura.model.InstitucionEducativa;
+import pe.edu.pucp.softprog.infraestructura.mysql.InstitucionEducativaMySQL;
 
 public class Principal {
 
     public static void main(String[] args) throws Exception {
-//        probarUsuarios();
-//        probarInstitucionEducativa();
-//        probarEstudiante();
+        probarUsuarios();
+        probarInstitucionEducativa();
+        probarEstudiante();
         probarCurso();
     }
 
@@ -72,6 +75,7 @@ public class Principal {
         for (Usuario us : usuarios) {
             System.out.println("ID: " + us.getIdUsuario() + " - Username: " + us.getUsername() + " - TipoUser: " + us.getTipoUsuario());
         }
+        System.out.println("\n\n");
     }
 
     public static void probarEstudiante() throws ParseException {
@@ -129,16 +133,61 @@ public class Principal {
         for (Estudiante es : estudiantes) {
             System.out.println("DNI: " + es.getDni() + " - Nombre y Apellido: " + es.getNombres() + " " + es.getApellidoPaterno() + "\n");
         }
+        System.out.println("\n\n");
     }
     
     public static void probarInstitucionEducativa(){
         System.out.println("--------------PRUEBA DE I.E--------------\n\n");
+        ArrayList<InstitucionEducativa> institucionesEducativas;
+        InstitucionEducativa institucionEducativa = new InstitucionEducativa("Colegio Marcelino Champagnat", "Av. Surco 1290");
+        InstitucionEducativaDAO daoInst = new InstitucionEducativaMySQL();
+        //INSERT DE USUARIOS
+        if (daoInst.insertar(institucionEducativa) == 0) {
+            System.out.println("Error en registro\n");
+        } else {
+            System.out.println("Registrado exitosamente: " + institucionEducativa.getNombre()+ " - " + institucionEducativa.getDireccion() + "\n");
+        }
+        String anterior = "Roosevlete";
+        institucionEducativa.setNombre(anterior);
+        institucionEducativa.setDireccion("Av. La Palmeras 325 Camacho");
+        if (daoInst.insertar(institucionEducativa) == 0) {
+            System.out.println("Error en registro\n");
+        } else {
+            System.out.println("Registrado exitosamente: " + institucionEducativa.getNombre()+ " - " + institucionEducativa.getDireccion() + "\n");
+        }
+        //OBTENER POR ID Y MODIFICAR
+        institucionEducativa = daoInst.obtenerPorId(institucionEducativa.getIdInstitucion());
+        institucionEducativa.setNombre("Roosevelt");
+        if (daoInst.modificar(institucionEducativa) == 0) {
+            System.out.println("Error en modificar\n");
+        } else {
+            System.out.println("Modificado exitosamente: " + anterior + " -> " + institucionEducativa.getNombre()+ "\n");
+        }
+        //LISTAR TODOS
+        institucionesEducativas = daoInst.listarTodos();
+        System.out.println("\n\nLISTA DE INSTITUCIONES");
+        for (InstitucionEducativa ie : institucionesEducativas) {
+            System.out.println("ID: " + ie.getIdInstitucion()+ " - Nombre Colegio: " + ie.getNombre()+ " - Direccion: " + ie.getDireccion());
+        }
+        //ELIMINAR
+        if (daoInst.eliminar(institucionEducativa.getIdInstitucion()) == 0) {
+            System.out.println("Error en eliminar\n");
+        } else {
+            System.out.println("\n\nEliminado exitosamente: " + institucionEducativa.getNombre()+ "\n");
+        }
+        //LISTAR TODOS
+        institucionesEducativas = daoInst.listarTodos();
+        System.out.println("\n\nLISTA DE INSTITUCIONES");
+        for (InstitucionEducativa ie : institucionesEducativas) {
+            System.out.println("ID: " + ie.getIdInstitucion()+ " - Nombre Colegio: " + ie.getNombre()+ " - Direccion: " + ie.getDireccion());
+        }
+        System.out.println("\n\n");
     }
 
     public static void probarCurso() {
         System.out.println("--------------PRUEBA DE CURSO--------------\n\n");
         ArrayList<Curso> cursos;
-        Curso curso = new Curso("Matemática 1er grado");
+        Curso curso = new Curso("Matematica 1er grado");
         CursoDAO daoCurso = new CursoMySQL();
         //INSERT DE USUARIOS
         if (daoCurso.insertar(curso) == 0) {
@@ -155,7 +204,7 @@ public class Principal {
         }
         //OBTENER POR ID Y MODIFICAR
         curso = daoCurso.obtenerPorId(curso.getIdCurso());
-        curso.setNombre("Física 4to grado");
+        curso.setNombre("Fisica 4to grado");
         if (daoCurso.modificar(curso) == 0) {
             System.out.println("Error en modificar\n");
         } else {
@@ -174,10 +223,11 @@ public class Principal {
             System.out.println("\n\nEliminado exitosamente: " + curso.getNombre()+ "\n");
         }
         //LISTAR TODOS
-        System.out.println("\n\nLISTA DE USUARIOS");
+        System.out.println("\n\nLISTA DE CURSOS");
         cursos = daoCurso.listarTodos();
         for (Curso cur : cursos) {
             System.out.println("ID: " + cur.getIdCurso()+ " - Nombre: " + cur.getNombre());
         }
+        System.out.println("\n\n");
     }
 }

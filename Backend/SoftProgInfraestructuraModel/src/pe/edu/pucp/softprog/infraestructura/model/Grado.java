@@ -15,15 +15,17 @@ public class Grado {
     private boolean activo;
 
     public Grado(){
-        estudiantes = new ArrayList<>();
-        alumnosMatriculados = 0;
+        this.estudiantes = new ArrayList<>();
+        this.alumnosMatriculados = 0;
+        this.institucion = new InstitucionEducativa();
     }
 
     public Grado(String numero, TipoNivel nivel) {
         this.numero = numero;
         this.nivel = nivel;
-        alumnosMatriculados = 0;
-        estudiantes = new ArrayList<>();
+        this.alumnosMatriculados = 0;
+        this.estudiantes = new ArrayList<>();
+        this.institucion = new InstitucionEducativa();
     }
 
     public Grado(String numero, TipoNivel nivel, int alumnosMatriculados, ArrayList<Estudiante> estudiantes, InstitucionEducativa institucion, PlanDeEstudio planDeEstudio) {
@@ -87,6 +89,10 @@ public class Grado {
         return activo;
     }
 
+    public void setActivo(boolean activo) {
+        this.activo = activo;
+    }
+    
     public PlanDeEstudio getPlanDeEstudio() {
         return planDeEstudio;
     }
