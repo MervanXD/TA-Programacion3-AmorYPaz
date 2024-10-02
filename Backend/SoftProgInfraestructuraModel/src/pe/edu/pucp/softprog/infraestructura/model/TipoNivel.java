@@ -1,4 +1,4 @@
 package pe.edu.pucp.softprog.infraestructura.model;
 public enum TipoNivel {
-    INICIAL,PRIMARIA,SECUNDARIA,BACHILLERATO,PREUNIVERSITARIO
+    INICIAL,PRIMARIA,SECUNDARIA
 }
