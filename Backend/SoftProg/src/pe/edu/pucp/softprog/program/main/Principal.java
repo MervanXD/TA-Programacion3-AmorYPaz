@@ -23,12 +23,15 @@ import pe.edu.pucp.softprog.infraestructura.mysql.InstitucionEducativaMySQL;
 public class Principal {
 
     public static void main(String[] args) throws Exception {
-        probarUsuarios();
-        probarInstitucionEducativa();
-        probarEstudiante();
-        probarCurso();
+//        probarUsuarios();
+//        probarInstitucionEducativa();
+//        probarEstudiante();
+//        probarCurso();
     }
-
+    
+    public static void probarPlanDeEstudios(){
+        
+    }
     public static void probarUsuarios() {
         System.out.println("--------------PRUEBA DE USUARIOS--------------\n\n");
         ArrayList<Usuario> usuarios;

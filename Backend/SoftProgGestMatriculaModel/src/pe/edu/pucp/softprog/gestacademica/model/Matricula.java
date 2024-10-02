@@ -1,19 +1,38 @@
 package pe.edu.pucp.softprog.gestacademica.model;
 
+import java.util.Date;
 import pe.edu.pucp.softprog.gestcalendario.model.AnioAcademico;
 import pe.edu.pucp.softprog.rrhh.model.Estudiante;
 import pe.edu.pucp.softprog.infraestructura.model.Grado;
+import pe.edu.pucp.softprog.infraestructura.model.InstitucionEducativa;
 
 public class Matricula {
 
     private int idMatricula;
-    private TipoMatricula tipoMatricula;
+    private Date fecha;
     private String estado;
-    private AnioAcademico anioAcademico;
+    private TipoMatricula tipoMatricula;
+    private Grado grado; //
+    private AnioAcademico anioAcademico; //
     private Estudiante estudiante;
-    private Grado grado;
+    private InstitucionEducativa institucion;
 
     public Matricula() {
+    }
+    public Date getFecha() {
+        return fecha;
+    }
+
+    public InstitucionEducativa getInstitucion() {
+        return institucion;
+    }
+
+    public void setInstitucion(InstitucionEducativa institucion) {
+        this.institucion = institucion;
+    }
+
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
     }
 
     public Matricula(TipoMatricula tipoMatricula, String estado, AnioAcademico anioAcademico, Estudiante estudiante, Grado grado) {
