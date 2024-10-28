@@ -1,0 +1,91 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SuperIntendente.master.cs" Inherits="AmorYPazBackend.SuperIntendente" %>
+
+<!DOCTYPE html>
+
+<html lang="es">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/estilos.css" rel="stylesheet" />
+    <link href="Content/Fonts/css/all.css" rel="stylesheet" />
+
+
+    <script src="Scripts/bootstrap.js"></script>
+    <script src="Scripts/bootstrap.bundle.js"></script>
+    <script src="Scripts/jquery-3.7.1.js"></script>
+    <asp:ContentPlaceHolder ID="cphHead" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <title>
+        <asp:ContentPlaceHolder ID="cphTitulo" runat="server">
+        </asp:ContentPlaceHolder>
+    </title>
+
+</head>
+<body>
+    <div class="container-fluid d-flex p-0 h-100">
+        <!--Menu Lateral-->
+        <div id="bdSidebar" class="d-flex flex-column flex-shrink-0 p-0 bg-secondary text-white offcanvas-md offcanvas-start">
+            <hr />
+            <ul class="mynav nav nav-pills flex-column mb-auto">
+                <li class="nav-item mb-1">
+                    <a href="MenuPrincipal.aspx"><i class="fa-solid fa-building pe-2"></i>
+                        Menu Principal
+                    </a>
+                </li>
+                <li class="nav-item mb-1">
+                    <a href="GestionarInstituciones.aspx"><i class="fa-solid fa-building pe-2"></i>
+                        Instituciones
+                    </a>
+                </li>
+                <li class="nav-item mb-1">
+                    <a href="MenuPrincipal.aspx"><i class="fa-solid fa-people-group pe-2"></i>
+                        Administrar Directores
+                    </a>
+                </li>
+                <li class="nav-item mb-1">
+                    <a href="MenuPrincipal.aspx"><i class="fa-solid fa-people-group pe-2"></i>
+                        Reportes
+                    </a>
+                </li>
+            </ul>
+            <hr />
+            <div class="d-flex">
+                <form class="d-flex">
+                    <div class="dropdown ps-3">
+                        <button class="btn btn-outline-light dropdown-toggle"
+                            id="btnUsuario" data-bs-toggle="dropdown" type="button"
+                            aria-expanded="false">
+                            <i class="fas fa-user me-2"></i>Juan Perez
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="btnUsuario">
+                            <li><a class="dropdown-item" href="#">Perfil</a></li>
+                            <li><a class="dropdown-item" href="#">Cambiar Contraseña</a></li>
+                            <li><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
+                        </ul>
+                    </div>
+</form>
+            </div>
+        </div>
+        <!--Contenido de la Derecha-->
+        <div class="bg-light flex-fill overflow-auto">
+            <!-- Barra superior para dispositivos móviles -->
+            <div class="p-2 d-md-none d-flex text-white bg-secondary">
+                <a data-bs-toggle="offcanvas" data-bs-target="#bdSidebar" class="text-white" href="#">
+                    <i class="fa-solid fa-bars"></i>
+                </a>
+            </div>
+
+           
+            <!-- Contenido de las Pags-->
+            <div class="p-4">
+                <form runat="server">
+                    <asp:ContentPlaceHolder ID="cphContenido" runat="server"></asp:ContentPlaceHolder>
+                </form>
+            </div>
+        </div>
+    </div>   
+</body>
+</html>

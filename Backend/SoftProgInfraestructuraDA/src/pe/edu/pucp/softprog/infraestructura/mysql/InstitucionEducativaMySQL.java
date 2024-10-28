@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.sql.ResultSet;
 import java.sql.Connection;
 import pe.edu.pucp.softprog.config.DBManager;
+import pe.edu.pucp.softprog.rrhh.model.Director;
 
 public class InstitucionEducativaMySQL implements InstitucionEducativaDAO {
 
@@ -150,11 +151,17 @@ public class InstitucionEducativaMySQL implements InstitucionEducativaDAO {
             rs = cs.executeQuery();
             while (rs.next()) {
                 InstitucionEducativa institucion = new InstitucionEducativa();
+                Director director = new Director();
                 institucion.setIdInstitucion(rs.getInt("id_Institucion_Educativa"));
                 institucion.setNombre(rs.getString("nombre"));
                 institucion.setDireccion(rs.getString("direccion"));
                 institucion.setCantidadGrados(rs.getInt("cantidad_grados"));
                 institucion.setActivo(rs.getBoolean("activo"));
+                director.setIdPersona(rs.getInt("id_Persona"));
+                director.setNombres(rs.getString("nombres"));
+                director.setApellidoPaterno(rs.getString("apellido_Paterno"));
+                director.setApellidoMaterno(rs.getString("apellido_Materno"));
+                institucion.setDirector(director);
                 instituciones.add(institucion);
             }
         } catch (SQLException ex) {
