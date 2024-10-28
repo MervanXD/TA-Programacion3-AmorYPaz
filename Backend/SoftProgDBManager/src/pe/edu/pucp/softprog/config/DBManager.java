@@ -7,7 +7,7 @@ public class DBManager {
 
     private Connection con;
     private static DBManager dbManager;
-    private static String url = "jdbc:mysql://db-prog3-ta.cvkawg88ktuo.us-east-1.rds.amazonaws.com:3306/taProg3";
+    private static String url = "jdbc:mysql://ta-ayp-prog3-20242.cbu6smk6ic6s.us-east-1.rds.amazonaws.com:3306/taProg3";
     private static String username = "admin";
     private static String password = "amorypaz_psw";
 

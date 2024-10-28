@@ -10,7 +10,7 @@ public class ResultadoAnual {
     private int cantidadCursosAnual;
     private double promedioAnual;
     private ArrayList<ResultadoPorCurso> resultadosPorCurso;
-
+    
     public ResultadoAnual(){
         this.resultadosPorCurso = new ArrayList<>();
     }

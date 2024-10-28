@@ -102,7 +102,7 @@ public class UsuarioMySQL implements UsuarioDAO {
                 usuario.setIdUsuario(rs.getInt("id_usuario"));
                 usuario.setUsername(rs.getString("nombre_usuario"));
                 usuario.setTipoUsuario(TipoUsuario.valueOf(rs.getString("tipo_usuario")));
-                usuario.setContrasena("XXXXXXXX");
+                usuario.setContrasena(rs.getString("contrasenha"));
                 usuario.setActivo(rs.getBoolean("activo"));
             }
         } catch (SQLException ex) {

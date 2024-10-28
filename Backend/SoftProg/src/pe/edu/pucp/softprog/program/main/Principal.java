@@ -23,7 +23,7 @@ import pe.edu.pucp.softprog.infraestructura.mysql.InstitucionEducativaMySQL;
 public class Principal {
 
     public static void main(String[] args) throws Exception {
-//        probarUsuarios();
+        probarUsuarios();
 //        probarInstitucionEducativa();
 //        probarEstudiante();
 //        probarCurso();
@@ -35,7 +35,7 @@ public class Principal {
     public static void probarUsuarios() {
         System.out.println("--------------PRUEBA DE USUARIOS--------------\n\n");
         ArrayList<Usuario> usuarios;
-        Usuario usuario = new Usuario("master", "987656", TipoUsuario.DIRECTOR_IE);
+        Usuario usuario = new Usuario("master2", "987658", TipoUsuario.DIRECTOR_IE);
         UsuarioDAO daoUsuario = new UsuarioMySQL();
         //INSERT DE USUARIOS
         if (daoUsuario.insertar(usuario) == 0) {
@@ -45,7 +45,7 @@ public class Principal {
         }
         String anterior = "admin";
         usuario.setUsername(anterior);
-        usuario.setContrasena("151515");
+        usuario.setContrasena("153334");
         usuario.setTipoUsuario(TipoUsuario.DIRECTOR_UGEL);
         if (daoUsuario.insertar(usuario) == 0) {
             System.out.println("Error en registro\n");
@@ -54,7 +54,7 @@ public class Principal {
         }
         //OBTENER POR ID Y MODIFICAR
         usuario = daoUsuario.obtenerPorId(usuario.getIdUsuario());
-        usuario.setUsername("adminroot");
+        usuario.setUsername("adminroot3");
         if (daoUsuario.modificar(usuario) == 0) {
             System.out.println("Error en modificar\n");
         } else {
@@ -64,7 +64,7 @@ public class Principal {
         usuarios = daoUsuario.listarTodos();
         System.out.println("\n\nLISTA DE USUARIOS");
         for (Usuario us : usuarios) {
-            System.out.println("ID: " + us.getIdUsuario() + " - Username: " + us.getUsername() + " - TipoUser: " + us.getTipoUsuario());
+            System.out.println("ID: " + us.getIdUsuario() + " - Username: " + us.getUsername() + " - TipoUser: " + us.getTipoUsuario() + " " + us.getContrasena());
         }
         //ELIMINAR
         if (daoUsuario.eliminar(usuario.getIdUsuario()) == 0) {
