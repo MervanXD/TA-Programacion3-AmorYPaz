@@ -1,0 +1,4 @@
+usuario: admin
+password: amorypaz_psw
+esquema (BD): taProg3
+URL (hostname): ta-ayp-prog3-20242.cbu6smk6ic6s.us-east-1.rds.amazonaws.com
