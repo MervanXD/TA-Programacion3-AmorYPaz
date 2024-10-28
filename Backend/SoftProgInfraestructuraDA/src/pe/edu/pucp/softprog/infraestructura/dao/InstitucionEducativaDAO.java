@@ -9,4 +9,5 @@ public interface InstitucionEducativaDAO {
     int eliminar(int idInstitucionEducativa);
     InstitucionEducativa obtenerPorId(int idInstitucionEducativa);
     ArrayList<InstitucionEducativa> listarTodos();
+    ArrayList<InstitucionEducativa> listarInstitucionesPorIdNombre(String idNombre);
 }

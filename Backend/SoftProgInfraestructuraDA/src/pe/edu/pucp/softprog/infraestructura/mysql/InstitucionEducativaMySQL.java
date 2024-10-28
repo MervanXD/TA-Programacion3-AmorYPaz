@@ -140,4 +140,33 @@ public class InstitucionEducativaMySQL implements InstitucionEducativaDAO {
         return instituciones;
     }
 
+    @Override
+    public ArrayList<InstitucionEducativa> listarInstitucionesPorIdNombre(String idNombre) {
+        ArrayList<InstitucionEducativa> instituciones = new ArrayList<>();
+        try {
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call LISTAR_INSTITUCIONES_EDUCATIVAS_X_ID_NOMBRE(?)}");
+            cs.setString("_id_nombre", idNombre);
+            rs = cs.executeQuery();
+            while (rs.next()) {
+                InstitucionEducativa institucion = new InstitucionEducativa();
+                institucion.setIdInstitucion(rs.getInt("id_Institucion_Educativa"));
+                institucion.setNombre(rs.getString("nombre"));
+                institucion.setDireccion(rs.getString("direccion"));
+                institucion.setCantidadGrados(rs.getInt("cantidad_grados"));
+                institucion.setActivo(rs.getBoolean("activo"));
+                instituciones.add(institucion);
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            try {
+                con.close();
+            } catch (SQLException ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
+        return instituciones;        
+    }
+
 }
