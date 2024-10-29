@@ -9,6 +9,7 @@ import pe.edu.pucp.softprog.config.DBManager;
 import pe.edu.pucp.softprog.gestusuarios.dao.UsuarioDAO;
 import pe.edu.pucp.softprog.gestusuarios.model.TipoUsuario;
 import pe.edu.pucp.softprog.gestusuarios.model.Usuario;
+import pe.edu.pucp.softprog.rrhh.model.Director;
 
 public class UsuarioMySQL implements UsuarioDAO {
 
@@ -144,6 +145,35 @@ public class UsuarioMySQL implements UsuarioDAO {
             }
         }
         return usuarios;
+    }
+
+    @Override
+    public Usuario verificar(Usuario usuario) {
+        usuario.setDirector(null);
+        try {
+            con = DBManager.getInstance().getConnection();
+            String sql = "{call VERIFICAR_CUENTA_USUARIO(?,?)}";
+            cs = con.prepareCall(sql);
+            cs.setString("_usuario", usuario.getUsername());
+            cs.setString("_password", usuario.getContrasena());
+            rs = cs.executeQuery();
+            if (rs.next()) {
+                Director director = new Director();
+                director.setIdPersona(rs.getInt("fid_Director"));
+                director.setNombres(rs.getString("nombres"));
+                director.setApellidoPaterno(rs.getString("apellido_Paterno"));
+                usuario.setDirector(director);
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            try {
+                con.close();
+            } catch (SQLException ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
+        return usuario;
     }
 
 }

@@ -12,15 +12,14 @@
                 <div id="carrusel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="20000">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="img/img1.PNG" class="d-block w-100" alt="Imagen 1">
+                            <img src="img/img1.PNG" class="d-block w-100" width="300" height="300" alt="Imagen 1">
                         </div>
                         <div class="carousel-item">
-                            <img src="img/img2.PNG" class="d-block w-100" alt="Imagen 2">
+                            <img src="img/img2.PNG" class="d-block w-100" width="300" height="300" alt="Imagen 2">
 
                         </div>
                         <div class="carousel-item">
-                            <img src="img/img3.PNG" class="d-block w-100" alt="Imagen 3">
-
+                            <img src="img/img3.PNG" class="d-block w-100" width="300" height="300" alt="Imagen 3">
                         </div>
                     </div>
                     <button class="carousel-control-prev" type="button" color="black" data-bs-target="#carrusel" data-bs-slide="prev">

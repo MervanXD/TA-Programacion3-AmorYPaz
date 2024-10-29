@@ -1,4 +1,4 @@
-﻿using AmorYPazBackend.Servicio;
+﻿using AmorYPazBackend.ServicioIE;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,8 +15,16 @@ namespace AmorYPazBackend
         private InstitucionEducativaWSClient daoIEducativa = new InstitucionEducativaWSClient();
         protected void Page_Load(object sender, EventArgs e) //page init quizas
         {
-            gvInstituciones.DataSource = daoIEducativa.listarPorIdNombre("");
-            gvInstituciones.DataBind();
+            try
+            {
+                gvInstituciones.DataSource = daoIEducativa.listarPorIdNombre("");
+                gvInstituciones.DataBind();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());//cambiar por un warning emergente
+            }
+            
         }
 
         protected void lbBuscar_Click(object sender, EventArgs e)

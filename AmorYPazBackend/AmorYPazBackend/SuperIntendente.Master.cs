@@ -11,7 +11,18 @@ namespace AmorYPazBackend
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                if (Session["NombreUsuario"] != null)
+                {
+                    string nombreDirector = Session["NombreUsuario"].ToString();
+                    litNombreUsuario.Text = nombreDirector;
+                }
+                else
+                {
+                    Response.Redirect("InicioSesion.aspx");
+                }
+            }
         }
     }
 }

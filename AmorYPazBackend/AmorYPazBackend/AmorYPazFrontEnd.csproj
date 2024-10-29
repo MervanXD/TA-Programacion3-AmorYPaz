@@ -69,15 +69,32 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Connected Services\Servicio\AmorYPazBackend.Servicio.institucionEducativa.datasource">
+    <Content Include="CerrarSesion.aspx" />
+    <Content Include="Connected Services\ServicioUser\AmorYPazBackend.ServicioUser.usuario.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\Servicio\AmorYPazBackend.Servicio.listarPorIdNombreResponse.datasource">
+    <Content Include="Connected Services\ServicioUser\AmorYPazBackend.ServicioUser.verificarUsuarioResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Connected Services\Servicio\configuration91.svcinfo" />
-    <None Include="Connected Services\Servicio\configuration.svcinfo" />
-    <None Include="Connected Services\Servicio\Reference.svcmap">
+    <None Include="Connected Services\ServicioUser\configuration91.svcinfo" />
+    <None Include="Connected Services\ServicioUser\configuration.svcinfo" />
+    <None Include="Connected Services\ServicioUser\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Connected Services\ServicioIE\AmorYPazBackend.ServicioIE.institucionEducativa.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioIE\AmorYPazBackend.ServicioIE.listarPorIdNombreResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\ServicioUser\UsuarioWS.wsdl" />
+    <None Include="Connected Services\ServicioUser\UsuarioWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServicioIE\configuration91.svcinfo" />
+    <None Include="Connected Services\ServicioIE\configuration.svcinfo" />
+    <None Include="Connected Services\ServicioIE\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -157,8 +174,8 @@
     <Content Include="Content\Fonts\webfonts\fa-thin-100.woff2" />
     <Content Include="Content\Fonts\webfonts\fa-v4compatibility.ttf" />
     <Content Include="Content\Fonts\webfonts\fa-v4compatibility.woff2" />
-    <None Include="Connected Services\Servicio\InstitucionEducativaWS.wsdl" />
-    <None Include="Connected Services\Servicio\InstitucionEducativaWS.xsd">
+    <None Include="Connected Services\ServicioIE\InstitucionEducativaWS.wsdl" />
+    <None Include="Connected Services\ServicioIE\InstitucionEducativaWS.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Scripts\jquery-3.7.1.intellisense.js" />
@@ -169,7 +186,19 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Connected Services\Servicio\Reference.cs">
+    <Compile Include="CerrarSesion.aspx.cs">
+      <DependentUpon>CerrarSesion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CerrarSesion.aspx.designer.cs">
+      <DependentUpon>CerrarSesion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ServicioUser\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ServicioIE\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -256,7 +285,8 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\Servicio\" />
+    <WCFMetadataStorage Include="Connected Services\ServicioUser\" />
+    <WCFMetadataStorage Include="Connected Services\ServicioIE\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

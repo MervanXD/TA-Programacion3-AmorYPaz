@@ -8,5 +8,6 @@ public interface UsuarioDAO {
     int eliminar(int id);
     Usuario obtenerPorId(int id);
     ArrayList<Usuario> listarTodos();
+    Usuario verificar(Usuario usuario);
 }
 

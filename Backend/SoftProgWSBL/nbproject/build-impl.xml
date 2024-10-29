@@ -850,6 +850,9 @@ exists or setup the property manually. For example like this:
         <ant antfile="${project.SoftProgPlanifAcademicaModel}/build.xml" inheritall="false" target="jar">
             <property name="deploy.on.save" value="false"/>
         </ant>
+        <ant antfile="${project.SoftProgRRHHDA}/build.xml" inheritall="false" target="jar">
+            <property name="deploy.on.save" value="false"/>
+        </ant>
         <ant antfile="${project.SoftProgRRHHModel}/build.xml" inheritall="false" target="jar">
             <property name="deploy.on.save" value="false"/>
         </ant>
@@ -865,6 +868,9 @@ exists or setup the property manually. For example like this:
             <property name="deploy.on.save" value="false"/>
         </ant>
         <ant antfile="${project.SoftProgPlanifAcademicaModel}/build.xml" inheritall="false" target="jar">
+            <property name="deploy.on.save" value="false"/>
+        </ant>
+        <ant antfile="${project.SoftProgRRHHDA}/build.xml" inheritall="false" target="jar">
             <property name="deploy.on.save" value="false"/>
         </ant>
         <ant antfile="${project.SoftProgRRHHModel}/build.xml" inheritall="false" target="jar">
@@ -1021,6 +1027,7 @@ exists or setup the property manually. For example like this:
         <copyfiles files="${reference.SoftProgInfraestructuraDA.jar}" iftldtodir="${build.web.dir}/WEB-INF" todir="${dist.ear.dir}/lib"/>
         <copyfiles files="${reference.SoftProgRRHHModel.jar}" iftldtodir="${build.web.dir}/WEB-INF" todir="${dist.ear.dir}/lib"/>
         <copyfiles files="${reference.SoftProgPlanifAcademicaModel.jar}" iftldtodir="${build.web.dir}/WEB-INF" todir="${dist.ear.dir}/lib"/>
+        <copyfiles files="${reference.SoftProgRRHHDA.jar}" iftldtodir="${build.web.dir}/WEB-INF" todir="${dist.ear.dir}/lib"/>
         <mkdir dir="${build.web.dir}/META-INF"/>
         <manifest file="${build.web.dir}/META-INF/MANIFEST.MF" mode="update"/>
     </target>
@@ -1032,6 +1039,7 @@ exists or setup the property manually. For example like this:
         <copyfiles files="${reference.SoftProgInfraestructuraDA.jar}" todir="${build.web.dir}/WEB-INF/lib"/>
         <copyfiles files="${reference.SoftProgRRHHModel.jar}" todir="${build.web.dir}/WEB-INF/lib"/>
         <copyfiles files="${reference.SoftProgPlanifAcademicaModel.jar}" todir="${build.web.dir}/WEB-INF/lib"/>
+        <copyfiles files="${reference.SoftProgRRHHDA.jar}" todir="${build.web.dir}/WEB-INF/lib"/>
     </target>
     <target depends="init" if="dist.ear.dir" name="-clean-webinf-lib">
         <delete dir="${build.web.dir}/WEB-INF/lib"/>
@@ -1450,6 +1458,7 @@ exists or setup the property manually. For example like this:
         <ant antfile="${project.SoftProgInfraestructuraDA}/build.xml" inheritall="false" target="clean"/>
         <ant antfile="${project.SoftProgInfraestructuraModel}/build.xml" inheritall="false" target="clean"/>
         <ant antfile="${project.SoftProgPlanifAcademicaModel}/build.xml" inheritall="false" target="clean"/>
+        <ant antfile="${project.SoftProgRRHHDA}/build.xml" inheritall="false" target="clean"/>
         <ant antfile="${project.SoftProgRRHHModel}/build.xml" inheritall="false" target="clean"/>
     </target>
     <target depends="init" name="do-clean">
