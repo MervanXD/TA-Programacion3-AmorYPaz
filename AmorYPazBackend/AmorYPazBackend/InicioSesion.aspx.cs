@@ -40,6 +40,7 @@ namespace AmorYPazBackend
             {
                 Session["NombreUsuario"] = user.director.nombres + " " + 
                     user.director.apellidoPaterno;
+                Session["idDirector"] = user.director.idPersona;
 
                 FormsAuthenticationTicket tkt;
                 string cookiestr;

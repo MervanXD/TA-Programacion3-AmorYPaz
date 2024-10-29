@@ -25,4 +25,20 @@ public class InstitucionEducativaWS {
         }
         return instituciones;
     }
+    
+    @WebMethod(operationName = "listarPorNombreYUgel")
+    public ArrayList<InstitucionEducativa> listarPorNombreYUgel(
+            @WebParam(name = "idNombre") String idNombre,
+            @WebParam(name = "idUgel") int idUgel) {
+        ArrayList<InstitucionEducativa> instituciones = null;
+        if(idNombre == null) idNombre = "";
+        try{
+            daoIEducativa = new InstitucionEducativaMySQL();
+            instituciones = daoIEducativa.listarInstitucionesPorNombreYUGEL(idNombre, idUgel);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return instituciones;
+    }
+    
 }

@@ -176,4 +176,40 @@ public class InstitucionEducativaMySQL implements InstitucionEducativaDAO {
         return instituciones;        
     }
 
+    @Override
+    public ArrayList<InstitucionEducativa> listarInstitucionesPorNombreYUGEL(String idNombre, int idUgel) {
+        ArrayList<InstitucionEducativa> instituciones = new ArrayList<>();
+        try {
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call LISTAR_INSTITUCIONES_EDUCATIVAS_X_NOMBRE_Y_UGEL(?,?)}");
+            cs.setString("_id_nombre", idNombre);
+            cs.setInt("_id_ugel", idUgel);
+            rs = cs.executeQuery();
+            while (rs.next()) {
+                InstitucionEducativa institucion = new InstitucionEducativa();
+                Director director = new Director();
+                institucion.setIdInstitucion(rs.getInt("id_Institucion_Educativa"));
+                institucion.setNombre(rs.getString("nombre"));
+                institucion.setDireccion(rs.getString("direccion"));
+                institucion.setCantidadGrados(rs.getInt("cantidad_grados"));
+                institucion.setActivo(rs.getBoolean("activo"));
+                director.setIdPersona(rs.getInt("id_Persona"));
+                director.setNombres(rs.getString("nombres"));
+                director.setApellidoPaterno(rs.getString("apellido_Paterno"));
+                director.setApellidoMaterno(rs.getString("apellido_Materno"));
+                institucion.setDirector(director);
+                instituciones.add(institucion);
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            try {
+                con.close();
+            } catch (SQLException ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
+        return instituciones; 
+    }
+
 }

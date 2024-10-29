@@ -34,9 +34,7 @@
             </div>
         </div>
         <div class="text-center mt-4">
-            <h2>UGEL</h2>
-            <asp:GridView ID="gvUgel" runat="server" CssClass="table table-hover table-responsive table-striped">
-            </asp:GridView>
+            <asp:Label ID="lblInfoUGEL" runat="server" CssClass="label-title"></asp:Label>
         </div>
     </div>
     

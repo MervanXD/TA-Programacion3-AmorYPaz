@@ -17,7 +17,14 @@ namespace AmorYPazBackend
         {
             try
             {
-                gvInstituciones.DataSource = daoIEducativa.listarPorIdNombre("");
+                if ((Session["idDirector"] != null))
+                {
+                    int idDirector = Int32.Parse(Session["idDirector"].ToString());
+                    gvInstituciones.DataSource = daoIEducativa.listarPorNombreYUgel("", idDirector);
+                }
+                else {
+                    gvInstituciones.DataSource = daoIEducativa.listarPorIdNombre("");
+                }
                 gvInstituciones.DataBind();
             }
             catch (Exception ex)
@@ -30,8 +37,21 @@ namespace AmorYPazBackend
         protected void lbBuscar_Click(object sender, EventArgs e)
         {
             string idNombre = txtNombre.Text;
-            gvInstituciones.DataSource = daoIEducativa.listarPorIdNombre(idNombre);
+            if (idNombre == null) idNombre = "";
+            if ((Session["idDirector"] != null))
+            {
+                int idDirector = Int32.Parse(Session["idDirector"].ToString());
+                gvInstituciones.DataSource = daoIEducativa.listarPorNombreYUgel(idNombre, idDirector);
+            }
+            else {
+                gvInstituciones.DataSource = daoIEducativa.listarPorIdNombre(idNombre);
+            }
             gvInstituciones.DataBind();
+        }
+
+        protected void gvInstituciones_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvInstituciones.PageIndex = e.NewPageIndex;
         }
     }
 }

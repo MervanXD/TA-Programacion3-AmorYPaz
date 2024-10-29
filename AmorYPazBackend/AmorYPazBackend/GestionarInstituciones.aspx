@@ -24,9 +24,8 @@
                     </div>
                 </div>
                 <div class="row">
-                    <asp:GridView ID="gvInstituciones" runat="server" AllowPaging="true" PageSize="5" AutoGenerateColumns="false" CssClass="table table-hover table-responsive table-striped" ShowHeaderWhenEmpty="true">
+                    <asp:GridView ID="gvInstituciones" runat="server" AllowPaging="true" PageSize="5" AutoGenerateColumns="false" CssClass="table table-hover table-responsive table-striped" ShowHeaderWhenEmpty="true" OnPageIndexChanging="gvInstituciones_PageIndexChanging">
                         <columns>
-                            <asp:BoundField HeaderText="ID" DataField="idInstitucion"/>
                             <asp:BoundField HeaderText="Nombre" DataField="nombre"/>
                             <asp:BoundField HeaderText="Direccion" DataField="direccion"/>
                             <asp:TemplateField HeaderText="Director">

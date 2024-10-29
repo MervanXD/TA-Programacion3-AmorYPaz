@@ -5,6 +5,12 @@
       <xsd:import schemaLocation="http://localhost:8080/SoftProgWSBL/InstitucionEducativaWS?xsd=1" namespace="http://services.infraest.softprog.pucp.edu.pe/" />
     </xsd:schema>
   </types>
+  <message name="listarPorNombreYUgel">
+    <part name="parameters" element="tns:listarPorNombreYUgel" />
+  </message>
+  <message name="listarPorNombreYUgelResponse">
+    <part name="parameters" element="tns:listarPorNombreYUgelResponse" />
+  </message>
   <message name="listarPorIdNombre">
     <part name="parameters" element="tns:listarPorIdNombre" />
   </message>
@@ -12,6 +18,10 @@
     <part name="parameters" element="tns:listarPorIdNombreResponse" />
   </message>
   <portType name="InstitucionEducativaWS">
+    <operation name="listarPorNombreYUgel">
+      <input wsam:Action="http://services.infraest.softprog.pucp.edu.pe/InstitucionEducativaWS/listarPorNombreYUgelRequest" message="tns:listarPorNombreYUgel" />
+      <output wsam:Action="http://services.infraest.softprog.pucp.edu.pe/InstitucionEducativaWS/listarPorNombreYUgelResponse" message="tns:listarPorNombreYUgelResponse" />
+    </operation>
     <operation name="listarPorIdNombre">
       <input wsam:Action="http://services.infraest.softprog.pucp.edu.pe/InstitucionEducativaWS/listarPorIdNombreRequest" message="tns:listarPorIdNombre" />
       <output wsam:Action="http://services.infraest.softprog.pucp.edu.pe/InstitucionEducativaWS/listarPorIdNombreResponse" message="tns:listarPorIdNombreResponse" />
@@ -19,6 +29,15 @@
   </portType>
   <binding name="InstitucionEducativaWSPortBinding" type="tns:InstitucionEducativaWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="listarPorNombreYUgel">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="listarPorIdNombre">
       <soap:operation soapAction="" />
       <input>

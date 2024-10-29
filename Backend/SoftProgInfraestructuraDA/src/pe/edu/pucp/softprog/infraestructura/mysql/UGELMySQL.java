@@ -134,4 +134,31 @@ public class UGELMySQL implements UGELDAO {
         return ugeles;        
     }
 
+    @Override
+    public UGEL obtenerPorDirector(int idDirector) {
+        UGEL ugel = new UGEL();
+        try {
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call OBTENER_UGEL_X_DIRECTOR(?)}");
+            cs.setInt("_id_director", idDirector);
+            rs = cs.executeQuery();
+            if (rs.next()) {
+                ugel.setIdUgel(rs.getInt("id_ugel"));
+                ugel.setCodigo(rs.getString("codigo"));
+                ugel.setDistrito(rs.getString("distrito"));
+                ugel.setCantidadIE(rs.getInt("cantidad_ie"));
+                ugel.setActivo(rs.getBoolean("activo"));
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            try {
+                con.close();
+            } catch (SQLException ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
+        return ugel;
+    }
+
 }

@@ -178,3 +178,11 @@ h5 {
     border-radius: 8px;
     text-align: center;
 }
+
+
+.label-title {
+    font-size: 2.5em; /* Tamaño de fuente grande */
+    font-weight: bold; /* Negrita */
+    color: #4A90E2; /* Color azul atractivo */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente moderna y legible */
+}

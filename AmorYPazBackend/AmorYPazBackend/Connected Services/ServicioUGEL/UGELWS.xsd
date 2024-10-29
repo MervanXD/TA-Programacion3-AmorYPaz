@@ -1,17 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://services.infraest.softprog.pucp.edu.pe/" targetNamespace="http://services.infraest.softprog.pucp.edu.pe/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:element name="listarPorIdNombre" type="tns:listarPorIdNombre" />
-  <xs:element name="listarPorIdNombreResponse" type="tns:listarPorIdNombreResponse" />
-  <xs:element name="listarPorNombreYUgel" type="tns:listarPorNombreYUgel" />
-  <xs:element name="listarPorNombreYUgelResponse" type="tns:listarPorNombreYUgelResponse" />
-  <xs:complexType name="listarPorIdNombre">
+  <xs:element name="obtenerPorIdDirector" type="tns:obtenerPorIdDirector" />
+  <xs:element name="obtenerPorIdDirectorResponse" type="tns:obtenerPorIdDirectorResponse" />
+  <xs:complexType name="obtenerPorIdDirector">
     <xs:sequence>
-      <xs:element minOccurs="0" name="idNombre" type="xs:string" />
+      <xs:element name="idDirector" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="listarPorIdNombreResponse">
+  <xs:complexType name="obtenerPorIdDirectorResponse">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:institucionEducativa" />
+      <xs:element minOccurs="0" name="return" type="tns:ugel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ugel">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element name="cantidadIE" type="xs:int" />
+      <xs:element minOccurs="0" name="codigo" type="xs:string" />
+      <xs:element minOccurs="0" name="directorUgel" type="tns:director" />
+      <xs:element minOccurs="0" name="distrito" type="xs:string" />
+      <xs:element name="idUgel" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="institucionesEducativas" nillable="true" type="tns:institucionEducativa" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="director">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:persona">
+        <xs:sequence>
+          <xs:element name="activo" type="xs:boolean" />
+          <xs:element minOccurs="0" name="email" type="xs:string" />
+          <xs:element minOccurs="0" name="fechaNombramiento" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="tipoContrato" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="persona">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="apellidoMaterno" type="xs:string" />
+      <xs:element minOccurs="0" name="apellidoPaterno" type="xs:string" />
+      <xs:element minOccurs="0" name="direccion" type="xs:string" />
+      <xs:element minOccurs="0" name="dni" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaNacimiento" type="xs:dateTime" />
+      <xs:element name="idPersona" type="xs:int" />
+      <xs:element minOccurs="0" name="lengua" type="xs:string" />
+      <xs:element minOccurs="0" name="nombres" type="xs:string" />
+      <xs:element minOccurs="0" name="religion" type="xs:string" />
+      <xs:element name="sexo" type="xs:unsignedShort" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="institucionEducativa">
@@ -55,32 +90,6 @@
       <xs:element minOccurs="0" name="nombre" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="director">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:persona">
-        <xs:sequence>
-          <xs:element name="activo" type="xs:boolean" />
-          <xs:element minOccurs="0" name="email" type="xs:string" />
-          <xs:element minOccurs="0" name="fechaNombramiento" type="xs:dateTime" />
-          <xs:element minOccurs="0" name="tipoContrato" type="xs:string" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="persona">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="apellidoMaterno" type="xs:string" />
-      <xs:element minOccurs="0" name="apellidoPaterno" type="xs:string" />
-      <xs:element minOccurs="0" name="direccion" type="xs:string" />
-      <xs:element minOccurs="0" name="dni" type="xs:string" />
-      <xs:element minOccurs="0" name="fechaNacimiento" type="xs:dateTime" />
-      <xs:element name="idPersona" type="xs:int" />
-      <xs:element minOccurs="0" name="lengua" type="xs:string" />
-      <xs:element minOccurs="0" name="nombres" type="xs:string" />
-      <xs:element minOccurs="0" name="religion" type="xs:string" />
-      <xs:element name="sexo" type="xs:unsignedShort" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="grado">
     <xs:sequence>
       <xs:element name="activo" type="xs:boolean" />
@@ -107,28 +116,6 @@
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="ugel">
-    <xs:sequence>
-      <xs:element name="activo" type="xs:boolean" />
-      <xs:element name="cantidadIE" type="xs:int" />
-      <xs:element minOccurs="0" name="codigo" type="xs:string" />
-      <xs:element minOccurs="0" name="directorUgel" type="tns:director" />
-      <xs:element minOccurs="0" name="distrito" type="xs:string" />
-      <xs:element name="idUgel" type="xs:int" />
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="institucionesEducativas" nillable="true" type="tns:institucionEducativa" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="listarPorNombreYUgel">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="idNombre" type="xs:string" />
-      <xs:element name="idUgel" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="listarPorNombreYUgelResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:institucionEducativa" />
-    </xs:sequence>
   </xs:complexType>
   <xs:simpleType name="tipoNivel">
     <xs:restriction base="xs:string">

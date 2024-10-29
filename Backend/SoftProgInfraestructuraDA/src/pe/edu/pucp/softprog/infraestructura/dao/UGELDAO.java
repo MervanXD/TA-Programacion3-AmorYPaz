@@ -8,5 +8,6 @@ public interface UGELDAO {
     int modificar(UGEL ugel);
     int eliminar(int idUgel);
     UGEL obtenerPorId(int idUgel);
+    UGEL obtenerPorDirector(int idDirector);
     ArrayList<UGEL> listarTodos();
 }
