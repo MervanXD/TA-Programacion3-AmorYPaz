@@ -16,6 +16,60 @@ namespace AmorYPazBackend.servicioDirectorWS {
     public interface DirectorWS {
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.rrhh.softprog.pucp.edu.pe/DirectorWS/listarTodosDirectoresRequest" +
+            "", ReplyAction="http://services.rrhh.softprog.pucp.edu.pe/DirectorWS/listarTodosDirectoresRespons" +
+            "e")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        AmorYPazBackend.servicioDirectorWS.listarTodosDirectoresResponse listarTodosDirectores(AmorYPazBackend.servicioDirectorWS.listarTodosDirectoresRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.rrhh.softprog.pucp.edu.pe/DirectorWS/listarTodosDirectoresRequest" +
+            "", ReplyAction="http://services.rrhh.softprog.pucp.edu.pe/DirectorWS/listarTodosDirectoresRespons" +
+            "e")]
+        System.Threading.Tasks.Task<AmorYPazBackend.servicioDirectorWS.listarTodosDirectoresResponse> listarTodosDirectoresAsync(AmorYPazBackend.servicioDirectorWS.listarTodosDirectoresRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.rrhh.softprog.pucp.edu.pe/DirectorWS/eliminarDirectorRequest", ReplyAction="http://services.rrhh.softprog.pucp.edu.pe/DirectorWS/eliminarDirectorResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        AmorYPazBackend.servicioDirectorWS.eliminarDirectorResponse eliminarDirector(AmorYPazBackend.servicioDirectorWS.eliminarDirectorRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.rrhh.softprog.pucp.edu.pe/DirectorWS/eliminarDirectorRequest", ReplyAction="http://services.rrhh.softprog.pucp.edu.pe/DirectorWS/eliminarDirectorResponse")]
+        System.Threading.Tasks.Task<AmorYPazBackend.servicioDirectorWS.eliminarDirectorResponse> eliminarDirectorAsync(AmorYPazBackend.servicioDirectorWS.eliminarDirectorRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.rrhh.softprog.pucp.edu.pe/DirectorWS/buscarDirectorRequest", ReplyAction="http://services.rrhh.softprog.pucp.edu.pe/DirectorWS/buscarDirectorResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        AmorYPazBackend.servicioDirectorWS.buscarDirectorResponse buscarDirector(AmorYPazBackend.servicioDirectorWS.buscarDirectorRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.rrhh.softprog.pucp.edu.pe/DirectorWS/buscarDirectorRequest", ReplyAction="http://services.rrhh.softprog.pucp.edu.pe/DirectorWS/buscarDirectorResponse")]
+        System.Threading.Tasks.Task<AmorYPazBackend.servicioDirectorWS.buscarDirectorResponse> buscarDirectorAsync(AmorYPazBackend.servicioDirectorWS.buscarDirectorRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.rrhh.softprog.pucp.edu.pe/DirectorWS/modificarDirectorRequest", ReplyAction="http://services.rrhh.softprog.pucp.edu.pe/DirectorWS/modificarDirectorResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        AmorYPazBackend.servicioDirectorWS.modificarDirectorResponse modificarDirector(AmorYPazBackend.servicioDirectorWS.modificarDirectorRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.rrhh.softprog.pucp.edu.pe/DirectorWS/modificarDirectorRequest", ReplyAction="http://services.rrhh.softprog.pucp.edu.pe/DirectorWS/modificarDirectorResponse")]
+        System.Threading.Tasks.Task<AmorYPazBackend.servicioDirectorWS.modificarDirectorResponse> modificarDirectorAsync(AmorYPazBackend.servicioDirectorWS.modificarDirectorRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.rrhh.softprog.pucp.edu.pe/DirectorWS/insertarDirectorRequest", ReplyAction="http://services.rrhh.softprog.pucp.edu.pe/DirectorWS/insertarDirectorResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        AmorYPazBackend.servicioDirectorWS.insertarDirectorResponse insertarDirector(AmorYPazBackend.servicioDirectorWS.insertarDirectorRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.rrhh.softprog.pucp.edu.pe/DirectorWS/insertarDirectorRequest", ReplyAction="http://services.rrhh.softprog.pucp.edu.pe/DirectorWS/insertarDirectorResponse")]
+        System.Threading.Tasks.Task<AmorYPazBackend.servicioDirectorWS.insertarDirectorResponse> insertarDirectorAsync(AmorYPazBackend.servicioDirectorWS.insertarDirectorRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.rrhh.softprog.pucp.edu.pe/DirectorWS/listarDirectoresTodasRequest" +
             "", ReplyAction="http://services.rrhh.softprog.pucp.edu.pe/DirectorWS/listarDirectoresTodasRespons" +
             "e")]
@@ -285,6 +339,178 @@ namespace AmorYPazBackend.servicioDirectorWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarTodosDirectores", WrapperNamespace="http://services.rrhh.softprog.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarTodosDirectoresRequest {
+        
+        public listarTodosDirectoresRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarTodosDirectoresResponse", WrapperNamespace="http://services.rrhh.softprog.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarTodosDirectoresResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.rrhh.softprog.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public AmorYPazBackend.servicioDirectorWS.director[] @return;
+        
+        public listarTodosDirectoresResponse() {
+        }
+        
+        public listarTodosDirectoresResponse(AmorYPazBackend.servicioDirectorWS.director[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarDirector", WrapperNamespace="http://services.rrhh.softprog.pucp.edu.pe/", IsWrapped=true)]
+    public partial class eliminarDirectorRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.rrhh.softprog.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int idDirector;
+        
+        public eliminarDirectorRequest() {
+        }
+        
+        public eliminarDirectorRequest(int idDirector) {
+            this.idDirector = idDirector;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarDirectorResponse", WrapperNamespace="http://services.rrhh.softprog.pucp.edu.pe/", IsWrapped=true)]
+    public partial class eliminarDirectorResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.rrhh.softprog.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public eliminarDirectorResponse() {
+        }
+        
+        public eliminarDirectorResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="buscarDirector", WrapperNamespace="http://services.rrhh.softprog.pucp.edu.pe/", IsWrapped=true)]
+    public partial class buscarDirectorRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.rrhh.softprog.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int idDirector;
+        
+        public buscarDirectorRequest() {
+        }
+        
+        public buscarDirectorRequest(int idDirector) {
+            this.idDirector = idDirector;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="buscarDirectorResponse", WrapperNamespace="http://services.rrhh.softprog.pucp.edu.pe/", IsWrapped=true)]
+    public partial class buscarDirectorResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.rrhh.softprog.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public AmorYPazBackend.servicioDirectorWS.director @return;
+        
+        public buscarDirectorResponse() {
+        }
+        
+        public buscarDirectorResponse(AmorYPazBackend.servicioDirectorWS.director @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarDirector", WrapperNamespace="http://services.rrhh.softprog.pucp.edu.pe/", IsWrapped=true)]
+    public partial class modificarDirectorRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.rrhh.softprog.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public AmorYPazBackend.servicioDirectorWS.director director;
+        
+        public modificarDirectorRequest() {
+        }
+        
+        public modificarDirectorRequest(AmorYPazBackend.servicioDirectorWS.director director) {
+            this.director = director;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarDirectorResponse", WrapperNamespace="http://services.rrhh.softprog.pucp.edu.pe/", IsWrapped=true)]
+    public partial class modificarDirectorResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.rrhh.softprog.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public modificarDirectorResponse() {
+        }
+        
+        public modificarDirectorResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarDirector", WrapperNamespace="http://services.rrhh.softprog.pucp.edu.pe/", IsWrapped=true)]
+    public partial class insertarDirectorRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.rrhh.softprog.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public AmorYPazBackend.servicioDirectorWS.director director;
+        
+        public insertarDirectorRequest() {
+        }
+        
+        public insertarDirectorRequest(AmorYPazBackend.servicioDirectorWS.director director) {
+            this.director = director;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarDirectorResponse", WrapperNamespace="http://services.rrhh.softprog.pucp.edu.pe/", IsWrapped=true)]
+    public partial class insertarDirectorResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.rrhh.softprog.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public insertarDirectorResponse() {
+        }
+        
+        public insertarDirectorResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="listarDirectoresTodas", WrapperNamespace="http://services.rrhh.softprog.pucp.edu.pe/", IsWrapped=true)]
     public partial class listarDirectoresTodasRequest {
         
@@ -335,6 +561,119 @@ namespace AmorYPazBackend.servicioDirectorWS {
         
         public DirectorWSClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AmorYPazBackend.servicioDirectorWS.listarTodosDirectoresResponse AmorYPazBackend.servicioDirectorWS.DirectorWS.listarTodosDirectores(AmorYPazBackend.servicioDirectorWS.listarTodosDirectoresRequest request) {
+            return base.Channel.listarTodosDirectores(request);
+        }
+        
+        public AmorYPazBackend.servicioDirectorWS.director[] listarTodosDirectores() {
+            AmorYPazBackend.servicioDirectorWS.listarTodosDirectoresRequest inValue = new AmorYPazBackend.servicioDirectorWS.listarTodosDirectoresRequest();
+            AmorYPazBackend.servicioDirectorWS.listarTodosDirectoresResponse retVal = ((AmorYPazBackend.servicioDirectorWS.DirectorWS)(this)).listarTodosDirectores(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<AmorYPazBackend.servicioDirectorWS.listarTodosDirectoresResponse> AmorYPazBackend.servicioDirectorWS.DirectorWS.listarTodosDirectoresAsync(AmorYPazBackend.servicioDirectorWS.listarTodosDirectoresRequest request) {
+            return base.Channel.listarTodosDirectoresAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<AmorYPazBackend.servicioDirectorWS.listarTodosDirectoresResponse> listarTodosDirectoresAsync() {
+            AmorYPazBackend.servicioDirectorWS.listarTodosDirectoresRequest inValue = new AmorYPazBackend.servicioDirectorWS.listarTodosDirectoresRequest();
+            return ((AmorYPazBackend.servicioDirectorWS.DirectorWS)(this)).listarTodosDirectoresAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AmorYPazBackend.servicioDirectorWS.eliminarDirectorResponse AmorYPazBackend.servicioDirectorWS.DirectorWS.eliminarDirector(AmorYPazBackend.servicioDirectorWS.eliminarDirectorRequest request) {
+            return base.Channel.eliminarDirector(request);
+        }
+        
+        public int eliminarDirector(int idDirector) {
+            AmorYPazBackend.servicioDirectorWS.eliminarDirectorRequest inValue = new AmorYPazBackend.servicioDirectorWS.eliminarDirectorRequest();
+            inValue.idDirector = idDirector;
+            AmorYPazBackend.servicioDirectorWS.eliminarDirectorResponse retVal = ((AmorYPazBackend.servicioDirectorWS.DirectorWS)(this)).eliminarDirector(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<AmorYPazBackend.servicioDirectorWS.eliminarDirectorResponse> AmorYPazBackend.servicioDirectorWS.DirectorWS.eliminarDirectorAsync(AmorYPazBackend.servicioDirectorWS.eliminarDirectorRequest request) {
+            return base.Channel.eliminarDirectorAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<AmorYPazBackend.servicioDirectorWS.eliminarDirectorResponse> eliminarDirectorAsync(int idDirector) {
+            AmorYPazBackend.servicioDirectorWS.eliminarDirectorRequest inValue = new AmorYPazBackend.servicioDirectorWS.eliminarDirectorRequest();
+            inValue.idDirector = idDirector;
+            return ((AmorYPazBackend.servicioDirectorWS.DirectorWS)(this)).eliminarDirectorAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AmorYPazBackend.servicioDirectorWS.buscarDirectorResponse AmorYPazBackend.servicioDirectorWS.DirectorWS.buscarDirector(AmorYPazBackend.servicioDirectorWS.buscarDirectorRequest request) {
+            return base.Channel.buscarDirector(request);
+        }
+        
+        public AmorYPazBackend.servicioDirectorWS.director buscarDirector(int idDirector) {
+            AmorYPazBackend.servicioDirectorWS.buscarDirectorRequest inValue = new AmorYPazBackend.servicioDirectorWS.buscarDirectorRequest();
+            inValue.idDirector = idDirector;
+            AmorYPazBackend.servicioDirectorWS.buscarDirectorResponse retVal = ((AmorYPazBackend.servicioDirectorWS.DirectorWS)(this)).buscarDirector(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<AmorYPazBackend.servicioDirectorWS.buscarDirectorResponse> AmorYPazBackend.servicioDirectorWS.DirectorWS.buscarDirectorAsync(AmorYPazBackend.servicioDirectorWS.buscarDirectorRequest request) {
+            return base.Channel.buscarDirectorAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<AmorYPazBackend.servicioDirectorWS.buscarDirectorResponse> buscarDirectorAsync(int idDirector) {
+            AmorYPazBackend.servicioDirectorWS.buscarDirectorRequest inValue = new AmorYPazBackend.servicioDirectorWS.buscarDirectorRequest();
+            inValue.idDirector = idDirector;
+            return ((AmorYPazBackend.servicioDirectorWS.DirectorWS)(this)).buscarDirectorAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AmorYPazBackend.servicioDirectorWS.modificarDirectorResponse AmorYPazBackend.servicioDirectorWS.DirectorWS.modificarDirector(AmorYPazBackend.servicioDirectorWS.modificarDirectorRequest request) {
+            return base.Channel.modificarDirector(request);
+        }
+        
+        public int modificarDirector(AmorYPazBackend.servicioDirectorWS.director director) {
+            AmorYPazBackend.servicioDirectorWS.modificarDirectorRequest inValue = new AmorYPazBackend.servicioDirectorWS.modificarDirectorRequest();
+            inValue.director = director;
+            AmorYPazBackend.servicioDirectorWS.modificarDirectorResponse retVal = ((AmorYPazBackend.servicioDirectorWS.DirectorWS)(this)).modificarDirector(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<AmorYPazBackend.servicioDirectorWS.modificarDirectorResponse> AmorYPazBackend.servicioDirectorWS.DirectorWS.modificarDirectorAsync(AmorYPazBackend.servicioDirectorWS.modificarDirectorRequest request) {
+            return base.Channel.modificarDirectorAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<AmorYPazBackend.servicioDirectorWS.modificarDirectorResponse> modificarDirectorAsync(AmorYPazBackend.servicioDirectorWS.director director) {
+            AmorYPazBackend.servicioDirectorWS.modificarDirectorRequest inValue = new AmorYPazBackend.servicioDirectorWS.modificarDirectorRequest();
+            inValue.director = director;
+            return ((AmorYPazBackend.servicioDirectorWS.DirectorWS)(this)).modificarDirectorAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AmorYPazBackend.servicioDirectorWS.insertarDirectorResponse AmorYPazBackend.servicioDirectorWS.DirectorWS.insertarDirector(AmorYPazBackend.servicioDirectorWS.insertarDirectorRequest request) {
+            return base.Channel.insertarDirector(request);
+        }
+        
+        public int insertarDirector(AmorYPazBackend.servicioDirectorWS.director director) {
+            AmorYPazBackend.servicioDirectorWS.insertarDirectorRequest inValue = new AmorYPazBackend.servicioDirectorWS.insertarDirectorRequest();
+            inValue.director = director;
+            AmorYPazBackend.servicioDirectorWS.insertarDirectorResponse retVal = ((AmorYPazBackend.servicioDirectorWS.DirectorWS)(this)).insertarDirector(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<AmorYPazBackend.servicioDirectorWS.insertarDirectorResponse> AmorYPazBackend.servicioDirectorWS.DirectorWS.insertarDirectorAsync(AmorYPazBackend.servicioDirectorWS.insertarDirectorRequest request) {
+            return base.Channel.insertarDirectorAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<AmorYPazBackend.servicioDirectorWS.insertarDirectorResponse> insertarDirectorAsync(AmorYPazBackend.servicioDirectorWS.director director) {
+            AmorYPazBackend.servicioDirectorWS.insertarDirectorRequest inValue = new AmorYPazBackend.servicioDirectorWS.insertarDirectorRequest();
+            inValue.director = director;
+            return ((AmorYPazBackend.servicioDirectorWS.DirectorWS)(this)).insertarDirectorAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

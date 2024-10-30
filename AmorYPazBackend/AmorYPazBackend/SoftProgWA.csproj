@@ -69,11 +69,27 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AdministrarDirectores.aspx" />
     <Content Include="CerrarSesion.aspx" />
     <Content Include="Connected Services\servicioDirectorWS\AmorYPazBackend.servicioDirectorWS.director.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\servicioDirectorWS\AmorYPazBackend.servicioDirectorWS.listarDirectoresTodasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\servicioDirectorWS\AmorYPazBackend.servicioDirectorWS.buscarDirectorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\servicioDirectorWS\AmorYPazBackend.servicioDirectorWS.eliminarDirectorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\servicioDirectorWS\AmorYPazBackend.servicioDirectorWS.insertarDirectorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\servicioDirectorWS\AmorYPazBackend.servicioDirectorWS.listarTodosDirectoresResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\servicioDirectorWS\AmorYPazBackend.servicioDirectorWS.modificarDirectorResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Connected Services\servicioDirectorWS\configuration91.svcinfo" />
@@ -199,6 +215,7 @@
     <Content Include="MostrarConsolidadoAlumno.aspx" />
     <Content Include="MostrarInstitucion.aspx" />
     <Content Include="OpcionesReporte.aspx" />
+    <Content Include="RegistrarDirector.aspx" />
     <Content Include="RegistrarInstitucion.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -238,6 +255,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdministrarDirectores.aspx.cs">
+      <DependentUpon>AdministrarDirectores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdministrarDirectores.aspx.designer.cs">
+      <DependentUpon>AdministrarDirectores.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CerrarSesion.aspx.cs">
       <DependentUpon>CerrarSesion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -265,6 +289,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Estado.cs" />
     <Compile Include="GestionarInstituciones.aspx.cs">
       <DependentUpon>GestionarInstituciones.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -322,6 +347,13 @@
       <DependentUpon>OpcionesReporte.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegistrarDirector.aspx.cs">
+      <DependentUpon>RegistrarDirector.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistrarDirector.aspx.designer.cs">
+      <DependentUpon>RegistrarDirector.aspx</DependentUpon>
+    </Compile>
     <Compile Include="RegistrarInstitucion.aspx.cs">
       <DependentUpon>RegistrarInstitucion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

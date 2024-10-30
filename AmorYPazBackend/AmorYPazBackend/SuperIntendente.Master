@@ -46,7 +46,7 @@
                     </a>
                 </li>
                 <li class="nav-item mb-1">
-                    <a href="MenuPrincipal.aspx"><i class="fa-solid fa-people-group pe-2"></i>
+                    <a href="AdministrarDirectores.aspx"><i class="fa-solid fa-people-group pe-2"></i>
                         Administrar Directores
                     </a>
                 </li>

@@ -24,7 +24,7 @@ public class DirectorMySQL implements DirectorDAO {
             con = DBManager.getInstance().getConnection();
             String sql = "{call INSERTAR_DIRECTOR(?,?,?,?,?,?,?,?,?,?,?,?,?)}";
             cs = con.prepareCall(sql);
-            cs.registerOutParameter("_fid_Persona", java.sql.Types.INTEGER);
+            cs.registerOutParameter("_fid_persona", java.sql.Types.INTEGER);
             cs.setString("_tipo_contrato", director.getTipoContrato());
             cs.setDate("_fecha_nombramiento", new java.sql.Date(director.getFechaNombramiento().getTime()));
             cs.setString("_email", director.getEmail());
