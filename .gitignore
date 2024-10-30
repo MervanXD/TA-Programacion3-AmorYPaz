@@ -41,11 +41,8 @@ replay_pid*
 /Backend/SoftProg/dist/
 
 # ¡Pero no ignores este archivo específico!
-<<<<<<< HEAD
-!Backend/SoftProg/src/pe/edu/pucp/softprog/lib/mysql-connector-j-9.0.0.jar
-=======
-!Backend/SoftProg/src/pe/edu/pucp/softprog/lib/mysql-connector-j-9.0.0.jar
->>>>>>> 531424777f9b0092cbe8ccf43c2f5fd851ad9781
+!Backend/mysql-connector-j-9.0.0.jar
+!Backend/jakarta.xml.ws-api-4.0.2.jar
 /Backend/SoftProgPlanifAcademicaModel/nbproject/private/
 /Backend/SoftProgPlanifAcademicaModel/build/
 /Backend/SoftProgPlanifAcademicaModel/dist/
