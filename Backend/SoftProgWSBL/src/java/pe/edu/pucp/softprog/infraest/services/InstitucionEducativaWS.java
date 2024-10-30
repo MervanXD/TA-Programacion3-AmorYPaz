@@ -40,5 +40,30 @@ public class InstitucionEducativaWS {
         }
         return instituciones;
     }
+
+    @WebMethod(operationName = "obtenerPorId")
+    public InstitucionEducativa obtenerPorId (@WebParam(name = "idInstitucion") int idInstitucion) {
+        InstitucionEducativa institucion = null;
+        try{
+            daoIEducativa = new InstitucionEducativaMySQL();
+            institucion = daoIEducativa.obtenerPorId(idInstitucion);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return institucion;
+    }
+
+    @WebMethod(operationName = "insertarInstitucion")
+    public int insertarEmpleado(@WebParam(name = "institucionEdu")
+            InstitucionEducativa institucionEdu){
+        int resultado = 0;
+        try{
+            daoIEducativa = new InstitucionEducativaMySQL();
+            resultado = daoIEducativa.insertar(institucionEdu);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return resultado;
+    }
     
 }

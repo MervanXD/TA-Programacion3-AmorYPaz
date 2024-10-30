@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://services.infraest.softprog.pucp.edu.pe/" targetNamespace="http://services.infraest.softprog.pucp.edu.pe/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="insertarInstitucion" type="tns:insertarInstitucion" />
+  <xs:element name="insertarInstitucionResponse" type="tns:insertarInstitucionResponse" />
   <xs:element name="listarPorIdNombre" type="tns:listarPorIdNombre" />
   <xs:element name="listarPorIdNombreResponse" type="tns:listarPorIdNombreResponse" />
   <xs:element name="listarPorNombreYUgel" type="tns:listarPorNombreYUgel" />
   <xs:element name="listarPorNombreYUgelResponse" type="tns:listarPorNombreYUgelResponse" />
+  <xs:element name="obtenerPorId" type="tns:obtenerPorId" />
+  <xs:element name="obtenerPorIdResponse" type="tns:obtenerPorIdResponse" />
   <xs:complexType name="listarPorIdNombre">
     <xs:sequence>
       <xs:element minOccurs="0" name="idNombre" type="xs:string" />
@@ -128,6 +132,26 @@
   <xs:complexType name="listarPorNombreYUgelResponse">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:institucionEducativa" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtenerPorId">
+    <xs:sequence>
+      <xs:element name="idInstitucion" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtenerPorIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:institucionEducativa" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarInstitucion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="institucionEdu" type="tns:institucionEducativa" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarInstitucionResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:simpleType name="tipoNivel">

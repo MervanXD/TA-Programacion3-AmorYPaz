@@ -9,11 +9,29 @@ public class InstitucionEducativa {
     private String nombre;
     private String direccion;
     private int cantidadGrados;
-    private ArrayList<Grado> grados;
+    private String correo_electronico;
+    private String telefono;
+     private ArrayList<Grado> grados;
     private ArrayList<AnioAcademico> aniosAcademicos;
     private UGEL ugel;
     private Director director;
     private boolean activo;
+    
+    public String getCorreo_electronico() {
+        return correo_electronico;
+    }
+
+    public void setCorreo_electronico(String correo_electronico) {
+        this.correo_electronico = correo_electronico;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
 
     public InstitucionEducativa() {
         grados = new ArrayList<>();

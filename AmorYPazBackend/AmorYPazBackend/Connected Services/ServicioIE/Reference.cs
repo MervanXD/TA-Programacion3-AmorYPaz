@@ -40,6 +40,32 @@ namespace AmorYPazBackend.ServicioIE {
             "ombreRequest", ReplyAction="http://services.infraest.softprog.pucp.edu.pe/InstitucionEducativaWS/listarPorIdN" +
             "ombreResponse")]
         System.Threading.Tasks.Task<AmorYPazBackend.ServicioIE.listarPorIdNombreResponse> listarPorIdNombreAsync(AmorYPazBackend.ServicioIE.listarPorIdNombreRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.infraest.softprog.pucp.edu.pe/InstitucionEducativaWS/insertarInst" +
+            "itucionRequest", ReplyAction="http://services.infraest.softprog.pucp.edu.pe/InstitucionEducativaWS/insertarInst" +
+            "itucionResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        AmorYPazBackend.ServicioIE.insertarInstitucionResponse insertarInstitucion(AmorYPazBackend.ServicioIE.insertarInstitucionRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.infraest.softprog.pucp.edu.pe/InstitucionEducativaWS/insertarInst" +
+            "itucionRequest", ReplyAction="http://services.infraest.softprog.pucp.edu.pe/InstitucionEducativaWS/insertarInst" +
+            "itucionResponse")]
+        System.Threading.Tasks.Task<AmorYPazBackend.ServicioIE.insertarInstitucionResponse> insertarInstitucionAsync(AmorYPazBackend.ServicioIE.insertarInstitucionRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.infraest.softprog.pucp.edu.pe/InstitucionEducativaWS/obtenerPorId" +
+            "Request", ReplyAction="http://services.infraest.softprog.pucp.edu.pe/InstitucionEducativaWS/obtenerPorId" +
+            "Response")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        AmorYPazBackend.ServicioIE.obtenerPorIdResponse obtenerPorId(AmorYPazBackend.ServicioIE.obtenerPorIdRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.infraest.softprog.pucp.edu.pe/InstitucionEducativaWS/obtenerPorId" +
+            "Request", ReplyAction="http://services.infraest.softprog.pucp.edu.pe/InstitucionEducativaWS/obtenerPorId" +
+            "Response")]
+        System.Threading.Tasks.Task<AmorYPazBackend.ServicioIE.obtenerPorIdResponse> obtenerPorIdAsync(AmorYPazBackend.ServicioIE.obtenerPorIdRequest request);
     }
     
     /// <remarks/>
@@ -1205,6 +1231,78 @@ namespace AmorYPazBackend.ServicioIE {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarInstitucion", WrapperNamespace="http://services.infraest.softprog.pucp.edu.pe/", IsWrapped=true)]
+    public partial class insertarInstitucionRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.infraest.softprog.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public AmorYPazBackend.ServicioIE.institucionEducativa institucionEdu;
+        
+        public insertarInstitucionRequest() {
+        }
+        
+        public insertarInstitucionRequest(AmorYPazBackend.ServicioIE.institucionEducativa institucionEdu) {
+            this.institucionEdu = institucionEdu;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarInstitucionResponse", WrapperNamespace="http://services.infraest.softprog.pucp.edu.pe/", IsWrapped=true)]
+    public partial class insertarInstitucionResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.infraest.softprog.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public insertarInstitucionResponse() {
+        }
+        
+        public insertarInstitucionResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerPorId", WrapperNamespace="http://services.infraest.softprog.pucp.edu.pe/", IsWrapped=true)]
+    public partial class obtenerPorIdRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.infraest.softprog.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int idInstitucion;
+        
+        public obtenerPorIdRequest() {
+        }
+        
+        public obtenerPorIdRequest(int idInstitucion) {
+            this.idInstitucion = idInstitucion;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerPorIdResponse", WrapperNamespace="http://services.infraest.softprog.pucp.edu.pe/", IsWrapped=true)]
+    public partial class obtenerPorIdResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.infraest.softprog.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public AmorYPazBackend.ServicioIE.institucionEducativa @return;
+        
+        public obtenerPorIdResponse() {
+        }
+        
+        public obtenerPorIdResponse(AmorYPazBackend.ServicioIE.institucionEducativa @return) {
+            this.@return = @return;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface InstitucionEducativaWSChannel : AmorYPazBackend.ServicioIE.InstitucionEducativaWS, System.ServiceModel.IClientChannel {
     }
@@ -1278,6 +1376,52 @@ namespace AmorYPazBackend.ServicioIE {
             AmorYPazBackend.ServicioIE.listarPorIdNombreRequest inValue = new AmorYPazBackend.ServicioIE.listarPorIdNombreRequest();
             inValue.idNombre = idNombre;
             return ((AmorYPazBackend.ServicioIE.InstitucionEducativaWS)(this)).listarPorIdNombreAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AmorYPazBackend.ServicioIE.insertarInstitucionResponse AmorYPazBackend.ServicioIE.InstitucionEducativaWS.insertarInstitucion(AmorYPazBackend.ServicioIE.insertarInstitucionRequest request) {
+            return base.Channel.insertarInstitucion(request);
+        }
+        
+        public int insertarInstitucion(AmorYPazBackend.ServicioIE.institucionEducativa institucionEdu) {
+            AmorYPazBackend.ServicioIE.insertarInstitucionRequest inValue = new AmorYPazBackend.ServicioIE.insertarInstitucionRequest();
+            inValue.institucionEdu = institucionEdu;
+            AmorYPazBackend.ServicioIE.insertarInstitucionResponse retVal = ((AmorYPazBackend.ServicioIE.InstitucionEducativaWS)(this)).insertarInstitucion(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<AmorYPazBackend.ServicioIE.insertarInstitucionResponse> AmorYPazBackend.ServicioIE.InstitucionEducativaWS.insertarInstitucionAsync(AmorYPazBackend.ServicioIE.insertarInstitucionRequest request) {
+            return base.Channel.insertarInstitucionAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<AmorYPazBackend.ServicioIE.insertarInstitucionResponse> insertarInstitucionAsync(AmorYPazBackend.ServicioIE.institucionEducativa institucionEdu) {
+            AmorYPazBackend.ServicioIE.insertarInstitucionRequest inValue = new AmorYPazBackend.ServicioIE.insertarInstitucionRequest();
+            inValue.institucionEdu = institucionEdu;
+            return ((AmorYPazBackend.ServicioIE.InstitucionEducativaWS)(this)).insertarInstitucionAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AmorYPazBackend.ServicioIE.obtenerPorIdResponse AmorYPazBackend.ServicioIE.InstitucionEducativaWS.obtenerPorId(AmorYPazBackend.ServicioIE.obtenerPorIdRequest request) {
+            return base.Channel.obtenerPorId(request);
+        }
+        
+        public AmorYPazBackend.ServicioIE.institucionEducativa obtenerPorId(int idInstitucion) {
+            AmorYPazBackend.ServicioIE.obtenerPorIdRequest inValue = new AmorYPazBackend.ServicioIE.obtenerPorIdRequest();
+            inValue.idInstitucion = idInstitucion;
+            AmorYPazBackend.ServicioIE.obtenerPorIdResponse retVal = ((AmorYPazBackend.ServicioIE.InstitucionEducativaWS)(this)).obtenerPorId(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<AmorYPazBackend.ServicioIE.obtenerPorIdResponse> AmorYPazBackend.ServicioIE.InstitucionEducativaWS.obtenerPorIdAsync(AmorYPazBackend.ServicioIE.obtenerPorIdRequest request) {
+            return base.Channel.obtenerPorIdAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<AmorYPazBackend.ServicioIE.obtenerPorIdResponse> obtenerPorIdAsync(int idInstitucion) {
+            AmorYPazBackend.ServicioIE.obtenerPorIdRequest inValue = new AmorYPazBackend.ServicioIE.obtenerPorIdRequest();
+            inValue.idInstitucion = idInstitucion;
+            return ((AmorYPazBackend.ServicioIE.InstitucionEducativaWS)(this)).obtenerPorIdAsync(inValue);
         }
     }
 }

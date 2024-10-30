@@ -17,6 +17,18 @@
   <message name="listarPorIdNombreResponse">
     <part name="parameters" element="tns:listarPorIdNombreResponse" />
   </message>
+  <message name="insertarInstitucion">
+    <part name="parameters" element="tns:insertarInstitucion" />
+  </message>
+  <message name="insertarInstitucionResponse">
+    <part name="parameters" element="tns:insertarInstitucionResponse" />
+  </message>
+  <message name="obtenerPorId">
+    <part name="parameters" element="tns:obtenerPorId" />
+  </message>
+  <message name="obtenerPorIdResponse">
+    <part name="parameters" element="tns:obtenerPorIdResponse" />
+  </message>
   <portType name="InstitucionEducativaWS">
     <operation name="listarPorNombreYUgel">
       <input wsam:Action="http://services.infraest.softprog.pucp.edu.pe/InstitucionEducativaWS/listarPorNombreYUgelRequest" message="tns:listarPorNombreYUgel" />
@@ -25,6 +37,14 @@
     <operation name="listarPorIdNombre">
       <input wsam:Action="http://services.infraest.softprog.pucp.edu.pe/InstitucionEducativaWS/listarPorIdNombreRequest" message="tns:listarPorIdNombre" />
       <output wsam:Action="http://services.infraest.softprog.pucp.edu.pe/InstitucionEducativaWS/listarPorIdNombreResponse" message="tns:listarPorIdNombreResponse" />
+    </operation>
+    <operation name="insertarInstitucion">
+      <input wsam:Action="http://services.infraest.softprog.pucp.edu.pe/InstitucionEducativaWS/insertarInstitucionRequest" message="tns:insertarInstitucion" />
+      <output wsam:Action="http://services.infraest.softprog.pucp.edu.pe/InstitucionEducativaWS/insertarInstitucionResponse" message="tns:insertarInstitucionResponse" />
+    </operation>
+    <operation name="obtenerPorId">
+      <input wsam:Action="http://services.infraest.softprog.pucp.edu.pe/InstitucionEducativaWS/obtenerPorIdRequest" message="tns:obtenerPorId" />
+      <output wsam:Action="http://services.infraest.softprog.pucp.edu.pe/InstitucionEducativaWS/obtenerPorIdResponse" message="tns:obtenerPorIdResponse" />
     </operation>
   </portType>
   <binding name="InstitucionEducativaWSPortBinding" type="tns:InstitucionEducativaWS">
@@ -39,6 +59,24 @@
       </output>
     </operation>
     <operation name="listarPorIdNombre">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarInstitucion">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="obtenerPorId">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

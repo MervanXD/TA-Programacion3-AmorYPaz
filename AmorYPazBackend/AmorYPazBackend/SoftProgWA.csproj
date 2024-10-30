@@ -70,6 +70,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CerrarSesion.aspx" />
+    <Content Include="Connected Services\servicioDirectorWS\AmorYPazBackend.servicioDirectorWS.director.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\servicioDirectorWS\AmorYPazBackend.servicioDirectorWS.listarDirectoresTodasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\servicioDirectorWS\configuration91.svcinfo" />
+    <None Include="Connected Services\servicioDirectorWS\configuration.svcinfo" />
+    <None Include="Connected Services\servicioDirectorWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Connected Services\ServicioUGEL\AmorYPazBackend.ServicioUGEL.obtenerPorIdDirectorResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -77,6 +89,16 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\ServicioIE\AmorYPazBackend.ServicioIE.listarPorNombreYUgelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\servicioDirectorWS\DirectorWS.wsdl" />
+    <None Include="Connected Services\servicioDirectorWS\DirectorWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Connected Services\ServicioIE\AmorYPazBackend.ServicioIE.insertarInstitucionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioIE\AmorYPazBackend.ServicioIE.obtenerPorIdResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Connected Services\ServicioUGEL\configuration91.svcinfo" />
@@ -220,6 +242,11 @@
     <Compile Include="CerrarSesion.aspx.designer.cs">
       <DependentUpon>CerrarSesion.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Connected Services\servicioDirectorWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\ServicioUGEL\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -345,6 +372,7 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\servicioDirectorWS\" />
     <WCFMetadataStorage Include="Connected Services\ServicioUGEL\" />
     <WCFMetadataStorage Include="Connected Services\ServicioUser\" />
     <WCFMetadataStorage Include="Connected Services\ServicioIE\" />

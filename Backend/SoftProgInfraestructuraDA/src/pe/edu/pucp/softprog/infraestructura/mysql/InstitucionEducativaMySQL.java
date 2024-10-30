@@ -7,6 +7,7 @@ import java.sql.CallableStatement;
 import java.sql.SQLException;
 import java.sql.ResultSet;
 import java.sql.Connection;
+import pe.edu.pucp.softprog.infraestructura.model.UGEL;
 import pe.edu.pucp.softprog.config.DBManager;
 import pe.edu.pucp.softprog.rrhh.model.Director;
 
@@ -99,7 +100,21 @@ public class InstitucionEducativaMySQL implements InstitucionEducativaDAO {
                 institucion.setNombre(rs.getString("nombre"));
                 institucion.setDireccion(rs.getString("direccion"));
                 institucion.setCantidadGrados(rs.getInt("cantidad_grados"));
-                institucion.setActivo(rs.getBoolean("activo"));
+                institucion.setCorreo_electronico(rs.getString("correo_electronico"));
+                institucion.setTelefono(rs.getString("telefono"));
+                institucion.setActivo(rs.getBoolean("institucion_activo"));
+                
+                institucion.setDirector(new Director());
+                institucion.getDirector().setIdPersona(rs.getInt("fidPersona"));
+                institucion.getDirector().setNombres(rs.getString("nombres"));
+                institucion.getDirector().setApellidoPaterno(rs.getString("apellido_Paterno"));
+                institucion.getDirector().setApellidoMaterno(rs.getString("apellido_Materno"));
+                
+                institucion.setUgel(new UGEL());
+                institucion.getUgel().setIdUgel(rs.getInt("id_ugel"));
+                institucion.getUgel().setCodigo(rs.getString("ugel_codigo"));
+                institucion.getUgel().setDistrito(rs.getString("ugel_distrito"));
+                institucion.getUgel().setCantidadIE(rs.getInt("ugel_cantidad_ie"));
             }
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
@@ -112,6 +127,7 @@ public class InstitucionEducativaMySQL implements InstitucionEducativaDAO {
         }
         return institucion;
     }
+
 
     @Override
     public ArrayList<InstitucionEducativa> listarTodos() {
