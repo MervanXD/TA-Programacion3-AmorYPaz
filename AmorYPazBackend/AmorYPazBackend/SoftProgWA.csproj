@@ -88,9 +88,6 @@
     <Content Include="Connected Services\ServicioUGEL\AmorYPazBackend.ServicioUGEL.ugel.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\ServicioIE\AmorYPazBackend.ServicioIE.listarPorNombreYUgelResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <None Include="Connected Services\servicioDirectorWS\DirectorWS.wsdl" />
     <None Include="Connected Services\servicioDirectorWS\DirectorWS.xsd">
       <SubType>Designer</SubType>
@@ -99,6 +96,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\ServicioIE\AmorYPazBackend.ServicioIE.obtenerPorIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioIE\AmorYPazBackend.ServicioIE.listarPorNombreYUgelResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Connected Services\ServicioUGEL\configuration91.svcinfo" />
@@ -117,6 +117,9 @@
     <None Include="Connected Services\ServicioUGEL\UGELWS.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Connected Services\ServicioUser\AmorYPazBackend.ServicioUser.obtenerUgelDeUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Connected Services\ServicioUser\configuration91.svcinfo" />
     <None Include="Connected Services\ServicioUser\configuration.svcinfo" />
     <None Include="Connected Services\ServicioUser\Reference.svcmap">
@@ -376,6 +379,9 @@
     <WCFMetadataStorage Include="Connected Services\ServicioUGEL\" />
     <WCFMetadataStorage Include="Connected Services\ServicioUser\" />
     <WCFMetadataStorage Include="Connected Services\ServicioIE\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Uploads\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

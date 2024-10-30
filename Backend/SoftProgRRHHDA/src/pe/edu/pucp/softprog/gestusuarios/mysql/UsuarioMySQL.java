@@ -176,4 +176,28 @@ public class UsuarioMySQL implements UsuarioDAO {
         return usuario;
     }
 
+    @Override
+    public int obtenerUgelDeUsuario(String nombreCuentaUsuario) {
+        int resultado = 0;
+        try {
+            con=DBManager.getInstance().getConnection();
+            String sql="{call OBTENER_UGEL_POR_USUARIO_DIRECTOR(?)}";
+            cs = con.prepareCall(sql);
+            cs.setString("_nombre_usuario", nombreCuentaUsuario);
+            rs = cs.executeQuery();
+            if (rs.next()) {
+                resultado = rs.getInt("id_ugel");
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            try {
+                con.close();
+            } catch (SQLException ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
+        return resultado;  
+    }
+
 }

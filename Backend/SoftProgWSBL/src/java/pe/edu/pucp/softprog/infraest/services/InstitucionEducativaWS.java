@@ -40,7 +40,7 @@ public class InstitucionEducativaWS {
         }
         return instituciones;
     }
-
+    
     @WebMethod(operationName = "obtenerPorId")
     public InstitucionEducativa obtenerPorId (@WebParam(name = "idInstitucion") int idInstitucion) {
         InstitucionEducativa institucion = null;
@@ -52,7 +52,7 @@ public class InstitucionEducativaWS {
         }
         return institucion;
     }
-
+    
     @WebMethod(operationName = "insertarInstitucion")
     public int insertarEmpleado(@WebParam(name = "institucionEdu")
             InstitucionEducativa institucionEdu){
@@ -65,5 +65,4 @@ public class InstitucionEducativaWS {
         }
         return resultado;
     }
-    
 }

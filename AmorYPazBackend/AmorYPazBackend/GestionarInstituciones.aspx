@@ -20,7 +20,7 @@
                         <asp:LinkButton ID="lbBuscar" runat="server" CssClass="btn btn-info" Text="<i class='fa-solid fa-magnifying-glass'></i> Buscar" OnClick="lbBuscar_Click"/>
                     </div>
                     <div class="col-12 col-md text-md-end mt-3 mt-md-0">
-                        <asp:LinkButton ID="lbRegistrar" runat="server" CssClass="btn btn-success" Text="<i class='fa-solid fa-plus'></i> Registrar Institucion" />
+                        <asp:LinkButton ID="lbRegistrar" runat="server" CssClass="btn btn-success" Text="<i class='fa-solid fa-plus'></i> Registrar Institucion" OnClick="lbRegistrar_Click"/>
                     </div>
                 </div>
                 <div class="row">
@@ -35,7 +35,7 @@
                             </asp:TemplateField>
                             <asp:TemplateField>
                                 <itemtemplate>
-                                    <asp:LinkButton runat="server" Text="<i class='fa-solid fa-eye'></i>"/>
+                                    <asp:LinkButton runat="server" Text="<i class='fa-solid fa-eye'></i>" OnClick="lbVisualizar_click"  CommandArgument='<%# Eval("idInstitucion") %>' />
                                 </itemtemplate>
                             </asp:TemplateField>
                         </columns>

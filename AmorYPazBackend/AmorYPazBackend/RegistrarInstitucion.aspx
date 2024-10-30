@@ -46,7 +46,7 @@
                 <div class="row mb-3">
                     <div class="col-md-6">
                         <asp:Label ID="lblLogo" runat="server" Text="Logo de la institución:" CssClass="col-form-label fw-bold"></asp:Label>
-                        <asp:FileUpload ID="fuLogo" runat="server" CssClass="form-control" onchange="previewLogo(event)" />
+                        <asp:FileUpload ID="fuLogo" runat="server" CssClass="form-control" onchange="this.form.submit()" ClientIDMode="Static"/>
                     </div>
                     <div class="col-md-6 d-flex justify-content-center align-items-center">
                         <asp:Image ID="imgLogoPlaceholder" runat="server" CssClass="img-thumbnail" ImageUrl="~/Images/placeholder.jpg" AlternateText="Logo" Height="100" Width="100" />

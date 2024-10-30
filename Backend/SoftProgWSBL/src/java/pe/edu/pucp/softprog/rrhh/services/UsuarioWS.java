@@ -23,4 +23,17 @@ public class UsuarioWS {
         }
         return nuevoUsuario;
     }
+    
+    @WebMethod(operationName = "obtenerUgelDeUsuario")
+    public int obtenerUgelDeDirector(@WebParam(name = "nombreCuentaUsuario") String nombreCuenta) {
+        int id_ugel = 0;
+        try{
+            daoUsuario = new UsuarioMySQL();
+            id_ugel = daoUsuario.obtenerUgelDeUsuario(nombreCuenta);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return id_ugel;
+    }
+   
 }

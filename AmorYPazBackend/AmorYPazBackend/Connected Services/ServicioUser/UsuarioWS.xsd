@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://services.rrhh.softprog.pucp.edu.pe/" targetNamespace="http://services.rrhh.softprog.pucp.edu.pe/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="obtenerUgelDeUsuario" type="tns:obtenerUgelDeUsuario" />
+  <xs:element name="obtenerUgelDeUsuarioResponse" type="tns:obtenerUgelDeUsuarioResponse" />
   <xs:element name="verificarUsuario" type="tns:verificarUsuario" />
   <xs:element name="verificarUsuarioResponse" type="tns:verificarUsuarioResponse" />
+  <xs:complexType name="obtenerUgelDeUsuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="nombreCuentaUsuario" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtenerUgelDeUsuarioResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="verificarUsuario">
     <xs:sequence>
       <xs:element minOccurs="0" name="usuario" type="tns:usuario" />

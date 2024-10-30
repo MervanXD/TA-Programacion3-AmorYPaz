@@ -56,8 +56,11 @@ namespace AmorYPazBackend
                 string strRedirect;
                 strRedirect = Request["ReturnUrl"];
                 if (strRedirect == null)
+                {
                     strRedirect = "MenuPrincipal.aspx";
-                Response.Redirect(strRedirect, true);
+                    Session["id_Director"] = daoUsuario.obtenerUgelDeUsuario(user.username);
+                }
+                    Response.Redirect(strRedirect, true);
             }
             else
             {

@@ -49,9 +49,23 @@ namespace AmorYPazBackend
             gvInstituciones.DataBind();
         }
 
+        protected void lbRegistrar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("RegistrarInstitucion.aspx");
+        }
+
+        protected void lbVisualizar_click(object sender, EventArgs e)
+        {
+            int idInstitucionEdu = Int32.Parse(((LinkButton)sender).CommandArgument);
+            institucionEducativa institucionEdu = daoIEducativa.obtenerPorId(idInstitucionEdu);
+            Session["institucion"] = institucionEdu;
+            Response.Redirect("RegistrarInstitucion.aspx?accion=visualizar");
+        }
+
         protected void gvInstituciones_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             gvInstituciones.PageIndex = e.NewPageIndex;
+            gvInstituciones.DataBind();
         }
     }
 }

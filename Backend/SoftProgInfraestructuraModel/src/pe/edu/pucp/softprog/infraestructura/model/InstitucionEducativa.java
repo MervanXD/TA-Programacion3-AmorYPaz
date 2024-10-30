@@ -16,6 +16,16 @@ public class InstitucionEducativa {
     private UGEL ugel;
     private Director director;
     private boolean activo;
+    private byte[] fotoInstitucion;
+
+    public byte[] getFotoInstitucion() {
+        return fotoInstitucion;
+    }
+
+    public void setFotoInstitucion(byte[] fotoInstitucion) {
+        this.fotoInstitucion = fotoInstitucion;
+    }
+
     
     public String getCorreo_electronico() {
         return correo_electronico;

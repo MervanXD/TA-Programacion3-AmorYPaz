@@ -9,5 +9,6 @@ public interface UsuarioDAO {
     Usuario obtenerPorId(int id);
     ArrayList<Usuario> listarTodos();
     Usuario verificar(Usuario usuario);
+    int obtenerUgelDeUsuario (String nombreCuentaUsuario);
 }
 

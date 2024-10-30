@@ -2,6 +2,7 @@
 using AmorYPazBackend.ServicioIE;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -40,6 +41,7 @@ namespace AmorYPazBackend
                 //lblTitulo.Text = "UGEL04 - Añadir Institución";
                 lblTitulo.Text = "Añadir Institución";
                 institucionEdu = new institucionEducativa();
+                Cargar_Foto(sender, e);
                 //estado = Estado.Nuevo;
                 if (!IsPostBack)
                 {
@@ -61,8 +63,15 @@ namespace AmorYPazBackend
                 txtTelefono.Text = institucionEdu.telefono;
                 txtEmail.Text = institucionEdu.correo_electronico;
 
+                //imagen
+                if (institucionEdu.fotoInstitucion != null)
+                {
+                    string base64String = Convert.ToBase64String(institucionEdu.fotoInstitucion);
+                    string imageUrl = "data:image/jpeg;base64," + base64String;
+                    imgLogoPlaceholder.ImageUrl = imageUrl;
+                }
+
                 Deshabilitar_Componentes();
-                //falta la imagen!
 
 
             }
@@ -90,16 +99,44 @@ namespace AmorYPazBackend
             institucionEdu.telefono = txtTelefono.Text;
             institucionEdu.director = new ServicioIE.director();
             institucionEdu.director.idPersona = Int32.Parse(ddlDirector.SelectedValue);
-            //faltan los siguientes datos
+            institucionEdu.ugel = new ugel();
+            int id_ugel = (int)Session["id_Director"];
+            institucionEdu.ugel.idUgel = id_ugel;
+            institucionEdu.fotoInstitucion = (byte[])Session["foto"];
 
             //if (estado == Estado.Nuevo)
             //    daoEmpleado.insertar(empleado);
             //else if (estado == Estado.Modificar)
             //    daoEmpleado.modificar(empleado);
 
-            daoInstitucion.insertarInstitucion(institucionEdu);
+            int resultado = daoInstitucion.insertarInstitucion(institucionEdu);
 
-            Response.Redirect("ListarEmpleados.aspx");
+
+            Response.Redirect("GestionarInstituciones.aspx");
+        }
+
+        protected void Cargar_Foto(object sender, EventArgs e)
+        {
+            if (IsPostBack && fuLogo.PostedFile != null && fuLogo.HasFile)
+            {
+                string extension = System.IO.Path.GetExtension(fuLogo.FileName);
+                if (extension.ToLower() == ".jpg" || extension.ToLower() == ".jpeg" || extension.ToLower() == ".png" || extension.ToLower() == ".gif")
+                {
+                    string filename = Guid.NewGuid().ToString() + extension;
+                    string filePath = Server.MapPath("~/Uploads/") + filename;
+                    fuLogo.SaveAs(Server.MapPath("~/Uploads/") + filename);
+                    imgLogoPlaceholder.ImageUrl = "~/Uploads/" + filename;
+                    imgLogoPlaceholder.Visible = true;
+                    FileStream fs = new FileStream(filePath, FileMode.Open, FileAccess.Read);
+                    BinaryReader br = new BinaryReader(fs);
+                    Session["foto"] = br.ReadBytes((int)fs.Length);
+                    fs.Close();
+                }
+                else
+                {
+                    Response.Write("Por favor, selecciona un archivo de imagen válido.");
+                }
+            }
         }
 
         protected void lbCancelar_Click(object sender, EventArgs e)

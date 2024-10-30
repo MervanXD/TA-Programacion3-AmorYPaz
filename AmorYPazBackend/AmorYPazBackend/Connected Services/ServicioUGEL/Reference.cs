@@ -661,15 +661,21 @@ namespace AmorYPazBackend.ServicioUGEL {
         
         private int cantidadGradosField;
         
+        private string correo_electronicoField;
+        
         private string direccionField;
         
         private director directorField;
+        
+        private byte[] fotoInstitucionField;
         
         private grado[] gradosField;
         
         private int idInstitucionField;
         
         private string nombreField;
+        
+        private string telefonoField;
         
         private ugel ugelField;
         
@@ -711,6 +717,18 @@ namespace AmorYPazBackend.ServicioUGEL {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
+        public string correo_electronico {
+            get {
+                return this.correo_electronicoField;
+            }
+            set {
+                this.correo_electronicoField = value;
+                this.RaisePropertyChanged("correo_electronico");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
         public string direccion {
             get {
                 return this.direccionField;
@@ -722,7 +740,7 @@ namespace AmorYPazBackend.ServicioUGEL {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
         public director director {
             get {
                 return this.directorField;
@@ -734,7 +752,19 @@ namespace AmorYPazBackend.ServicioUGEL {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("grados", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=5)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="base64Binary", Order=6)]
+        public byte[] fotoInstitucion {
+            get {
+                return this.fotoInstitucionField;
+            }
+            set {
+                this.fotoInstitucionField = value;
+                this.RaisePropertyChanged("fotoInstitucion");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("grados", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=7)]
         public grado[] grados {
             get {
                 return this.gradosField;
@@ -746,7 +776,7 @@ namespace AmorYPazBackend.ServicioUGEL {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=6)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=8)]
         public int idInstitucion {
             get {
                 return this.idInstitucionField;
@@ -758,7 +788,7 @@ namespace AmorYPazBackend.ServicioUGEL {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=7)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=9)]
         public string nombre {
             get {
                 return this.nombreField;
@@ -770,7 +800,19 @@ namespace AmorYPazBackend.ServicioUGEL {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=8)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=10)]
+        public string telefono {
+            get {
+                return this.telefonoField;
+            }
+            set {
+                this.telefonoField = value;
+                this.RaisePropertyChanged("telefono");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=11)]
         public ugel ugel {
             get {
                 return this.ugelField;

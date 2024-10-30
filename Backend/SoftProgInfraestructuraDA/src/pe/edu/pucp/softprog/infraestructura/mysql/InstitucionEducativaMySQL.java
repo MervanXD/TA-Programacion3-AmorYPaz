@@ -7,8 +7,8 @@ import java.sql.CallableStatement;
 import java.sql.SQLException;
 import java.sql.ResultSet;
 import java.sql.Connection;
-import pe.edu.pucp.softprog.infraestructura.model.UGEL;
 import pe.edu.pucp.softprog.config.DBManager;
+import pe.edu.pucp.softprog.infraestructura.model.UGEL;
 import pe.edu.pucp.softprog.rrhh.model.Director;
 
 public class InstitucionEducativaMySQL implements InstitucionEducativaDAO {
@@ -22,11 +22,15 @@ public class InstitucionEducativaMySQL implements InstitucionEducativaDAO {
         int resultado = 0;
         try {
             con = DBManager.getInstance().getConnection();
-            cs = con.prepareCall("{call INSERTAR_INSTITUCION_EDUCATIVA(?,?,?,?)}");
+            cs = con.prepareCall("{call INSERTAR_INSTITUCION_EDUCATIVA(?,?,?,?,?,?,?,?)}");
             cs.registerOutParameter("_id_institucion_educativa", java.sql.Types.INTEGER);
             cs.setString("_nombre", institucion.getNombre());
             cs.setString("_direccion", institucion.getDireccion());
-            cs.setInt("_cantidad_grados", institucion.getCantidadGrados());
+            cs.setString("_telefono", institucion.getTelefono());
+            cs.setString("_correo_electronico", institucion.getCorreo_electronico());
+            cs.setInt("_fid_director", institucion.getDirector().getIdPersona());
+            cs.setInt("_fid_ugel", institucion.getUgel().getIdUgel());
+            cs.setBytes("_foto_institucion", institucion.getFotoInstitucion());
             cs.executeUpdate();
             institucion.setIdInstitucion(cs.getInt("_id_institucion_educativa"));
             resultado = institucion.getIdInstitucion();
@@ -103,6 +107,7 @@ public class InstitucionEducativaMySQL implements InstitucionEducativaDAO {
                 institucion.setCorreo_electronico(rs.getString("correo_electronico"));
                 institucion.setTelefono(rs.getString("telefono"));
                 institucion.setActivo(rs.getBoolean("institucion_activo"));
+                institucion.setFotoInstitucion(rs.getBytes("foto_institucion"));
                 
                 institucion.setDirector(new Director());
                 institucion.getDirector().setIdPersona(rs.getInt("fidPersona"));
@@ -127,7 +132,6 @@ public class InstitucionEducativaMySQL implements InstitucionEducativaDAO {
         }
         return institucion;
     }
-
 
     @Override
     public ArrayList<InstitucionEducativa> listarTodos() {
@@ -191,7 +195,6 @@ public class InstitucionEducativaMySQL implements InstitucionEducativaDAO {
         }
         return instituciones;        
     }
-
     @Override
     public ArrayList<InstitucionEducativa> listarInstitucionesPorNombreYUGEL(String idNombre, int idUgel) {
         ArrayList<InstitucionEducativa> instituciones = new ArrayList<>();
