@@ -1,11 +1,16 @@
 ﻿using AmorYPazBackend.ServicioUser;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Xml.Linq;
 
 namespace AmorYPazBackend
 {
@@ -34,38 +39,67 @@ namespace AmorYPazBackend
             user.username = txtUsername.Text;
             user.contrasena = txtContrasenha.Text;
             user = daoUsuario.verificarUsuario(user);
-
+            
 
             if (user.director != null)
             {
-                Session["NombreUsuario"] = user.director.nombres + " " + 
-                    user.director.apellidoPaterno;
-                Session["idDirector"] = user.director.idPersona;
+                if (IsReCaptchValid()){
+                    Session["NombreUsuario"] = user.director.nombres + " " +
+                        user.director.apellidoPaterno;
+                    Session["idDirector"] = user.director.idPersona;
 
-                FormsAuthenticationTicket tkt;
-                string cookiestr;
-                HttpCookie ck;
-                tkt = new FormsAuthenticationTicket(1, user.username, DateTime.Now,
-                DateTime.Now.AddMinutes(30), true, "datos adicionales del usuario");
-                cookiestr = FormsAuthentication.Encrypt(tkt);
-                ck = new HttpCookie(FormsAuthentication.FormsCookieName, cookiestr);
-                ck.Expires = tkt.Expiration; //esto genera que la cookie se quede guardada
-                ck.Path = FormsAuthentication.FormsCookiePath;
-                Response.Cookies.Add(ck);
+                    FormsAuthenticationTicket tkt;
+                    string cookiestr;
+                    HttpCookie ck;
+                    tkt = new FormsAuthenticationTicket(1, user.username, DateTime.Now,
+                    DateTime.Now.AddMinutes(30), true, "datos adicionales del usuario");
+                    cookiestr = FormsAuthentication.Encrypt(tkt);
+                    ck = new HttpCookie(FormsAuthentication.FormsCookieName, cookiestr);
+                    ck.Expires = tkt.Expiration; //esto genera que la cookie se quede guardada
+                    ck.Path = FormsAuthentication.FormsCookiePath;
+                    Response.Cookies.Add(ck);
 
-                string strRedirect;
-                strRedirect = Request["ReturnUrl"];
-                if (strRedirect == null)
-                {
-                    strRedirect = "MenuPrincipal.aspx";
-                    Session["id_Director"] = daoUsuario.obtenerUgelDeUsuario(user.username);
-                }
+                    string strRedirect;
+                    strRedirect = Request["ReturnUrl"];
+                    if (strRedirect == null)
+                    {
+                        strRedirect = "MenuPrincipal.aspx";
+                        Session["id_Director"] = daoUsuario.obtenerUgelDeUsuario(user.username);
+                    }
                     Response.Redirect(strRedirect, true);
+                } 
+                else
+                {
+                    ScriptManager.RegisterClientScriptBlock(this, typeof(string),
+                    "MsgAlert", "alert('Validación Captcha incorrecta');window.location ='InicioSesion.aspx';", true);
+                }
             }
             else
             {
                 Response.Redirect("InicioSesion.aspx?error=Usuario o contraseña incorrectos.", true);
             }
+        }
+
+        //Método para validar Captcha
+        public bool IsReCaptchValid()
+        {
+            var result = false;
+            var captchaResponse = Request.Form["g-recaptcha-response"];
+            var secretKey = ConfigurationManager.AppSettings["SecretKey"];
+            var apiUrl = "https://www.google.com/recaptcha/api/siteverify?secret={0}&response={1}";
+            var requestUri = string.Format(apiUrl, secretKey, captchaResponse);
+            var request = (HttpWebRequest)WebRequest.Create(requestUri);
+
+            using (WebResponse response = request.GetResponse())
+            {
+                using (StreamReader stream = new StreamReader(response.GetResponseStream()))
+                {
+                    JObject jResponse = JObject.Parse(stream.ReadToEnd());
+                    var isSuccess = jResponse.Value<bool>("success");
+                    result = (isSuccess) ? true : false;
+                }
+            }
+            return result;
         }
     }
 }

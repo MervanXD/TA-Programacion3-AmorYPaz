@@ -8,6 +8,7 @@
     <title>Inicio de Sesión</title>
     <link rel="stylesheet" href="Content/bootstrap.css" />
     <link rel="stylesheet" href="Content/estilos.css" />
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <style>
         /* Estilos generales para la página */
         body, html {
@@ -131,11 +132,15 @@
             <!-- Campo de contraseña -->
             <asp:TextBox ID="txtContrasenha" runat="server" CssClass="form-control" TextMode="Password" Placeholder="Contraseña" OnFocus="this.classList.remove('input-error');"></asp:TextBox>
 
-            <!-- Enlace para olvidó su contraseña -->
-            <a href="#" class="forgot-password">¿Olvidó su contraseña?</a>
+            <div class="col-sm-3">
+                <div class="g-recaptcha" data-sitekey="6LfK7XEqAAAAAE5eB2rP-LazQTG6wEGmKaqnIlXd"></div>
+            </div>
 
             <!-- Botón de inicio de sesión -->
             <asp:Button ID="btnInicioSesion" runat="server" Text="INICIAR SESIÓN" CssClass="btn-primary" OnClick="btnInicioSesion_Click"/>
+
+            <!-- Enlace para olvidó su contraseña -->
+            <a href="#" class="forgot-password">¿Olvidó su contraseña?</a>
             
             <!-- Mensaje de error -->
             <asp:Label ID="lblMensaje" runat="server" CssClass="error-message" Visible="false"></asp:Label>
