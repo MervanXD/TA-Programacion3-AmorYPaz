@@ -16,7 +16,6 @@
                         </div>
                         <div class="carousel-item">
                             <img src="img/img2.PNG" class="d-block w-100" width="300" height="300" alt="Imagen 2">
-
                         </div>
                         <div class="carousel-item">
                             <img src="img/img3.PNG" class="d-block w-100" width="300" height="300" alt="Imagen 3">

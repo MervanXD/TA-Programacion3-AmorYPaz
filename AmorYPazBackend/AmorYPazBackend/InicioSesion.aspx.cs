@@ -34,12 +34,19 @@ namespace AmorYPazBackend
 
         protected void btnInicioSesion_Click(object sender, EventArgs e)
         {
+            string captchaResponse = Request.Form["g-recaptcha-response"];
+
+            if (string.IsNullOrEmpty(captchaResponse))
+            {
+                lblCaptchaError.Visible = true; // Mostrar mensaje de error si el CAPTCHA no está marcado
+                return;
+            }
+            //Si está validado el CAPTCHA recién se procede a llamar al back del proyecto
             daoUsuario = new UsuarioWSClient();
             usuario user = new usuario();
             user.username = txtUsername.Text;
             user.contrasena = txtContrasenha.Text;
             user = daoUsuario.verificarUsuario(user);
-            
 
             if (user.director != null)
             {

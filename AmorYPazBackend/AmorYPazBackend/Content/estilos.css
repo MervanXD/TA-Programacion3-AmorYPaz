@@ -186,3 +186,9 @@ h5 {
     color: #4A90E2; /* Color azul atractivo */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente moderna y legible */
 }
+
+.modal-title {
+    background-color: transparent;
+    font-weight: bold;
+    color: black;
+}

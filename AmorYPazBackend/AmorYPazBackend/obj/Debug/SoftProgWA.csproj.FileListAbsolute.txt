@@ -236,3 +236,5 @@ D:\Users\alulab14\Downloads\Alst\TA-Programacion3-AmorYPaz\AmorYPazBackend\AmorY
 D:\Users\alulab14\Downloads\Alst\TA-Programacion3-AmorYPaz\AmorYPazBackend\AmorYPazBackend\obj\Debug\AmorYPazBackend.pdb
 D:\Users\alulab14\Downloads\Alst\TA-Programacion3-AmorYPaz\AmorYPazBackend\AmorYPazBackend\bin\Newtonsoft.Json.dll
 D:\Users\alulab14\Downloads\Alst\TA-Programacion3-AmorYPaz\AmorYPazBackend\AmorYPazBackend\bin\Newtonsoft.Json.xml
+C:\Programacion3\TA_PROG3\AmorYPazBackend\AmorYPazBackend\bin\Newtonsoft.Json.dll
+C:\Programacion3\TA_PROG3\AmorYPazBackend\AmorYPazBackend\bin\Newtonsoft.Json.xml

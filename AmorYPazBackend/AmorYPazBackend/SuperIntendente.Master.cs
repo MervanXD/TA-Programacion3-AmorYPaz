@@ -24,5 +24,11 @@ namespace AmorYPazBackend
                 }
             }
         }
+
+        protected void lbCerrarSesion_Click(object sender, EventArgs e)
+        {
+            string script = "showModalConfirmation();";
+            ScriptManager.RegisterStartupScript(this, GetType(), "ShowModalConfirmation", script, true);
+        }
     }
 }
