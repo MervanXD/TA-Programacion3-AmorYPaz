@@ -20,9 +20,9 @@
                             <asp:Label id="lblDNI" runat="server" CssClass="col-sm-2 col-form-label" Text="DNI: "></asp:Label>
                             <div class="col-sm-8">
                                 <asp:TextBox id="txtDNI" runat="server" CssClass="form-control"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="rfvDNI" runat="server" ControlToValidate="txtDNI"
+                                <asp:RequiredFieldValidator ID="rfvDNI" runat="server" ControlToValidate="txtDNI" ValidationGroup="GrupoGuardarD"
                                     ErrorMessage="El DNI es obligatorio." ForeColor="Red"></asp:RequiredFieldValidator>
-                                <asp:RegularExpressionValidator ID="revDNI" runat="server" ControlToValidate="txtDNI"
+                                <asp:RegularExpressionValidator ID="revDNI" runat="server" ControlToValidate="txtDNI" ValidationGroup="GrupoGuardarD"
                                     ValidationExpression="^\d{8}$" ErrorMessage="El DNI debe contener solo 8 dígitos." ForeColor="Red"></asp:RegularExpressionValidator>
                             </div>
                         </div>
@@ -30,9 +30,9 @@
                             <asp:Label id="lblNombre" runat="server" Text="Nombre: " CssClass="col-sm-2 col-form-label"></asp:Label>
                             <div class="col-sm-8">
                                 <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="rfvNombre" runat="server" ControlToValidate="txtNombre"
+                                <asp:RequiredFieldValidator ID="rfvNombre" runat="server" ControlToValidate="txtNombre" ValidationGroup="GrupoGuardarD"
                                     ErrorMessage="El nombre es obligatorio." ForeColor="Red"></asp:RequiredFieldValidator>
-                                <asp:RegularExpressionValidator ID="revNombre" runat="server" ControlToValidate="txtNombre"
+                                <asp:RegularExpressionValidator ID="revNombre" runat="server" ControlToValidate="txtNombre" ValidationGroup="GrupoGuardarD"
                                     ValidationExpression="^[a-zA-Z\s]+$" ErrorMessage="Solo se permiten letras en el nombre." ForeColor="Red"></asp:RegularExpressionValidator>
                             </div>
                         </div>
@@ -40,9 +40,9 @@
                             <asp:Label id="lblApellidoPaterno" runat="server" Text="Apellido Paterno: " CssClass="col-sm-2 col-form-label"></asp:Label>
                             <div class="col-sm-8">
                                 <asp:TextBox id="txtApellidoPaterno" runat="server" CssClass="form-control"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="rfvApellidoPaterno" runat="server" ControlToValidate="txtApellidoPaterno"
+                                <asp:RequiredFieldValidator ID="rfvApellidoPaterno" runat="server" ControlToValidate="txtApellidoPaterno" ValidationGroup="GrupoGuardarD"
                                     ErrorMessage="El apellido paterno es obligatorio." ForeColor="Red"></asp:RequiredFieldValidator>
-                                <asp:RegularExpressionValidator ID="revApellidoPaterno" runat="server" ControlToValidate="txtApellidoPaterno"
+                                <asp:RegularExpressionValidator ID="revApellidoPaterno" runat="server" ControlToValidate="txtApellidoPaterno" ValidationGroup="GrupoGuardarD"
                                     ValidationExpression="^[a-zA-Z\s]+$" ErrorMessage="Solo se permiten letras en el nombre." ForeColor="Red"></asp:RegularExpressionValidator>
                             </div>
                         </div>
@@ -50,9 +50,9 @@
                             <asp:Label id="lblApellidoMaterno" runat="server" Text="Apellido Materno: " CssClass="col-sm-2 col-form-label"></asp:Label>
                             <div class="col-sm-8">
                                 <asp:TextBox id="txtApellidoMaterno" runat="server" CssClass="form-control"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="rfvApellidoMaterno" runat="server" ControlToValidate="txtApellidoMaterno"
+                                <asp:RequiredFieldValidator ID="rfvApellidoMaterno" runat="server" ControlToValidate="txtApellidoMaterno" ValidationGroup="GrupoGuardarD"
                                     ErrorMessage="El apellido materno es obligatorio." ForeColor="Red"></asp:RequiredFieldValidator>
-                                <asp:RegularExpressionValidator ID="revApellidoMaterno" runat="server" ControlToValidate="txtApellidoMaterno"
+                                <asp:RegularExpressionValidator ID="revApellidoMaterno" runat="server" ControlToValidate="txtApellidoMaterno" ValidationGroup="GrupoGuardarD"
                                     ValidationExpression="^[a-zA-Z\s]+$" ErrorMessage="Solo se permiten letras en el nombre." ForeColor="Red"></asp:RegularExpressionValidator>
                             </div>
                         </div>
@@ -60,7 +60,7 @@
                             <asp:Label id="lblDireccion" runat="server" Text="Direccion: " CssClass="col-sm-2 col-form-label"></asp:Label>
                             <div class="col-sm-8">
                                 <asp:TextBox id="txtDireccion" runat="server" CssClass="form-control"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="rfvDireccion" runat="server" ControlToValidate="txtDireccion"
+                                <asp:RequiredFieldValidator ID="rfvDireccion" runat="server" ControlToValidate="txtDireccion" ValidationGroup="GrupoGuardarD"
                                 ErrorMessage="La direccion es obligatoria." ForeColor="Red"></asp:RequiredFieldValidator>
                             </div>
                         </div>
@@ -111,9 +111,9 @@
                         <asp:Label ID="lblEmail" runat="server" Text="Email: " CssClass="col-sm-2 col-form-label"></asp:Label>
                         <div class="col-sm-8">
                             <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="rfvEmail" runat="server" ControlToValidate="txtEmail"
+                            <asp:RequiredFieldValidator ID="rfvEmail" runat="server" ControlToValidate="txtEmail" ValidationGroup="GrupoGuardarD"
                                 ErrorMessage="El correo electrónico es obligatorio." ForeColor="Red"></asp:RequiredFieldValidator>
-                            <asp:RegularExpressionValidator ID="revEmail" runat="server" ControlToValidate="txtEmail"
+                            <asp:RegularExpressionValidator ID="revEmail" runat="server" ControlToValidate="txtEmail" ValidationGroup="GrupoGuardarD"
                                 ValidationExpression="^[^@\s]+@[^@\s]+\.[^@\s]+$" ErrorMessage="Ingrese un correo electrónico válido." ForeColor="Red"></asp:RegularExpressionValidator>
                         </div>
                     </div>
@@ -121,7 +121,7 @@
                     </div>
                     <div class="card-footer">
                         <asp:Button id="btnCancelar" runat="server" CssClass="float-start btn btn-primary" Text="Cancelar" OnClick="btnCancelar_Click" />
-                        <asp:Button id="btnGuardar" runat="server" CssClass="float-end btn btn-primary" Text="Guardar" OnClick="btnGuardar_Click" />
+                        <asp:Button id="btnGuardar" runat="server" CssClass="float-end btn btn-primary" Text="Guardar" OnClick="btnGuardar_Click"  ValidationGroup="GrupoGuardarD"/>
                     </div>
                 </div>
             </div>
