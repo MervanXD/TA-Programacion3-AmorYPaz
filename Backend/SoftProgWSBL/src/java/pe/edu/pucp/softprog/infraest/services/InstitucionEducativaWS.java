@@ -65,4 +65,17 @@ public class InstitucionEducativaWS {
         }
         return resultado;
     }
+    
+    @WebMethod(operationName = "modificarInstitucion")
+    public int modificarInstitucion(@WebParam(name = "institucionEdu")
+            InstitucionEducativa institucionEdu){
+        int resultado = 0;
+        try{
+            daoIEducativa = new InstitucionEducativaMySQL();
+            resultado = daoIEducativa.modificar(institucionEdu);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return resultado;
+    }
 }

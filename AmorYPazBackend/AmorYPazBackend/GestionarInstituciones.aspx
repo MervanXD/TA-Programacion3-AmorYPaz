@@ -35,6 +35,7 @@
                             </asp:TemplateField>
                             <asp:TemplateField>
                                 <itemtemplate>
+                                    <asp:LinkButton runat="server" Text="<i class='fa-solid fa-edit'></i>" CssClass="btn btn-warning" OnClick="lbModificar_click" CommandArgument='<%# Eval("idInstitucion") %>'/>
                                     <asp:LinkButton runat="server" Text="<i class='fa-solid fa-eye'></i>" OnClick="lbVisualizar_click"  CommandArgument='<%# Eval("idInstitucion") %>' />
                                 </itemtemplate>
                             </asp:TemplateField>

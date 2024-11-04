@@ -21,30 +21,45 @@
                     <div class="col-md-12">
                         <asp:Label ID="lblNombre" runat="server" Text="Nombre de la Institución Educativa:" CssClass="col-form-label fw-bold"></asp:Label>
                         <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="rfvNombre" runat="server" ControlToValidate="txtNombre"
+                            ErrorMessage="El nombre es obligatorio." ForeColor="Red"></asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="revNombre" runat="server" ControlToValidate="txtNombre"
+                            ValidationExpression="^[a-zA-Z\s]+$" ErrorMessage="Solo se permiten letras en el nombre." ForeColor="Red"></asp:RegularExpressionValidator>
                     </div>
                 </div>
                 <div class="row mb-3">
                     <div class="col-md-12">
                         <asp:Label ID="lblDireccion" runat="server" Text="Dirección de la Institución:" CssClass="col-form-label fw-bold"></asp:Label>
                         <asp:TextBox ID="txtDireccion" runat="server" CssClass="form-control"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="rfvDireccion" runat="server" ControlToValidate="txtDireccion"
+                            ErrorMessage="La dirección es obligatoria." ForeColor="Red"></asp:RequiredFieldValidator>
                     </div>
                 </div>
                 <div class="row mb-3">
                     <div class="col-md-12">
                         <asp:Label ID="lblDirector" runat="server" CssClass="col-form-label fw-bold"></asp:Label>
                         <asp:DropDownList ID="ddlDirector" runat="server" CssClass="form-select"></asp:DropDownList>
+                        <asp:RequiredFieldValidator ID="rfvDirector" runat="server" ControlToValidate="ddlDirector"
+                            InitialValue="0" ErrorMessage="Seleccione un director." ForeColor="Red"></asp:RequiredFieldValidator>
                     </div>
                 </div>
                 <div class="row mb-3">
                     <div class="col-md-6">
                         <asp:Label ID="lblTelefono" runat="server" Text="Número de teléfono:" CssClass="col-form-label fw-bold"></asp:Label>
                         <asp:TextBox ID="txtTelefono" runat="server" CssClass="form-control"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="rfvTelefono" runat="server" ControlToValidate="txtTelefono"
+                            ErrorMessage="El teléfono es obligatorio." ForeColor="Red"></asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="revTelefono" runat="server" ControlToValidate="txtTelefono"
+                            ValidationExpression="^\d{9}$" ErrorMessage="El teléfono debe contener solo 9 dígitos." ForeColor="Red"></asp:RegularExpressionValidator>
                     </div>
                     <div class="col-md-6">
                         <asp:Label ID="lblEmail" runat="server" Text="Correo electrónico:" CssClass="col-form-label fw-bold"></asp:Label>
                         <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control" TextMode="Email"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="rfvEmail" runat="server" ControlToValidate="txtEmail"
+                            ErrorMessage="El correo electrónico es obligatorio." ForeColor="Red"></asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="revEmail" runat="server" ControlToValidate="txtEmail"
+                            ValidationExpression="^[^@\s]+@[^@\s]+\.[^@\s]+$" ErrorMessage="Ingrese un correo electrónico válido." ForeColor="Red"></asp:RegularExpressionValidator>
                     </div>
-                </div>
                 <div class="row mb-3">
                     <div class="col-md-6">
                         <asp:Label ID="lblLogo" runat="server" Text="Logo de la institución:" CssClass="col-form-label fw-bold"></asp:Label>

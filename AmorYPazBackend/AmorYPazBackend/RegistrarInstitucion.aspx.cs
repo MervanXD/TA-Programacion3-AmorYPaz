@@ -16,6 +16,7 @@ namespace AmorYPazBackend
         private DirectorWSClient daoDirector = new DirectorWSClient();
         private InstitucionEducativaWSClient daoInstitucion = new InstitucionEducativaWSClient();
         private institucionEducativa institucionEdu;
+        private Estado estado;
         protected void Page_Init(object sender, EventArgs e)
         {
             var directores = daoDirector.listarDirectoresTodas();
@@ -52,7 +53,7 @@ namespace AmorYPazBackend
             {
                 lblDirector.Text = "Director Asignado:";
                 institucionEdu = (institucionEducativa)Session["institucion"];
-                lblTitulo.Text = institucionEdu.ugel.codigo + " - Modificar Institución";
+                lblTitulo.Text = institucionEdu.ugel.codigo + " - Visualizar Institución";
                 //estado = Estado.Modificar;
                 txtNombre.Text = institucionEdu.nombre;
                 txtDireccion.Text = institucionEdu.direccion;
@@ -75,6 +76,27 @@ namespace AmorYPazBackend
 
 
             }
+            else if(accion == "modificar" && accion != null && Session["institucion"] != null)
+            {
+                institucionEdu = (institucionEducativa)Session["institucion"];
+                estado = Estado.Modificar;
+                lblTitulo.Text = institucionEdu.ugel.codigo + " - Modificar Institución";
+                txtNombre.Text = institucionEdu.nombre;
+                txtDireccion.Text = institucionEdu.direccion;
+                string nombre_director = institucionEdu.director.nombres.ToString() +
+                    institucionEdu.director.apellidoPaterno.ToString() +
+                    institucionEdu.director.apellidoMaterno.ToString();
+                ddlDirector.SelectedValue = nombre_director;
+                txtTelefono.Text = institucionEdu.telefono;
+                txtEmail.Text = institucionEdu.correo_electronico;
+
+                if (institucionEdu.fotoInstitucion != null)
+                {
+                    string base64String = Convert.ToBase64String(institucionEdu.fotoInstitucion);
+                    string imageUrl = "data:image/jpeg;base64," + base64String;
+                    imgLogoPlaceholder.ImageUrl = imageUrl;
+                }
+            }
 
         }
 
@@ -91,28 +113,47 @@ namespace AmorYPazBackend
 
         protected void lbGuardar_Click(object sender, EventArgs e)
         {
+            if (Page.IsValid)
+            {
+                //Asignamos los valores
+                institucionEdu.nombre = txtNombre.Text;
+                institucionEdu.direccion = txtDireccion.Text;
+                institucionEdu.correo_electronico = txtEmail.Text;
+                institucionEdu.telefono = txtTelefono.Text;
+                institucionEdu.director = new ServicioIE.director();
+                institucionEdu.director.idPersona = Int32.Parse(ddlDirector.SelectedValue);
+                institucionEdu.ugel = new ugel();
+                int id_ugel = (int)Session["id_Director"];
+                institucionEdu.ugel.idUgel = id_ugel;
+                institucionEdu.fotoInstitucion = (byte[])Session["foto"];
 
-            //Asignamos los valores
-            institucionEdu.nombre = txtNombre.Text;
-            institucionEdu.direccion = txtDireccion.Text;
-            institucionEdu.correo_electronico = txtEmail.Text;
-            institucionEdu.telefono = txtTelefono.Text;
-            institucionEdu.director = new ServicioIE.director();
-            institucionEdu.director.idPersona = Int32.Parse(ddlDirector.SelectedValue);
-            institucionEdu.ugel = new ugel();
-            int id_ugel = (int)Session["id_Director"];
-            institucionEdu.ugel.idUgel = id_ugel;
-            institucionEdu.fotoInstitucion = (byte[])Session["foto"];
+                //if (estado == Estado.Nuevo)
+                //    daoEmpleado.insertar(empleado);
+                //else if (estado == Estado.Modificar)
+                //    daoEmpleado.modificar(empleado);
 
-            //if (estado == Estado.Nuevo)
-            //    daoEmpleado.insertar(empleado);
-            //else if (estado == Estado.Modificar)
-            //    daoEmpleado.modificar(empleado);
+                string script = ""; 
+                if (estado == Estado.Nuevo)
+                    daoInstitucion.insertarInstitucion(institucionEdu);
+                else if (estado == Estado.Modificar)
+                {
+                    daoInstitucion.modificarInstitucion(institucionEdu);
+                    Session["institucion"] = null;
+                }
 
-            int resultado = daoInstitucion.insertarInstitucion(institucionEdu);
 
-            string script = "mostrarModal('Se realizó el registro con éxito', 'GestionarInstituciones.aspx');";
-            ClientScript.RegisterStartupScript(this.GetType(), "modal", script, true);
+                //int resultado = daoInstitucion.insertarInstitucion(institucionEdu);
+                if (estado == Estado.Nuevo)
+                    script = "mostrarModal('Se realizó el registro con éxito', 'GestionarInstituciones.aspx');";
+                else if (estado == Estado.Modificar)
+                {
+                    script = "mostrarModal('Se modificó con éxito', 'GestionarInstituciones.aspx');";
+                }
+                
+                ClientScript.RegisterStartupScript(this.GetType(), "modal", script, true);
+            }
+
+            
         }
 
         protected void Cargar_Foto(object sender, EventArgs e)

@@ -13,6 +13,8 @@ namespace AmorYPazBackend
     public partial class GestionarInstituciones : System.Web.UI.Page
     {
         private InstitucionEducativaWSClient daoIEducativa = new InstitucionEducativaWSClient();
+        private BindingList<institucionEducativa> instituciones;
+        //private institucionEducativa institucion;
         protected void Page_Load(object sender, EventArgs e) //page init quizas
         {
             try
@@ -20,7 +22,8 @@ namespace AmorYPazBackend
                 if ((Session["idDirector"] != null))
                 {
                     int idDirector = Int32.Parse(Session["idDirector"].ToString());
-                    gvInstituciones.DataSource = daoIEducativa.listarPorNombreYUgel("", idDirector);
+                    instituciones = new BindingList<institucionEducativa>(daoIEducativa.listarPorNombreYUgel("", idDirector));
+                    gvInstituciones.DataSource = instituciones;
                 }
                 else {
                     gvInstituciones.DataSource = daoIEducativa.listarPorIdNombre("");
@@ -66,6 +69,14 @@ namespace AmorYPazBackend
         {
             gvInstituciones.PageIndex = e.NewPageIndex;
             gvInstituciones.DataBind();
+        }
+
+        protected void lbModificar_click(object sender, EventArgs e)
+        {
+            int idInstitucion = Int32.Parse(((LinkButton)sender).CommandArgument);
+            institucionEducativa institucion = daoIEducativa.obtenerPorId(idInstitucion);
+            Session["institucion"] = institucion;
+            Response.Redirect("RegistrarInstitucion.aspx?accion=modificar");
         }
     }
 }

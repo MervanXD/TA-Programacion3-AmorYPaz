@@ -20,24 +20,40 @@
                             <asp:Label id="lblDNI" runat="server" CssClass="col-sm-2 col-form-label" Text="DNI: "></asp:Label>
                             <div class="col-sm-8">
                                 <asp:TextBox id="txtDNI" runat="server" CssClass="form-control"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="rfvDNI" runat="server" ControlToValidate="txtDNI"
+                                    ErrorMessage="El DNI es obligatorio." ForeColor="Red"></asp:RequiredFieldValidator>
+                                <asp:RegularExpressionValidator ID="revDNI" runat="server" ControlToValidate="txtDNI"
+                                    ValidationExpression="^\d{8}$" ErrorMessage="El DNI debe contener solo 8 dígitos." ForeColor="Red"></asp:RegularExpressionValidator>
                             </div>
                         </div>
                         <div class="mb-3 row">
                             <asp:Label id="lblNombre" runat="server" Text="Nombre: " CssClass="col-sm-2 col-form-label"></asp:Label>
                             <div class="col-sm-8">
-                                <asp:TextBox id="txtNombre" runat="server" CssClass="form-control"></asp:TextBox>
+                                <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="rfvNombre" runat="server" ControlToValidate="txtNombre"
+                                    ErrorMessage="El nombre es obligatorio." ForeColor="Red"></asp:RequiredFieldValidator>
+                                <asp:RegularExpressionValidator ID="revNombre" runat="server" ControlToValidate="txtNombre"
+                                    ValidationExpression="^[a-zA-Z\s]+$" ErrorMessage="Solo se permiten letras en el nombre." ForeColor="Red"></asp:RegularExpressionValidator>
                             </div>
                         </div>
                         <div class="mb-3 row">
                             <asp:Label id="lblApellidoPaterno" runat="server" Text="Apellido Paterno: " CssClass="col-sm-2 col-form-label"></asp:Label>
                             <div class="col-sm-8">
                                 <asp:TextBox id="txtApellidoPaterno" runat="server" CssClass="form-control"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="rfvApellidoPaterno" runat="server" ControlToValidate="txtApellidoPaterno"
+                                    ErrorMessage="El nombre es obligatorio." ForeColor="Red"></asp:RequiredFieldValidator>
+                                <asp:RegularExpressionValidator ID="revApellidoPaterno" runat="server" ControlToValidate="txtApellidoPaterno"
+                                    ValidationExpression="^[a-zA-Z\s]+$" ErrorMessage="Solo se permiten letras en el nombre." ForeColor="Red"></asp:RegularExpressionValidator>
                             </div>
                         </div>
                         <div class="mb-3 row">
                             <asp:Label id="lblApellidoMaterno" runat="server" Text="Apellido Materno: " CssClass="col-sm-2 col-form-label"></asp:Label>
                             <div class="col-sm-8">
                                 <asp:TextBox id="txtApellidoMaterno" runat="server" CssClass="form-control"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="rfvApellidoMaterno" runat="server" ControlToValidate="txtApellidoMaterno"
+                                    ErrorMessage="El nombre es obligatorio." ForeColor="Red"></asp:RequiredFieldValidator>
+                                <asp:RegularExpressionValidator ID="revApellidoMaterno" runat="server" ControlToValidate="txtApellidoMaterno"
+                                    ValidationExpression="^[a-zA-Z\s]+$" ErrorMessage="Solo se permiten letras en el nombre." ForeColor="Red"></asp:RegularExpressionValidator>
                             </div>
                         </div>
                         <div class="mb-3 row">

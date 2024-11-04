@@ -120,6 +120,9 @@
     <Content Include="Connected Services\ServicioIE\AmorYPazBackend.ServicioIE.listarPorNombreYUgelResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Connected Services\ServicioIE\AmorYPazBackend.ServicioIE.modificarInstitucionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Connected Services\ServicioUGEL\configuration91.svcinfo" />
     <None Include="Connected Services\ServicioUGEL\configuration.svcinfo" />
     <None Include="Connected Services\ServicioUGEL\Reference.svcmap">
@@ -210,6 +213,7 @@
     <Content Include="Content\Fonts\css\v5-font-face.css" />
     <Content Include="Content\Fonts\css\v5-font-face.min.css" />
     <Content Include="GestionarInstituciones.aspx" />
+    <Content Include="Global.asax" />
     <Content Include="Home.aspx" />
     <Content Include="img\img1.PNG" />
     <Content Include="img\img2.PNG" />
@@ -305,6 +309,9 @@
     </Compile>
     <Compile Include="GestionarInstituciones.aspx.designer.cs">
       <DependentUpon>GestionarInstituciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>

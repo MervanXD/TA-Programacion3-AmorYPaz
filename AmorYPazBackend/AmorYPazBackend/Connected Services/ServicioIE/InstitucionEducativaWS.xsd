@@ -6,6 +6,8 @@
   <xs:element name="listarPorIdNombreResponse" type="tns:listarPorIdNombreResponse" />
   <xs:element name="listarPorNombreYUgel" type="tns:listarPorNombreYUgel" />
   <xs:element name="listarPorNombreYUgelResponse" type="tns:listarPorNombreYUgelResponse" />
+  <xs:element name="modificarInstitucion" type="tns:modificarInstitucion" />
+  <xs:element name="modificarInstitucionResponse" type="tns:modificarInstitucionResponse" />
   <xs:element name="obtenerPorId" type="tns:obtenerPorId" />
   <xs:element name="obtenerPorIdResponse" type="tns:obtenerPorIdResponse" />
   <xs:complexType name="listarPorIdNombre">
@@ -145,6 +147,16 @@
   <xs:complexType name="obtenerPorIdResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="tns:institucionEducativa" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarInstitucion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="institucionEdu" type="tns:institucionEducativa" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarInstitucionResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="insertarInstitucion">
