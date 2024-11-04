@@ -67,7 +67,7 @@
                         <asp:FileUpload ID="fuLogo" runat="server" CssClass="form-control" onchange="this.form.submit()" ClientIDMode="Static"/>
                     </div>
                     <div class="col-md-6 d-flex justify-content-center align-items-center">
-                        <asp:Image ID="imgLogoPlaceholder" runat="server" CssClass="img-thumbnail" ImageUrl="~/Images/placeholder.jpg" AlternateText="Logo" Height="100" Width="100" />
+                        <asp:Image ID="imgLogoPlaceholder" runat="server" CssClass="img-thumbnail" ImageUrl="~/img/placeholder.jpg" AlternateText="Logo" Height="100" Width="100" />
                     </div>
                 </div>
             </div>
