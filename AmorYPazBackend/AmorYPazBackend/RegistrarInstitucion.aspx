@@ -1,7 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SuperIntendente.Master" AutoEventWireup="true" CodeBehind="RegistrarInstitucion.aspx.cs" Inherits="AmorYPazBackend.RegistrarInstitucion" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="cphHead" runat="server">
-    <link href="Content/EstilosRegisInsti.css" rel="stylesheet" />
+    <link href="Content/EstilosRegisInsti.css" rel="stylesheet"/>
+    <link href="Content/estilosMasterPage.css" rel="stylesheet"/>
     <script src="Scripts/ScriptRegisInsti.js"></script>
+    <script src="Scripts/scriptsMasterPage.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphTitulo" runat="server">
     Registrar Institución Educativa
@@ -56,6 +58,20 @@
             <div class="card-footer text-center">
                 <asp:LinkButton ID="lbGuardar" runat="server" Text="Guardar" CssClass="btn btn-primary" OnClick="lbGuardar_Click"/>
                 <asp:LinkButton ID="lbCancelar" runat="server" Text="Cancelar" CssClass="btn btn-secondary" OnClick="lbCancelar_Click"/>
+            </div>
+        </div>
+    </div>
+
+    <!--Mensaje de confirmacion-->
+    <div id="modalMensaje" class="modal fade" tabindex="-1" aria-labelledby="confirmLogoutModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalLabel">Mensaje</h5>
+                </div>
+                <div class="modal-body">
+                    <p id="mensajeTexto">Se ha realizado el registro con éxito</p>
+                </div>
             </div>
         </div>
     </div>

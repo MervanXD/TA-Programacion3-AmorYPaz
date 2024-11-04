@@ -6,8 +6,8 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
+using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace AmorYPazBackend
 {
@@ -111,8 +111,8 @@ namespace AmorYPazBackend
 
             int resultado = daoInstitucion.insertarInstitucion(institucionEdu);
 
-
-            Response.Redirect("GestionarInstituciones.aspx");
+            string script = "mostrarModal('Se realizó el registro con éxito', 'GestionarInstituciones.aspx');";
+            ClientScript.RegisterStartupScript(this.GetType(), "modal", script, true);
         }
 
         protected void Cargar_Foto(object sender, EventArgs e)

@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SuperIntendente.Master" AutoEventWireup="true" CodeBehind="RegistrarDirector.aspx.cs" Inherits="AmorYPazBackend.RegistrarDirector" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="cphHead" runat="server">
+    <script src="Scripts/scriptsMasterPage.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphTitulo" runat="server">
 </asp:Content>
@@ -122,4 +123,18 @@
             </div>
         </contenttemplate>
     </asp:UpdatePanel>
+
+    <!--Mensaje de confirmacion-->
+    <div id="modalMensaje" class="modal fade" tabindex="-1" aria-labelledby="confirmLogoutModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalLabel">Mensaje</h5>
+                </div>
+                <div class="modal-body">
+                    <p id="mensajeTexto">Se ha realizado el registro con éxito</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </asp:Content>

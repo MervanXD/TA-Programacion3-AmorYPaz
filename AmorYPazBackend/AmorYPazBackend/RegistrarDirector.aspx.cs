@@ -84,7 +84,13 @@ namespace AmorYPazBackend
             }
 
             //Redireccionamos a otra página
-            Response.Redirect("AdministrarDirectores.aspx");
+            string script="";
+            if (estado == Estado.Nuevo) {
+                script = "mostrarModal('Se realizó el registro con éxito', 'AdministrarDirectores.aspx');";
+            } else if (estado == Estado.Modificar) {
+                script = "mostrarModal('Se realizó la modificación con éxito', 'AdministrarDirectores.aspx');";
+            }
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "modal", script, true);
         }
         protected void btnCancelar_Click(object sender, EventArgs e)
         {

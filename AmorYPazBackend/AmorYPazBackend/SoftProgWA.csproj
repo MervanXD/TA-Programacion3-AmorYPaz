@@ -180,6 +180,7 @@
     <Content Include="Content\estilos.css" />
     <Content Include="Content\estilosInicioSesion.css" />
     <Content Include="Content\EstilosListaConsolidadoAlumnos.css" />
+    <Content Include="Content\estilosMasterPage.css" />
     <Content Include="Content\EstilosMostrarConsoAlum.css" />
     <Content Include="Content\estilosMostrarInstitucion.css" />
     <Content Include="Content\EstilosOpcionesReporte.css" />
@@ -259,6 +260,7 @@
     <Content Include="Scripts\jquery-3.7.1.slim.js" />
     <Content Include="Scripts\jquery-3.7.1.slim.min.js" />
     <Content Include="Scripts\scriptsInicioSesion.js" />
+    <Content Include="Scripts\scriptsMasterPage.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
