@@ -181,9 +181,11 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\estilos.css" />
+    <Content Include="Content\EstilosGestionarPlanesEstudio.css" />
     <Content Include="Content\estilosInicioSesion.css" />
     <Content Include="Content\EstilosListaConsolidadoAlumnos.css" />
     <Content Include="Content\estilosMasterPage.css" />
+    <Content Include="Content\EstilosMenuDirector.css" />
     <Content Include="Content\EstilosMostrarConsoAlum.css" />
     <Content Include="Content\estilosMostrarInstitucion.css" />
     <Content Include="Content\EstilosOpcionesReporte.css" />
@@ -213,6 +215,7 @@
     <Content Include="Content\Fonts\css\v5-font-face.css" />
     <Content Include="Content\Fonts\css\v5-font-face.min.css" />
     <Content Include="GestionarInstituciones.aspx" />
+    <Content Include="GestionarPlanesEstudio.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Home.aspx" />
     <Content Include="img\img1.PNG" />
@@ -221,6 +224,7 @@
     <Content Include="InicioSesion.aspx" />
     <Content Include="ListaConsolidadoAlumnos.aspx" />
     <Content Include="MenuPrincipal.aspx" />
+    <Content Include="MenuPrincipalDirectores.aspx" />
     <Content Include="MostrarConsolidadoAlumno.aspx" />
     <Content Include="MostrarInstitucion.aspx" />
     <Content Include="OpcionesReporte.aspx" />
@@ -310,6 +314,13 @@
     <Compile Include="GestionarInstituciones.aspx.designer.cs">
       <DependentUpon>GestionarInstituciones.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GestionarPlanesEstudio.aspx.cs">
+      <DependentUpon>GestionarPlanesEstudio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GestionarPlanesEstudio.aspx.designer.cs">
+      <DependentUpon>GestionarPlanesEstudio.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -340,6 +351,13 @@
     </Compile>
     <Compile Include="MenuPrincipal.aspx.designer.cs">
       <DependentUpon>MenuPrincipal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MenuPrincipalDirectores.aspx.cs">
+      <DependentUpon>MenuPrincipalDirectores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MenuPrincipalDirectores.aspx.designer.cs">
+      <DependentUpon>MenuPrincipalDirectores.aspx</DependentUpon>
     </Compile>
     <Compile Include="MostrarConsolidadoAlumno.aspx.cs">
       <DependentUpon>MostrarConsolidadoAlumno.aspx</DependentUpon>
@@ -384,6 +402,13 @@
     <Compile Include="RegistrarInstitucion.aspx.designer.cs">
       <DependentUpon>RegistrarInstitucion.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Director.Master.cs">
+      <DependentUpon>Director.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Director.Master.designer.cs">
+      <DependentUpon>Director.Master</DependentUpon>
+    </Compile>
     <Compile Include="SuperIntendente.Master.cs">
       <DependentUpon>SuperIntendente.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -419,6 +444,7 @@
     <Content Include="Scripts\bootstrap.bundle.js.map" />
     <Content Include="Scripts\jquery-3.7.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.7.1.min.map" />
+    <Content Include="Director.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

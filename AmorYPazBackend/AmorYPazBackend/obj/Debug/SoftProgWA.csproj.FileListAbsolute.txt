@@ -299,3 +299,5 @@ C:\Users\User\TA-Programacion3-AmorYPaz\AmorYPazBackend\AmorYPazBackend\obj\Debu
 C:\Users\User\TA-Programacion3-AmorYPaz\AmorYPazBackend\AmorYPazBackend\obj\Debug\SoftProgWA.csproj.Up2Date
 C:\Users\User\TA-Programacion3-AmorYPaz\AmorYPazBackend\AmorYPazBackend\obj\Debug\AmorYPazBackend.dll
 C:\Users\User\TA-Programacion3-AmorYPaz\AmorYPazBackend\AmorYPazBackend\obj\Debug\AmorYPazBackend.pdb
+C:\PUCP\TAPROG3\TA-Programacion3-AmorYPaz\AmorYPazBackend\AmorYPazBackend\bin\Newtonsoft.Json.dll
+C:\PUCP\TAPROG3\TA-Programacion3-AmorYPaz\AmorYPazBackend\AmorYPazBackend\bin\Newtonsoft.Json.xml
