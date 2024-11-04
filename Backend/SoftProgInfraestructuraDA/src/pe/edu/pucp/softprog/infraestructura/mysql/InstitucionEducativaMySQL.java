@@ -51,11 +51,15 @@ public class InstitucionEducativaMySQL implements InstitucionEducativaDAO {
         int resultado = 0;
         try {
             con = DBManager.getInstance().getConnection();
-            cs = con.prepareCall("{call MODIFICAR_INSTITUCION_EDUCATIVA(?,?,?,?)}");
+            cs = con.prepareCall("{call MODIFICAR_INSTITUCION_EDUCATIVA(?,?,?,?,?,?,?,?)}");
             cs.setInt("_id_institucion_educativa", institucion.getIdInstitucion());
             cs.setString("_nombre", institucion.getNombre());
             cs.setString("_direccion", institucion.getDireccion());
-            cs.setInt("_cantidad_grados", institucion.getCantidadGrados());
+            cs.setString("_telefono", institucion.getTelefono());
+            cs.setString("_correo_electronico", institucion.getCorreo_electronico());
+            cs.setInt("_fid_director", institucion.getDirector().getIdPersona());
+            cs.setInt("_fid_ugel", institucion.getUgel().getIdUgel());
+            cs.setBytes("_foto_institucion", institucion.getFotoInstitucion());
             cs.executeUpdate();
             resultado = institucion.getIdInstitucion();
         } catch (SQLException ex) {

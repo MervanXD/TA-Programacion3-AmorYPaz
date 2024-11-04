@@ -17,7 +17,7 @@ namespace AmorYPazBackend
         private InstitucionEducativaWSClient daoInstitucion = new InstitucionEducativaWSClient();
         private institucionEducativa institucionEdu;
         private Estado estado;
-        protected void Page_Init(object sender, EventArgs e)
+        protected void Page_Init (object sender, EventArgs e)
         {
             var directores = daoDirector.listarDirectoresTodas();
 
@@ -28,11 +28,13 @@ namespace AmorYPazBackend
             }).ToList();
 
             // Asigna la lista combinada al DropDownList
-            ddlDirector.DataSource = directoresConNombreCompleto;
-            ddlDirector.DataTextField = "NombreCompleto";
-            ddlDirector.DataValueField = "idPersona";
-            ddlDirector.DataBind();
-
+            if (!IsPostBack)
+            {
+                ddlDirector.DataSource = directoresConNombreCompleto;
+                ddlDirector.DataTextField = "NombreCompleto";
+                ddlDirector.DataValueField = "idPersona";
+                ddlDirector.DataBind();
+            }
             //Verificamos si es una acción de modificación
             string accion = Request.QueryString["accion"];
             if (accion == null)
@@ -68,7 +70,7 @@ namespace AmorYPazBackend
                 if (institucionEdu.fotoInstitucion != null)
                 {
                     string base64String = Convert.ToBase64String(institucionEdu.fotoInstitucion);
-                    string imageUrl = "data:image/jpeg;base64," + base64String;
+                    string imageUrl = "data:img/jpeg;base64," + base64String;
                     imgLogoPlaceholder.ImageUrl = imageUrl;
                 }
 
@@ -89,13 +91,13 @@ namespace AmorYPazBackend
                 ddlDirector.SelectedValue = nombre_director;
                 txtTelefono.Text = institucionEdu.telefono;
                 txtEmail.Text = institucionEdu.correo_electronico;
-
-                if (institucionEdu.fotoInstitucion != null)
+                if (!IsPostBack && institucionEdu.fotoInstitucion != null )
                 {
                     string base64String = Convert.ToBase64String(institucionEdu.fotoInstitucion);
-                    string imageUrl = "data:image/jpeg;base64," + base64String;
+                    string imageUrl = "data:img/jpeg;base64," + base64String;
                     imgLogoPlaceholder.ImageUrl = imageUrl;
                 }
+                Cargar_Foto(sender, e);
             }
 
         }
@@ -109,6 +111,7 @@ namespace AmorYPazBackend
             lbGuardar.Visible = false;
             ddlDirector.Enabled = false;
             fuLogo.Enabled = false;
+            fuLogo.Visible= false;
         }
 
         protected void lbGuardar_Click(object sender, EventArgs e)
