@@ -48,9 +48,10 @@
                         <asp:Label ID="lblTelefono" runat="server" Text="Número de teléfono:" CssClass="col-form-label fw-bold"></asp:Label>
                         <asp:TextBox ID="txtTelefono" runat="server" CssClass="form-control"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="rfvTelefono" runat="server" ControlToValidate="txtTelefono"
-                            ErrorMessage="El teléfono es obligatorio." ForeColor="Red"></asp:RequiredFieldValidator>
+                            ErrorMessage="El teléfono es obligatorio." ForeColor="Red" ValidationGroup="GrupoGuardar"></asp:RequiredFieldValidator>
                         <asp:RegularExpressionValidator ID="revTelefono" runat="server" ControlToValidate="txtTelefono"
-                            ValidationExpression="^\d{9}$" ErrorMessage="El teléfono debe contener solo 9 dígitos." ForeColor="Red"></asp:RegularExpressionValidator>
+                            ValidationExpression="^\d{9}$" ErrorMessage="El teléfono debe contener solo 9 dígitos." ForeColor="Red"  ValidationGroup="GrupoGuardar"
+                            ></asp:RegularExpressionValidator>
                     </div>
                     <div class="col-md-6">
                         <asp:Label ID="lblEmail" runat="server" Text="Correo electrónico:" CssClass="col-form-label fw-bold"></asp:Label>
@@ -71,7 +72,7 @@
                 </div>
             </div>
             <div class="card-footer text-center">
-                <asp:LinkButton ID="lbGuardar" runat="server" Text="Guardar" CssClass="btn btn-primary" OnClick="lbGuardar_Click"/>
+                <asp:LinkButton ID="lbGuardar" runat="server" Text="Guardar" CssClass="btn btn-primary" OnClick="lbGuardar_Click"  ValidationGroup="GrupoGuardar"/>
                 <asp:LinkButton ID="lbCancelar" runat="server" Text="Cancelar" CssClass="btn btn-secondary" OnClick="lbCancelar_Click"/>
             </div>
         </div>
