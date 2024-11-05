@@ -188,8 +188,10 @@
     <Content Include="Content\EstilosMenuDirector.css" />
     <Content Include="Content\EstilosMostrarConsoAlum.css" />
     <Content Include="Content\estilosMostrarInstitucion.css" />
+    <Content Include="Content\EstilosMostrarPlanDeEstudio.css" />
     <Content Include="Content\EstilosOpcionesReporte.css" />
     <Content Include="Content\EstilosRegisInsti.css" />
+    <Content Include="Content\EstilosRegistrarPlanDeEstudios.css" />
     <Content Include="Content\Fonts\css\all.css" />
     <Content Include="Content\Fonts\css\all.min.css" />
     <Content Include="Content\Fonts\css\brands.css" />
@@ -227,10 +229,12 @@
     <Content Include="MenuPrincipalDirectores.aspx" />
     <Content Include="MostrarConsolidadoAlumno.aspx" />
     <Content Include="MostrarInstitucion.aspx" />
+    <Content Include="MostrarPlanDeEstudio.aspx" />
     <Content Include="OpcionesReporte.aspx" />
     <Content Include="PerfilUsuario.aspx" />
     <Content Include="RegistrarDirector.aspx" />
     <Content Include="RegistrarInstitucion.aspx" />
+    <Content Include="RegistrarPlanDeEstudios.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -373,6 +377,12 @@
     <Compile Include="MostrarInstitucion.aspx.designer.cs">
       <DependentUpon>MostrarInstitucion.aspx</DependentUpon>
     </Compile>
+    <Compile Include="MostrarPlanDeEstudio.aspx.cs">
+      <DependentUpon>MostrarPlanDeEstudio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MostrarPlanDeEstudio.aspx.designer.cs">
+      <DependentUpon>MostrarPlanDeEstudio.aspx</DependentUpon>
+    </Compile>
     <Compile Include="OpcionesReporte.aspx.cs">
       <DependentUpon>OpcionesReporte.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -408,6 +418,13 @@
     </Compile>
     <Compile Include="Director.Master.designer.cs">
       <DependentUpon>Director.Master</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrarPlanDeEstudios.aspx.cs">
+      <DependentUpon>RegistrarPlanDeEstudios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistrarPlanDeEstudios.aspx.designer.cs">
+      <DependentUpon>RegistrarPlanDeEstudios.aspx</DependentUpon>
     </Compile>
     <Compile Include="SuperIntendente.Master.cs">
       <DependentUpon>SuperIntendente.Master</DependentUpon>
