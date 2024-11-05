@@ -10,6 +10,10 @@ import java.sql.SQLException;
 import java.sql.ResultSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import pe.edu.pucp.softprog.gestusuarios.dao.UsuarioDAO;
+import pe.edu.pucp.softprog.gestusuarios.model.TipoUsuario;
+import pe.edu.pucp.softprog.gestusuarios.model.Usuario;
+import pe.edu.pucp.softprog.gestusuarios.mysql.UsuarioMySQL;
 
 public class DirectorMySQL implements DirectorDAO {
 
@@ -20,6 +24,7 @@ public class DirectorMySQL implements DirectorDAO {
     @Override
     public int insertar(Director director) {
         int resultado = 0;
+        Usuario usuario=new Usuario();
         try {
             con = DBManager.getInstance().getConnection();
             String sql = "{call INSERTAR_DIRECTOR(?,?,?,?,?,?,?,?,?,?,?,?,?)}";
@@ -40,6 +45,14 @@ public class DirectorMySQL implements DirectorDAO {
             cs.executeUpdate();
             director.setIdPersona(cs.getInt("_fid_Persona"));
             resultado = director.getIdPersona();
+            //Ahora la parte de insertar el director
+            usuario.setActivo(true);
+            usuario.setContrasena("09876");
+            usuario.setDirector(director);
+            usuario.setTipoUsuario(TipoUsuario.DIRECTOR_IE);
+            usuario.setUsername("DIR"+director.getApellidoPaterno());
+            UsuarioDAO daoUsuario = new UsuarioMySQL();
+            resultado = daoUsuario.insertar(usuario);
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
             try {

@@ -22,12 +22,13 @@ public class UsuarioMySQL implements UsuarioDAO {
         int resultado = 0;
         try {
             con = DBManager.getInstance().getConnection();
-            String sql = "{call INSERTAR_USUARIO(?,?,?,?)}";
+            String sql = "{call INSERTAR_USUARIO(?,?,?,?,?)}";
             cs = con.prepareCall(sql);
             cs.registerOutParameter("_id_usuario", java.sql.Types.INTEGER);
             cs.setString("_nombre_usuario", usuario.getUsername());
             cs.setString("_contrasenha", usuario.getContrasena());
             cs.setString("_tipo_usuario", usuario.getTipoUsuario().toString());
+            cs.setInt("_fid_director", usuario.getDirector().getIdPersona());
             cs.executeUpdate();
             usuario.setIdUsuario(cs.getInt("_id_usuario"));
             resultado = usuario.getIdUsuario();

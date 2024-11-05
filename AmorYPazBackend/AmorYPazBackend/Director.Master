@@ -37,12 +37,12 @@
             <hr />      
             <ul class="mynav nav nav-pills flex-column mb-auto">
                 <li class="nav-item mb-1">
-                    <a href="MenuPrincipal.aspx"><i class="fa-solid fa-house pe-2"></i>
+                    <a href="MenuPrincipalDirectores.aspx"><i class="fa-solid fa-house pe-2"></i>
                         Menu Principal
                     </a>
                 </li>
                 <li class="nav-item mb-1">
-                    <a href="GestionarInstituciones.aspx"><i class="fa-solid fa-building pe-2"></i>
+                    <a href="GestionarPlanesEstudio.aspx"><i class="fa-solid fa-building pe-2"></i>
                         Año Académico
                     </a>
                 </li>

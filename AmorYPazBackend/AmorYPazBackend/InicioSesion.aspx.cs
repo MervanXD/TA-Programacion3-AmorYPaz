@@ -70,9 +70,6 @@ namespace AmorYPazBackend
                     strRedirect = Request["ReturnUrl"];
                     if (strRedirect == null)
                     {
-                        
-                        
-                        user.tipoUsuario = (tipoUsuario)Enum.Parse(typeof(tipoUsuario),daoUsuario.obtenerTipoUsuario(user.idUsuario));
                         if (user.tipoUsuario == tipoUsuario.DIRECTOR_UGEL)
                         {
                             strRedirect = "MenuPrincipal.aspx";
