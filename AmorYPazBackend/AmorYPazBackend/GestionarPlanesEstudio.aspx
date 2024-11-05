@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Director.Master" AutoEventWireup="true" CodeBehind="GestionarPlanesEstudio.aspx.cs" Inherits="AmorYPazBackend.GestionarPlanesEstudio" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SoftProg.Master" AutoEventWireup="true" CodeBehind="GestionarPlanesEstudio.aspx.cs" Inherits="AmorYPazBackend.GestionarPlanesEstudio" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="cphHead" runat="server">
     <link href="Content/EstilosGestionarPlanesEstudio.css" rel="stylesheet" />
 </asp:Content>

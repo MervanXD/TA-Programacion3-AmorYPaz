@@ -25,7 +25,7 @@ public class UsuarioWS {
     }
     
     @WebMethod(operationName = "obtenerUgelDeUsuario")
-    public int obtenerUgelDeDirector(@WebParam(name = "nombreCuentaUsuario") String nombreCuenta) {
+    public int obtenerIDUgel(@WebParam(name = "nombreCuentaUsuario") String nombreCuenta) {
         int id_ugel = 0;
         try{
             daoUsuario = new UsuarioMySQL();
@@ -45,11 +45,12 @@ public class UsuarioWS {
         }catch(Exception ex){
             System.out.println(ex.getMessage());
         }
-        return nuevoUsuario.getTipoUsuario().toString();
+        if(nuevoUsuario!=null) return nuevoUsuario.getTipoUsuario().toString();
+        return null;
     }
     
     @WebMethod(operationName = "obtenerIEDeUsuario")
-    public int obtenerIEDeUsuario(@WebParam(name = "idDirector") int id) {
+    public int obtenerIDIE(@WebParam(name = "idDirector") int id) {
         int id_IE = 0;
         try{
             daoUsuario = new UsuarioMySQL();

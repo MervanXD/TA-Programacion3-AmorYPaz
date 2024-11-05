@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SuperIntendente.Master" AutoEventWireup="true" CodeBehind="RegistrarDirector.aspx.cs" Inherits="AmorYPazBackend.RegistrarDirector" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SoftProg.Master" AutoEventWireup="true" CodeBehind="RegistrarDirector.aspx.cs" Inherits="AmorYPazBackend.RegistrarDirector" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="cphHead" runat="server">
     <script src="Scripts/scriptsMasterPage.js"></script>
 </asp:Content>

@@ -163,6 +163,7 @@ public class UsuarioMySQL implements UsuarioDAO {
                 director.setIdPersona(rs.getInt("fid_Director"));
                 director.setNombres(rs.getString("nombres"));
                 director.setApellidoPaterno(rs.getString("apellido_Paterno"));
+                usuario.setTipoUsuario(TipoUsuario.valueOf(rs.getString("tipo_Usuario")));
                 usuario.setDirector(director);
             }
         } catch (SQLException ex) {

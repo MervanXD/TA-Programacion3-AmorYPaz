@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Director.Master.cs" Inherits="AmorYPazBackend.Director" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SoftProg.Master.cs" Inherits="AmorYPazBackend.SuperIntendente" %>
 
 <!DOCTYPE html>
 
@@ -36,26 +36,7 @@
             </div>
             <hr />      
             <ul class="mynav nav nav-pills flex-column mb-auto">
-                <li class="nav-item mb-1">
-                    <a href="MenuPrincipalDirectores.aspx"><i class="fa-solid fa-house pe-2"></i>
-                        Menu Principal
-                    </a>
-                </li>
-                <li class="nav-item mb-1">
-                    <a href="GestionarPlanesEstudio.aspx"><i class="fa-solid fa-building pe-2"></i>
-                        Año Académico
-                    </a>
-                </li>
-                <li class="nav-item mb-1">
-                    <a href="AdministrarDirectores.aspx"><i class="fa-solid fa-people-group pe-2"></i>
-                        Matrícula
-                    </a>
-                </li>
-                <li class="nav-item mb-1">
-                    <a href="MenuPrincipal.aspx"><i class="fa-solid fa-chart-line pe-2"></i>
-                        Reportes
-                    </a>
-                </li>
+                <asp:PlaceHolder ID="menuPlaceHolder" runat="server"></asp:PlaceHolder>
             </ul>
             <hr />
             <div class="d-flex">

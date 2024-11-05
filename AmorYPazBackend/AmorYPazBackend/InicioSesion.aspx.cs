@@ -54,6 +54,7 @@ namespace AmorYPazBackend
                     Session["NombreUsuario"] = user.director.nombres + " " +
                         user.director.apellidoPaterno;
                     Session["idDirector"] = user.director.idPersona;
+                    Session["tipoUsuario"] = user.tipoUsuario.ToString();
 
                     FormsAuthenticationTicket tkt;
                     string cookiestr;
@@ -71,15 +72,10 @@ namespace AmorYPazBackend
                     if (strRedirect == null)
                     {
                         if (user.tipoUsuario == tipoUsuario.DIRECTOR_UGEL)
-                        {
                             strRedirect = "MenuPrincipal.aspx";
-                            Session["id_Director"] = daoUsuario.obtenerUgelDeUsuario(user.username);
-                        }
                         else if (user.tipoUsuario == tipoUsuario.DIRECTOR_IE)
-                        {
                             strRedirect = "MenuPrincipalDirectores.aspx";
-                            Session["id_Director"] = daoUsuario.obtenerIEDeUsuario(user.director.idPersona);
-                        }
+                        Session["idDirector"] = user.director.idPersona;
                     }
                     Response.Redirect(strRedirect, true);
                 } 

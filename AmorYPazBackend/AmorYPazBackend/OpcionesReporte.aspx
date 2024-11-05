@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SuperIntendente.Master" AutoEventWireup="true" CodeBehind="OpcionesReporte.aspx.cs" Inherits="AmorYPazBackend.OpcionesReporte" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SoftProg.Master" AutoEventWireup="true" CodeBehind="OpcionesReporte.aspx.cs" Inherits="AmorYPazBackend.OpcionesReporte" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="cphHead" runat="server">
     <link href="Content/EstilosOpcionesReporte.css" rel="stylesheet" />
 </asp:Content>

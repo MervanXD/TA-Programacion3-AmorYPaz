@@ -11,7 +11,7 @@ namespace AmorYPazBackend
 {
 
 
-    public partial class Director
+    public partial class SuperIntendente
     {
 
         /// <summary>
@@ -31,6 +31,15 @@ namespace AmorYPazBackend
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder cphTitulo;
+
+        /// <summary>
+        /// Control menuPlaceHolder.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder menuPlaceHolder;
 
         /// <summary>
         /// Control litNombreUsuario.

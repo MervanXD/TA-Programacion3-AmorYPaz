@@ -5,23 +5,11 @@
       <xsd:import schemaLocation="http://localhost:8080/SoftProgWSBL/UsuarioWS?xsd=1" namespace="http://services.rrhh.softprog.pucp.edu.pe/" />
     </xsd:schema>
   </types>
-  <message name="obtenerIEDeUsuario">
-    <part name="parameters" element="tns:obtenerIEDeUsuario" />
-  </message>
-  <message name="obtenerIEDeUsuarioResponse">
-    <part name="parameters" element="tns:obtenerIEDeUsuarioResponse" />
-  </message>
   <message name="verificarUsuario">
     <part name="parameters" element="tns:verificarUsuario" />
   </message>
   <message name="verificarUsuarioResponse">
     <part name="parameters" element="tns:verificarUsuarioResponse" />
-  </message>
-  <message name="obtenerTipoUsuario">
-    <part name="parameters" element="tns:obtenerTipoUsuario" />
-  </message>
-  <message name="obtenerTipoUsuarioResponse">
-    <part name="parameters" element="tns:obtenerTipoUsuarioResponse" />
   </message>
   <message name="obtenerUgelDeUsuario">
     <part name="parameters" element="tns:obtenerUgelDeUsuario" />
@@ -29,27 +17,39 @@
   <message name="obtenerUgelDeUsuarioResponse">
     <part name="parameters" element="tns:obtenerUgelDeUsuarioResponse" />
   </message>
+  <message name="obtenerTipoUsuario">
+    <part name="parameters" element="tns:obtenerTipoUsuario" />
+  </message>
+  <message name="obtenerTipoUsuarioResponse">
+    <part name="parameters" element="tns:obtenerTipoUsuarioResponse" />
+  </message>
+  <message name="obtenerIEDeUsuario">
+    <part name="parameters" element="tns:obtenerIEDeUsuario" />
+  </message>
+  <message name="obtenerIEDeUsuarioResponse">
+    <part name="parameters" element="tns:obtenerIEDeUsuarioResponse" />
+  </message>
   <portType name="UsuarioWS">
-    <operation name="obtenerIEDeUsuario">
-      <input wsam:Action="http://services.rrhh.softprog.pucp.edu.pe/UsuarioWS/obtenerIEDeUsuarioRequest" message="tns:obtenerIEDeUsuario" />
-      <output wsam:Action="http://services.rrhh.softprog.pucp.edu.pe/UsuarioWS/obtenerIEDeUsuarioResponse" message="tns:obtenerIEDeUsuarioResponse" />
-    </operation>
     <operation name="verificarUsuario">
       <input wsam:Action="http://services.rrhh.softprog.pucp.edu.pe/UsuarioWS/verificarUsuarioRequest" message="tns:verificarUsuario" />
       <output wsam:Action="http://services.rrhh.softprog.pucp.edu.pe/UsuarioWS/verificarUsuarioResponse" message="tns:verificarUsuarioResponse" />
-    </operation>
-    <operation name="obtenerTipoUsuario">
-      <input wsam:Action="http://services.rrhh.softprog.pucp.edu.pe/UsuarioWS/obtenerTipoUsuarioRequest" message="tns:obtenerTipoUsuario" />
-      <output wsam:Action="http://services.rrhh.softprog.pucp.edu.pe/UsuarioWS/obtenerTipoUsuarioResponse" message="tns:obtenerTipoUsuarioResponse" />
     </operation>
     <operation name="obtenerUgelDeUsuario">
       <input wsam:Action="http://services.rrhh.softprog.pucp.edu.pe/UsuarioWS/obtenerUgelDeUsuarioRequest" message="tns:obtenerUgelDeUsuario" />
       <output wsam:Action="http://services.rrhh.softprog.pucp.edu.pe/UsuarioWS/obtenerUgelDeUsuarioResponse" message="tns:obtenerUgelDeUsuarioResponse" />
     </operation>
+    <operation name="obtenerTipoUsuario">
+      <input wsam:Action="http://services.rrhh.softprog.pucp.edu.pe/UsuarioWS/obtenerTipoUsuarioRequest" message="tns:obtenerTipoUsuario" />
+      <output wsam:Action="http://services.rrhh.softprog.pucp.edu.pe/UsuarioWS/obtenerTipoUsuarioResponse" message="tns:obtenerTipoUsuarioResponse" />
+    </operation>
+    <operation name="obtenerIEDeUsuario">
+      <input wsam:Action="http://services.rrhh.softprog.pucp.edu.pe/UsuarioWS/obtenerIEDeUsuarioRequest" message="tns:obtenerIEDeUsuario" />
+      <output wsam:Action="http://services.rrhh.softprog.pucp.edu.pe/UsuarioWS/obtenerIEDeUsuarioResponse" message="tns:obtenerIEDeUsuarioResponse" />
+    </operation>
   </portType>
   <binding name="UsuarioWSPortBinding" type="tns:UsuarioWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="obtenerIEDeUsuario">
+    <operation name="verificarUsuario">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -58,7 +58,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="verificarUsuario">
+    <operation name="obtenerUgelDeUsuario">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -76,7 +76,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="obtenerUgelDeUsuario">
+    <operation name="obtenerIEDeUsuario">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

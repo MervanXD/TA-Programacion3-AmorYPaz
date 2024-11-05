@@ -1,15 +1,15 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Director.Master" AutoEventWireup="true" CodeBehind="MostrarPlanDeEstudio.aspx.cs" Inherits="AmorYPazBackend.MostrarPlanDeEstudio" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SoftProg.Master" AutoEventWireup="true" CodeBehind="MostrarPlanDeEstudio.aspx.cs" Inherits="AmorYPazBackend.MostrarPlanDeEstudio" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="cphHead" runat="server">
     <link href="Content/EstilosMostrarPlanDeEstudio.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphTitulo" runat="server">
+    Plan de Estudio
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cphContenido" runat="server">
     <div class="header">
         <h1>Nombre de la Institución Educativa</h1>
         <div class="logo">Logo</div>
     </div>
-    <form>
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
@@ -51,5 +51,4 @@
             </div>
         </div>
         <button type="submit" class="btn btn-primary">Siguiente</button>
-    </form>
 </asp:Content>

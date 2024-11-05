@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SuperIntendente.Master" AutoEventWireup="true" CodeBehind="GestionarInstituciones.aspx.cs" Inherits="AmorYPazBackend.GestionarInstituciones" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SoftProg.Master" AutoEventWireup="true" CodeBehind="GestionarInstituciones.aspx.cs" Inherits="AmorYPazBackend.GestionarInstituciones" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="cphTitulo" runat="server">
     Listado de Insituciones
 </asp:Content>

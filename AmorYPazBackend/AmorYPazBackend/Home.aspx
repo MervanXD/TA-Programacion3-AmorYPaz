@@ -1,1 +1,1 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SuperIntendente.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="AmorYPazBackend.Home" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SoftProg.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="AmorYPazBackend.Home" %>

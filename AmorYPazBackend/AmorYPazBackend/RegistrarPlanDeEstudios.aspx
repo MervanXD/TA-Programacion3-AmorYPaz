@@ -1,8 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Director.Master" AutoEventWireup="true" CodeBehind="RegistrarPlanDeEstudios.aspx.cs" Inherits="AmorYPazBackend.RegistrarPlanDeEstudios" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SoftProg.Master" AutoEventWireup="true" CodeBehind="RegistrarPlanDeEstudios.aspx.cs" Inherits="AmorYPazBackend.RegistrarPlanDeEstudios" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="cphHead" runat="server">
     <link href="Content/EstilosRegistrarPlanDeEstudios.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphTitulo" runat="server">
+    Registrar Plan de Estudios
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cphContenido" runat="server">
     <div class="content">
@@ -12,7 +13,7 @@
     </h1>
     <img alt="Logo de la Institución Educativa" height="50" src="https://storage.googleapis.com/a1aa/image/rKEbxFzSEeUiIqGTB0DFrWqe0yI4e3gpY6IJzfj25XyfUSudC.jpg" width="50"/>
    </div>
-   <form>
+
     <div class="row">
      <div class="col-md-6">
       <div class="form-group">
@@ -68,6 +69,6 @@
     <button class="btn btn-primary" type="submit">
      Siguiente
     </button>
-   </form>
+
   </div>
 </asp:Content>

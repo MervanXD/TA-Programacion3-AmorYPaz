@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SuperIntendente.Master" AutoEventWireup="true" CodeBehind="RegistrarInstitucion.aspx.cs" Inherits="AmorYPazBackend.RegistrarInstitucion" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SoftProg.Master" AutoEventWireup="true" CodeBehind="RegistrarInstitucion.aspx.cs" Inherits="AmorYPazBackend.RegistrarInstitucion" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="cphHead" runat="server">
     <link href="Content/EstilosRegisInsti.css" rel="stylesheet"/>
     <link href="Content/estilosMasterPage.css" rel="stylesheet"/>

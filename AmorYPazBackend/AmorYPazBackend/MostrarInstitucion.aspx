@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SuperIntendente.Master" AutoEventWireup="true" CodeBehind="MostrarInstitucion.aspx.cs" Inherits="AmorYPazBackend.MostrarInstitucion" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SoftProg.Master" AutoEventWireup="true" CodeBehind="MostrarInstitucion.aspx.cs" Inherits="AmorYPazBackend.MostrarInstitucion" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="cphHead" runat="server">
     <link rel="stylesheet" href="Content/estilosMostrarInstitucion.css" />
 </asp:Content>

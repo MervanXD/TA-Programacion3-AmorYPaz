@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SuperIntendente.Master" AutoEventWireup="true" CodeBehind="AdministrarDirectores.aspx.cs" Inherits="AmorYPazBackend.AdministrarDirectores" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SoftProg.Master" AutoEventWireup="true" CodeBehind="AdministrarDirectores.aspx.cs" Inherits="AmorYPazBackend.AdministrarDirectores" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="cphHead" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphTitulo" runat="server">

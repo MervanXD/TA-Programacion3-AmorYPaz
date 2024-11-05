@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SuperIntendente.Master" AutoEventWireup="true" CodeBehind="MenuPrincipal.aspx.cs" Inherits="AmorYPazBackend.MenuPrincipal" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SoftProg.Master" AutoEventWireup="true" CodeBehind="MenuPrincipal.aspx.cs" Inherits="AmorYPazBackend.MenuPrincipal" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="cphTitulo" runat="server">
     Menu Principal
 </asp:Content>

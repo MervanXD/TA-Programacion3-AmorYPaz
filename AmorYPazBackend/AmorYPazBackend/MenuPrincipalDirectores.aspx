@@ -1,9 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Director.Master" AutoEventWireup="true" CodeBehind="MenuPrincipalDirectores.aspx.cs" Inherits="AmorYPazBackend.MenuPrincipalDirectores" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SoftProg.Master" AutoEventWireup="true" CodeBehind="MenuPrincipalDirectores.aspx.cs" Inherits="AmorYPazBackend.MenuPrincipalDirectores" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="cphHead" runat="server">
     <link href="Content/EstilosMenuDirector.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphTitulo" runat="server">
-    <Tittle>Menú Principal</Tittle>
+    Menú Principal
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cphContenido" runat="server">
     <div class="container bg-light min-vh-100">
