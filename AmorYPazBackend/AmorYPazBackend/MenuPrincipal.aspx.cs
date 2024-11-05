@@ -1,6 +1,4 @@
-﻿using AmorYPazBackend.ServicioIE;
-using AmorYPazBackend.ServicioUGEL;
-using AmorYPazBackend.ServicioUser;
+﻿using AmorYPazBackend.ServicioWS;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,7 +19,7 @@ namespace AmorYPazBackend
                 {
                     daoUGEL = new UGELWSClient();
                     int idDirector = Int32.Parse(Session["idDirector"].ToString());
-                    ServicioUGEL.ugel ug = daoUGEL.obtenerPorIdDirector(idDirector); //revisar si es necesario ServicioUGEL o si se creo un servicio de más
+                    ugel ug = daoUGEL.obtenerUGELPorIdDirector(idDirector); //revisar si es necesario ServicioUGEL o si se creo un servicio de más
                     if (ug != null) {
                         lblInfoUGEL.Text = $"{ug.codigo} - {ug.distrito}";
                     }

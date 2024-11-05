@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="bc311f55-1173-47e5-95d7-983afc7bc7f9" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8080/SoftProgWSBL/archivo.disco" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="UGELWS.xsd" MetadataType="Schema" ID="5dbe2ed9-a25c-459b-8755-5d972e7a312d" SourceId="1" SourceUrl="http://localhost:8080/SoftProgWSBL/UGELWS?xsd=1" />
+    <MetadataFile FileName="DirectorWS.xsd" MetadataType="Schema" ID="b4242a96-30c4-463b-87c8-7b2e5b31746e" SourceId="1" SourceUrl="http://localhost:8080/SoftProgWSBL/DirectorWS?xsd=1" />
+    <MetadataFile FileName="InstitucionEducativaWS.xsd" MetadataType="Schema" ID="30599e13-b03f-4213-8028-3cf22abc9224" SourceId="1" SourceUrl="http://localhost:8080/SoftProgWSBL/InstitucionEducativaWS?xsd=1" />
+    <MetadataFile FileName="UsuarioWS.wsdl" MetadataType="Wsdl" ID="64568417-78ab-4261-8a00-6f965b620cc7" SourceId="1" SourceUrl="http://localhost:8080/SoftProgWSBL/UsuarioWS?WSDL" />
+    <MetadataFile FileName="UGELWS.wsdl" MetadataType="Wsdl" ID="8594bbc9-cce2-4591-8234-708b3f615d62" SourceId="1" SourceUrl="http://localhost:8080/SoftProgWSBL/UGELWS?WSDL" />
+    <MetadataFile FileName="DirectorWS.wsdl" MetadataType="Wsdl" ID="f09bc871-ca76-4b03-bd75-6246e7e33b5b" SourceId="1" SourceUrl="http://localhost:8080/SoftProgWSBL/DirectorWS?WSDL" />
+    <MetadataFile FileName="archivo.disco" MetadataType="Disco" ID="4088f33d-8224-4eab-84b0-342109ab0408" SourceId="1" SourceUrl="http://localhost:8080/SoftProgWSBL/archivo.disco" />
+    <MetadataFile FileName="UsuarioWS.xsd" MetadataType="Schema" ID="0335d2ae-0741-4e5d-9fa8-82013acdee24" SourceId="1" SourceUrl="http://localhost:8080/SoftProgWSBL/UsuarioWS?xsd=1" />
+    <MetadataFile FileName="InstitucionEducativaWS.wsdl" MetadataType="Wsdl" ID="3afe6499-5da2-45e5-8f05-720ef8a4687d" SourceId="1" SourceUrl="http://localhost:8080/SoftProgWSBL/InstitucionEducativaWS?WSDL" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

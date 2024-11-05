@@ -1,5 +1,4 @@
-﻿using AmorYPazBackend.servicioDirectorWS;
-using AmorYPazBackend.ServicioIE;
+﻿using AmorYPazBackend.ServicioWS;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -64,7 +63,7 @@ namespace AmorYPazBackend
                     institucionEdu.director.apellidoMaterno.ToString();
                 ddlDirector.SelectedValue = nombre_director;
                 txtTelefono.Text = institucionEdu.telefono;
-                txtEmail.Text = institucionEdu.correo_electronico;
+                txtEmail.Text = institucionEdu.correoElectronico;
 
                 //imagen
                 if (institucionEdu.fotoInstitucion != null)
@@ -90,7 +89,7 @@ namespace AmorYPazBackend
                     institucionEdu.director.apellidoMaterno.ToString();
                 ddlDirector.SelectedValue = nombre_director;
                 txtTelefono.Text = institucionEdu.telefono;
-                txtEmail.Text = institucionEdu.correo_electronico;
+                txtEmail.Text = institucionEdu.correoElectronico;
                 if (!IsPostBack && institucionEdu.fotoInstitucion != null )
                 {
                     string base64String = Convert.ToBase64String(institucionEdu.fotoInstitucion);
@@ -121,10 +120,9 @@ namespace AmorYPazBackend
                 //Asignamos los valores
                 institucionEdu.nombre = txtNombre.Text;
                 institucionEdu.direccion = txtDireccion.Text;
-                institucionEdu.correo_electronico = txtEmail.Text;
+                institucionEdu.correoElectronico = txtEmail.Text;
                 institucionEdu.telefono = txtTelefono.Text;
-                institucionEdu.director = new ServicioIE.director();
-                institucionEdu.director.idPersona = Int32.Parse(ddlDirector.SelectedValue);
+                institucionEdu.director = new director { idPersona = Int32.Parse(ddlDirector.SelectedValue) };
                 institucionEdu.ugel = new ugel();
                 int id_ugel = (int)Session["id_Director"];
                 institucionEdu.ugel.idUgel = id_ugel;

@@ -1,0 +1,6 @@
+<discovery xmlns="http://schemas.xmlsoap.org/disco/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
+    <contractRef xmlns="http://schemas.xmlsoap.org/disco/scl/" ref="http://localhost:8080/SoftProgWSBL/UGELWS?WSDL"/>
+    <contractRef xmlns="http://schemas.xmlsoap.org/disco/scl/" ref="http://localhost:8080/SoftProgWSBL/InstitucionEducativaWS?WSDL"/>
+    <contractRef xmlns="http://schemas.xmlsoap.org/disco/scl/" ref="http://localhost:8080/SoftProgWSBL/DirectorWS?WSDL"/>
+    <contractRef xmlns="http://schemas.xmlsoap.org/disco/scl/" ref="http://localhost:8080/SoftProgWSBL/UsuarioWS?WSDL"/>
+</discovery>

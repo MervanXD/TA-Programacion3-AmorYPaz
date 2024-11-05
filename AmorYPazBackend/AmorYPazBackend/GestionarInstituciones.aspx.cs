@@ -1,4 +1,4 @@
-﻿using AmorYPazBackend.ServicioIE;
+﻿using AmorYPazBackend.ServicioWS;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

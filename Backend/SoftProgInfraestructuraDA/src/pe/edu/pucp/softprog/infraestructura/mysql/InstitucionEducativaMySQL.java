@@ -27,7 +27,7 @@ public class InstitucionEducativaMySQL implements InstitucionEducativaDAO {
             cs.setString("_nombre", institucion.getNombre());
             cs.setString("_direccion", institucion.getDireccion());
             cs.setString("_telefono", institucion.getTelefono());
-            cs.setString("_correo_electronico", institucion.getCorreo_electronico());
+            cs.setString("_correo_electronico", institucion.getCorreoElectronico());
             cs.setInt("_fid_director", institucion.getDirector().getIdPersona());
             cs.setInt("_fid_ugel", institucion.getUgel().getIdUgel());
             cs.setBytes("_foto_institucion", institucion.getFotoInstitucion());
@@ -56,7 +56,7 @@ public class InstitucionEducativaMySQL implements InstitucionEducativaDAO {
             cs.setString("_nombre", institucion.getNombre());
             cs.setString("_direccion", institucion.getDireccion());
             cs.setString("_telefono", institucion.getTelefono());
-            cs.setString("_correo_electronico", institucion.getCorreo_electronico());
+            cs.setString("_correo_electronico", institucion.getCorreoElectronico());
             cs.setInt("_fid_director", institucion.getDirector().getIdPersona());
             cs.setInt("_fid_ugel", institucion.getUgel().getIdUgel());
             cs.setBytes("_foto_institucion", institucion.getFotoInstitucion());
@@ -108,7 +108,7 @@ public class InstitucionEducativaMySQL implements InstitucionEducativaDAO {
                 institucion.setNombre(rs.getString("nombre"));
                 institucion.setDireccion(rs.getString("direccion"));
                 institucion.setCantidadGrados(rs.getInt("cantidad_grados"));
-                institucion.setCorreo_electronico(rs.getString("correo_electronico"));
+                institucion.setCorreoElectronico(rs.getString("correo_electronico"));
                 institucion.setTelefono(rs.getString("telefono"));
                 institucion.setActivo(rs.getBoolean("institucion_activo"));
                 institucion.setFotoInstitucion(rs.getBytes("foto_institucion"));
@@ -233,6 +233,36 @@ public class InstitucionEducativaMySQL implements InstitucionEducativaDAO {
             }
         }
         return instituciones; 
+    }
+
+    @Override
+    public InstitucionEducativa obtenerPorDirector(int idDirector) {
+        InstitucionEducativa institucion = null;
+        try {
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call OBTENER_INSTITUCION_EDUCATIVA_X_DIRECTOR(?)}");
+            cs.setInt("_id_director", idDirector);
+            rs = cs.executeQuery();
+            if (rs.next()) {
+                institucion = new InstitucionEducativa();
+                institucion.setIdInstitucion(rs.getInt("id_Institucion_Educativa"));
+                institucion.setNombre(rs.getString("nombre"));
+                institucion.setDireccion(rs.getString("direccion"));
+                institucion.setCantidadGrados(rs.getInt("cantidad_grados"));
+                institucion.setCorreoElectronico(rs.getString("correo_electronico"));
+                institucion.setTelefono(rs.getString("telefono"));
+                institucion.setActivo(true);
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            try {
+                con.close();
+            } catch (SQLException ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
+        return institucion;
     }
 
 }

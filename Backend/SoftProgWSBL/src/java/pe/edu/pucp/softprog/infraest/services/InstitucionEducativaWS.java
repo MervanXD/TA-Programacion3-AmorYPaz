@@ -8,7 +8,7 @@ import pe.edu.pucp.softprog.infraestructura.dao.InstitucionEducativaDAO;
 import pe.edu.pucp.softprog.infraestructura.model.InstitucionEducativa;
 import pe.edu.pucp.softprog.infraestructura.mysql.InstitucionEducativaMySQL;
 
-@WebService(serviceName = "InstitucionEducativaWS")
+@WebService(serviceName = "InstitucionEducativaWS", targetNamespace = "services.softprog.pucp.edu.pe")
 public class InstitucionEducativaWS {
 
     private InstitucionEducativaDAO daoIEducativa;
@@ -77,5 +77,18 @@ public class InstitucionEducativaWS {
             System.out.println(ex.getMessage());
         }
         return resultado;
+    }
+    
+    @WebMethod(operationName = "obtenerIEPorIdDirector")
+    public InstitucionEducativa obtenerIEPorIdDirector(@WebParam(name = "idDirector") int idDirector) {
+        InstitucionEducativa institucion;
+        try {
+            daoIEducativa = new InstitucionEducativaMySQL();
+            institucion = daoIEducativa.obtenerPorDirector(idDirector);
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+            return null;
+        }
+        return institucion;
     }
 }

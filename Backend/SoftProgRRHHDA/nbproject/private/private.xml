@@ -3,9 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/PUCP/TAPROG3/TA-Programacion3-AmorYPaz/Backend/SoftProgRRHHDA/src/pe/edu/pucp/softprog/rrhh/dao/DirectorDAO.java</file>
-            <file>file:/C:/PUCP/TAPROG3/TA-Programacion3-AmorYPaz/Backend/SoftProgRRHHDA/src/pe/edu/pucp/softprog/gestusuarios/mysql/UsuarioMySQL.java</file>
-            <file>file:/C:/PUCP/TAPROG3/TA-Programacion3-AmorYPaz/Backend/SoftProgRRHHDA/src/pe/edu/pucp/softprog/rrhh/mysql/DirectorMySQL.java</file>
+            <file>file:/C:/Programacion3/TA_PROG3/Backend/SoftProgRRHHDA/src/pe/edu/pucp/softprog/rrhh/mysql/DirectorMySQL.java</file>
+            <file>file:/C:/Programacion3/TA_PROG3/Backend/SoftProgRRHHDA/src/pe/edu/pucp/softprog/gestusuarios/mysql/UsuarioMySQL.java</file>
         </group>
     </open-files>
 </project-private>

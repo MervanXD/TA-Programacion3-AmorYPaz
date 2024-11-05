@@ -9,7 +9,7 @@ public class InstitucionEducativa {
     private String nombre;
     private String direccion;
     private int cantidadGrados;
-    private String correo_electronico;
+    private String correoElectronico;
     private String telefono;
      private ArrayList<Grado> grados;
     private ArrayList<AnioAcademico> aniosAcademicos;
@@ -27,12 +27,12 @@ public class InstitucionEducativa {
     }
 
     
-    public String getCorreo_electronico() {
-        return correo_electronico;
+    public String getCorreoElectronico() {
+        return correoElectronico;
     }
 
-    public void setCorreo_electronico(String correo_electronico) {
-        this.correo_electronico = correo_electronico;
+    public void setCorreoElectronico(String correo_electronico) {
+        this.correoElectronico = correo_electronico;
     }
 
     public String getTelefono() {

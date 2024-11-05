@@ -1,5 +1,4 @@
-﻿using AmorYPazBackend.servicioDirectorWS;
-//using AmorYPazBackend.ServicioDisco;
+﻿using AmorYPazBackend.ServicioWS;
 using System;
 using System.Collections.Generic;
 using System.Linq;

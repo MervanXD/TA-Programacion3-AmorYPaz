@@ -8,7 +8,7 @@ import pe.edu.pucp.softprog.rrhh.dao.DirectorDAO;
 import pe.edu.pucp.softprog.rrhh.model.Director;
 import pe.edu.pucp.softprog.rrhh.mysql.DirectorMySQL;
 
-@WebService(serviceName = "DirectorWS")
+@WebService(serviceName = "DirectorWS", targetNamespace = "services.softprog.pucp.edu.pe")
 public class DirectorWS {
     private DirectorDAO daoDirector;
     @WebMethod(operationName = "listarDirectoresTodas")

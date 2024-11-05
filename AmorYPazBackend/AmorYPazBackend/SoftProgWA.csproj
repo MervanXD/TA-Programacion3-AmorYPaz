@@ -74,99 +74,73 @@
   <ItemGroup>
     <Content Include="AdministrarDirectores.aspx" />
     <Content Include="CerrarSesion.aspx" />
-    <Content Include="Connected Services\servicioDirectorWS\AmorYPazBackend.servicioDirectorWS.director.datasource">
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.buscarDirectorResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\servicioDirectorWS\AmorYPazBackend.servicioDirectorWS.listarDirectoresTodasResponse.datasource">
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.director.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\servicioDirectorWS\AmorYPazBackend.servicioDirectorWS.buscarDirectorResponse.datasource">
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.eliminarDirectorResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\servicioDirectorWS\AmorYPazBackend.servicioDirectorWS.eliminarDirectorResponse.datasource">
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.insertarDirectorResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\servicioDirectorWS\AmorYPazBackend.servicioDirectorWS.insertarDirectorResponse.datasource">
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.insertarInstitucionResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\servicioDirectorWS\AmorYPazBackend.servicioDirectorWS.listarTodosDirectoresResponse.datasource">
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.institucionEducativa.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\servicioDirectorWS\AmorYPazBackend.servicioDirectorWS.modificarDirectorResponse.datasource">
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.listarDirectoresTodasResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Connected Services\servicioDirectorWS\configuration91.svcinfo" />
-    <None Include="Connected Services\servicioDirectorWS\configuration.svcinfo" />
-    <None Include="Connected Services\servicioDirectorWS\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-    <Content Include="Connected Services\ServicioUGEL\AmorYPazBackend.ServicioUGEL.obtenerPorIdDirectorResponse.datasource">
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.listarPorIdNombreResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\ServicioUGEL\AmorYPazBackend.ServicioUGEL.ugel.datasource">
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.listarPorNombreYUgelResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Connected Services\servicioDirectorWS\DirectorWS.wsdl" />
-    <None Include="Connected Services\servicioDirectorWS\DirectorWS.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <Content Include="Connected Services\ServicioIE\AmorYPazBackend.ServicioIE.insertarInstitucionResponse.datasource">
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.listarTodosDirectoresResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\ServicioIE\AmorYPazBackend.ServicioIE.obtenerPorIdResponse.datasource">
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.modificarDirectorResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\ServicioIE\AmorYPazBackend.ServicioIE.listarPorNombreYUgelResponse.datasource">
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.modificarInstitucionResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\ServicioIE\AmorYPazBackend.ServicioIE.modificarInstitucionResponse.datasource">
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.obtenerIEDeUsuarioResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Connected Services\ServicioUGEL\configuration91.svcinfo" />
-    <None Include="Connected Services\ServicioUGEL\configuration.svcinfo" />
-    <None Include="Connected Services\ServicioUGEL\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-    <Content Include="Connected Services\ServicioUser\AmorYPazBackend.ServicioUser.usuario.datasource">
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.obtenerIEPorIdDirectorResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\ServicioUser\AmorYPazBackend.ServicioUser.verificarUsuarioResponse.datasource">
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.obtenerPorIdResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Connected Services\ServicioUGEL\UGELWS.wsdl" />
-    <None Include="Connected Services\ServicioUGEL\UGELWS.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <Content Include="Connected Services\ServicioUser\AmorYPazBackend.ServicioUser.obtenerUgelDeUsuarioResponse.datasource">
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.obtenerTipoUsuarioResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\ServicioUser\AmorYPazBackend.ServicioUser.obtenerTipoUsuarioResponse.datasource">
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.obtenerUgelDeUsuarioResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\ServicioUser\AmorYPazBackend.ServicioUser.obtenerIEDeUsuarioResponse.datasource">
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.obtenerUGELPorIdDirectorResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Connected Services\ServicioUser\configuration91.svcinfo" />
-    <None Include="Connected Services\ServicioUser\configuration.svcinfo" />
-    <None Include="Connected Services\ServicioUser\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-    <Content Include="Connected Services\ServicioIE\AmorYPazBackend.ServicioIE.institucionEducativa.datasource">
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.ugel.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\ServicioIE\AmorYPazBackend.ServicioIE.listarPorIdNombreResponse.datasource">
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.usuario.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Connected Services\ServicioUser\UsuarioWS.wsdl" />
-    <None Include="Connected Services\ServicioUser\UsuarioWS.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\ServicioIE\configuration91.svcinfo" />
-    <None Include="Connected Services\ServicioIE\configuration.svcinfo" />
-    <None Include="Connected Services\ServicioIE\Reference.svcmap">
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.verificarUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\ServicioWS\archivo.disco" />
+    <None Include="Connected Services\ServicioWS\configuration91.svcinfo" />
+    <None Include="Connected Services\ServicioWS\configuration.svcinfo" />
+    <None Include="Connected Services\ServicioWS\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -267,8 +241,20 @@
     <Content Include="Content\Fonts\webfonts\fa-thin-100.woff2" />
     <Content Include="Content\Fonts\webfonts\fa-v4compatibility.ttf" />
     <Content Include="Content\Fonts\webfonts\fa-v4compatibility.woff2" />
-    <None Include="Connected Services\ServicioIE\InstitucionEducativaWS.wsdl" />
-    <None Include="Connected Services\ServicioIE\InstitucionEducativaWS.xsd">
+    <None Include="Connected Services\ServicioWS\DirectorWS.wsdl" />
+    <None Include="Connected Services\ServicioWS\DirectorWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServicioWS\InstitucionEducativaWS.wsdl" />
+    <None Include="Connected Services\ServicioWS\InstitucionEducativaWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServicioWS\UGELWS.wsdl" />
+    <None Include="Connected Services\ServicioWS\UGELWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServicioWS\UsuarioWS.wsdl" />
+    <None Include="Connected Services\ServicioWS\UsuarioWS.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Scripts\jquery-3.7.1.intellisense.js" />
@@ -296,22 +282,7 @@
     <Compile Include="CerrarSesion.aspx.designer.cs">
       <DependentUpon>CerrarSesion.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Connected Services\servicioDirectorWS\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <Compile Include="Connected Services\ServicioUGEL\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <Compile Include="Connected Services\ServicioUser\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <Compile Include="Connected Services\ServicioIE\Reference.cs">
+    <Compile Include="Connected Services\ServicioWS\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -472,13 +443,10 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\servicioDirectorWS\" />
-    <WCFMetadataStorage Include="Connected Services\ServicioUGEL\" />
-    <WCFMetadataStorage Include="Connected Services\ServicioUser\" />
-    <WCFMetadataStorage Include="Connected Services\ServicioIE\" />
+    <Folder Include="Uploads\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Uploads\" />
+    <WCFMetadataStorage Include="Connected Services\ServicioWS\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

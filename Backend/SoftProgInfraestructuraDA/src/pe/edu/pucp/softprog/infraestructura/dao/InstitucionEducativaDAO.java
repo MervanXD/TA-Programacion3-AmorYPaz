@@ -11,4 +11,5 @@ public interface InstitucionEducativaDAO {
     ArrayList<InstitucionEducativa> listarTodos();
     ArrayList<InstitucionEducativa> listarInstitucionesPorIdNombre(String idNombre);
     ArrayList<InstitucionEducativa> listarInstitucionesPorNombreYUGEL(String idNombre, int idUgel);
+    InstitucionEducativa obtenerPorDirector(int idDirector); 
 }

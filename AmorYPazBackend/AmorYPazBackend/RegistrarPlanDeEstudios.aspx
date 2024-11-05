@@ -9,7 +9,7 @@
     <div class="content">
    <div class="header">
     <h1>
-     Nombre de la Institución Educativa
+        <asp:Label ID="lblNombreInstitucion" runat="server" Text=""></asp:Label>
     </h1>
     <img alt="Logo de la Institución Educativa" height="50" src="https://storage.googleapis.com/a1aa/image/rKEbxFzSEeUiIqGTB0DFrWqe0yI4e3gpY6IJzfj25XyfUSudC.jpg" width="50"/>
    </div>

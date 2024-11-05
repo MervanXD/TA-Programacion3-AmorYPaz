@@ -7,7 +7,7 @@ import pe.edu.pucp.softprog.gestusuarios.dao.UsuarioDAO;
 import pe.edu.pucp.softprog.gestusuarios.model.Usuario;
 import pe.edu.pucp.softprog.gestusuarios.mysql.UsuarioMySQL;
 
-@WebService(serviceName = "UsuarioWS")
+@WebService(serviceName = "UsuarioWS", targetNamespace = "services.softprog.pucp.edu.pe")
 public class UsuarioWS {
     
     private UsuarioDAO daoUsuario;
