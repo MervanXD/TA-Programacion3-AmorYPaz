@@ -362,3 +362,5 @@ D:\Users\TEMP\Downloads\FFS\TA-Programacion3-AmorYPaz\AmorYPazBackend\AmorYPazBa
 D:\Users\TEMP\Downloads\FFS\TA-Programacion3-AmorYPaz\AmorYPazBackend\AmorYPazBackend\obj\Debug\SoftProgWA.csproj.CopyComplete
 D:\Users\TEMP\Downloads\FFS\TA-Programacion3-AmorYPaz\AmorYPazBackend\AmorYPazBackend\obj\Debug\AmorYPazBackend.dll
 D:\Users\TEMP\Downloads\FFS\TA-Programacion3-AmorYPaz\AmorYPazBackend\AmorYPazBackend\obj\Debug\AmorYPazBackend.pdb
+C:\Users\sfeli\OneDrive\Escritorio\2024-2\Progra3\Repositorio1\TA-Programacion3-AmorYPaz\AmorYPazBackend\AmorYPazBackend\bin\Newtonsoft.Json.dll
+C:\Users\sfeli\OneDrive\Escritorio\2024-2\Progra3\Repositorio1\TA-Programacion3-AmorYPaz\AmorYPazBackend\AmorYPazBackend\bin\Newtonsoft.Json.xml

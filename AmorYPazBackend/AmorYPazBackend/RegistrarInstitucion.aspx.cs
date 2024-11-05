@@ -124,7 +124,7 @@ namespace AmorYPazBackend
                 institucionEdu.telefono = txtTelefono.Text;
                 institucionEdu.director = new director { idPersona = Int32.Parse(ddlDirector.SelectedValue) };
                 institucionEdu.ugel = new ugel();
-                int id_ugel = (int)Session["id_Director"];
+                int id_ugel = (int)Session["idDirector"];
                 institucionEdu.ugel.idUgel = id_ugel;
                 institucionEdu.fotoInstitucion = (byte[])Session["foto"];
 
