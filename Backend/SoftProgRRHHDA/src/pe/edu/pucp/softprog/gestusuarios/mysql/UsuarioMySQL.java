@@ -199,5 +199,29 @@ public class UsuarioMySQL implements UsuarioDAO {
         }
         return resultado;  
     }
+    
+    @Override
+    public int obtenerIEDeUsuario(int id) {
+        int resultado = 0;
+        try {
+            con=DBManager.getInstance().getConnection();
+            String sql="{call OBTENER_IE_X_DIRECTOR (?)}";
+            cs = con.prepareCall(sql);
+            cs.setInt("_id_director", id);
+            rs = cs.executeQuery();
+            if (rs.next()) {
+                resultado = rs.getInt("id_Institucion_Educativa");
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            try {
+                con.close();
+            } catch (SQLException ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
+        return resultado;  
+    }
 
 }

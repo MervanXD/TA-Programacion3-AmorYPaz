@@ -16,6 +16,15 @@ namespace AmorYPazBackend.ServicioUser {
     public interface UsuarioWS {
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.rrhh.softprog.pucp.edu.pe/UsuarioWS/obtenerUgelDeUsuarioRequest", ReplyAction="http://services.rrhh.softprog.pucp.edu.pe/UsuarioWS/obtenerUgelDeUsuarioResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        AmorYPazBackend.ServicioUser.obtenerUgelDeUsuarioResponse obtenerUgelDeUsuario(AmorYPazBackend.ServicioUser.obtenerUgelDeUsuarioRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.rrhh.softprog.pucp.edu.pe/UsuarioWS/obtenerUgelDeUsuarioRequest", ReplyAction="http://services.rrhh.softprog.pucp.edu.pe/UsuarioWS/obtenerUgelDeUsuarioResponse")]
+        System.Threading.Tasks.Task<AmorYPazBackend.ServicioUser.obtenerUgelDeUsuarioResponse> obtenerUgelDeUsuarioAsync(AmorYPazBackend.ServicioUser.obtenerUgelDeUsuarioRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.rrhh.softprog.pucp.edu.pe/UsuarioWS/verificarUsuarioRequest", ReplyAction="http://services.rrhh.softprog.pucp.edu.pe/UsuarioWS/verificarUsuarioResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
@@ -26,14 +35,60 @@ namespace AmorYPazBackend.ServicioUser {
         System.Threading.Tasks.Task<AmorYPazBackend.ServicioUser.verificarUsuarioResponse> verificarUsuarioAsync(AmorYPazBackend.ServicioUser.verificarUsuarioRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.rrhh.softprog.pucp.edu.pe/UsuarioWS/obtenerUgelDeUsuarioRequest", ReplyAction="http://services.rrhh.softprog.pucp.edu.pe/UsuarioWS/obtenerUgelDeUsuarioResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.rrhh.softprog.pucp.edu.pe/UsuarioWS/obtenerTipoUsuarioRequest", ReplyAction="http://services.rrhh.softprog.pucp.edu.pe/UsuarioWS/obtenerTipoUsuarioResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        AmorYPazBackend.ServicioUser.obtenerUgelDeUsuarioResponse obtenerUgelDeUsuario(AmorYPazBackend.ServicioUser.obtenerUgelDeUsuarioRequest request);
+        AmorYPazBackend.ServicioUser.obtenerTipoUsuarioResponse obtenerTipoUsuario(AmorYPazBackend.ServicioUser.obtenerTipoUsuarioRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.rrhh.softprog.pucp.edu.pe/UsuarioWS/obtenerUgelDeUsuarioRequest", ReplyAction="http://services.rrhh.softprog.pucp.edu.pe/UsuarioWS/obtenerUgelDeUsuarioResponse")]
-        System.Threading.Tasks.Task<AmorYPazBackend.ServicioUser.obtenerUgelDeUsuarioResponse> obtenerUgelDeUsuarioAsync(AmorYPazBackend.ServicioUser.obtenerUgelDeUsuarioRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.rrhh.softprog.pucp.edu.pe/UsuarioWS/obtenerTipoUsuarioRequest", ReplyAction="http://services.rrhh.softprog.pucp.edu.pe/UsuarioWS/obtenerTipoUsuarioResponse")]
+        System.Threading.Tasks.Task<AmorYPazBackend.ServicioUser.obtenerTipoUsuarioResponse> obtenerTipoUsuarioAsync(AmorYPazBackend.ServicioUser.obtenerTipoUsuarioRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.rrhh.softprog.pucp.edu.pe/UsuarioWS/obtenerIEDeUsuarioRequest", ReplyAction="http://services.rrhh.softprog.pucp.edu.pe/UsuarioWS/obtenerIEDeUsuarioResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        AmorYPazBackend.ServicioUser.obtenerIEDeUsuarioResponse obtenerIEDeUsuario(AmorYPazBackend.ServicioUser.obtenerIEDeUsuarioRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.rrhh.softprog.pucp.edu.pe/UsuarioWS/obtenerIEDeUsuarioRequest", ReplyAction="http://services.rrhh.softprog.pucp.edu.pe/UsuarioWS/obtenerIEDeUsuarioResponse")]
+        System.Threading.Tasks.Task<AmorYPazBackend.ServicioUser.obtenerIEDeUsuarioResponse> obtenerIEDeUsuarioAsync(AmorYPazBackend.ServicioUser.obtenerIEDeUsuarioRequest request);
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerUgelDeUsuario", WrapperNamespace="http://services.rrhh.softprog.pucp.edu.pe/", IsWrapped=true)]
+    public partial class obtenerUgelDeUsuarioRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.rrhh.softprog.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string nombreCuentaUsuario;
+        
+        public obtenerUgelDeUsuarioRequest() {
+        }
+        
+        public obtenerUgelDeUsuarioRequest(string nombreCuentaUsuario) {
+            this.nombreCuentaUsuario = nombreCuentaUsuario;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerUgelDeUsuarioResponse", WrapperNamespace="http://services.rrhh.softprog.pucp.edu.pe/", IsWrapped=true)]
+    public partial class obtenerUgelDeUsuarioResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.rrhh.softprog.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public obtenerUgelDeUsuarioResponse() {
+        }
+        
+        public obtenerUgelDeUsuarioResponse(int @return) {
+            this.@return = @return;
+        }
     }
     
     /// <remarks/>
@@ -456,35 +511,71 @@ namespace AmorYPazBackend.ServicioUser {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerUgelDeUsuario", WrapperNamespace="http://services.rrhh.softprog.pucp.edu.pe/", IsWrapped=true)]
-    public partial class obtenerUgelDeUsuarioRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerTipoUsuario", WrapperNamespace="http://services.rrhh.softprog.pucp.edu.pe/", IsWrapped=true)]
+    public partial class obtenerTipoUsuarioRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.rrhh.softprog.pucp.edu.pe/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string nombreCuentaUsuario;
+        public int idUsuario;
         
-        public obtenerUgelDeUsuarioRequest() {
+        public obtenerTipoUsuarioRequest() {
         }
         
-        public obtenerUgelDeUsuarioRequest(string nombreCuentaUsuario) {
-            this.nombreCuentaUsuario = nombreCuentaUsuario;
+        public obtenerTipoUsuarioRequest(int idUsuario) {
+            this.idUsuario = idUsuario;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerUgelDeUsuarioResponse", WrapperNamespace="http://services.rrhh.softprog.pucp.edu.pe/", IsWrapped=true)]
-    public partial class obtenerUgelDeUsuarioResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerTipoUsuarioResponse", WrapperNamespace="http://services.rrhh.softprog.pucp.edu.pe/", IsWrapped=true)]
+    public partial class obtenerTipoUsuarioResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.rrhh.softprog.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string @return;
+        
+        public obtenerTipoUsuarioResponse() {
+        }
+        
+        public obtenerTipoUsuarioResponse(string @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerIEDeUsuario", WrapperNamespace="http://services.rrhh.softprog.pucp.edu.pe/", IsWrapped=true)]
+    public partial class obtenerIEDeUsuarioRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.rrhh.softprog.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int idDirector;
+        
+        public obtenerIEDeUsuarioRequest() {
+        }
+        
+        public obtenerIEDeUsuarioRequest(int idDirector) {
+            this.idDirector = idDirector;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerIEDeUsuarioResponse", WrapperNamespace="http://services.rrhh.softprog.pucp.edu.pe/", IsWrapped=true)]
+    public partial class obtenerIEDeUsuarioResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.rrhh.softprog.pucp.edu.pe/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public int @return;
         
-        public obtenerUgelDeUsuarioResponse() {
+        public obtenerIEDeUsuarioResponse() {
         }
         
-        public obtenerUgelDeUsuarioResponse(int @return) {
+        public obtenerIEDeUsuarioResponse(int @return) {
             this.@return = @return;
         }
     }
@@ -517,6 +608,29 @@ namespace AmorYPazBackend.ServicioUser {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AmorYPazBackend.ServicioUser.obtenerUgelDeUsuarioResponse AmorYPazBackend.ServicioUser.UsuarioWS.obtenerUgelDeUsuario(AmorYPazBackend.ServicioUser.obtenerUgelDeUsuarioRequest request) {
+            return base.Channel.obtenerUgelDeUsuario(request);
+        }
+        
+        public int obtenerUgelDeUsuario(string nombreCuentaUsuario) {
+            AmorYPazBackend.ServicioUser.obtenerUgelDeUsuarioRequest inValue = new AmorYPazBackend.ServicioUser.obtenerUgelDeUsuarioRequest();
+            inValue.nombreCuentaUsuario = nombreCuentaUsuario;
+            AmorYPazBackend.ServicioUser.obtenerUgelDeUsuarioResponse retVal = ((AmorYPazBackend.ServicioUser.UsuarioWS)(this)).obtenerUgelDeUsuario(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<AmorYPazBackend.ServicioUser.obtenerUgelDeUsuarioResponse> AmorYPazBackend.ServicioUser.UsuarioWS.obtenerUgelDeUsuarioAsync(AmorYPazBackend.ServicioUser.obtenerUgelDeUsuarioRequest request) {
+            return base.Channel.obtenerUgelDeUsuarioAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<AmorYPazBackend.ServicioUser.obtenerUgelDeUsuarioResponse> obtenerUgelDeUsuarioAsync(string nombreCuentaUsuario) {
+            AmorYPazBackend.ServicioUser.obtenerUgelDeUsuarioRequest inValue = new AmorYPazBackend.ServicioUser.obtenerUgelDeUsuarioRequest();
+            inValue.nombreCuentaUsuario = nombreCuentaUsuario;
+            return ((AmorYPazBackend.ServicioUser.UsuarioWS)(this)).obtenerUgelDeUsuarioAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         AmorYPazBackend.ServicioUser.verificarUsuarioResponse AmorYPazBackend.ServicioUser.UsuarioWS.verificarUsuario(AmorYPazBackend.ServicioUser.verificarUsuarioRequest request) {
             return base.Channel.verificarUsuario(request);
         }
@@ -540,26 +654,49 @@ namespace AmorYPazBackend.ServicioUser {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        AmorYPazBackend.ServicioUser.obtenerUgelDeUsuarioResponse AmorYPazBackend.ServicioUser.UsuarioWS.obtenerUgelDeUsuario(AmorYPazBackend.ServicioUser.obtenerUgelDeUsuarioRequest request) {
-            return base.Channel.obtenerUgelDeUsuario(request);
+        AmorYPazBackend.ServicioUser.obtenerTipoUsuarioResponse AmorYPazBackend.ServicioUser.UsuarioWS.obtenerTipoUsuario(AmorYPazBackend.ServicioUser.obtenerTipoUsuarioRequest request) {
+            return base.Channel.obtenerTipoUsuario(request);
         }
         
-        public int obtenerUgelDeUsuario(string nombreCuentaUsuario) {
-            AmorYPazBackend.ServicioUser.obtenerUgelDeUsuarioRequest inValue = new AmorYPazBackend.ServicioUser.obtenerUgelDeUsuarioRequest();
-            inValue.nombreCuentaUsuario = nombreCuentaUsuario;
-            AmorYPazBackend.ServicioUser.obtenerUgelDeUsuarioResponse retVal = ((AmorYPazBackend.ServicioUser.UsuarioWS)(this)).obtenerUgelDeUsuario(inValue);
+        public string obtenerTipoUsuario(int idUsuario) {
+            AmorYPazBackend.ServicioUser.obtenerTipoUsuarioRequest inValue = new AmorYPazBackend.ServicioUser.obtenerTipoUsuarioRequest();
+            inValue.idUsuario = idUsuario;
+            AmorYPazBackend.ServicioUser.obtenerTipoUsuarioResponse retVal = ((AmorYPazBackend.ServicioUser.UsuarioWS)(this)).obtenerTipoUsuario(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<AmorYPazBackend.ServicioUser.obtenerUgelDeUsuarioResponse> AmorYPazBackend.ServicioUser.UsuarioWS.obtenerUgelDeUsuarioAsync(AmorYPazBackend.ServicioUser.obtenerUgelDeUsuarioRequest request) {
-            return base.Channel.obtenerUgelDeUsuarioAsync(request);
+        System.Threading.Tasks.Task<AmorYPazBackend.ServicioUser.obtenerTipoUsuarioResponse> AmorYPazBackend.ServicioUser.UsuarioWS.obtenerTipoUsuarioAsync(AmorYPazBackend.ServicioUser.obtenerTipoUsuarioRequest request) {
+            return base.Channel.obtenerTipoUsuarioAsync(request);
         }
         
-        public System.Threading.Tasks.Task<AmorYPazBackend.ServicioUser.obtenerUgelDeUsuarioResponse> obtenerUgelDeUsuarioAsync(string nombreCuentaUsuario) {
-            AmorYPazBackend.ServicioUser.obtenerUgelDeUsuarioRequest inValue = new AmorYPazBackend.ServicioUser.obtenerUgelDeUsuarioRequest();
-            inValue.nombreCuentaUsuario = nombreCuentaUsuario;
-            return ((AmorYPazBackend.ServicioUser.UsuarioWS)(this)).obtenerUgelDeUsuarioAsync(inValue);
+        public System.Threading.Tasks.Task<AmorYPazBackend.ServicioUser.obtenerTipoUsuarioResponse> obtenerTipoUsuarioAsync(int idUsuario) {
+            AmorYPazBackend.ServicioUser.obtenerTipoUsuarioRequest inValue = new AmorYPazBackend.ServicioUser.obtenerTipoUsuarioRequest();
+            inValue.idUsuario = idUsuario;
+            return ((AmorYPazBackend.ServicioUser.UsuarioWS)(this)).obtenerTipoUsuarioAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AmorYPazBackend.ServicioUser.obtenerIEDeUsuarioResponse AmorYPazBackend.ServicioUser.UsuarioWS.obtenerIEDeUsuario(AmorYPazBackend.ServicioUser.obtenerIEDeUsuarioRequest request) {
+            return base.Channel.obtenerIEDeUsuario(request);
+        }
+        
+        public int obtenerIEDeUsuario(int idDirector) {
+            AmorYPazBackend.ServicioUser.obtenerIEDeUsuarioRequest inValue = new AmorYPazBackend.ServicioUser.obtenerIEDeUsuarioRequest();
+            inValue.idDirector = idDirector;
+            AmorYPazBackend.ServicioUser.obtenerIEDeUsuarioResponse retVal = ((AmorYPazBackend.ServicioUser.UsuarioWS)(this)).obtenerIEDeUsuario(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<AmorYPazBackend.ServicioUser.obtenerIEDeUsuarioResponse> AmorYPazBackend.ServicioUser.UsuarioWS.obtenerIEDeUsuarioAsync(AmorYPazBackend.ServicioUser.obtenerIEDeUsuarioRequest request) {
+            return base.Channel.obtenerIEDeUsuarioAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<AmorYPazBackend.ServicioUser.obtenerIEDeUsuarioResponse> obtenerIEDeUsuarioAsync(int idDirector) {
+            AmorYPazBackend.ServicioUser.obtenerIEDeUsuarioRequest inValue = new AmorYPazBackend.ServicioUser.obtenerIEDeUsuarioRequest();
+            inValue.idDirector = idDirector;
+            return ((AmorYPazBackend.ServicioUser.UsuarioWS)(this)).obtenerIEDeUsuarioAsync(inValue);
         }
     }
 }

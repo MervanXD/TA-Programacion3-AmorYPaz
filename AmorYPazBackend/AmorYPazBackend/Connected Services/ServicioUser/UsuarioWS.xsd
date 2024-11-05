@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://services.rrhh.softprog.pucp.edu.pe/" targetNamespace="http://services.rrhh.softprog.pucp.edu.pe/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="obtenerIEDeUsuario" type="tns:obtenerIEDeUsuario" />
+  <xs:element name="obtenerIEDeUsuarioResponse" type="tns:obtenerIEDeUsuarioResponse" />
+  <xs:element name="obtenerTipoUsuario" type="tns:obtenerTipoUsuario" />
+  <xs:element name="obtenerTipoUsuarioResponse" type="tns:obtenerTipoUsuarioResponse" />
   <xs:element name="obtenerUgelDeUsuario" type="tns:obtenerUgelDeUsuario" />
   <xs:element name="obtenerUgelDeUsuarioResponse" type="tns:obtenerUgelDeUsuarioResponse" />
   <xs:element name="verificarUsuario" type="tns:verificarUsuario" />
@@ -12,6 +16,26 @@
   <xs:complexType name="obtenerUgelDeUsuarioResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtenerIEDeUsuario">
+    <xs:sequence>
+      <xs:element name="idDirector" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtenerIEDeUsuarioResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtenerTipoUsuario">
+    <xs:sequence>
+      <xs:element name="idUsuario" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtenerTipoUsuarioResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="verificarUsuario">

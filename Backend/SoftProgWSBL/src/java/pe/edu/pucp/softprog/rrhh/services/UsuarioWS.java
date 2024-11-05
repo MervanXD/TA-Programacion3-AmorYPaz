@@ -35,5 +35,29 @@ public class UsuarioWS {
         }
         return id_ugel;
     }
+    
+    @WebMethod(operationName = "obtenerTipoUsuario")
+    public String obtenerTipoUsuario(@WebParam(name = "idUsuario") int id) {
+        Usuario nuevoUsuario=null;
+        try{
+            daoUsuario = new UsuarioMySQL();
+            nuevoUsuario = daoUsuario.obtenerPorId(id);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return nuevoUsuario.getTipoUsuario().toString();
+    }
+    
+    @WebMethod(operationName = "obtenerIEDeUsuario")
+    public int obtenerIEDeUsuario(@WebParam(name = "idDirector") int id) {
+        int id_IE = 0;
+        try{
+            daoUsuario = new UsuarioMySQL();
+            id_IE = daoUsuario.obtenerIEDeUsuario(id);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return id_IE;
+    }
    
 }

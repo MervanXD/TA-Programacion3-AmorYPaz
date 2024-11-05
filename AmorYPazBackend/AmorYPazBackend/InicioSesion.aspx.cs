@@ -70,8 +70,19 @@ namespace AmorYPazBackend
                     strRedirect = Request["ReturnUrl"];
                     if (strRedirect == null)
                     {
-                        strRedirect = "MenuPrincipal.aspx";
-                        Session["id_Director"] = daoUsuario.obtenerUgelDeUsuario(user.username);
+                        
+                        
+                        user.tipoUsuario = (tipoUsuario)Enum.Parse(typeof(tipoUsuario),daoUsuario.obtenerTipoUsuario(user.idUsuario));
+                        if (user.tipoUsuario == tipoUsuario.DIRECTOR_UGEL)
+                        {
+                            strRedirect = "MenuPrincipal.aspx";
+                            Session["id_Director"] = daoUsuario.obtenerUgelDeUsuario(user.username);
+                        }
+                        else if (user.tipoUsuario == tipoUsuario.DIRECTOR_IE)
+                        {
+                            strRedirect = "MenuPrincipalDirectores.aspx";
+                            Session["id_Director"] = daoUsuario.obtenerIEDeUsuario(user.director.idPersona);
+                        }
                     }
                     Response.Redirect(strRedirect, true);
                 } 
