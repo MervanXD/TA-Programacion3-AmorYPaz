@@ -77,6 +77,7 @@
             </div>
         </div>
     </div>
+    </div>
 
     <!--Mensaje de confirmacion-->
     <div id="modalMensaje" class="modal fade" tabindex="-1" aria-labelledby="confirmLogoutModalLabel" aria-hidden="true">

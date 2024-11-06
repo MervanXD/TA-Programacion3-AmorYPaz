@@ -26,6 +26,10 @@ namespace AmorYPazBackend
                     Response.Redirect("InicioSesion.aspx");
                 }
             }
+            else
+            {
+                GenerateSidebarMenu();
+            }
         }
 
         private void GenerateSidebarMenu()

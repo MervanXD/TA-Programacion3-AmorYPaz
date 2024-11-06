@@ -19,16 +19,14 @@ namespace AmorYPazBackend
         protected void Page_Init (object sender, EventArgs e)
         {
             var directores = daoDirector.listarDirectoresTodas();
-
-            // Crea una lista anónima combinando nombres y apellidoPaterno
-            var directoresConNombreCompleto = directores.Select(d => new {
-                NombreCompleto = d.nombres + " " + d.apellidoPaterno + " " + d.apellidoMaterno,
-                d.idPersona
-            }).ToList();
-
             // Asigna la lista combinada al DropDownList
             if (!IsPostBack)
             {
+                // Crea una lista anónima combinando nombres y apellidoPaterno
+                var directoresConNombreCompleto = directores.Select(d => new {
+                    NombreCompleto = d.nombres + " " + d.apellidoPaterno + " " + d.apellidoMaterno,
+                    d.idPersona
+                }).ToList();
                 ddlDirector.DataSource = directoresConNombreCompleto;
                 ddlDirector.DataTextField = "NombreCompleto";
                 ddlDirector.DataValueField = "idPersona";
@@ -90,13 +88,34 @@ namespace AmorYPazBackend
                 ddlDirector.SelectedValue = nombre_director;
                 txtTelefono.Text = institucionEdu.telefono;
                 txtEmail.Text = institucionEdu.correoElectronico;
-                if (!IsPostBack && institucionEdu.fotoInstitucion != null )
-                {
-                    string base64String = Convert.ToBase64String(institucionEdu.fotoInstitucion);
-                    string imageUrl = "data:img/jpeg;base64," + base64String;
-                    imgLogoPlaceholder.ImageUrl = imageUrl;
-                }
-                Cargar_Foto(sender, e);
+
+
+                // CAMBIO(todo lo de poner la imagen de la intitucion esta en el PageLoad)
+                //Cargar_Foto(sender, e);
+
+                //if (institucionEdu.fotoInstitucion != null )
+                //{                        
+                //    if (fuLogo.HasFile)
+                //        institucionEdu.fotoInstitucion = (byte[])Session["foto"];
+                //    string base64String = Convert.ToBase64String(institucionEdu.fotoInstitucion);
+                //    string imageUrl = "data:img/jpeg;base64," + base64String;
+                //    imgLogoPlaceholder.ImageUrl = imageUrl;
+                //}          
+            }
+
+        }
+
+        //Nuevo
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            Cargar_Foto(sender, e);
+            if (institucionEdu.fotoInstitucion != null)
+            {
+                if (fuLogo.HasFile)
+                    institucionEdu.fotoInstitucion = (byte[])Session["foto"];
+                string base64String = Convert.ToBase64String(institucionEdu.fotoInstitucion);
+                string imageUrl = "data:img/jpeg;base64," + base64String;
+                imgLogoPlaceholder.ImageUrl = imageUrl;
             }
 
         }
