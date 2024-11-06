@@ -24,7 +24,7 @@ public class MatriculaMySQL implements MatriculaDAO{
         try{
             con=DBManager.getInstance().getConnection();
             con.setAutoCommit(false);
-            cs = con.prepareCall("{call INSERTAR_MATRICULA(?,?,?,?,?,?)}");
+            cs = con.prepareCall("{call INSERTAR_MATRICULA(?,?,?,?,?,?,?,?)}");
             cs.registerOutParameter("_id_Matricula", java.sql.Types.INTEGER);
             
             cs.setDate("_fecha",new java.sql.Date(matricula.getFecha().getTime()));
@@ -32,6 +32,8 @@ public class MatriculaMySQL implements MatriculaDAO{
             cs.setString("_tipo", String.valueOf(matricula.getTipoMatricula())); //enum en la bd?)
             cs.setInt("_fid_Institucion_Educativa", matricula.getInstitucion().getIdInstitucion());
             cs.setInt("_fid_Estudiante", matricula.getEstudiante().getIdPersona());
+            cs.setInt("_fid_AnhoAcademico", matricula.getAnioAcademico().getIdAnio());
+            cs.setInt("_fid_Grado", matricula.getGrado().getIdGrado());
             cs.executeUpdate();
             matricula.setIdMatricula(cs.getInt("_id_Matricula"));
             resultado= matricula.getIdMatricula();
@@ -39,7 +41,7 @@ public class MatriculaMySQL implements MatriculaDAO{
         }catch(SQLException ex){
             System.out.println(ex.getMessage());
         }finally{
-            try{con.close();}catch(SQLException ex){System.out.println(ex.getMessage());};
+            try{con.close();}catch(SQLException ex){System.out.println(ex.getMessage());}
         }
         return resultado;
     }
@@ -50,7 +52,7 @@ public class MatriculaMySQL implements MatriculaDAO{
         try{
             con=DBManager.getInstance().getConnection();
             con.setAutoCommit(false);
-            cs = con.prepareCall("{call MODIFICAR_MATRICULA(?,?,?,?,?,?)}");
+            cs = con.prepareCall("{call MODIFICAR_MATRICULA(?,?,?,?,?,?,?,?)}");
             
             cs.setInt("_id_Matricula", matricula.getIdMatricula());
             cs.setDate("_fecha",new java.sql.Date(matricula.getFecha().getTime()));
@@ -58,6 +60,8 @@ public class MatriculaMySQL implements MatriculaDAO{
             cs.setString("_tipo", String.valueOf(matricula.getTipoMatricula())); //enum en la bd?)
             cs.setInt("_fid_Institucion_Educativa", matricula.getInstitucion().getIdInstitucion());
             cs.setInt("_fid_Estudiante", matricula.getEstudiante().getIdPersona());
+            cs.setInt("_fid_AnhoAcademico", matricula.getAnioAcademico().getIdAnio());
+            cs.setInt("_fid_Grado", matricula.getGrado().getIdGrado());
             cs.executeUpdate();
             resultado= matricula.getIdMatricula();
             con.commit();
@@ -131,6 +135,7 @@ public class MatriculaMySQL implements MatriculaDAO{
                 matricula.getEstudiante().setApellidoMaterno(rs.getString("apellido_materno"));
                 matricula.setEstado(rs.getString("estado"));
                 
+            
                 matricula.setIdMatricula(rs.getInt("id_Matricula"));
                 matricula.setFecha(new java.util.Date(rs.getDate("fecha").getTime()));
                 matricula.setEstado(rs.getString("estado"));
