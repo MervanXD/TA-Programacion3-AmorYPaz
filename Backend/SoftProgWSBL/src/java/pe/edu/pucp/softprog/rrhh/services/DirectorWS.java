@@ -22,17 +22,20 @@ public class DirectorWS {
         }
         return directores;
     }
-    @WebMethod(operationName = "listarTodosDirectores")
-    public ArrayList<Director> listarTodasAreas(){
-        ArrayList<Director> areas = null;
+    
+    @WebMethod(operationName = "listarDirectoresDisponibles")
+    public ArrayList<Director> listarDirectoresDisponibles(@WebParam(name = "idDirector")
+            int idDirector) {
+        ArrayList<Director> directores = null;
         try{
             daoDirector = new DirectorMySQL();
-            areas = daoDirector.listarTodos();
+            directores = daoDirector.listarTodosDisponibles(idDirector);
         }catch(Exception ex){
             System.out.println(ex.getMessage());
         }
-        return areas;
+        return directores;
     }
+    
     @WebMethod(operationName = "insertarDirector")
     public int insertarEmpleado(@WebParam(name = "director")
             Director director){
@@ -82,5 +85,3 @@ public class DirectorWS {
     }
     
 }
-
-

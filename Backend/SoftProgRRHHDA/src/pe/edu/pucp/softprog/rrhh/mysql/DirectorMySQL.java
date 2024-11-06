@@ -206,5 +206,39 @@ public class DirectorMySQL implements DirectorDAO {
         }
         return directores;  
     }
-
+    
+    @Override
+    public ArrayList<Director> listarTodosDisponibles(int idDirector) {
+        ArrayList<Director> directores = new ArrayList<>();
+        try{
+            con = DBManager.getInstance().getConnection();
+            String sql="{call LISTAR_DIRECTORES_DISPONIBLES(?)}";
+            cs = con.prepareCall(sql);
+            cs.setInt("_fid_director", idDirector);
+            rs = cs.executeQuery();
+            while(rs.next()){
+                Director director = new Director();
+                director.setTipoContrato(rs.getString("tipo_contrato"));
+                director.setFechaNombramiento(rs.getDate("fecha_nombramiento"));
+                director.setEmail(rs.getString("email"));
+                director.setActivo(rs.getBoolean("activo"));     
+                director.setIdPersona(rs.getInt("fid_persona"));
+                director.setDni(rs.getString("DNI"));
+                director.setNombres(rs.getString("nombres"));
+                director.setApellidoPaterno(rs.getString("apellido_paterno"));
+                director.setApellidoMaterno(rs.getString("apellido_materno"));
+                director.setFechaNacimiento(rs.getDate("fecha_nacimiento"));
+                director.setLengua(rs.getString("lengua"));
+                director.setReligion(rs.getString("religion"));
+                director.setSexo(rs.getString("sexo").charAt(0));
+                director.setDireccion(rs.getString("direccion"));
+                directores.add(director);
+            }
+        }catch(SQLException ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(SQLException ex){System.out.println(ex.getMessage());}
+        }
+        return directores; 
+    }
 }

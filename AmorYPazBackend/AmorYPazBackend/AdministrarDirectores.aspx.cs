@@ -17,19 +17,34 @@ namespace AmorYPazBackend
         protected void Page_Load(object sender, EventArgs e)
         {
             daoDirector = new DirectorWSClient();
-            directores = new BindingList<director>(daoDirector.listarTodosDirectores());
-            dgvDirectores.DataSource = directores;
-            dgvDirectores.DataBind();
+            try
+            {
+                directores = new BindingList<director>(daoDirector.listarDirectoresTodas());
+                dgvDirectores.DataSource = directores;
+                dgvDirectores.DataBind();
+            }
+            catch (Exception ex)
+            {
+                dgvDirectores.DataBind();
+            }
         }
         protected void dgvDirectores_RowDataBound(object sender, GridViewRowEventArgs e)
         {
+            string nombreCompleto;
+            string correo;
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
-                e.Row.Cells[0].Text = DataBinder.Eval(e.Row.DataItem, "nombres").ToString() + " " + DataBinder.Eval(e.Row.DataItem, "apellidoPaterno").ToString();
+                nombreCompleto = DataBinder.Eval(e.Row.DataItem, "nombres").ToString() + " " + DataBinder.Eval(e.Row.DataItem, "apellidoPaterno").ToString();
+                e.Row.Cells[0].Text = nombreCompleto.Length > 25
+                    ? nombreCompleto.Substring(0, 22) + "..."
+                    : nombreCompleto;//esto con el fin de que si el texto es muy grande, que ocupe un espacio máximo
                 e.Row.Cells[1].Text = Convert.ToChar(DataBinder.Eval(e.Row.DataItem, "sexo")).ToString();
                 DateTime fechaNombramiento = DateTime.Parse(DataBinder.Eval(e.Row.DataItem, "fechaNombramiento").ToString());
                 e.Row.Cells[2].Text = fechaNombramiento.ToString("dd/MM/yyyy");
-                e.Row.Cells[3].Text = (DataBinder.Eval(e.Row.DataItem, "email").ToString());
+                correo = (DataBinder.Eval(e.Row.DataItem, "email").ToString());
+                e.Row.Cells[3].Text = correo.Length > 26
+                    ? correo.Substring(0, 23) + "..."
+                    : correo;//esto con el fin de que si el texto es muy grande, que ocupe un espacio máximo
             }
         }
         protected void dgvDirectores_PageIndexChanging(object sender, GridViewPageEventArgs e)

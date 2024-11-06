@@ -18,10 +18,21 @@ namespace AmorYPazBackend
         private Estado estado;
         protected void Page_Init (object sender, EventArgs e)
         {
-            var directores = daoDirector.listarDirectoresTodas();
+            institucionEducativa ie;
+            if (Session["institucion"] != null)
+            {
+                ie = (institucionEducativa)Session["institucion"];
+            }
+            else
+            {
+                ie = new institucionEducativa();
+            }
+
+            //var directores = daoDirector.listarDirectoresTodas();
             // Asigna la lista combinada al DropDownList
             if (!IsPostBack)
             {
+                director[] directores = daoDirector.listarDirectoresDisponibles((ie.director == null) ? -1 : ie.director.idPersona);
                 // Crea una lista anónima combinando nombres y apellidoPaterno
                 var directoresConNombreCompleto = directores.Select(d => new {
                     NombreCompleto = d.nombres + " " + d.apellidoPaterno + " " + d.apellidoMaterno,
@@ -56,10 +67,7 @@ namespace AmorYPazBackend
                 //estado = Estado.Modificar;
                 txtNombre.Text = institucionEdu.nombre;
                 txtDireccion.Text = institucionEdu.direccion;
-                string nombre_director = institucionEdu.director.nombres.ToString() +
-                    institucionEdu.director.apellidoPaterno.ToString() +
-                    institucionEdu.director.apellidoMaterno.ToString();
-                ddlDirector.SelectedValue = nombre_director;
+                ddlDirector.SelectedValue = institucionEdu.director.idPersona.ToString(); //CAMBIOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
                 txtTelefono.Text = institucionEdu.telefono;
                 txtEmail.Text = institucionEdu.correoElectronico;
 
@@ -75,32 +83,18 @@ namespace AmorYPazBackend
 
 
             }
-            else if(accion == "modificar" && accion != null && Session["institucion"] != null)
+            else if (accion == "modificar" && accion != null && Session["institucion"] != null)
             {
+                lblDirector.Text = "Director Asignado:"; //CAMBIOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
                 institucionEdu = (institucionEducativa)Session["institucion"];
                 estado = Estado.Modificar;
                 lblTitulo.Text = institucionEdu.ugel.codigo + " - Modificar Institución";
                 txtNombre.Text = institucionEdu.nombre;
                 txtDireccion.Text = institucionEdu.direccion;
-                string nombre_director = institucionEdu.director.nombres.ToString() +
-                    institucionEdu.director.apellidoPaterno.ToString() +
-                    institucionEdu.director.apellidoMaterno.ToString();
-                ddlDirector.SelectedValue = nombre_director;
+                ddlDirector.SelectedValue = institucionEdu.director.idPersona.ToString(); //CAMBIOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
                 txtTelefono.Text = institucionEdu.telefono;
                 txtEmail.Text = institucionEdu.correoElectronico;
 
-
-                // CAMBIO(todo lo de poner la imagen de la intitucion esta en el PageLoad)
-                //Cargar_Foto(sender, e);
-
-                //if (institucionEdu.fotoInstitucion != null )
-                //{                        
-                //    if (fuLogo.HasFile)
-                //        institucionEdu.fotoInstitucion = (byte[])Session["foto"];
-                //    string base64String = Convert.ToBase64String(institucionEdu.fotoInstitucion);
-                //    string imageUrl = "data:img/jpeg;base64," + base64String;
-                //    imgLogoPlaceholder.ImageUrl = imageUrl;
-                //}          
             }
 
         }

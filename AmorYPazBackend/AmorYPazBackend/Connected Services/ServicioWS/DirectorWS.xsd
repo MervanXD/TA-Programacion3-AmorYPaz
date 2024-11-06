@@ -6,10 +6,10 @@
   <xs:element name="eliminarDirectorResponse" type="tns:eliminarDirectorResponse" />
   <xs:element name="insertarDirector" type="tns:insertarDirector" />
   <xs:element name="insertarDirectorResponse" type="tns:insertarDirectorResponse" />
+  <xs:element name="listarDirectoresDisponibles" type="tns:listarDirectoresDisponibles" />
+  <xs:element name="listarDirectoresDisponiblesResponse" type="tns:listarDirectoresDisponiblesResponse" />
   <xs:element name="listarDirectoresTodas" type="tns:listarDirectoresTodas" />
   <xs:element name="listarDirectoresTodasResponse" type="tns:listarDirectoresTodasResponse" />
-  <xs:element name="listarTodosDirectores" type="tns:listarTodosDirectores" />
-  <xs:element name="listarTodosDirectoresResponse" type="tns:listarTodosDirectoresResponse" />
   <xs:element name="modificarDirector" type="tns:modificarDirector" />
   <xs:element name="modificarDirectorResponse" type="tns:modificarDirectorResponse" />
   <xs:complexType name="modificarDirector">
@@ -48,6 +48,16 @@
       <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="listarDirectoresDisponibles">
+    <xs:sequence>
+      <xs:element name="idDirector" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarDirectoresDisponiblesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:director" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="insertarDirector">
     <xs:sequence>
       <xs:element minOccurs="0" name="director" type="tns:director" />
@@ -56,14 +66,6 @@
   <xs:complexType name="insertarDirectorResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="listarTodosDirectores">
-    <xs:sequence />
-  </xs:complexType>
-  <xs:complexType name="listarTodosDirectoresResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:director" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="buscarDirector">
