@@ -4,14 +4,18 @@ import jakarta.jws.WebService;
 import jakarta.jws.WebMethod;
 import jakarta.jws.WebParam;
 import java.util.ArrayList;
+import pe.edu.pucp.softprog.infraestructura.dao.GradoDAO;
 import pe.edu.pucp.softprog.infraestructura.dao.InstitucionEducativaDAO;
 import pe.edu.pucp.softprog.infraestructura.model.InstitucionEducativa;
+import pe.edu.pucp.softprog.infraestructura.model.TipoNivel;
+import pe.edu.pucp.softprog.infraestructura.mysql.GradoMySQL;
 import pe.edu.pucp.softprog.infraestructura.mysql.InstitucionEducativaMySQL;
 
 @WebService(serviceName = "InstitucionEducativaWS", targetNamespace = "services.softprog.pucp.edu.pe")
 public class InstitucionEducativaWS {
 
     private InstitucionEducativaDAO daoIEducativa;
+    private GradoDAO daoGrado;
     
     @WebMethod(operationName = "listarPorIdNombre")
     public ArrayList<InstitucionEducativa> listarPorIdNombre(@WebParam(name = "idNombre") String idNombre) {
@@ -55,11 +59,18 @@ public class InstitucionEducativaWS {
     
     @WebMethod(operationName = "insertarInstitucion")
     public int insertarEmpleado(@WebParam(name = "institucionEdu")
-            InstitucionEducativa institucionEdu){
+            InstitucionEducativa institucionEdu,
+            @WebParam(name="cantInicial") int cantIni,
+            @WebParam(name="cantPrimaria") int cantPrim,
+            @WebParam(name="cantSecundaria") int cantSec){
         int resultado = 0;
         try{
             daoIEducativa = new InstitucionEducativaMySQL();
-            resultado = daoIEducativa.insertar(institucionEdu);
+            int fid_IE = daoIEducativa.insertar(institucionEdu);
+            daoGrado=new GradoMySQL();
+            resultado = daoGrado.insertarTodosLosGrados(cantIni,fid_IE,TipoNivel.INICIAL);
+            resultado = daoGrado.insertarTodosLosGrados(cantPrim,fid_IE,TipoNivel.PRIMARIA);
+            resultado = daoGrado.insertarTodosLosGrados(cantSec,fid_IE,TipoNivel.SECUNDARIA);
         }catch(Exception ex){
             System.out.println(ex.getMessage());
         }

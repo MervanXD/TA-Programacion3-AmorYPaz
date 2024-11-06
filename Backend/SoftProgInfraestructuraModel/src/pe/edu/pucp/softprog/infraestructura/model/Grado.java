@@ -9,6 +9,7 @@ public class Grado {
     private String numero;
     private TipoNivel nivel;
     private int alumnosMatriculados;
+    private int vacantes;
     private ArrayList<Estudiante> estudiantes;
     private InstitucionEducativa institucion;
     private PlanDeEstudio planDeEstudio;
@@ -99,6 +100,20 @@ public class Grado {
 
     public void setPlanDeEstudio(PlanDeEstudio planDeEstudio) {
         this.planDeEstudio = planDeEstudio;
+    }
+
+    /**
+     * @return the vacantes
+     */
+    public int getVacantes() {
+        return vacantes;
+    }
+
+    /**
+     * @param vacantes the vacantes to set
+     */
+    public void setVacantes(int vacantes) {
+        this.vacantes = vacantes;
     }
     
 }

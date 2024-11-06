@@ -140,7 +140,11 @@ namespace AmorYPazBackend
                 int id_ugel = (int)Session["idDirector"];
                 institucionEdu.ugel.idUgel = id_ugel;
                 institucionEdu.fotoInstitucion = (byte[])Session["foto"];
-
+                // ahora vemos la cantidad de grados que hay por cada nivel
+                int cantInicial,cantPrimaria, cantSecundaria;
+                cantInicial = Int32.Parse(ddlInicial.SelectedValue);
+                cantPrimaria = Int32.Parse(ddlPrimaria.SelectedValue);
+                cantSecundaria = Int32.Parse(ddlSecundaria.SelectedValue);
                 //if (estado == Estado.Nuevo)
                 //    daoEmpleado.insertar(empleado);
                 //else if (estado == Estado.Modificar)
@@ -148,7 +152,7 @@ namespace AmorYPazBackend
 
                 string script = ""; 
                 if (estado == Estado.Nuevo)
-                    daoInstitucion.insertarInstitucion(institucionEdu);
+                    daoInstitucion.insertarInstitucion(institucionEdu,cantInicial,cantPrimaria,cantSecundaria);
                 else if (estado == Estado.Modificar)
                 {
                     daoInstitucion.modificarInstitucion(institucionEdu);

@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.sql.ResultSet;
 import java.sql.Connection;
 import pe.edu.pucp.softprog.config.DBManager;
+import pe.edu.pucp.softprog.infraestructura.model.InstitucionEducativa;
 import pe.edu.pucp.softprog.infraestructura.model.TipoNivel;
 
 public class GradoMySQL implements GradoDAO {
@@ -21,12 +22,13 @@ public class GradoMySQL implements GradoDAO {
         int resultado = 0;
         try {
             con = DBManager.getInstance().getConnection();
-            cs = con.prepareCall("{call INSERTAR_GRADO(?,?,?,?,?)}");
-            cs.registerOutParameter("_id_grado", java.sql.Types.INTEGER);
+            cs = con.prepareCall("{call INSERTAR_GRADO(?,?,?,?,?,?)}");
+            cs.registerOutParameter("_id_Grado", java.sql.Types.INTEGER);
             cs.setString("_numero", grado.getNumero());
             cs.setString("_tipo_nivel", grado.getNivel().toString());
             cs.setInt("_num_matriculados", grado.getAlumnosMatriculados());
-            cs.setInt("_fid_institucion_educativa", grado.getInstitucion().getIdInstitucion());
+            cs.setInt("_fid_Institucion_Educativa", grado.getInstitucion().getIdInstitucion());
+            cs.setInt("_vacantes",grado.getVacantes());
             cs.executeUpdate();
             grado.setIdGrado(cs.getInt("_id_grado"));
             resultado = grado.getIdGrado();
@@ -47,12 +49,13 @@ public class GradoMySQL implements GradoDAO {
         int resultado = 0;
         try {
             con = DBManager.getInstance().getConnection();
-            cs = con.prepareCall("{call MODIFICAR_GRADO(?,?,?,?,?)}");
+            cs = con.prepareCall("{call MODIFICAR_GRADO(?,?,?,?,?,?)}");
             cs.setInt("_id_grado", grado.getIdGrado());
             cs.setString("_numero", grado.getNumero());
             cs.setString("_tipo_nivel", grado.getNivel().toString());
             cs.setInt("_num_matriculados", grado.getAlumnosMatriculados());
             cs.setInt("_fid_institucion_educativa", grado.getInstitucion().getIdInstitucion());
+            cs.setInt("_vacantes",grado.getVacantes());
             cs.executeUpdate();
             resultado = grado.getIdGrado();
         } catch (SQLException ex) {
@@ -151,6 +154,25 @@ public class GradoMySQL implements GradoDAO {
             }
         }
         return grados;
+    }
+    
+    @Override
+    public int insertarTodosLosGrados(int cantGrados, int fid_IE,TipoNivel tipo){
+        int resultado=0;
+        Grado gradonuevo;
+        InstitucionEducativa insti = new InstitucionEducativa();
+        insti.setIdInstitucion(fid_IE);
+        for(int i=1;i<=cantGrados;i++){
+            gradonuevo=new Grado();
+            gradonuevo.setActivo(true);
+            gradonuevo.setAlumnosMatriculados(0);
+            gradonuevo.setNivel(tipo);
+            gradonuevo.setVacantes(60);
+            gradonuevo.setNumero(String.valueOf(i));
+            gradonuevo.setInstitucion(insti);
+            resultado=this.insertar(gradonuevo);
+        }
+        return resultado;
     }
 
 }

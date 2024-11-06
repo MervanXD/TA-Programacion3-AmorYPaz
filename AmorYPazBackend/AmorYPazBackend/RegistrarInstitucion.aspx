@@ -1,7 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SoftProg.Master" AutoEventWireup="true" CodeBehind="RegistrarInstitucion.aspx.cs" Inherits="AmorYPazBackend.RegistrarInstitucion" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="cphHead" runat="server">
-    <link href="Content/EstilosRegisInsti.css" rel="stylesheet"/>
-    <link href="Content/estilosMasterPage.css" rel="stylesheet"/>
+    <link href="Content/EstilosRegisInsti.css" rel="stylesheet" />
+    <link href="Content/estilosMasterPage.css" rel="stylesheet" />
     <script src="Scripts/ScriptRegisInsti.js"></script>
     <script src="Scripts/scriptsMasterPage.js"></script>
 </asp:Content>
@@ -50,8 +51,7 @@
                         <asp:RequiredFieldValidator ID="rfvTelefono" runat="server" ControlToValidate="txtTelefono"
                             ErrorMessage="El teléfono es obligatorio." ForeColor="Red" ValidationGroup="GrupoGuardarI"></asp:RequiredFieldValidator>
                         <asp:RegularExpressionValidator ID="revTelefono" runat="server" ControlToValidate="txtTelefono"
-                            ValidationExpression="^\d{9}$" ErrorMessage="El teléfono debe contener solo 9 dígitos." ForeColor="Red"  ValidationGroup="GrupoGuardarI"
-                            ></asp:RegularExpressionValidator>
+                            ValidationExpression="^\d{9}$" ErrorMessage="El teléfono debe contener solo 9 dígitos." ForeColor="Red" ValidationGroup="GrupoGuardarI"></asp:RegularExpressionValidator>
                     </div>
                     <div class="col-md-6">
                         <asp:Label ID="lblEmail" runat="server" Text="Correo electrónico:" CssClass="col-form-label fw-bold"></asp:Label>
@@ -61,22 +61,58 @@
                         <asp:RegularExpressionValidator ID="revEmail" runat="server" ControlToValidate="txtEmail" ValidationGroup="GrupoGuardarI"
                             ValidationExpression="^[^@\s]+@[^@\s]+\.[^@\s]+$" ErrorMessage="Ingrese un correo electrónico válido." ForeColor="Red"></asp:RegularExpressionValidator>
                     </div>
-                <div class="row mb-3">
-                    <div class="col-md-6">
-                        <asp:Label ID="lblLogo" runat="server" Text="Logo de la institución:" CssClass="col-form-label fw-bold"></asp:Label>
-                        <asp:FileUpload ID="fuLogo" runat="server" CssClass="form-control" onchange="this.form.submit()" ClientIDMode="Static"/>
+                    <div class="row mb-3">
+                        <div class="col-md-4">
+                            <asp:Label ID="lblInicial" runat="server" Text="Inicial:" CssClass="col-form-label fw-bold"></asp:Label>
+                            <asp:DropDownList ID="ddlInicial" runat="server" CssClass="form-select">
+                                <asp:ListItem Value="0" Text="Seleccione un grado"></asp:ListItem>
+                                <asp:ListItem Value="3" Text="3"></asp:ListItem>
+                                <asp:ListItem Value="4" Text="4"></asp:ListItem>
+                                <asp:ListItem Value="5" Text="5"></asp:ListItem>
+                            </asp:DropDownList>
+                        </div>
+                        <div class="col-md-4">
+                            <asp:Label ID="lblPrimaria" runat="server" Text="Primaria:" CssClass="col-form-label fw-bold"></asp:Label>
+                            <asp:DropDownList ID="ddlPrimaria" runat="server" CssClass="form-select">
+                                <asp:ListItem Value="0" Text="Seleccione un grado"></asp:ListItem>
+                                <asp:ListItem Value="1" Text="1"></asp:ListItem>
+                                <asp:ListItem Value="2" Text="2"></asp:ListItem>
+                                <asp:ListItem Value="3" Text="3"></asp:ListItem>
+                                <asp:ListItem Value="4" Text="4"></asp:ListItem>
+                                <asp:ListItem Value="5" Text="5"></asp:ListItem>
+                                <asp:ListItem Value="6" Text="6"></asp:ListItem>
+                            </asp:DropDownList>
+                        </div>
+                        <div class="col-md-4">
+                            <asp:Label ID="lblSecundaria" runat="server" Text="Secundaria:" CssClass="col-form-label fw-bold"></asp:Label>
+                            <asp:DropDownList ID="ddlSecundaria" runat="server" CssClass="form-select">
+                                <asp:ListItem Value="0" Text="Seleccione un grado"></asp:ListItem>
+                                <asp:ListItem Value="1" Text="1"></asp:ListItem>
+                                <asp:ListItem Value="2" Text="2"></asp:ListItem>
+                                <asp:ListItem Value="3" Text="3"></asp:ListItem>
+                                <asp:ListItem Value="4" Text="4"></asp:ListItem>
+                                <asp:ListItem Value="5" Text="5"></asp:ListItem>
+                            </asp:DropDownList>
+                        </div>
+
                     </div>
-                    <div class="col-md-6 d-flex justify-content-center align-items-center">
-                        <asp:Image ID="imgLogoPlaceholder" runat="server" CssClass="img-thumbnail" ImageUrl="~/img/placeholder.jpg" AlternateText="Logo" Height="100" Width="100" />
+
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <asp:Label ID="lblLogo" runat="server" Text="Logo de la institución:" CssClass="col-form-label fw-bold"></asp:Label>
+                            <asp:FileUpload ID="fuLogo" runat="server" CssClass="form-control" onchange="this.form.submit()" ClientIDMode="Static" />
+                        </div>
+                        <div class="col-md-6 d-flex justify-content-center align-items-center">
+                            <asp:Image ID="imgLogoPlaceholder" runat="server" CssClass="img-thumbnail" ImageUrl="~/img/placeholder.jpg" AlternateText="Logo" Height="100" Width="100" />
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="card-footer text-center">
-                <asp:LinkButton ID="lbGuardar" runat="server" Text="Guardar" CssClass="btn btn-primary" OnClick="lbGuardar_Click"  ValidationGroup="GrupoGuardar"/>
-                <asp:LinkButton ID="lbCancelar" runat="server" Text="Cancelar" CssClass="btn btn-secondary" OnClick="lbCancelar_Click"/>
+                <div class="card-footer text-center">
+                    <asp:LinkButton ID="lbGuardar" runat="server" Text="Guardar" CssClass="btn btn-primary" OnClick="lbGuardar_Click" ValidationGroup="GrupoGuardar" />
+                    <asp:LinkButton ID="lbCancelar" runat="server" Text="Cancelar" CssClass="btn btn-secondary" OnClick="lbCancelar_Click" />
+                </div>
             </div>
         </div>
-    </div>
     </div>
 
     <!--Mensaje de confirmacion-->

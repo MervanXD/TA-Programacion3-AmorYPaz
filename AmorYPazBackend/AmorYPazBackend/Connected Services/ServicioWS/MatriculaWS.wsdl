@@ -5,11 +5,11 @@
       <xsd:import schemaLocation="http://localhost:8080/SoftProgWSBL/MatriculaWS?xsd=1" namespace="services.softprog.pucp.edu.pe" />
     </xsd:schema>
   </types>
-  <message name="insertarMatricula">
-    <part name="parameters" element="tns:insertarMatricula" />
+  <message name="modificarMatricula">
+    <part name="parameters" element="tns:modificarMatricula" />
   </message>
-  <message name="insertarMatriculaResponse">
-    <part name="parameters" element="tns:insertarMatriculaResponse" />
+  <message name="modificarMatriculaResponse">
+    <part name="parameters" element="tns:modificarMatriculaResponse" />
   </message>
   <message name="listarMatriculas">
     <part name="parameters" element="tns:listarMatriculas" />
@@ -17,39 +17,39 @@
   <message name="listarMatriculasResponse">
     <part name="parameters" element="tns:listarMatriculasResponse" />
   </message>
-  <message name="modificarMatricula">
-    <part name="parameters" element="tns:modificarMatricula" />
-  </message>
-  <message name="modificarMatriculaResponse">
-    <part name="parameters" element="tns:modificarMatriculaResponse" />
-  </message>
   <message name="eliminarMatricula">
     <part name="parameters" element="tns:eliminarMatricula" />
   </message>
   <message name="eliminarMatriculaResponse">
     <part name="parameters" element="tns:eliminarMatriculaResponse" />
   </message>
+  <message name="insertarMatricula">
+    <part name="parameters" element="tns:insertarMatricula" />
+  </message>
+  <message name="insertarMatriculaResponse">
+    <part name="parameters" element="tns:insertarMatriculaResponse" />
+  </message>
   <portType name="MatriculaWS">
-    <operation name="insertarMatricula">
-      <input wsam:Action="services.softprog.pucp.edu.pe/MatriculaWS/insertarMatriculaRequest" message="tns:insertarMatricula" />
-      <output wsam:Action="services.softprog.pucp.edu.pe/MatriculaWS/insertarMatriculaResponse" message="tns:insertarMatriculaResponse" />
+    <operation name="modificarMatricula">
+      <input wsam:Action="services.softprog.pucp.edu.pe/MatriculaWS/modificarMatriculaRequest" message="tns:modificarMatricula" />
+      <output wsam:Action="services.softprog.pucp.edu.pe/MatriculaWS/modificarMatriculaResponse" message="tns:modificarMatriculaResponse" />
     </operation>
     <operation name="listarMatriculas">
       <input wsam:Action="services.softprog.pucp.edu.pe/MatriculaWS/listarMatriculasRequest" message="tns:listarMatriculas" />
       <output wsam:Action="services.softprog.pucp.edu.pe/MatriculaWS/listarMatriculasResponse" message="tns:listarMatriculasResponse" />
     </operation>
-    <operation name="modificarMatricula">
-      <input wsam:Action="services.softprog.pucp.edu.pe/MatriculaWS/modificarMatriculaRequest" message="tns:modificarMatricula" />
-      <output wsam:Action="services.softprog.pucp.edu.pe/MatriculaWS/modificarMatriculaResponse" message="tns:modificarMatriculaResponse" />
-    </operation>
     <operation name="eliminarMatricula">
       <input wsam:Action="services.softprog.pucp.edu.pe/MatriculaWS/eliminarMatriculaRequest" message="tns:eliminarMatricula" />
       <output wsam:Action="services.softprog.pucp.edu.pe/MatriculaWS/eliminarMatriculaResponse" message="tns:eliminarMatriculaResponse" />
     </operation>
+    <operation name="insertarMatricula">
+      <input wsam:Action="services.softprog.pucp.edu.pe/MatriculaWS/insertarMatriculaRequest" message="tns:insertarMatricula" />
+      <output wsam:Action="services.softprog.pucp.edu.pe/MatriculaWS/insertarMatriculaResponse" message="tns:insertarMatriculaResponse" />
+    </operation>
   </portType>
   <binding name="MatriculaWSPortBinding" type="tns:MatriculaWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="insertarMatricula">
+    <operation name="modificarMatricula">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -67,7 +67,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="modificarMatricula">
+    <operation name="eliminarMatricula">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -76,7 +76,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="eliminarMatricula">
+    <operation name="insertarMatricula">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

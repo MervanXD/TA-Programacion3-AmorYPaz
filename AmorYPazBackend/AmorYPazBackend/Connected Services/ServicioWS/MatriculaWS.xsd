@@ -95,6 +95,7 @@
       <xs:element minOccurs="0" name="nivel" type="tns:tipoNivel" />
       <xs:element minOccurs="0" name="numero" type="xs:string" />
       <xs:element minOccurs="0" name="planDeEstudio" type="tns:planDeEstudio" />
+      <xs:element name="vacantes" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="institucionEducativa">
