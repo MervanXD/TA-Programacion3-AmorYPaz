@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="services.softprog.pucp.edu.pe" targetNamespace="services.softprog.pucp.edu.pe" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="buscarDirector" type="tns:buscarDirector" />
+  <xs:element name="buscarDirectorResponse" type="tns:buscarDirectorResponse" />
+  <xs:element name="eliminarDirector" type="tns:eliminarDirector" />
+  <xs:element name="eliminarDirectorResponse" type="tns:eliminarDirectorResponse" />
+  <xs:element name="insertarDirector" type="tns:insertarDirector" />
+  <xs:element name="insertarDirectorResponse" type="tns:insertarDirectorResponse" />
+  <xs:element name="listarDirectoresDisponibles" type="tns:listarDirectoresDisponibles" />
+  <xs:element name="listarDirectoresDisponiblesResponse" type="tns:listarDirectoresDisponiblesResponse" />
+  <xs:element name="listarDirectoresTodas" type="tns:listarDirectoresTodas" />
+  <xs:element name="listarDirectoresTodasResponse" type="tns:listarDirectoresTodasResponse" />
+  <xs:element name="modificarDirector" type="tns:modificarDirector" />
+  <xs:element name="modificarDirectorResponse" type="tns:modificarDirectorResponse" />
+  <xs:complexType name="modificarDirector">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="director" type="tns:director" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="director">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:persona">
+        <xs:sequence>
+          <xs:element name="activo" type="xs:boolean" />
+          <xs:element minOccurs="0" name="email" type="xs:string" />
+          <xs:element minOccurs="0" name="fechaNombramiento" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="tipoContrato" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="persona">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="apellidoMaterno" type="xs:string" />
+      <xs:element minOccurs="0" name="apellidoPaterno" type="xs:string" />
+      <xs:element minOccurs="0" name="direccion" type="xs:string" />
+      <xs:element minOccurs="0" name="dni" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaNacimiento" type="xs:dateTime" />
+      <xs:element name="idPersona" type="xs:int" />
+      <xs:element minOccurs="0" name="lengua" type="xs:string" />
+      <xs:element minOccurs="0" name="nombres" type="xs:string" />
+      <xs:element minOccurs="0" name="religion" type="xs:string" />
+      <xs:element name="sexo" type="xs:unsignedShort" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarDirectorResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarDirectoresDisponibles">
+    <xs:sequence>
+      <xs:element name="idDirector" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarDirectoresDisponiblesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:director" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarDirector">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="director" type="tns:director" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarDirectorResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="buscarDirector">
+    <xs:sequence>
+      <xs:element name="idDirector" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="buscarDirectorResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:director" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarDirectoresTodas">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarDirectoresTodasResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:director" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarDirector">
+    <xs:sequence>
+      <xs:element name="idDirector" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarDirectorResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

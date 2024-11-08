@@ -1,0 +1,52 @@
+﻿body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    padding: 20px;
+}
+
+.content {
+    margin: 0 auto;
+    max-width: 800px;
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+}
+
+.table-container {
+    margin-top: 20px;
+}
+
+.btn-custom {
+    width: 100px;
+    height: 40px;
+    margin: 10px;
+}
+
+.btn-add {
+    width: 100px;
+    height: 40px;
+    margin-top: 10px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    .header h1 {
+        font-size: 24px;
+    }
+
+    .header .btn-group {
+        display: flex;
+    }
+
+.logo {
+    width: 50px;
+    height: 50px;
+    background-color: #ccc;
+    display: inline-block;
+    margin-left: 20px;
+}

@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="services.softprog.pucp.edu.pe" targetNamespace="services.softprog.pucp.edu.pe" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="eliminarMatricula" type="tns:eliminarMatricula" />
+  <xs:element name="eliminarMatriculaResponse" type="tns:eliminarMatriculaResponse" />
+  <xs:element name="insertarMatricula" type="tns:insertarMatricula" />
+  <xs:element name="insertarMatriculaResponse" type="tns:insertarMatriculaResponse" />
+  <xs:element name="listarMatriculas" type="tns:listarMatriculas" />
+  <xs:element name="listarMatriculasResponse" type="tns:listarMatriculasResponse" />
+  <xs:element name="modificarMatricula" type="tns:modificarMatricula" />
+  <xs:element name="modificarMatriculaResponse" type="tns:modificarMatriculaResponse" />
+  <xs:complexType name="listarMatriculas">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarMatriculasResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:matricula" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="matricula">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="anioAcademico" type="tns:anioAcademico" />
+      <xs:element minOccurs="0" name="estado" type="xs:string" />
+      <xs:element minOccurs="0" name="estudiante" type="tns:estudiante" />
+      <xs:element minOccurs="0" name="fecha" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="grado" type="tns:grado" />
+      <xs:element name="idMatricula" type="xs:int" />
+      <xs:element minOccurs="0" name="institucion" type="tns:institucionEducativa" />
+      <xs:element minOccurs="0" name="tipoMatricula" type="tns:tipoMatricula" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="anioAcademico">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="estado" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaFin" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fechaInicio" type="xs:dateTime" />
+      <xs:element name="idAnio" type="xs:int" />
+      <xs:element name="idIE" type="xs:int" />
+      <xs:element name="numero" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="planes" nillable="true" type="tns:planDeEstudio" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="planDeEstudio">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="anioAcademico" type="tns:anioAcademico" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="cursos" nillable="true" type="tns:curso" />
+      <xs:element minOccurs="0" name="descripcion" type="xs:string" />
+      <xs:element name="idPlan" type="xs:int" />
+      <xs:element name="numCursos" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="curso">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element name="idCurso" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="estudiante">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:persona">
+        <xs:sequence>
+          <xs:element name="activo" type="xs:boolean" />
+          <xs:element minOccurs="0" name="apoderado" type="tns:persona" />
+          <xs:element name="cantCursos" type="xs:int" />
+          <xs:element minOccurs="0" name="condicionesMedicas" type="xs:string" />
+          <xs:element minOccurs="0" name="discapacidades" type="xs:string" />
+          <xs:element minOccurs="0" name="estado" type="xs:string" />
+          <xs:element name="promedio" type="xs:double" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="persona">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="apellidoMaterno" type="xs:string" />
+      <xs:element minOccurs="0" name="apellidoPaterno" type="xs:string" />
+      <xs:element minOccurs="0" name="direccion" type="xs:string" />
+      <xs:element minOccurs="0" name="dni" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaNacimiento" type="xs:dateTime" />
+      <xs:element name="idPersona" type="xs:int" />
+      <xs:element minOccurs="0" name="lengua" type="xs:string" />
+      <xs:element minOccurs="0" name="nombres" type="xs:string" />
+      <xs:element minOccurs="0" name="religion" type="xs:string" />
+      <xs:element name="sexo" type="xs:unsignedShort" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="grado">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element name="alumnosMatriculados" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="estudiantes" nillable="true" type="tns:estudiante" />
+      <xs:element name="idGrado" type="xs:int" />
+      <xs:element minOccurs="0" name="institucion" type="tns:institucionEducativa" />
+      <xs:element minOccurs="0" name="nivel" type="tns:tipoNivel" />
+      <xs:element minOccurs="0" name="numero" type="xs:string" />
+      <xs:element minOccurs="0" name="planDeEstudio" type="tns:planDeEstudio" />
+      <xs:element name="vacantes" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="institucionEducativa">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="aniosAcademicos" nillable="true" type="tns:anioAcademico" />
+      <xs:element name="cantidadGrados" type="xs:int" />
+      <xs:element minOccurs="0" name="correoElectronico" type="xs:string" />
+      <xs:element minOccurs="0" name="direccion" type="xs:string" />
+      <xs:element minOccurs="0" name="director" type="tns:director" />
+      <xs:element minOccurs="0" name="fotoInstitucion" type="xs:base64Binary" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="grados" nillable="true" type="tns:grado" />
+      <xs:element name="idInstitucion" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element minOccurs="0" name="telefono" type="xs:string" />
+      <xs:element minOccurs="0" name="ugel" type="tns:ugel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="director">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:persona">
+        <xs:sequence>
+          <xs:element name="activo" type="xs:boolean" />
+          <xs:element minOccurs="0" name="email" type="xs:string" />
+          <xs:element minOccurs="0" name="fechaNombramiento" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="tipoContrato" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ugel">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element name="cantidadIE" type="xs:int" />
+      <xs:element minOccurs="0" name="codigo" type="xs:string" />
+      <xs:element minOccurs="0" name="directorUgel" type="tns:director" />
+      <xs:element minOccurs="0" name="distrito" type="xs:string" />
+      <xs:element name="idUgel" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="institucionesEducativas" nillable="true" type="tns:institucionEducativa" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarMatricula">
+    <xs:sequence>
+      <xs:element name="matricula" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarMatriculaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarMatricula">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="matricula" type="tns:matricula" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarMatriculaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarMatricula">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="matricula" type="tns:matricula" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarMatriculaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="tipoNivel">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="INICIAL" />
+      <xs:enumeration value="PRIMARIA" />
+      <xs:enumeration value="SECUNDARIA" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="tipoMatricula">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="INICIADO" />
+      <xs:enumeration value="TRASLADO" />
+      <xs:enumeration value="APROBADO" />
+      <xs:enumeration value="DESAPROBADO" />
+      <xs:enumeration value="REINCORPORADO" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

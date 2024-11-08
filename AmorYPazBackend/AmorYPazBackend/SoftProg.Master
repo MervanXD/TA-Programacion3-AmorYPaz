@@ -1,0 +1,96 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SoftProg.Master.cs" Inherits="AmorYPazBackend.SuperIntendente" %>
+
+<!DOCTYPE html>
+
+<html lang="es">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/estilos.css" rel="stylesheet" />
+    <link href="Content/Fonts/css/all.css" rel="stylesheet" />
+    <link href="Content/estilosMasterPage.css" rel="stylesheet" />
+
+    <script src="Scripts/bootstrap.js"></script>
+    <script src="Scripts/bootstrap.bundle.js"></script>
+    <script src="Scripts/jquery-3.7.1.js"></script>
+    <script src="Scripts/cierreSesion.js"></script>
+    <script src="Scripts/scriptsMasterPage.js"></script>
+    <asp:ContentPlaceHolder ID="cphHead" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <title>
+        <asp:ContentPlaceHolder ID="cphTitulo" runat="server">
+        </asp:ContentPlaceHolder>
+    </title>
+
+</head>
+<body>
+    <div class="container-fluid d-flex p-0 h-100">
+        <!--Menu Lateral-->
+
+        <div id="bdSidebar" class="d-flex flex-column flex-shrink-0 p-3 bg-secondary text-white offcanvas-md offcanvas-start">
+            <div class="text-center mb-3" style="max-width: 170px; background-color: white; border-radius: 80%;">
+                <img src="img/logo.png" alt="Logo" class="img-fluid" style="height: auto; margin: auto; ">
+            </div>
+            <hr />      
+            <ul class="mynav nav nav-pills flex-column mb-auto">
+                <asp:PlaceHolder ID="menuPlaceHolder" runat="server"></asp:PlaceHolder>
+            </ul>
+            <hr />
+            <div class="d-flex">
+                <form class="d-flex">
+                    <div class="dropdown ps-3">
+                        <button class="btn btn-outline-light dropdown-toggle"
+                            id="btnUsuario" data-bs-toggle="dropdown" type="button"
+                            aria-expanded="false">
+                            <i class="fas fa-user me-2"></i><asp:Literal id="litNombreUsuario" runat="server" />
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="btnUsuario">
+                            <li><a class="dropdown-item" href="PerfilUsuario.aspx">Perfil</a></li>
+                            <li>
+                                <a href="#" class="dropdown-item" onclick="showModalConfirmation(); return false;">Cerrar Sesión</a>
+                            </li>
+                        </ul>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!--Contenido de la Derecha-->
+        <div class="bg-light flex-fill overflow-auto">
+            <!-- Barra superior para dispositivos móviles -->
+            <div class="p-2 d-md-none d-flex text-white bg-secondary">
+                <a data-bs-toggle="offcanvas" data-bs-target="#bdSidebar" class="text-white" href="#">
+                    <i class="fa-solid fa-bars"></i>
+                </a>
+            </div>
+           
+            <!-- Contenido de las Pags-->
+            <div class="p-4">
+                <form runat="server">
+                    <asp:ContentPlaceHolder ID="cphContenido" runat="server"></asp:ContentPlaceHolder>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="confirmarCierreModal" tabindex="-1" aria-labelledby="confirmLogoutModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmLogoutModalLabel">Confirmar Cierre de Sesión</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    ¿Estás seguro de que deseas cerrar sesión?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <a href="CerrarSesion.aspx" class="btn btn-danger">Cerrar Sesión</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
