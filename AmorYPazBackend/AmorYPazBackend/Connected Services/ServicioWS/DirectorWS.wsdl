@@ -29,6 +29,18 @@
   <message name="eliminarDirectorResponse">
     <part name="parameters" element="tns:eliminarDirectorResponse" />
   </message>
+  <message name="buscarDirector">
+    <part name="parameters" element="tns:buscarDirector" />
+  </message>
+  <message name="buscarDirectorResponse">
+    <part name="parameters" element="tns:buscarDirectorResponse" />
+  </message>
+  <message name="listarDirectoresTodas">
+    <part name="parameters" element="tns:listarDirectoresTodas" />
+  </message>
+  <message name="listarDirectoresTodasResponse">
+    <part name="parameters" element="tns:listarDirectoresTodasResponse" />
+  </message>
   <message name="listarDirectoresDisponibles">
     <part name="parameters" element="tns:listarDirectoresDisponibles" />
   </message>
@@ -57,6 +69,14 @@
     <operation name="eliminarDirector">
       <input wsam:Action="services.softprog.pucp.edu.pe/DirectorWS/eliminarDirectorRequest" message="tns:eliminarDirector" />
       <output wsam:Action="services.softprog.pucp.edu.pe/DirectorWS/eliminarDirectorResponse" message="tns:eliminarDirectorResponse" />
+    </operation>
+    <operation name="buscarDirector">
+      <input wsam:Action="services.softprog.pucp.edu.pe/DirectorWS/buscarDirectorRequest" message="tns:buscarDirector" />
+      <output wsam:Action="services.softprog.pucp.edu.pe/DirectorWS/buscarDirectorResponse" message="tns:buscarDirectorResponse" />
+    </operation>
+    <operation name="listarDirectoresTodas">
+      <input wsam:Action="services.softprog.pucp.edu.pe/DirectorWS/listarDirectoresTodasRequest" message="tns:listarDirectoresTodas" />
+      <output wsam:Action="services.softprog.pucp.edu.pe/DirectorWS/listarDirectoresTodasResponse" message="tns:listarDirectoresTodasResponse" />
     </operation>
     <operation name="listarDirectoresDisponibles">
       <input wsam:Action="services.softprog.pucp.edu.pe/DirectorWS/listarDirectoresDisponiblesRequest" message="tns:listarDirectoresDisponibles" />

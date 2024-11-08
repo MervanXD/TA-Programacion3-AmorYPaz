@@ -26,8 +26,20 @@
   <message name="listarPorNombreYUgel">
     <part name="parameters" element="tns:listarPorNombreYUgel" />
   </message>
-  <message name="listarPorNombreYUgelResponse">
-    <part name="parameters" element="tns:listarPorNombreYUgelResponse" />
+  <message name="insertarInstitucionResponse">
+    <part name="parameters" element="tns:insertarInstitucionResponse" />
+  </message>
+  <message name="listarPorIdNombre">
+    <part name="parameters" element="tns:listarPorIdNombre" />
+  </message>
+  <message name="listarPorIdNombreResponse">
+    <part name="parameters" element="tns:listarPorIdNombreResponse" />
+  </message>
+  <message name="obtenerPorId">
+    <part name="parameters" element="tns:obtenerPorId" />
+  </message>
+  <message name="obtenerPorIdResponse">
+    <part name="parameters" element="tns:obtenerPorIdResponse" />
   </message>
   <message name="obtenerIEPorIdDirector">
     <part name="parameters" element="tns:obtenerIEPorIdDirector" />
@@ -35,11 +47,11 @@
   <message name="obtenerIEPorIdDirectorResponse">
     <part name="parameters" element="tns:obtenerIEPorIdDirectorResponse" />
   </message>
-  <message name="obtenerPorId">
-    <part name="parameters" element="tns:obtenerPorId" />
+  <message name="listarPorNombreYUgel">
+    <part name="parameters" element="tns:listarPorNombreYUgel" />
   </message>
-  <message name="obtenerPorIdResponse">
-    <part name="parameters" element="tns:obtenerPorIdResponse" />
+  <message name="listarPorNombreYUgelResponse">
+    <part name="parameters" element="tns:listarPorNombreYUgelResponse" />
   </message>
   <portType name="InstitucionEducativaWS">
     <operation name="listarPorIdNombre">
@@ -58,13 +70,21 @@
       <input wsam:Action="services.softprog.pucp.edu.pe/InstitucionEducativaWS/listarPorNombreYUgelRequest" message="tns:listarPorNombreYUgel" />
       <output wsam:Action="services.softprog.pucp.edu.pe/InstitucionEducativaWS/listarPorNombreYUgelResponse" message="tns:listarPorNombreYUgelResponse" />
     </operation>
-    <operation name="obtenerIEPorIdDirector">
-      <input wsam:Action="services.softprog.pucp.edu.pe/InstitucionEducativaWS/obtenerIEPorIdDirectorRequest" message="tns:obtenerIEPorIdDirector" />
-      <output wsam:Action="services.softprog.pucp.edu.pe/InstitucionEducativaWS/obtenerIEPorIdDirectorResponse" message="tns:obtenerIEPorIdDirectorResponse" />
+    <operation name="listarPorIdNombre">
+      <input wsam:Action="services.softprog.pucp.edu.pe/InstitucionEducativaWS/listarPorIdNombreRequest" message="tns:listarPorIdNombre" />
+      <output wsam:Action="services.softprog.pucp.edu.pe/InstitucionEducativaWS/listarPorIdNombreResponse" message="tns:listarPorIdNombreResponse" />
     </operation>
     <operation name="obtenerPorId">
       <input wsam:Action="services.softprog.pucp.edu.pe/InstitucionEducativaWS/obtenerPorIdRequest" message="tns:obtenerPorId" />
       <output wsam:Action="services.softprog.pucp.edu.pe/InstitucionEducativaWS/obtenerPorIdResponse" message="tns:obtenerPorIdResponse" />
+    </operation>
+    <operation name="obtenerIEPorIdDirector">
+      <input wsam:Action="services.softprog.pucp.edu.pe/InstitucionEducativaWS/obtenerIEPorIdDirectorRequest" message="tns:obtenerIEPorIdDirector" />
+      <output wsam:Action="services.softprog.pucp.edu.pe/InstitucionEducativaWS/obtenerIEPorIdDirectorResponse" message="tns:obtenerIEPorIdDirectorResponse" />
+    </operation>
+    <operation name="listarPorNombreYUgel">
+      <input wsam:Action="services.softprog.pucp.edu.pe/InstitucionEducativaWS/listarPorNombreYUgelRequest" message="tns:listarPorNombreYUgel" />
+      <output wsam:Action="services.softprog.pucp.edu.pe/InstitucionEducativaWS/listarPorNombreYUgelResponse" message="tns:listarPorNombreYUgelResponse" />
     </operation>
   </portType>
   <binding name="InstitucionEducativaWSPortBinding" type="tns:InstitucionEducativaWS">

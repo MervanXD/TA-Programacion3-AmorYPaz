@@ -57,3 +57,5 @@ replay_pid*
 /Backend/SoftProgDBManager/nbproject/private/
 /Backend/SoftProgInfraestructuraModel/nbproject/private/
 /Backend/SoftProgWSBL/dist/
+/Backend/SoftProgGestMatriculaDA/build/
+/Backend/SoftProgGestMatriculaDA/dist/

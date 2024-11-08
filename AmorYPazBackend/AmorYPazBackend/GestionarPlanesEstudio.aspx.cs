@@ -13,5 +13,10 @@ namespace AmorYPazBackend
         {
 
         }
+
+        protected void AddButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

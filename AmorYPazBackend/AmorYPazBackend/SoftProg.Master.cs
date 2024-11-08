@@ -39,7 +39,7 @@ namespace AmorYPazBackend
             if (tipoUsuario == "DIRECTOR_IE")
             {
                 itemsMenu.Add(("MenuPrincipalDirectores.aspx", "fa-solid fa-school", "Menu Principal"));
-                itemsMenu.Add(("RegistrarPlanDeEstudios.aspx", "fa-solid fa-calendar-lines-pen", "Año Académico"));
+                itemsMenu.Add(("GestionarPlanesEstudio.aspx", "fa-solid fa-calendar-lines-pen", "Año Académico"));
                 itemsMenu.Add(("MenuPrincipalDirectores.aspx", "fa-solid fa-graduation-cap", "Matrícula"));
                 itemsMenu.Add(("MenuPrincipalDirectores.aspx", "fa-solid fa-chart-line", "Reportes"));
             }

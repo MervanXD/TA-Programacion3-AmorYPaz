@@ -27,5 +27,15 @@ namespace AmorYPazBackend
                 }
             }
         }
+
+        protected void lbGuardar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void lbCancelar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

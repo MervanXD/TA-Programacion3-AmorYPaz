@@ -33,6 +33,7 @@
       <xs:element minOccurs="0" name="fechaFin" type="xs:dateTime" />
       <xs:element minOccurs="0" name="fechaInicio" type="xs:dateTime" />
       <xs:element name="idAnio" type="xs:int" />
+      <xs:element name="idIE" type="xs:int" />
       <xs:element name="numero" type="xs:int" />
       <xs:element minOccurs="0" maxOccurs="unbounded" name="planes" nillable="true" type="tns:planDeEstudio" />
     </xs:sequence>

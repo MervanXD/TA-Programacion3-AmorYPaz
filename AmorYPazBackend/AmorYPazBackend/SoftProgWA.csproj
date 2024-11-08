@@ -167,6 +167,13 @@
     <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.planDeEstudio.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.insertarAnioAcademicoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\ServicioWS\AnioAcademicoWS.wsdl" />
+    <None Include="Connected Services\ServicioWS\AnioAcademicoWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\ServicioWS\archivo.disco" />
     <None Include="Connected Services\ServicioWS\configuration91.svcinfo" />
     <None Include="Connected Services\ServicioWS\configuration.svcinfo" />
@@ -250,6 +257,7 @@
     <Content Include="MostrarPlanDeEstudio.aspx" />
     <Content Include="OpcionesReporte.aspx" />
     <Content Include="PerfilUsuario.aspx" />
+    <Content Include="RegistrarAnioAcademico.aspx" />
     <Content Include="RegistrarDirector.aspx" />
     <Content Include="RegistrarInstitucion.aspx" />
     <Content Include="RegistrarPlanDeEstudios.aspx" />
@@ -414,6 +422,13 @@
       <DependentUpon>PerfilUsuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegistrarAnioAcademico.aspx.cs">
+      <DependentUpon>RegistrarAnioAcademico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistrarAnioAcademico.aspx.designer.cs">
+      <DependentUpon>RegistrarAnioAcademico.aspx</DependentUpon>
+    </Compile>
     <Compile Include="RegistrarDirector.aspx.cs">
       <DependentUpon>RegistrarDirector.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

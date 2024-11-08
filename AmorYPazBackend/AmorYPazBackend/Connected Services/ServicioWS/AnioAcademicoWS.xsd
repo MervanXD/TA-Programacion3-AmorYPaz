@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="services.softprog.pucp.edu.pe" targetNamespace="services.softprog.pucp.edu.pe" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="insertarAnioAcademico" type="tns:insertarAnioAcademico" />
+  <xs:element name="insertarAnioAcademicoResponse" type="tns:insertarAnioAcademicoResponse" />
+  <xs:complexType name="insertarAnioAcademico">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="anioAcademico" type="tns:anioAcademico" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="anioAcademico">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="estado" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaFin" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fechaInicio" type="xs:dateTime" />
+      <xs:element name="idAnio" type="xs:int" />
+      <xs:element name="idIE" type="xs:int" />
+      <xs:element name="numero" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="planes" nillable="true" type="tns:planDeEstudio" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="planDeEstudio">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="anioAcademico" type="tns:anioAcademico" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="cursos" nillable="true" type="tns:curso" />
+      <xs:element minOccurs="0" name="descripcion" type="xs:string" />
+      <xs:element name="idPlan" type="xs:int" />
+      <xs:element name="numCursos" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="curso">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element name="idCurso" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarAnioAcademicoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
