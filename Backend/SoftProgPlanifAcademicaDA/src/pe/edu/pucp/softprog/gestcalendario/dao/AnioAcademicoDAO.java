@@ -8,5 +8,5 @@ public interface AnioAcademicoDAO {
     int modificar(AnioAcademico anioAcademico);
     int eliminar(int id);
     AnioAcademico obtenerPorId(int id);
-    ArrayList<AnioAcademico> listarTodos();
+    ArrayList<AnioAcademico> listarPorIdIE(int idInstitucion);
 }

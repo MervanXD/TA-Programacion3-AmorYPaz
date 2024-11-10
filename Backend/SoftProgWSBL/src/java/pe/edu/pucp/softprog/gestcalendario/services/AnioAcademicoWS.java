@@ -26,12 +26,12 @@ public class AnioAcademicoWS {
         return resultado;
     }
     
-    @WebMethod(operationName = "listarAnioAcademico")
-    public ArrayList<AnioAcademico> listarAnioAcademico(){
+    @WebMethod(operationName = "listarAnioAcademicoPorIdIE")
+    public ArrayList<AnioAcademico> listarAnioAcademicoPorIdIE(int idInstitucion){
         ArrayList<AnioAcademico> anios=new ArrayList<>();
         try{
             daoAnio = new AnioAcademicoMySQL();
-            anios = daoAnio.listarTodos();
+            anios = daoAnio.listarPorIdIE(idInstitucion);
         }catch(Exception ex){
             System.out.println(ex.getMessage());
         }

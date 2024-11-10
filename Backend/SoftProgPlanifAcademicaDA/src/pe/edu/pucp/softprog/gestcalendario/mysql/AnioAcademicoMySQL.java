@@ -122,12 +122,13 @@ public class AnioAcademicoMySQL implements AnioAcademicoDAO{
     }
 
     @Override
-    public ArrayList<AnioAcademico> listarTodos() {
+    public ArrayList<AnioAcademico> listarPorIdIE(int idInstitucion) {
         ArrayList<AnioAcademico> aniosAcademicos = new ArrayList<>();
         try {
             con = DBManager.getInstance().getConnection();
-            String sql = "{call LISTAR_CURSOS_TODOS()}";
+            String sql = "{call LISTAR_ANIOS_POR_ID_INSTITUCION(?)}";
             cs = con.prepareCall(sql);
+            cs.setInt("_fid_institucion", idInstitucion);
             rs = cs.executeQuery();
             while (rs.next()) {
                 AnioAcademico anioAcademico = new AnioAcademico();
@@ -148,7 +149,7 @@ public class AnioAcademicoMySQL implements AnioAcademicoDAO{
                 System.out.println(ex.getMessage());
             }
         }
-        return aniosAcademicos;    
+        return aniosAcademicos;
     }
     
 }

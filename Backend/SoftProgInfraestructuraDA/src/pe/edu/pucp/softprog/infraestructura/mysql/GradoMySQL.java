@@ -50,7 +50,7 @@ public class GradoMySQL implements GradoDAO {
         try {
             con = DBManager.getInstance().getConnection();
             cs = con.prepareCall("{call MODIFICAR_GRADO(?,?,?,?,?,?)}");
-            cs.setInt("_id_grado", grado.getIdGrado());
+            cs.setInt("_id_Grado", grado.getIdGrado());
             cs.setString("_numero", grado.getNumero());
             cs.setString("_tipo_nivel", grado.getNivel().toString());
             cs.setInt("_num_matriculados", grado.getAlumnosMatriculados());
@@ -100,7 +100,7 @@ public class GradoMySQL implements GradoDAO {
             cs.setInt("_id_grado", idGrado);
             rs = cs.executeQuery();
             if (rs.next()) {
-                grado.setIdGrado(rs.getInt("idGrado"));
+                grado.setIdGrado(rs.getInt("id_Grado"));
                 grado.setAlumnosMatriculados(rs.getInt("num_matriculados"));
                 grado.setNivel(TipoNivel.valueOf(rs.getString("tipo_nivel")));
                 grado.setNumero(rs.getString("numero"));
@@ -132,7 +132,7 @@ public class GradoMySQL implements GradoDAO {
             rs = cs.executeQuery();
             while (rs.next()) {
                 Grado grado = new Grado();
-                grado.setIdGrado(rs.getInt("idGrado"));
+                grado.setIdGrado(rs.getInt("id_Grado"));
                 grado.setAlumnosMatriculados(rs.getInt("num_matriculados"));
                 grado.setNivel(TipoNivel.valueOf(rs.getString("tipo_nivel")));
                 grado.setNumero(rs.getString("numero"));
@@ -173,6 +173,108 @@ public class GradoMySQL implements GradoDAO {
             resultado=this.insertar(gradonuevo);
         }
         return resultado;
+    }
+
+    @Override
+    public Grado obtenerPorIdPlanEstudios(int idPlan) {
+        Grado grado = new Grado();
+        try {
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call OBTENER_GRADO_POR_PLAN_ESTUDIOS(?)}");
+            cs.setInt("_fid_plan", idPlan);
+            rs = cs.executeQuery();
+            if (rs.next()) {
+                grado.setIdGrado(rs.getInt("id_Grado"));
+                grado.setAlumnosMatriculados(rs.getInt("num_matriculados"));
+                grado.setNivel(TipoNivel.valueOf(rs.getString("tipo_nivel")));
+                grado.setNumero(rs.getString("numero"));
+                grado.setActivo(rs.getBoolean("gra_activo"));
+                grado.setVacantes(rs.getInt("vacantes"));
+                grado.getInstitucion().setActivo(rs.getBoolean("ie_activo"));
+                grado.getInstitucion().setCantidadGrados(rs.getInt("cantidad_grados"));
+                grado.getInstitucion().setDireccion(rs.getString("direccion"));
+                grado.getInstitucion().setIdInstitucion(rs.getInt("id_Institucion_Educativa"));
+                grado.getInstitucion().setNombre(rs.getString("nombre"));
+            }
+        } catch (SQLException ex) {
+            grado = null;
+            System.out.println(ex.getMessage());
+        } finally {
+            try {
+                con.close();
+            } catch (SQLException ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
+        return grado;
+    }
+
+    @Override
+    public Grado obtenerPorIdIE(int idInstitucion) {
+        Grado grado = new Grado();
+        try {
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call OBTENER_GRADO_POR_INSTITUCION(?)}");
+            cs.setInt("_fid_institucion", idInstitucion);
+            rs = cs.executeQuery();
+            if (rs.next()) {
+                grado.setIdGrado(rs.getInt("id_Grado"));
+                grado.setAlumnosMatriculados(rs.getInt("num_matriculados"));
+                grado.setNivel(TipoNivel.valueOf(rs.getString("tipo_nivel")));
+                grado.setNumero(rs.getString("numero"));
+                grado.setActivo(rs.getBoolean("gra_activo"));
+                grado.getInstitucion().setActivo(rs.getBoolean("ie_activo"));
+                grado.getInstitucion().setCantidadGrados(rs.getInt("cantidad_grados"));
+                grado.getInstitucion().setDireccion(rs.getString("direccion"));
+                grado.getInstitucion().setIdInstitucion(rs.getInt("id_Institucion_Educativa"));
+                grado.getInstitucion().setNombre(rs.getString("nombre"));
+            }
+        } catch (SQLException ex) {
+            grado = null;
+            System.out.println(ex.getMessage());
+        } finally {
+            try {
+                con.close();
+            } catch (SQLException ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
+        return grado;
+    }
+
+    @Override
+    public ArrayList<Grado> listarTodosPorIdIE(int idInstitucion) {
+        ArrayList<Grado> grados = new ArrayList<>();
+        try {
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call LISTAR_GRADOS_POR_IE(?)}");
+            cs.setInt("_fid_institucion", idInstitucion);
+            rs = cs.executeQuery();
+            while (rs.next()) {
+                Grado grado = new Grado();
+                grado.setIdGrado(rs.getInt("id_Grado"));
+                grado.setAlumnosMatriculados(rs.getInt("num_matriculados"));
+                grado.setNivel(TipoNivel.valueOf(rs.getString("tipo_nivel")));
+                grado.setNumero(rs.getString("numero"));
+                grado.setActivo(rs.getBoolean("gra_activo"));
+                grado.setVacantes(rs.getInt("vacantes"));
+                grado.getInstitucion().setActivo(rs.getBoolean("ie_activo"));
+                grado.getInstitucion().setCantidadGrados(rs.getInt("cantidad_grados"));
+                grado.getInstitucion().setDireccion(rs.getString("direccion"));
+                grado.getInstitucion().setIdInstitucion(rs.getInt("id_Institucion_Educativa"));
+                grado.getInstitucion().setNombre(rs.getString("nombre"));
+                grados.add(grado);
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            try {
+                con.close();
+            } catch (SQLException ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
+        return grados;        
     }
 
 }

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="services.softprog.pucp.edu.pe" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="AnioAcademicoWS" targetNamespace="services.softprog.pucp.edu.pe" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8080/SoftProgWSBL/AnioAcademicoWS?xsd=1" namespace="services.softprog.pucp.edu.pe" />
+    </xsd:schema>
+  </types>
+  <message name="listarAnioAcademicoPorIdIE">
+    <part name="parameters" element="tns:listarAnioAcademicoPorIdIE" />
+  </message>
+  <message name="listarAnioAcademicoPorIdIEResponse">
+    <part name="parameters" element="tns:listarAnioAcademicoPorIdIEResponse" />
+  </message>
+  <message name="insertarAnioAcademico">
+    <part name="parameters" element="tns:insertarAnioAcademico" />
+  </message>
+  <message name="insertarAnioAcademicoResponse">
+    <part name="parameters" element="tns:insertarAnioAcademicoResponse" />
+  </message>
+  <portType name="AnioAcademicoWS">
+    <operation name="listarAnioAcademicoPorIdIE">
+      <input wsam:Action="services.softprog.pucp.edu.pe/AnioAcademicoWS/listarAnioAcademicoPorIdIERequest" message="tns:listarAnioAcademicoPorIdIE" />
+      <output wsam:Action="services.softprog.pucp.edu.pe/AnioAcademicoWS/listarAnioAcademicoPorIdIEResponse" message="tns:listarAnioAcademicoPorIdIEResponse" />
+    </operation>
+    <operation name="insertarAnioAcademico">
+      <input wsam:Action="services.softprog.pucp.edu.pe/AnioAcademicoWS/insertarAnioAcademicoRequest" message="tns:insertarAnioAcademico" />
+      <output wsam:Action="services.softprog.pucp.edu.pe/AnioAcademicoWS/insertarAnioAcademicoResponse" message="tns:insertarAnioAcademicoResponse" />
+    </operation>
+  </portType>
+  <binding name="AnioAcademicoWSPortBinding" type="tns:AnioAcademicoWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="listarAnioAcademicoPorIdIE">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarAnioAcademico">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="AnioAcademicoWS">
+    <port name="AnioAcademicoWSPort" binding="tns:AnioAcademicoWSPortBinding">
+      <soap:address location="http://localhost:8080/SoftProgWSBL/AnioAcademicoWS" />
+    </port>
+  </service>
+</definitions>
