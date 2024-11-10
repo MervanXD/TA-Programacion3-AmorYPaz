@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/WebServices/WebService.java to edit this template
- */
 package pe.edu.pucp.softprog.gestcalendario.services;
 
 import jakarta.jws.WebService;
@@ -18,7 +14,7 @@ import pe.edu.pucp.softprog.gestcalendario.mysql.PlanDeEstudioMySQL;
 public class PlanDeEstudioWS {
 
     private PlanDeEstudioDAO daoPlan;
-    @WebMethod(operationName = "listarPlanesDeEstudio")
+    @WebMethod(operationName = "listarPlanesDeEstudio") // cambiar para que sean propios de un colegio
     public ArrayList<PlanDeEstudio> listarPlanesDeEstudio() {
         ArrayList<PlanDeEstudio> planes = null;
         try{
@@ -29,18 +25,33 @@ public class PlanDeEstudioWS {
         }
         return planes;
     }
+    
+    @WebMethod(operationName = "listarPlanesDeEstudioPorIdIE") // cambiar para que sean propios de un colegio
+    public ArrayList<PlanDeEstudio> listarPlanesDeEstudioPorIdIE(
+            @WebParam(name = "idGrado") int idInstitucion) {
+        ArrayList<PlanDeEstudio> planes = null;
+        try{
+            daoPlan = new PlanDeEstudioMySQL();
+            planes = daoPlan.listarPorIdIE(idInstitucion);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return planes;
+    }
+    
     @WebMethod(operationName = "insertarPlanDeEstudio")
     public int insertarPlanDeEstudio(@WebParam(name = "planDeEstudio")
-            PlanDeEstudio plan){
+            PlanDeEstudio plan, @WebParam(name = "idGrado") int idGrado){
         int resultado = 0;
         try{
             daoPlan = new PlanDeEstudioMySQL();
-            resultado = daoPlan.insertar(plan);
+            resultado = daoPlan.insertar(plan, idGrado);
         }catch(Exception ex){
             System.out.println(ex.getMessage());
         }
         return resultado;
     }
+    
     @WebMethod(operationName = "eliminarPlanDeEstudio")
     public int eliminarPlanDeEstudio(@WebParam(name = "idPlanDeEstudio") int idPlanDeEstudio){
         int resultado = 0;
@@ -52,6 +63,7 @@ public class PlanDeEstudioWS {
         }
         return resultado;
     }
+    
     @WebMethod(operationName = "modificarPlanDeEstudio")
     public int modificarPlanDeEstudio(@WebParam(name = "planDeEstudio") PlanDeEstudio plan){
         int resultado = 0;
@@ -63,4 +75,5 @@ public class PlanDeEstudioWS {
         }
         return resultado;
     }
+    
 }
