@@ -108,6 +108,7 @@ public class AnioAcademicoMySQL implements AnioAcademicoDAO{
                 anioAcademico.setFechaFin(rs.getDate("fecha_Fin"));
                 anioAcademico.setEstado(rs.getString("estado"));
                 anioAcademico.setActivo(rs.getBoolean("activo"));
+                anioAcademico.setIdIE(rs.getInt("fid_Institucion_Educativa"));
             }
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());

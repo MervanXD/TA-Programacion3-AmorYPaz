@@ -37,4 +37,28 @@ public class AnioAcademicoWS {
         }
         return anios;
     }
+    
+    @WebMethod(operationName = "modificarAnioAcademico")
+    public int modificarAnioAcademico   (@WebParam(name = "anioAcademico") AnioAcademico anio){
+        int resultado = 0;
+        try{
+            daoAnio = new AnioAcademicoMySQL();
+            resultado = daoAnio.modificar(anio);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return resultado;
+    }
+    
+    @WebMethod(operationName = "obtenerAnioAcademico")
+    public AnioAcademico obtenerAnioAcademico (@WebParam(name = "idAnioAcademico") int idAnioAcademico){
+        AnioAcademico anioAcademico=null;
+        try{
+            daoAnio = new AnioAcademicoMySQL();
+            anioAcademico = daoAnio.obtenerPorId(idAnioAcademico);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return anioAcademico;
+    }
 }

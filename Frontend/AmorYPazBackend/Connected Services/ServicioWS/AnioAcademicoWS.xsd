@@ -4,6 +4,10 @@
   <xs:element name="insertarAnioAcademicoResponse" type="tns:insertarAnioAcademicoResponse" />
   <xs:element name="listarAnioAcademicoPorIdIE" type="tns:listarAnioAcademicoPorIdIE" />
   <xs:element name="listarAnioAcademicoPorIdIEResponse" type="tns:listarAnioAcademicoPorIdIEResponse" />
+  <xs:element name="modificarAnioAcademico" type="tns:modificarAnioAcademico" />
+  <xs:element name="modificarAnioAcademicoResponse" type="tns:modificarAnioAcademicoResponse" />
+  <xs:element name="obtenerAnioAcademico" type="tns:obtenerAnioAcademico" />
+  <xs:element name="obtenerAnioAcademicoResponse" type="tns:obtenerAnioAcademicoResponse" />
   <xs:complexType name="listarAnioAcademicoPorIdIE">
     <xs:sequence>
       <xs:element name="arg0" type="xs:int" />
@@ -49,6 +53,26 @@
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="insertarAnioAcademicoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtenerAnioAcademico">
+    <xs:sequence>
+      <xs:element name="idAnioAcademico" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtenerAnioAcademicoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:anioAcademico" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarAnioAcademico">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="anioAcademico" type="tns:anioAcademico" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarAnioAcademicoResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
     </xs:sequence>
