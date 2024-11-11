@@ -188,6 +188,12 @@
     <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.listarPlanesDeEstudioPorIdIEResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.modificarAnioAcademicoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.obtenerAnioAcademicoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Connected Services\ServicioWS\AnioAcademicoWS.wsdl" />
     <None Include="Connected Services\ServicioWS\AnioAcademicoWS.xsd">
       <SubType>Designer</SubType>
@@ -228,6 +234,7 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\estilos.css" />
+    <Content Include="Content\EstilosGestionarAniosAcademicos.css" />
     <Content Include="Content\EstilosGestionarPlanesEstudio.css" />
     <Content Include="Content\estilosInicioSesion.css" />
     <Content Include="Content\EstilosListaConsolidadoAlumnos.css" />
@@ -263,6 +270,7 @@
     <Content Include="Content\Fonts\css\v4-shims.min.css" />
     <Content Include="Content\Fonts\css\v5-font-face.css" />
     <Content Include="Content\Fonts\css\v5-font-face.min.css" />
+    <Content Include="GestionarAniosAcademicos.aspx" />
     <Content Include="GestionarInstituciones.aspx" />
     <Content Include="GestionarPlanesEstudio.aspx" />
     <Content Include="Global.asax" />
@@ -358,6 +366,13 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Estado.cs" />
+    <Compile Include="GestionarAniosAcademicos.aspx.cs">
+      <DependentUpon>GestionarAniosAcademicos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GestionarAniosAcademicos.aspx.designer.cs">
+      <DependentUpon>GestionarAniosAcademicos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GestionarInstituciones.aspx.cs">
       <DependentUpon>GestionarInstituciones.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

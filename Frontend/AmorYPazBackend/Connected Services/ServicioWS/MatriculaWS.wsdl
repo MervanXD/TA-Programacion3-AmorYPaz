@@ -11,6 +11,12 @@
   <message name="modificarMatriculaResponse">
     <part name="parameters" element="tns:modificarMatriculaResponse" />
   </message>
+  <message name="listarMatriculas">
+    <part name="parameters" element="tns:listarMatriculas" />
+  </message>
+  <message name="listarMatriculasResponse">
+    <part name="parameters" element="tns:listarMatriculasResponse" />
+  </message>
   <message name="eliminarMatricula">
     <part name="parameters" element="tns:eliminarMatricula" />
   </message>
@@ -23,16 +29,14 @@
   <message name="insertarMatriculaResponse">
     <part name="parameters" element="tns:insertarMatriculaResponse" />
   </message>
-  <message name="listarMatriculas">
-    <part name="parameters" element="tns:listarMatriculas" />
-  </message>
-  <message name="listarMatriculasResponse">
-    <part name="parameters" element="tns:listarMatriculasResponse" />
-  </message>
   <portType name="MatriculaWS">
     <operation name="modificarMatricula">
       <input wsam:Action="services.softprog.pucp.edu.pe/MatriculaWS/modificarMatriculaRequest" message="tns:modificarMatricula" />
       <output wsam:Action="services.softprog.pucp.edu.pe/MatriculaWS/modificarMatriculaResponse" message="tns:modificarMatriculaResponse" />
+    </operation>
+    <operation name="listarMatriculas">
+      <input wsam:Action="services.softprog.pucp.edu.pe/MatriculaWS/listarMatriculasRequest" message="tns:listarMatriculas" />
+      <output wsam:Action="services.softprog.pucp.edu.pe/MatriculaWS/listarMatriculasResponse" message="tns:listarMatriculasResponse" />
     </operation>
     <operation name="eliminarMatricula">
       <input wsam:Action="services.softprog.pucp.edu.pe/MatriculaWS/eliminarMatriculaRequest" message="tns:eliminarMatricula" />
@@ -41,10 +45,6 @@
     <operation name="insertarMatricula">
       <input wsam:Action="services.softprog.pucp.edu.pe/MatriculaWS/insertarMatriculaRequest" message="tns:insertarMatricula" />
       <output wsam:Action="services.softprog.pucp.edu.pe/MatriculaWS/insertarMatriculaResponse" message="tns:insertarMatriculaResponse" />
-    </operation>
-    <operation name="listarMatriculas">
-      <input wsam:Action="services.softprog.pucp.edu.pe/MatriculaWS/listarMatriculasRequest" message="tns:listarMatriculas" />
-      <output wsam:Action="services.softprog.pucp.edu.pe/MatriculaWS/listarMatriculasResponse" message="tns:listarMatriculasResponse" />
     </operation>
   </portType>
   <binding name="MatriculaWSPortBinding" type="tns:MatriculaWS">
@@ -58,6 +58,15 @@
         <soap:body use="literal" />
       </output>
     </operation>
+    <operation name="listarMatriculas">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="eliminarMatricula">
       <soap:operation soapAction="" />
       <input>
@@ -68,15 +77,6 @@
       </output>
     </operation>
     <operation name="insertarMatricula">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="listarMatriculas">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
