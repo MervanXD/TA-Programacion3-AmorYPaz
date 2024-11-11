@@ -5,6 +5,30 @@
       <xsd:import schemaLocation="http://localhost:8080/SoftProgWSBL/InstitucionEducativaWS?xsd=1" namespace="services.softprog.pucp.edu.pe" />
     </xsd:schema>
   </types>
+  <message name="modificarInstitucion">
+    <part name="parameters" element="tns:modificarInstitucion" />
+  </message>
+  <message name="modificarInstitucionResponse">
+    <part name="parameters" element="tns:modificarInstitucionResponse" />
+  </message>
+  <message name="obtenerIEPorIdDirector">
+    <part name="parameters" element="tns:obtenerIEPorIdDirector" />
+  </message>
+  <message name="obtenerIEPorIdDirectorResponse">
+    <part name="parameters" element="tns:obtenerIEPorIdDirectorResponse" />
+  </message>
+  <message name="listarPorNombreYUgel">
+    <part name="parameters" element="tns:listarPorNombreYUgel" />
+  </message>
+  <message name="listarPorNombreYUgelResponse">
+    <part name="parameters" element="tns:listarPorNombreYUgelResponse" />
+  </message>
+  <message name="obtenerPorId">
+    <part name="parameters" element="tns:obtenerPorId" />
+  </message>
+  <message name="obtenerPorIdResponse">
+    <part name="parameters" element="tns:obtenerPorIdResponse" />
+  </message>
   <message name="insertarInstitucion">
     <part name="parameters" element="tns:insertarInstitucion" />
   </message>
@@ -17,31 +41,23 @@
   <message name="listarPorIdNombreResponse">
     <part name="parameters" element="tns:listarPorIdNombreResponse" />
   </message>
-  <message name="obtenerPorId">
-    <part name="parameters" element="tns:obtenerPorId" />
-  </message>
-  <message name="obtenerPorIdResponse">
-    <part name="parameters" element="tns:obtenerPorIdResponse" />
-  </message>
-  <message name="listarPorNombreYUgel">
-    <part name="parameters" element="tns:listarPorNombreYUgel" />
-  </message>
-  <message name="listarPorNombreYUgelResponse">
-    <part name="parameters" element="tns:listarPorNombreYUgelResponse" />
-  </message>
-  <message name="obtenerIEPorIdDirector">
-    <part name="parameters" element="tns:obtenerIEPorIdDirector" />
-  </message>
-  <message name="obtenerIEPorIdDirectorResponse">
-    <part name="parameters" element="tns:obtenerIEPorIdDirectorResponse" />
-  </message>
-  <message name="modificarInstitucion">
-    <part name="parameters" element="tns:modificarInstitucion" />
-  </message>
-  <message name="modificarInstitucionResponse">
-    <part name="parameters" element="tns:modificarInstitucionResponse" />
-  </message>
   <portType name="InstitucionEducativaWS">
+    <operation name="modificarInstitucion">
+      <input wsam:Action="services.softprog.pucp.edu.pe/InstitucionEducativaWS/modificarInstitucionRequest" message="tns:modificarInstitucion" />
+      <output wsam:Action="services.softprog.pucp.edu.pe/InstitucionEducativaWS/modificarInstitucionResponse" message="tns:modificarInstitucionResponse" />
+    </operation>
+    <operation name="obtenerIEPorIdDirector">
+      <input wsam:Action="services.softprog.pucp.edu.pe/InstitucionEducativaWS/obtenerIEPorIdDirectorRequest" message="tns:obtenerIEPorIdDirector" />
+      <output wsam:Action="services.softprog.pucp.edu.pe/InstitucionEducativaWS/obtenerIEPorIdDirectorResponse" message="tns:obtenerIEPorIdDirectorResponse" />
+    </operation>
+    <operation name="listarPorNombreYUgel">
+      <input wsam:Action="services.softprog.pucp.edu.pe/InstitucionEducativaWS/listarPorNombreYUgelRequest" message="tns:listarPorNombreYUgel" />
+      <output wsam:Action="services.softprog.pucp.edu.pe/InstitucionEducativaWS/listarPorNombreYUgelResponse" message="tns:listarPorNombreYUgelResponse" />
+    </operation>
+    <operation name="obtenerPorId">
+      <input wsam:Action="services.softprog.pucp.edu.pe/InstitucionEducativaWS/obtenerPorIdRequest" message="tns:obtenerPorId" />
+      <output wsam:Action="services.softprog.pucp.edu.pe/InstitucionEducativaWS/obtenerPorIdResponse" message="tns:obtenerPorIdResponse" />
+    </operation>
     <operation name="insertarInstitucion">
       <input wsam:Action="services.softprog.pucp.edu.pe/InstitucionEducativaWS/insertarInstitucionRequest" message="tns:insertarInstitucion" />
       <output wsam:Action="services.softprog.pucp.edu.pe/InstitucionEducativaWS/insertarInstitucionResponse" message="tns:insertarInstitucionResponse" />
@@ -50,25 +66,45 @@
       <input wsam:Action="services.softprog.pucp.edu.pe/InstitucionEducativaWS/listarPorIdNombreRequest" message="tns:listarPorIdNombre" />
       <output wsam:Action="services.softprog.pucp.edu.pe/InstitucionEducativaWS/listarPorIdNombreResponse" message="tns:listarPorIdNombreResponse" />
     </operation>
-    <operation name="obtenerPorId">
-      <input wsam:Action="services.softprog.pucp.edu.pe/InstitucionEducativaWS/obtenerPorIdRequest" message="tns:obtenerPorId" />
-      <output wsam:Action="services.softprog.pucp.edu.pe/InstitucionEducativaWS/obtenerPorIdResponse" message="tns:obtenerPorIdResponse" />
-    </operation>
-    <operation name="listarPorNombreYUgel">
-      <input wsam:Action="services.softprog.pucp.edu.pe/InstitucionEducativaWS/listarPorNombreYUgelRequest" message="tns:listarPorNombreYUgel" />
-      <output wsam:Action="services.softprog.pucp.edu.pe/InstitucionEducativaWS/listarPorNombreYUgelResponse" message="tns:listarPorNombreYUgelResponse" />
-    </operation>
-    <operation name="obtenerIEPorIdDirector">
-      <input wsam:Action="services.softprog.pucp.edu.pe/InstitucionEducativaWS/obtenerIEPorIdDirectorRequest" message="tns:obtenerIEPorIdDirector" />
-      <output wsam:Action="services.softprog.pucp.edu.pe/InstitucionEducativaWS/obtenerIEPorIdDirectorResponse" message="tns:obtenerIEPorIdDirectorResponse" />
-    </operation>
-    <operation name="modificarInstitucion">
-      <input wsam:Action="services.softprog.pucp.edu.pe/InstitucionEducativaWS/modificarInstitucionRequest" message="tns:modificarInstitucion" />
-      <output wsam:Action="services.softprog.pucp.edu.pe/InstitucionEducativaWS/modificarInstitucionResponse" message="tns:modificarInstitucionResponse" />
-    </operation>
   </portType>
   <binding name="InstitucionEducativaWSPortBinding" type="tns:InstitucionEducativaWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="modificarInstitucion">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="obtenerIEPorIdDirector">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarPorNombreYUgel">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="obtenerPorId">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="insertarInstitucion">
       <soap:operation soapAction="" />
       <input>
@@ -79,42 +115,6 @@
       </output>
     </operation>
     <operation name="listarPorIdNombre">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="obtenerPorId">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="listarPorNombreYUgel">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="obtenerIEPorIdDirector">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="modificarInstitucion">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

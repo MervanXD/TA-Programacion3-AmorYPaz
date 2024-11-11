@@ -194,6 +194,9 @@
     <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.obtenerAnioAcademicoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.listarMatriculasPorIdIEResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Connected Services\ServicioWS\AnioAcademicoWS.wsdl" />
     <None Include="Connected Services\ServicioWS\AnioAcademicoWS.xsd">
       <SubType>Designer</SubType>
@@ -270,8 +273,10 @@
     <Content Include="Content\Fonts\css\v4-shims.min.css" />
     <Content Include="Content\Fonts\css\v5-font-face.css" />
     <Content Include="Content\Fonts\css\v5-font-face.min.css" />
+    <Content Include="GestionarAlumnos.aspx" />
     <Content Include="GestionarAniosAcademicos.aspx" />
     <Content Include="GestionarInstituciones.aspx" />
+    <Content Include="GestionarMatricula.aspx" />
     <Content Include="GestionarPlanesEstudio.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Home.aspx" />
@@ -290,6 +295,7 @@
     <Content Include="RegistrarAnioAcademico.aspx" />
     <Content Include="RegistrarDirector.aspx" />
     <Content Include="RegistrarInstitucion.aspx" />
+    <Content Include="RegistrarMatricula.aspx" />
     <Content Include="RegistrarPlanDeEstudios.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -366,6 +372,13 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Estado.cs" />
+    <Compile Include="GestionarAlumnos.aspx.cs">
+      <DependentUpon>GestionarAlumnos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GestionarAlumnos.aspx.designer.cs">
+      <DependentUpon>GestionarAlumnos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GestionarAniosAcademicos.aspx.cs">
       <DependentUpon>GestionarAniosAcademicos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -379,6 +392,13 @@
     </Compile>
     <Compile Include="GestionarInstituciones.aspx.designer.cs">
       <DependentUpon>GestionarInstituciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GestionarMatricula.aspx.cs">
+      <DependentUpon>GestionarMatricula.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GestionarMatricula.aspx.designer.cs">
+      <DependentUpon>GestionarMatricula.aspx</DependentUpon>
     </Compile>
     <Compile Include="GestionarPlanesEstudio.aspx.cs">
       <DependentUpon>GestionarPlanesEstudio.aspx</DependentUpon>
@@ -482,6 +502,13 @@
     </Compile>
     <Compile Include="RegistrarInstitucion.aspx.designer.cs">
       <DependentUpon>RegistrarInstitucion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrarMatricula.aspx.cs">
+      <DependentUpon>RegistrarMatricula.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistrarMatricula.aspx.designer.cs">
+      <DependentUpon>RegistrarMatricula.aspx</DependentUpon>
     </Compile>
     <Compile Include="RegistrarPlanDeEstudios.aspx.cs">
       <DependentUpon>RegistrarPlanDeEstudios.aspx</DependentUpon>

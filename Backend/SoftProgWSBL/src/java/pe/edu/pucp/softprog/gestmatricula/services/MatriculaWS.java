@@ -63,4 +63,16 @@ public class MatriculaWS {
         }
         return resultado;
     }
+    
+    @WebMethod(operationName = "listarMatriculasPorIdIE")
+    public ArrayList<Matricula> listarMatriculasPorIdIE( int idInstitucion){
+        ArrayList<Matricula> matriculas = new ArrayList<>();
+        try{
+            daoMatricula = new MatriculaMySQL();
+            matriculas = daoMatricula.listarPorIdIE(idInstitucion);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return matriculas;
+    }
 }

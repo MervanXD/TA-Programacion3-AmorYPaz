@@ -5,6 +5,8 @@
   <xs:element name="insertarMatricula" type="tns:insertarMatricula" />
   <xs:element name="insertarMatriculaResponse" type="tns:insertarMatriculaResponse" />
   <xs:element name="listarMatriculas" type="tns:listarMatriculas" />
+  <xs:element name="listarMatriculasPorIdIE" type="tns:listarMatriculasPorIdIE" />
+  <xs:element name="listarMatriculasPorIdIEResponse" type="tns:listarMatriculasPorIdIEResponse" />
   <xs:element name="listarMatriculasResponse" type="tns:listarMatriculasResponse" />
   <xs:element name="modificarMatricula" type="tns:modificarMatricula" />
   <xs:element name="modificarMatriculaResponse" type="tns:modificarMatriculaResponse" />
@@ -25,7 +27,7 @@
       <xs:element minOccurs="0" name="grado" type="tns:grado" />
       <xs:element name="idMatricula" type="xs:int" />
       <xs:element minOccurs="0" name="institucion" type="tns:institucionEducativa" />
-      <xs:element minOccurs="0" name="tipoMatricula" type="tns:tipoMatricula" />
+      <xs:element minOccurs="0" name="tipoMatricula" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="anioAcademico">
@@ -158,6 +160,16 @@
       <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="listarMatriculasPorIdIE">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarMatriculasPorIdIEResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:matricula" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="insertarMatricula">
     <xs:sequence>
       <xs:element minOccurs="0" name="matricula" type="tns:matricula" />
@@ -173,15 +185,6 @@
       <xs:enumeration value="INICIAL" />
       <xs:enumeration value="PRIMARIA" />
       <xs:enumeration value="SECUNDARIA" />
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:simpleType name="tipoMatricula">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="INICIADO" />
-      <xs:enumeration value="TRASLADO" />
-      <xs:enumeration value="APROBADO" />
-      <xs:enumeration value="DESAPROBADO" />
-      <xs:enumeration value="REINCORPORADO" />
     </xs:restriction>
   </xs:simpleType>
 </xs:schema>
