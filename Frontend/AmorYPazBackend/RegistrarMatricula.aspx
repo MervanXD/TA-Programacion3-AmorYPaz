@@ -1,91 +1,128 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SoftProg.Master" AutoEventWireup="true" CodeBehind="RegistrarMatricula.aspx.cs" Inherits="AmorYPazBackend.RegistrarMatricula" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="cphHead" runat="server">
     <script src="Scripts/scriptsMasterPage.js"></script>
+    <link href="Content/estilosMasterPage.css" rel="stylesheet"/>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphTitulo" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cphContenido" runat="server">
-    <!-- División 1: Búsqueda del alumno -->
-    <div class="container my-4">
-        <div class="row mb-3">
-            <div class="col-auto">
-                <asp:Label ID="lblIngreseDNI" CssClass="form-label" runat="server" Text="Ingrese el DNI del alumno:"></asp:Label>
-            </div>
-            <div class="col-sm-3">
-                <asp:TextBox ID="txtDNI" CssClass="form-control" runat="server"></asp:TextBox>
-            </div>
-            <div class="col-sm-2">
-                <asp:Button ID="btnBuscar" CssClass="btn btn-primary" runat="server" Text="Buscar" OnClick="btnBuscar_Click" />
-            </div>
-        </div>
+    <asp:ScriptManager ID="smMatricula" runat="server" />
+    <asp:UpdatePanel ID="upMatricula" runat="server">
+        <ContentTemplate>
+            <div class="container">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>
+                            <asp:Label ID="lblTitulo" runat="server" Text="Registro de Matrícula"></asp:Label>
+                        </h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3 row">
+                            <asp:Label ID="lblAnio" runat="server" Text="Periodo Académico: " CssClass="col-sm-2 col-form-label"></asp:Label>
+                            <div class="col-sm-8">
+                                <asp:DropDownList ID="ddlAnio" runat="server" CssClass="form-control">
+                                </asp:DropDownList>
+                                <asp:RequiredFieldValidator ID="rfvAnio" runat="server" 
+                                    ControlToValidate="ddlAnio" ValidationGroup="GrupoGuardarM"
+                                    ErrorMessage="El periodo académico es obligatorio." ForeColor="Red">
+                                </asp:RequiredFieldValidator>
+                            </div>
+                        </div>
 
-        <!-- División 2: Datos del alumno -->
-        <div class="row mb-3">
-            <!-- Primera fila: Nombres y Lengua -->
-            <div class="col-md-6">
-                <asp:Label ID="lblNombres" CssClass="form-label" runat="server" Text="Nombres:"></asp:Label>
-                <asp:TextBox ID="txtNombres" CssClass="form-control" runat="server"></asp:TextBox>
-            </div>
-            <div class="col-md-6">
-                <asp:Label ID="lblLengua" CssClass="form-label" runat="server" Text="Lengua:"></asp:Label>
-                <asp:TextBox ID="txtLengua" CssClass="form-control" runat="server"></asp:TextBox>
-            </div>
-         </div>
-            <!-- Segunda fila: Apellido Paterno y Dirección -->
-        <div class="row mb-3">
-            <div class="col-md-6">
-                <asp:Label ID="lblApellidoPaterno" CssClass="form-label" runat="server" Text="Apellido Paterno:"></asp:Label>
-                <asp:TextBox ID="txtApellidoPaterno" CssClass="form-control" runat="server"></asp:TextBox>
-            </div>
-            <div class="col-md-6">
-                <asp:Label ID="lblDireccion" CssClass="form-label" runat="server" Text="Dirección:"></asp:Label>
-                <asp:TextBox ID="txtDireccion" CssClass="form-control" runat="server"></asp:TextBox>
-            </div>
-         </div>
-            <!-- Tercera fila: Apellido Materno y Sexo -->
-        <div class="row mb-3">
-            <div class="col-md-6">
-                <asp:Label ID="lblApellidoMaterno" CssClass="form-label" runat="server" Text="Apellido Materno:"></asp:Label>
-                <asp:TextBox ID="txtApellidoMaterno" CssClass="form-control" runat="server"></asp:TextBox>
-            </div>
-            <div class="col-md-6">
-                <asp:Label ID="lblSexo" CssClass="form-label" runat="server" Text="Sexo:"></asp:Label>
-                <asp:DropDownList ID="ddlSexo" CssClass="form-select" runat="server">
-                    <asp:ListItem Text="Masculino" Value="M"></asp:ListItem>
-                    <asp:ListItem Text="Femenino" Value="F"></asp:ListItem>
-                </asp:DropDownList>
-            </div>
-        </div>
-            <!-- Cuarta fila: Fecha de Nacimiento y Religión -->
-        <div class="row mb-3">
-            <div class="col-md-6">
-                <asp:Label ID="lblFechaNacimiento" CssClass="form-label" runat="server" Text="Fecha de Nacimiento:"></asp:Label>
-                <asp:TextBox ID="dtpFechaNacimiento" CssClass="form-control" runat="server" TextMode="Date"></asp:TextBox>
-            </div>
-            <div class="col-md-6">
-                <asp:Label ID="lblReligion" CssClass="form-label" runat="server" Text="Religión:"></asp:Label>
-                <asp:TextBox ID="txtReligion" CssClass="form-control" runat="server"></asp:TextBox>
-            </div>
-        </div>
+                        <div class="mb-3 row">
+                            <asp:Label ID="lblFecha" runat="server" Text="Fecha: " CssClass="col-sm-2 col-form-label"></asp:Label>
+                            <div class="col-sm-8">
+                                <input id="dtpFecha" class="form-control" type="date" runat="server" />
+                                <asp:RequiredFieldValidator ID="rfvFecha" runat="server" 
+                                    ControlToValidate="dtpFecha" ValidationGroup="GrupoGuardarM"
+                                    ErrorMessage="La fecha es obligatoria." ForeColor="Red">
+                                </asp:RequiredFieldValidator>
+                            </div>
+                        </div>
 
-        <!-- División 3: Condición Médica y Discapacidades -->
-        <div class="row mb-3">
-            <div class="col-md-6">
-                <asp:Label ID="lblCondicionMedica" CssClass="form-label" runat="server" Text="Condición Médica:"></asp:Label>
-                <asp:TextBox ID="txtCondicionMedica" CssClass="form-control" runat="server"></asp:TextBox>
-            </div>
-            <div class="col-md-6">
-                <asp:Label ID="lblDiscapacidades" CssClass="form-label" runat="server" Text="Discapacidades:"></asp:Label>
-                <asp:TextBox ID="txtDiscapacidades" CssClass="form-control" runat="server"></asp:TextBox>
-            </div>
-        </div>
+                        <div class="mb-3 row">
+                            <asp:Label ID="lblAlumno" runat="server" Text="Alumno: " CssClass="col-sm-2 col-form-label"></asp:Label>
+                            <div class="col-sm-8">
+                                <asp:TextBox ID="txtAlumno" runat="server" CssClass="form-control"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="rfvAlumno" runat="server" 
+                                    ControlToValidate="txtAlumno" ValidationGroup="GrupoGuardarM"
+                                    ErrorMessage="El nombre del alumno es obligatorio." ForeColor="Red">
+                                </asp:RequiredFieldValidator>
+                                <asp:RegularExpressionValidator ID="revAlumno" runat="server" 
+                                    ControlToValidate="txtAlumno" ValidationGroup="GrupoGuardarM"
+                                    ValidationExpression="^[a-zA-Z\s]+$" 
+                                    ErrorMessage="Solo se permiten letras en el nombre." ForeColor="Red">
+                                </asp:RegularExpressionValidator>
+                            </div>
+                        </div>
 
-        <!-- Botones Guardar y Cancelar -->
-        <div class="row">
-            <div class="col text-end">
-                <asp:Button ID="btnGuardar" CssClass="btn btn-success me-2" runat="server" Text="Guardar" OnClick="btnGuardar_Click" />
-                <asp:Button ID="btnCancelar" CssClass="btn btn-secondary" runat="server" Text="Cancelar" OnClick="btnCancelar_Click" />
+                        <div class="mb-3 row">
+                            <asp:Label ID="lblGrado" runat="server" Text="Grado: " CssClass="col-sm-2 col-form-label"></asp:Label>
+                            <div class="col-sm-8">
+                                <asp:DropDownList ID="ddlGrado" runat="server" CssClass="form-control">
+                                </asp:DropDownList>
+                                <asp:RequiredFieldValidator ID="rfvGrado" runat="server" 
+                                    ControlToValidate="ddlGrado" ValidationGroup="GrupoGuardarM"
+                                    ErrorMessage="El grado es obligatorio." ForeColor="Red">
+                                </asp:RequiredFieldValidator>
+                            </div>
+                        </div>
+
+                        <div class="mb-3 row">
+                            <asp:Label ID="lblVacantes" runat="server" Text="Vacantes Libres: " CssClass="col-sm-2 col-form-label"></asp:Label>
+                            <div class="col-sm-8">
+                                <asp:TextBox ID="txtVacantes" runat="server" CssClass="form-control" ReadOnly="true"></asp:TextBox>
+                            </div>
+                        </div>
+
+                        <div class="mb-3 row">
+                            <asp:Label ID="lblObservacion" runat="server" Text="Observación: " CssClass="col-sm-2 col-form-label"></asp:Label>
+                            <div class="col-sm-8">
+                                <asp:TextBox ID="txtObservacion" runat="server" CssClass="form-control" TextMode="MultiLine" Rows="3"></asp:TextBox>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-footer">
+                        <asp:Button ID="btnCancelar" runat="server" CssClass="float-start btn btn-primary" Text="Cancelar" OnClick="btnCancelar_Click"/>
+                        <asp:Button ID="btnGuardar" runat="server" CssClass="float-end btn btn-primary" Text="Guardar" ValidationGroup="GrupoGuardarM" OnClick="btnGuardar_Click"/>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
+
+            <!-- Modal de Error -->
+            <div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header bg-danger text-white">
+                            <h5 class="modal-title" id="errorModalLabel">
+                                <i class="bi bi-exclamation-triangle-fill me-2"></i>Mensaje de Error
+                            </h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <asp:Label ID="lblMensajeError" runat="server" Text="Mensaje de ejemplo..." CssClass="form-text text-danger"></asp:Label>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal de Confirmación -->
+            <div id="modalMensaje" class="modal fade" tabindex="-1" aria-labelledby="confirmLogoutModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalLabel">Mensaje</h5>
+                        </div>
+                        <div class="modal-body">
+                            <p id="mensajeTexto">Se ha realizado el registro con éxito</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ContentTemplate>
+    </asp:UpdatePanel>
 </asp:Content>

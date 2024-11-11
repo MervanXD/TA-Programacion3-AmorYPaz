@@ -9,4 +9,5 @@ public interface MatriculaDAO {
     int eliminar(int id);
 //    Matricula obtenerPorId(int id);
     ArrayList<Matricula> listarTodos(); 
+    ArrayList<Matricula> listarPorIdIE(int idInstitucion);
 }

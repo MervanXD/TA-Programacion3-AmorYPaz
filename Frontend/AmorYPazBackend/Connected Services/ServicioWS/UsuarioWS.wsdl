@@ -11,17 +11,17 @@
   <message name="obtenerTipoUsuarioResponse">
     <part name="parameters" element="tns:obtenerTipoUsuarioResponse" />
   </message>
-  <message name="obtenerUgelDeUsuario">
-    <part name="parameters" element="tns:obtenerUgelDeUsuario" />
-  </message>
-  <message name="obtenerUgelDeUsuarioResponse">
-    <part name="parameters" element="tns:obtenerUgelDeUsuarioResponse" />
-  </message>
   <message name="obtenerIEDeUsuario">
     <part name="parameters" element="tns:obtenerIEDeUsuario" />
   </message>
   <message name="obtenerIEDeUsuarioResponse">
     <part name="parameters" element="tns:obtenerIEDeUsuarioResponse" />
+  </message>
+  <message name="obtenerUgelDeUsuario">
+    <part name="parameters" element="tns:obtenerUgelDeUsuario" />
+  </message>
+  <message name="obtenerUgelDeUsuarioResponse">
+    <part name="parameters" element="tns:obtenerUgelDeUsuarioResponse" />
   </message>
   <message name="verificarUsuario">
     <part name="parameters" element="tns:verificarUsuario" />
@@ -34,13 +34,13 @@
       <input wsam:Action="services.softprog.pucp.edu.pe/UsuarioWS/obtenerTipoUsuarioRequest" message="tns:obtenerTipoUsuario" />
       <output wsam:Action="services.softprog.pucp.edu.pe/UsuarioWS/obtenerTipoUsuarioResponse" message="tns:obtenerTipoUsuarioResponse" />
     </operation>
-    <operation name="obtenerUgelDeUsuario">
-      <input wsam:Action="services.softprog.pucp.edu.pe/UsuarioWS/obtenerUgelDeUsuarioRequest" message="tns:obtenerUgelDeUsuario" />
-      <output wsam:Action="services.softprog.pucp.edu.pe/UsuarioWS/obtenerUgelDeUsuarioResponse" message="tns:obtenerUgelDeUsuarioResponse" />
-    </operation>
     <operation name="obtenerIEDeUsuario">
       <input wsam:Action="services.softprog.pucp.edu.pe/UsuarioWS/obtenerIEDeUsuarioRequest" message="tns:obtenerIEDeUsuario" />
       <output wsam:Action="services.softprog.pucp.edu.pe/UsuarioWS/obtenerIEDeUsuarioResponse" message="tns:obtenerIEDeUsuarioResponse" />
+    </operation>
+    <operation name="obtenerUgelDeUsuario">
+      <input wsam:Action="services.softprog.pucp.edu.pe/UsuarioWS/obtenerUgelDeUsuarioRequest" message="tns:obtenerUgelDeUsuario" />
+      <output wsam:Action="services.softprog.pucp.edu.pe/UsuarioWS/obtenerUgelDeUsuarioResponse" message="tns:obtenerUgelDeUsuarioResponse" />
     </operation>
     <operation name="verificarUsuario">
       <input wsam:Action="services.softprog.pucp.edu.pe/UsuarioWS/verificarUsuarioRequest" message="tns:verificarUsuario" />
@@ -58,7 +58,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="obtenerUgelDeUsuario">
+    <operation name="obtenerIEDeUsuario">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -67,7 +67,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="obtenerIEDeUsuario">
+    <operation name="obtenerUgelDeUsuario">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

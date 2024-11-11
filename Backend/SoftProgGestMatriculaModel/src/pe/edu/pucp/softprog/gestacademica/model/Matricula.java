@@ -11,13 +11,17 @@ public class Matricula {
     private int idMatricula;
     private Date fecha;
     private String estado;
-    private TipoMatricula tipoMatricula;
+    private String tipoMatricula;
     private Grado grado; //
     private AnioAcademico anioAcademico; //
     private Estudiante estudiante;
     private InstitucionEducativa institucion;
 
     public Matricula() {
+        this.grado = new Grado();
+        this.anioAcademico = new AnioAcademico();
+        this.estudiante = new Estudiante();
+        this.institucion = new InstitucionEducativa();
     }
     public Date getFecha() {
         return fecha;
@@ -35,7 +39,7 @@ public class Matricula {
         this.fecha = fecha;
     }
 
-    public Matricula(TipoMatricula tipoMatricula, String estado, AnioAcademico anioAcademico, Estudiante estudiante, Grado grado) {
+    public Matricula(String tipoMatricula, String estado, AnioAcademico anioAcademico, Estudiante estudiante, Grado grado) {
         this.tipoMatricula = tipoMatricula;
         this.estado = estado;
         this.anioAcademico = anioAcademico;
@@ -51,11 +55,11 @@ public class Matricula {
         this.idMatricula = idMatricula;
     }
 
-    public TipoMatricula getTipoMatricula() {
+    public String getTipoMatricula() {
         return tipoMatricula;
     }
 
-    public void setTipoMatricula(TipoMatricula tipoMatricula) {
+    public void setTipoMatricula(String tipoMatricula) {
         this.tipoMatricula = tipoMatricula;
     }
     

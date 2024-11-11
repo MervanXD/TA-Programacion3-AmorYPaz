@@ -5,11 +5,17 @@
       <xsd:import schemaLocation="http://localhost:8080/SoftProgWSBL/DirectorWS?xsd=1" namespace="services.softprog.pucp.edu.pe" />
     </xsd:schema>
   </types>
-  <message name="listarDirectoresDisponibles">
-    <part name="parameters" element="tns:listarDirectoresDisponibles" />
+  <message name="listarDirectoresTodas">
+    <part name="parameters" element="tns:listarDirectoresTodas" />
   </message>
-  <message name="listarDirectoresDisponiblesResponse">
-    <part name="parameters" element="tns:listarDirectoresDisponiblesResponse" />
+  <message name="listarDirectoresTodasResponse">
+    <part name="parameters" element="tns:listarDirectoresTodasResponse" />
+  </message>
+  <message name="eliminarDirector">
+    <part name="parameters" element="tns:eliminarDirector" />
+  </message>
+  <message name="eliminarDirectorResponse">
+    <part name="parameters" element="tns:eliminarDirectorResponse" />
   </message>
   <message name="buscarDirector">
     <part name="parameters" element="tns:buscarDirector" />
@@ -29,22 +35,20 @@
   <message name="modificarDirectorResponse">
     <part name="parameters" element="tns:modificarDirectorResponse" />
   </message>
-  <message name="eliminarDirector">
-    <part name="parameters" element="tns:eliminarDirector" />
+  <message name="listarDirectoresDisponibles">
+    <part name="parameters" element="tns:listarDirectoresDisponibles" />
   </message>
-  <message name="eliminarDirectorResponse">
-    <part name="parameters" element="tns:eliminarDirectorResponse" />
-  </message>
-  <message name="listarDirectoresTodas">
-    <part name="parameters" element="tns:listarDirectoresTodas" />
-  </message>
-  <message name="listarDirectoresTodasResponse">
-    <part name="parameters" element="tns:listarDirectoresTodasResponse" />
+  <message name="listarDirectoresDisponiblesResponse">
+    <part name="parameters" element="tns:listarDirectoresDisponiblesResponse" />
   </message>
   <portType name="DirectorWS">
-    <operation name="listarDirectoresDisponibles">
-      <input wsam:Action="services.softprog.pucp.edu.pe/DirectorWS/listarDirectoresDisponiblesRequest" message="tns:listarDirectoresDisponibles" />
-      <output wsam:Action="services.softprog.pucp.edu.pe/DirectorWS/listarDirectoresDisponiblesResponse" message="tns:listarDirectoresDisponiblesResponse" />
+    <operation name="listarDirectoresTodas">
+      <input wsam:Action="services.softprog.pucp.edu.pe/DirectorWS/listarDirectoresTodasRequest" message="tns:listarDirectoresTodas" />
+      <output wsam:Action="services.softprog.pucp.edu.pe/DirectorWS/listarDirectoresTodasResponse" message="tns:listarDirectoresTodasResponse" />
+    </operation>
+    <operation name="eliminarDirector">
+      <input wsam:Action="services.softprog.pucp.edu.pe/DirectorWS/eliminarDirectorRequest" message="tns:eliminarDirector" />
+      <output wsam:Action="services.softprog.pucp.edu.pe/DirectorWS/eliminarDirectorResponse" message="tns:eliminarDirectorResponse" />
     </operation>
     <operation name="buscarDirector">
       <input wsam:Action="services.softprog.pucp.edu.pe/DirectorWS/buscarDirectorRequest" message="tns:buscarDirector" />
@@ -58,18 +62,23 @@
       <input wsam:Action="services.softprog.pucp.edu.pe/DirectorWS/modificarDirectorRequest" message="tns:modificarDirector" />
       <output wsam:Action="services.softprog.pucp.edu.pe/DirectorWS/modificarDirectorResponse" message="tns:modificarDirectorResponse" />
     </operation>
-    <operation name="eliminarDirector">
-      <input wsam:Action="services.softprog.pucp.edu.pe/DirectorWS/eliminarDirectorRequest" message="tns:eliminarDirector" />
-      <output wsam:Action="services.softprog.pucp.edu.pe/DirectorWS/eliminarDirectorResponse" message="tns:eliminarDirectorResponse" />
-    </operation>
-    <operation name="listarDirectoresTodas">
-      <input wsam:Action="services.softprog.pucp.edu.pe/DirectorWS/listarDirectoresTodasRequest" message="tns:listarDirectoresTodas" />
-      <output wsam:Action="services.softprog.pucp.edu.pe/DirectorWS/listarDirectoresTodasResponse" message="tns:listarDirectoresTodasResponse" />
+    <operation name="listarDirectoresDisponibles">
+      <input wsam:Action="services.softprog.pucp.edu.pe/DirectorWS/listarDirectoresDisponiblesRequest" message="tns:listarDirectoresDisponibles" />
+      <output wsam:Action="services.softprog.pucp.edu.pe/DirectorWS/listarDirectoresDisponiblesResponse" message="tns:listarDirectoresDisponiblesResponse" />
     </operation>
   </portType>
   <binding name="DirectorWSPortBinding" type="tns:DirectorWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="listarDirectoresDisponibles">
+    <operation name="listarDirectoresTodas">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarDirector">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -105,16 +114,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="eliminarDirector">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="listarDirectoresTodas">
+    <operation name="listarDirectoresDisponibles">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
