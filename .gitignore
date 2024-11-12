@@ -60,3 +60,40 @@ replay_pid*
 /Backend/SoftProgGestMatriculaDA/build/
 /Backend/SoftProgGestMatriculaDA/dist/
 /Backend/SoftProgRRHHDA/build
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Compilación
+bin/
+obj/
+*.dll
+*.exe
+*.pdb
+*.cache
+*.dbmdl
+*.dbproj.schemaview
+
+# NuGet
+packages/
+*.nupkg
+*.snupkg
+
+# Logs
+*.log
+
+# Configuración de entorno
+appsettings.Development.json
+appsettings.Production.json
+appsettings.Staging.json
+
+# IDE
+.idea/
+*.sln.ide
+
+# Sistema
+Thumbs.db
+.DS_Store

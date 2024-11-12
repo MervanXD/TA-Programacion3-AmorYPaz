@@ -5,6 +5,11 @@
     <link href="Content/estilosMasterPage.css" rel="stylesheet" />
     <script src="Scripts/scriptsRegistrarPlanes.js"></script>
     <script src="Scripts/scriptsMasterPage.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet" />
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet" />
+    
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphTitulo" runat="server">
     Registrar Plan de Estudios
@@ -68,7 +73,7 @@
             <div class="card-body">
                 <div class="row align-items-center pb-3">
                     <div class="col-auto">
-                        <asp:Label ID="lblCurso" CssClass="form-label" runat="server" Text="Cuso:"></asp:Label>
+                        <asp:Label ID="lblCurso" CssClass="form-label" runat="server" Text="Curso:"></asp:Label>
                     </div>
                     <div class="col-sm-4">
                         <asp:TextBox ID="txtNombreCurso" CssClass="form-control" runat="server" Enabled="false"></asp:TextBox>
@@ -78,8 +83,7 @@
                             CssClass="btn btn-info" Text="<i class='fa-solid fa-magnifying-glass pe-2'></i> Buscar" OnClick="lbBuscarCurso_Click" />
                     </div>
                     <div class="col text-end">
-                        <asp:LinkButton ID="lbAgregarCurso" runat="server"
-                            CssClass="btn btn-success" Text="<i class='fa-solid fa-plus pe-2'></i> Agregar" />
+                        <asp:LinkButton ID="lbAgregarCurso" runat="server" CssClass="btn btn-success" Text="<i class='fa-solid fa-plus pe-2'></i> Agregar" OnClick="lbAgregarCurso_Click1"/>
                     </div>
                 </div>
                 <asp:UpdatePanel runat="server">
@@ -91,7 +95,8 @@
                                     <asp:BoundField HeaderText="Nombre del Curso" />
                                     <asp:TemplateField>
                                         <ItemTemplate>
-                                            <asp:LinkButton runat="server" Text="<i class='fa-solid fa-trash'></i>" />
+                                            <asp:LinkButton runat="server" Text="<i class='fa-solid fa-trash'></i>"
+                                                OnClick="EliminarCurso_Click" CommandArgument='<%# Eval("nombre") %>' />
                                         </ItemTemplate>
                                     </asp:TemplateField>
                                 </Columns>
@@ -109,6 +114,32 @@
         </div>
     </div>
 
+    <!-- Modal para crear un nuevo curso -->
+<div class="modal" id="crearCursoModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Crear Curso</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <asp:Label runat="server" Text="Nombre del Curso:" CssClass="form-label"></asp:Label>
+                    <asp:TextBox runat="server" ID="TextBox1" CssClass="form-control"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfvNombreCurso" runat="server" ControlToValidate="txtNombreCurso"
+                        ErrorMessage="El nombre del curso es requerido." CssClass="text-danger" Display="Dynamic"></asp:RequiredFieldValidator>
+                    <asp:CustomValidator ID="cvNombreCurso" runat="server" ControlToValidate="txtNombreCurso"
+                        ErrorMessage="El nombre solo debe contener letras y espacios." CssClass="text-danger" 
+                        ClientValidationFunction="validarNombreCurso" Display="Dynamic"></asp:CustomValidator>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <asp:LinkButton ID="btnGuardarCurso" runat="server" CssClass="btn btn-primary" OnClick="btnGuardarCurso_Click">Guardar</asp:LinkButton>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
 
     <div class="modal" id="form-modal">
         <div class="modal-dialog modal-xl">
@@ -129,17 +160,18 @@
                                         <asp:TextBox CssClass="form-control" ID="txtNombreCursoModal" runat="server"></asp:TextBox>
                                     </div>
                                     <div class="col-sm-2">
-                                        <asp:LinkButton ID="lbBuscarCursoModal" runat="server" CssClass="btn btn-info" Text="<i class='fa-solid fa-magnifying-glass pe-2'></i> Buscar" />
+                                        <asp:LinkButton ID="lbBuscarCursoModal" runat="server" CssClass="btn btn-info" Text="<i class='fa-solid fa-magnifying-glass pe-2'></i> Buscar" OnClick="lbBuscarCursoModal_Click"/>
                                     </div>
                                 </div>
                             </div>
                             <div class="container">
                                 <asp:GridView ID="gvCursosModal" runat="server" AllowPaging="true" PageSize="5" AutoGenerateColumns="false" CssClass="table table-hover table-responsive table-striped" OnPageIndexChanging="gvCursosModal_PageIndexChanging" HeaderStyle-CssClass="grid-header">
                                     <Columns>
-                                        <asp:BoundField HeaderText="Nombre del Curso" DataField="nombre"/>
+                                        <asp:BoundField HeaderText="Nombre del Curso" DataField="nombre" />
                                         <asp:TemplateField>
                                             <ItemTemplate>
-                                                <asp:LinkButton CssClass="btn btn-success" runat="server" Text="<i class='fa-solid fa-check'></i> Seleccionar" />
+                                                <asp:LinkButton CssClass="btn btn-success" runat="server" Text="<i class='fa-solid fa-check'></i> Seleccionar"
+                                                    OnClick="SeleccionarCurso_Click" CommandArgument='<%# Eval("nombre") %>' />
                                             </ItemTemplate>
                                         </asp:TemplateField>
                                     </Columns>

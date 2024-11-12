@@ -16,8 +16,8 @@ namespace AmorYPazBackend
             // Agrega la configuración de ScriptResourceMapping para jQuery
             ScriptManager.ScriptResourceMapping.AddDefinition("jquery", new ScriptResourceDefinition
             {
-                Path = "~/Scripts/jquery-3.6.0.min.js", // Asegúrate de que la versión y la ruta sean correctas
-                DebugPath = "~/Scripts/jquery-3.6.0.js",
+                Path = "~/Scripts/jquery-3.7.1.min.js", // Asegúrate de que la versión y la ruta sean correctas
+                DebugPath = "~/Scripts/jquery-3.7.1.js",
                 CdnPath = "https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js",
                 CdnDebugPath = "https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.js",
                 LoadSuccessExpression = "window.jQuery"

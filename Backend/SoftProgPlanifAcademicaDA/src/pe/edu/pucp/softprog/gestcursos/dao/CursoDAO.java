@@ -9,4 +9,5 @@ public interface CursoDAO {
     int eliminar(int id);
     Curso obtenerPorId(int id);
     ArrayList<Curso> listarTodos();
+    ArrayList<Curso> listarPorIdNombre(String idNombre);
 }
