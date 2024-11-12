@@ -33,7 +33,6 @@
       <xs:extension base="tns:persona">
         <xs:sequence>
           <xs:element name="activo" type="xs:boolean" />
-          <xs:element minOccurs="0" name="apoderado" type="tns:persona" />
           <xs:element name="cantCursos" type="xs:int" />
           <xs:element minOccurs="0" name="condicionesMedicas" type="xs:string" />
           <xs:element minOccurs="0" name="discapacidades" type="xs:string" />

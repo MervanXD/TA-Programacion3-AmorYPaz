@@ -311,6 +311,7 @@
     <Content Include="MostrarPlanDeEstudio.aspx" />
     <Content Include="OpcionesReporte.aspx" />
     <Content Include="PerfilUsuario.aspx" />
+    <Content Include="RegistrarAlumno.aspx" />
     <Content Include="RegistrarAnioAcademico.aspx" />
     <Content Include="RegistrarDirector.aspx" />
     <Content Include="RegistrarInstitucion.aspx" />
@@ -501,6 +502,13 @@
       <DependentUpon>PerfilUsuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegistrarAlumno.aspx.cs">
+      <DependentUpon>RegistrarAlumno.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistrarAlumno.aspx.designer.cs">
+      <DependentUpon>RegistrarAlumno.aspx</DependentUpon>
+    </Compile>
     <Compile Include="RegistrarAnioAcademico.aspx.cs">
       <DependentUpon>RegistrarAnioAcademico.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

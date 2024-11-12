@@ -91,7 +91,7 @@ namespace AmorYPazBackend
 
         protected void lbRegistrar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("RegistrarMatricula.aspx");
+            Response.Redirect("RegistrarAlumno.aspx");
         }
 
         protected void lbEliminar_Click(object sender, EventArgs e)
@@ -105,9 +105,10 @@ namespace AmorYPazBackend
         protected void lbModificar_Click(object sender, EventArgs e)
         {
             int idEstudiante = Int32.Parse(((LinkButton)sender).CommandArgument);
+            estudiantes = (BindingList<estudiante>)Session["estudiantes"];
             estudiante estudiante = estudiantes.SingleOrDefault(x => x.idPersona == idEstudiante);
             Session["estudiante"] = estudiante;
-            Response.Redirect("RegistrarMatricula.aspx?accion=modificar");
+            Response.Redirect("RegistrarAlumno.aspx?accion=modificar");
         }
         protected void lbBuscar_Click(object sender, EventArgs e)
         {
