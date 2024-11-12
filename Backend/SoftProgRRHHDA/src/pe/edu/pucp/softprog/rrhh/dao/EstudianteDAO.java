@@ -9,4 +9,5 @@ public interface EstudianteDAO {
     int eliminar(int id);
     Estudiante obtenerPorId(int id);
     ArrayList<Estudiante> listarTodos();
+    ArrayList<Estudiante> listarEstudiantesPorGrado(int idGrado);
 }

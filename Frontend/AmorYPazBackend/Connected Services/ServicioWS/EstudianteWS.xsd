@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="services.softprog.pucp.edu.pe" targetNamespace="services.softprog.pucp.edu.pe" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="eliminarEstudiante" type="tns:eliminarEstudiante" />
+  <xs:element name="eliminarEstudianteResponse" type="tns:eliminarEstudianteResponse" />
+  <xs:element name="insertarEstudiante" type="tns:insertarEstudiante" />
+  <xs:element name="insertarEstudianteResponse" type="tns:insertarEstudianteResponse" />
+  <xs:element name="listarEstudiantesPorGrado" type="tns:listarEstudiantesPorGrado" />
+  <xs:element name="listarEstudiantesPorGradoResponse" type="tns:listarEstudiantesPorGradoResponse" />
+  <xs:element name="modificarEstudiante" type="tns:modificarEstudiante" />
+  <xs:element name="modificarEstudianteResponse" type="tns:modificarEstudianteResponse" />
+  <xs:complexType name="eliminarEstudiante">
+    <xs:sequence>
+      <xs:element name="idEstudiante" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarEstudianteResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarEstudiantesPorGrado">
+    <xs:sequence>
+      <xs:element name="idGrado" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarEstudiantesPorGradoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:estudiante" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="estudiante">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:persona">
+        <xs:sequence>
+          <xs:element name="activo" type="xs:boolean" />
+          <xs:element minOccurs="0" name="apoderado" type="tns:persona" />
+          <xs:element name="cantCursos" type="xs:int" />
+          <xs:element minOccurs="0" name="condicionesMedicas" type="xs:string" />
+          <xs:element minOccurs="0" name="discapacidades" type="xs:string" />
+          <xs:element minOccurs="0" name="estado" type="xs:string" />
+          <xs:element name="promedio" type="xs:double" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="persona">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="apellidoMaterno" type="xs:string" />
+      <xs:element minOccurs="0" name="apellidoPaterno" type="xs:string" />
+      <xs:element minOccurs="0" name="direccion" type="xs:string" />
+      <xs:element minOccurs="0" name="dni" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaNacimiento" type="xs:dateTime" />
+      <xs:element name="idPersona" type="xs:int" />
+      <xs:element minOccurs="0" name="lengua" type="xs:string" />
+      <xs:element minOccurs="0" name="nombres" type="xs:string" />
+      <xs:element minOccurs="0" name="religion" type="xs:string" />
+      <xs:element name="sexo" type="xs:unsignedShort" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarEstudiante">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="estudiante" type="tns:estudiante" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarEstudianteResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarEstudiante">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="estudiante" type="tns:estudiante" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarEstudianteResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
