@@ -1,80 +1,25 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\User\\TA-Programacion3-AmorYPaz\\Frontend\\",
+  "WorkspaceRootPath": "C:\\Users\\jimna\\OneDrive\\Documentos\\Cursos PUCP\\2024-2\\Programaci\u00F3n 3\\TA\\TA-Programacion3-AmorYPaz\\Frontend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|c:\\users\\user\\ta-programacion3-amorypaz\\frontend\\amorypazbackend\\registrarmatricula.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|solutionrelative:amorypazbackend\\registrarmatricula.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|C:\\Users\\User\\TA-Programacion3-AmorYPaz\\Frontend\\amorypazbackend\\gestionarmatricula.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|solutionrelative:amorypazbackend\\gestionarmatricula.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|C:\\Users\\User\\TA-Programacion3-AmorYPaz\\Frontend\\amorypazbackend\\gestionarmatricula.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|solutionrelative:amorypazbackend\\gestionarmatricula.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|C:\\Users\\User\\TA-Programacion3-AmorYPaz\\Frontend\\amorypazbackend\\gestionarplanesestudio.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|solutionrelative:amorypazbackend\\gestionarplanesestudio.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|C:\\Users\\User\\TA-Programacion3-AmorYPaz\\Frontend\\amorypazbackend\\gestionarinstituciones.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|solutionrelative:amorypazbackend\\gestionarinstituciones.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|C:\\Users\\User\\TA-Programacion3-AmorYPaz\\Frontend\\amorypazbackend\\registrarmatricula.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|solutionrelative:amorypazbackend\\registrarmatricula.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|C:\\Users\\User\\TA-Programacion3-AmorYPaz\\Frontend\\amorypazbackend\\registraranioacademico.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|solutionrelative:amorypazbackend\\registraranioacademico.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|C:\\Users\\User\\TA-Programacion3-AmorYPaz\\Frontend\\amorypazbackend\\gestionaraniosacademicos.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|solutionrelative:amorypazbackend\\gestionaraniosacademicos.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|C:\\Users\\User\\TA-Programacion3-AmorYPaz\\Frontend\\amorypazbackend\\gestionaralumnos.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|solutionrelative:amorypazbackend\\gestionaralumnos.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|C:\\Users\\User\\TA-Programacion3-AmorYPaz\\Frontend\\amorypazbackend\\registrarinstitucion.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|solutionrelative:amorypazbackend\\registrarinstitucion.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|C:\\Users\\User\\TA-Programacion3-AmorYPaz\\Frontend\\amorypazbackend\\scripts\\scriptsmasterpage.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|solutionrelative:amorypazbackend\\scripts\\scriptsmasterpage.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|C:\\Users\\User\\TA-Programacion3-AmorYPaz\\Frontend\\amorypazbackend\\registraranioacademico.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|solutionrelative:amorypazbackend\\registraranioacademico.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|C:\\Users\\User\\TA-Programacion3-AmorYPaz\\Frontend\\amorypazbackend\\gestionaraniosacademicos.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|solutionrelative:amorypazbackend\\gestionaraniosacademicos.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|C:\\Users\\User\\TA-Programacion3-AmorYPaz\\Frontend\\amorypazbackend\\gestionaralumnos.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|c:\\users\\jimna\\onedrive\\documentos\\cursos pucp\\2024-2\\programaci\u00F3n 3\\ta\\ta-programacion3-amorypaz\\frontend\\amorypazbackend\\gestionaralumnos.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|solutionrelative:amorypazbackend\\gestionaralumnos.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|C:\\Users\\User\\TA-Programacion3-AmorYPaz\\Frontend\\amorypazbackend\\gestionarplanesestudio.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "AbsoluteMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|c:\\users\\jimna\\onedrive\\documentos\\cursos pucp\\2024-2\\programaci\u00F3n 3\\ta\\ta-programacion3-amorypaz\\frontend\\amorypazbackend\\gestionaralumnos.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|solutionrelative:amorypazbackend\\gestionaralumnos.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|C:\\Users\\jimna\\OneDrive\\Documentos\\Cursos PUCP\\2024-2\\Programaci\u00F3n 3\\TA\\TA-Programacion3-AmorYPaz\\Frontend\\amorypazbackend\\gestionarplanesestudio.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|solutionrelative:amorypazbackend\\gestionarplanesestudio.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|C:\\Users\\User\\TA-Programacion3-AmorYPaz\\Frontend\\amorypazbackend\\softprog.master.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|solutionrelative:amorypazbackend\\softprog.master.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|C:\\Users\\jimna\\OneDrive\\Documentos\\Cursos PUCP\\2024-2\\Programaci\u00F3n 3\\TA\\TA-Programacion3-AmorYPaz\\Frontend\\amorypazbackend\\scripts\\scriptsmasterpage.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|solutionrelative:amorypazbackend\\scripts\\scriptsmasterpage.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|SoftProgWA||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|C:\\Users\\User\\TA-Programacion3-AmorYPaz\\Frontend\\amorypazbackend\\gestionarinstituciones.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|solutionrelative:amorypazbackend\\gestionarinstituciones.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|C:\\Users\\User\\TA-Programacion3-AmorYPaz\\Frontend\\amorypazbackend\\softprog.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
+      "AbsoluteMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|C:\\Users\\jimna\\OneDrive\\Documentos\\Cursos PUCP\\2024-2\\Programaci\u00F3n 3\\TA\\TA-Programacion3-AmorYPaz\\Frontend\\amorypazbackend\\softprog.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
       "RelativeMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|solutionrelative:amorypazbackend\\softprog.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}"
     }
   ],
@@ -85,172 +30,54 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "GestionarAniosAcademicos.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\User\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\GestionarAniosAcademicos.aspx.cs",
-              "RelativeDocumentMoniker": "AmorYPazBackend\\GestionarAniosAcademicos.aspx.cs",
-              "ToolTip": "C:\\Users\\User\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\GestionarAniosAcademicos.aspx.cs",
-              "RelativeToolTip": "AmorYPazBackend\\GestionarAniosAcademicos.aspx.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAQwCMAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-10T23:27:46.055Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "GestionarInstituciones.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\User\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\GestionarInstituciones.aspx.cs",
-              "RelativeDocumentMoniker": "AmorYPazBackend\\GestionarInstituciones.aspx.cs",
-              "ToolTip": "C:\\Users\\User\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\GestionarInstituciones.aspx.cs",
-              "RelativeToolTip": "AmorYPazBackend\\GestionarInstituciones.aspx.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABgAAABJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-10T23:34:39.739Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "RegistrarMatricula.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\User\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\RegistrarMatricula.aspx.cs",
-              "RelativeDocumentMoniker": "AmorYPazBackend\\RegistrarMatricula.aspx.cs",
-              "ToolTip": "C:\\Users\\User\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\RegistrarMatricula.aspx.cs",
-              "RelativeToolTip": "AmorYPazBackend\\RegistrarMatricula.aspx.cs",
-              "ViewState": "AgIAAFkAAAAAAAAAAAAwwGcAAAARAAAAAAAAAA==",
+              "Title": "GestionarAlumnos.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\jimna\\OneDrive\\Documentos\\Cursos PUCP\\2024-2\\Programaci\u00F3n 3\\TA\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\GestionarAlumnos.aspx.cs",
+              "RelativeDocumentMoniker": "AmorYPazBackend\\GestionarAlumnos.aspx.cs",
+              "ToolTip": "C:\\Users\\jimna\\OneDrive\\Documentos\\Cursos PUCP\\2024-2\\Programaci\u00F3n 3\\TA\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\GestionarAlumnos.aspx.cs",
+              "RelativeToolTip": "AmorYPazBackend\\GestionarAlumnos.aspx.cs",
+              "ViewState": "AgIAAGAAAAAAAAAAAAAIwHgAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T02:15:03.618Z",
+              "WhenOpened": "2024-11-12T00:46:09.893Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "RegistrarAnioAcademico.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\User\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\RegistrarAnioAcademico.aspx.cs",
-              "RelativeDocumentMoniker": "AmorYPazBackend\\RegistrarAnioAcademico.aspx.cs",
-              "ToolTip": "C:\\Users\\User\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\RegistrarAnioAcademico.aspx.cs",
-              "RelativeToolTip": "AmorYPazBackend\\RegistrarAnioAcademico.aspx.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAFYAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T00:15:57.586Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "RegistrarInstitucion.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\User\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\RegistrarInstitucion.aspx.cs",
-              "RelativeDocumentMoniker": "AmorYPazBackend\\RegistrarInstitucion.aspx.cs",
-              "ToolTip": "C:\\Users\\User\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\RegistrarInstitucion.aspx.cs",
-              "RelativeToolTip": "AmorYPazBackend\\RegistrarInstitucion.aspx.cs",
-              "ViewState": "AgIAAJUAAAAAAAAAAAAIwI0AAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T00:16:11.692Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "GestionarPlanesEstudio.aspx",
-              "DocumentMoniker": "C:\\Users\\User\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\GestionarPlanesEstudio.aspx",
-              "RelativeDocumentMoniker": "AmorYPazBackend\\GestionarPlanesEstudio.aspx",
-              "ToolTip": "C:\\Users\\User\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\GestionarPlanesEstudio.aspx",
-              "RelativeToolTip": "AmorYPazBackend\\GestionarPlanesEstudio.aspx",
+              "DocumentIndex": 1,
+              "Title": "GestionarAlumnos.aspx",
+              "DocumentMoniker": "C:\\Users\\jimna\\OneDrive\\Documentos\\Cursos PUCP\\2024-2\\Programaci\u00F3n 3\\TA\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\GestionarAlumnos.aspx",
+              "RelativeDocumentMoniker": "AmorYPazBackend\\GestionarAlumnos.aspx",
+              "ToolTip": "C:\\Users\\jimna\\OneDrive\\Documentos\\Cursos PUCP\\2024-2\\Programaci\u00F3n 3\\TA\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\GestionarAlumnos.aspx",
+              "RelativeToolTip": "AmorYPazBackend\\GestionarAlumnos.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-11-10T23:16:25.963Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "GestionarMatricula.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\User\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\GestionarMatricula.aspx.cs",
-              "RelativeDocumentMoniker": "AmorYPazBackend\\GestionarMatricula.aspx.cs",
-              "ToolTip": "C:\\Users\\User\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\GestionarMatricula.aspx.cs",
-              "RelativeToolTip": "AmorYPazBackend\\GestionarMatricula.aspx.cs",
-              "ViewState": "AgIAAEsAAAAAAAAAAAAUwGAAAABTAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T02:16:02.01Z"
+              "WhenOpened": "2024-11-12T00:46:07.34Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "GestionarMatricula.aspx",
-              "DocumentMoniker": "C:\\Users\\User\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\GestionarMatricula.aspx",
-              "RelativeDocumentMoniker": "AmorYPazBackend\\GestionarMatricula.aspx",
-              "ToolTip": "C:\\Users\\User\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\GestionarMatricula.aspx",
-              "RelativeToolTip": "AmorYPazBackend\\GestionarMatricula.aspx",
+              "Title": "GestionarPlanesEstudio.aspx",
+              "DocumentMoniker": "C:\\Users\\jimna\\OneDrive\\Documentos\\Cursos PUCP\\2024-2\\Programaci\u00F3n 3\\TA\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\GestionarPlanesEstudio.aspx",
+              "RelativeDocumentMoniker": "AmorYPazBackend\\GestionarPlanesEstudio.aspx",
+              "ToolTip": "C:\\Users\\jimna\\OneDrive\\Documentos\\Cursos PUCP\\2024-2\\Programaci\u00F3n 3\\TA\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\GestionarPlanesEstudio.aspx",
+              "RelativeToolTip": "AmorYPazBackend\\GestionarPlanesEstudio.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-11-11T02:15:46.315Z"
+              "WhenOpened": "2024-11-10T23:16:25.963Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "GestionarPlanesEstudio.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\User\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\GestionarPlanesEstudio.aspx.cs",
-              "RelativeDocumentMoniker": "AmorYPazBackend\\GestionarPlanesEstudio.aspx.cs",
-              "ToolTip": "C:\\Users\\User\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\GestionarPlanesEstudio.aspx.cs",
-              "RelativeToolTip": "AmorYPazBackend\\GestionarPlanesEstudio.aspx.cs",
-              "ViewState": "AgIAACUAAAAAAAAAAAAgwDcAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-10T23:26:37.109Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "RegistrarMatricula.aspx",
-              "DocumentMoniker": "C:\\Users\\User\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\RegistrarMatricula.aspx",
-              "RelativeDocumentMoniker": "AmorYPazBackend\\RegistrarMatricula.aspx",
-              "ToolTip": "C:\\Users\\User\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\RegistrarMatricula.aspx",
-              "RelativeToolTip": "AmorYPazBackend\\RegistrarMatricula.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-11-11T02:14:46.288Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "GestionarAniosAcademicos.aspx",
-              "DocumentMoniker": "C:\\Users\\User\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\GestionarAniosAcademicos.aspx",
-              "RelativeDocumentMoniker": "AmorYPazBackend\\GestionarAniosAcademicos.aspx",
-              "ToolTip": "C:\\Users\\User\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\GestionarAniosAcademicos.aspx",
-              "RelativeToolTip": "AmorYPazBackend\\GestionarAniosAcademicos.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-11-10T23:16:16.774Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "GestionarAlumnos.aspx",
-              "DocumentMoniker": "C:\\Users\\User\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\GestionarAlumnos.aspx",
-              "RelativeDocumentMoniker": "AmorYPazBackend\\GestionarAlumnos.aspx",
-              "ToolTip": "C:\\Users\\User\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\GestionarAlumnos.aspx",
-              "RelativeToolTip": "AmorYPazBackend\\GestionarAlumnos.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-11-11T02:18:00.188Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "RegistrarAnioAcademico.aspx",
-              "DocumentMoniker": "C:\\Users\\User\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\RegistrarAnioAcademico.aspx",
-              "RelativeDocumentMoniker": "AmorYPazBackend\\RegistrarAnioAcademico.aspx",
-              "ToolTip": "C:\\Users\\User\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\RegistrarAnioAcademico.aspx",
-              "RelativeToolTip": "AmorYPazBackend\\RegistrarAnioAcademico.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-11-11T00:24:31.719Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
               "Title": "scriptsMasterPage.js",
-              "DocumentMoniker": "C:\\Users\\User\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\Scripts\\scriptsMasterPage.js",
+              "DocumentMoniker": "C:\\Users\\jimna\\OneDrive\\Documentos\\Cursos PUCP\\2024-2\\Programaci\u00F3n 3\\TA\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\Scripts\\scriptsMasterPage.js",
               "RelativeDocumentMoniker": "AmorYPazBackend\\Scripts\\scriptsMasterPage.js",
-              "ToolTip": "C:\\Users\\User\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\Scripts\\scriptsMasterPage.js",
+              "ToolTip": "C:\\Users\\jimna\\OneDrive\\Documentos\\Cursos PUCP\\2024-2\\Programaci\u00F3n 3\\TA\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\Scripts\\scriptsMasterPage.js",
               "RelativeToolTip": "AmorYPazBackend\\Scripts\\scriptsMasterPage.js",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
@@ -258,62 +85,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "GestionarAlumnos.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\User\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\GestionarAlumnos.aspx.cs",
-              "RelativeDocumentMoniker": "AmorYPazBackend\\GestionarAlumnos.aspx.cs",
-              "ToolTip": "C:\\Users\\User\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\GestionarAlumnos.aspx.cs",
-              "RelativeToolTip": "AmorYPazBackend\\GestionarAlumnos.aspx.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAQwCMAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T02:20:55.075Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "GestionarInstituciones.aspx",
-              "DocumentMoniker": "C:\\Users\\User\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\GestionarInstituciones.aspx",
-              "RelativeDocumentMoniker": "AmorYPazBackend\\GestionarInstituciones.aspx",
-              "ToolTip": "C:\\Users\\User\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\GestionarInstituciones.aspx",
-              "RelativeToolTip": "AmorYPazBackend\\GestionarInstituciones.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-11-10T23:22:21.453Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "SoftProg.Master.cs",
-              "DocumentMoniker": "C:\\Users\\User\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\SoftProg.Master.cs",
-              "RelativeDocumentMoniker": "AmorYPazBackend\\SoftProg.Master.cs",
-              "ToolTip": "C:\\Users\\User\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\SoftProg.Master.cs",
-              "RelativeToolTip": "AmorYPazBackend\\SoftProg.Master.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-10T16:24:03.788Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "SoftProgWA",
-              "DocumentMoniker": "C:\\Users\\User\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\SoftProgWA.csproj",
-              "RelativeDocumentMoniker": "AmorYPazBackend\\SoftProgWA.csproj",
-              "ToolTip": "C:\\Users\\User\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\SoftProgWA.csproj",
-              "RelativeToolTip": "AmorYPazBackend\\SoftProgWA.csproj",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-11-11T15:40:11.572Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 4,
               "Title": "SoftProg.Master",
-              "DocumentMoniker": "C:\\Users\\User\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\SoftProg.Master",
+              "DocumentMoniker": "C:\\Users\\jimna\\OneDrive\\Documentos\\Cursos PUCP\\2024-2\\Programaci\u00F3n 3\\TA\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\SoftProg.Master",
               "RelativeDocumentMoniker": "AmorYPazBackend\\SoftProg.Master",
-              "ToolTip": "C:\\Users\\User\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\SoftProg.Master",
+              "ToolTip": "C:\\Users\\jimna\\OneDrive\\Documentos\\Cursos PUCP\\2024-2\\Programaci\u00F3n 3\\TA\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\SoftProg.Master",
               "RelativeToolTip": "AmorYPazBackend\\SoftProg.Master",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-11-11T01:24:23.79Z"
+              "WhenOpened": "2024-11-11T01:24:23.79Z",
+              "EditorCaption": ""
             }
           ]
         }

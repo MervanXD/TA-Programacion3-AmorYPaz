@@ -223,5 +223,54 @@ public class EstudianteMySQL implements EstudianteDAO {
             try{con.close();}catch(SQLException ex){System.out.println(ex.getMessage());}
         }
         return estudiantes;  
+    } 
+    @Override
+    public ArrayList<Estudiante> listarEstudiantesPorGrado(int idGrado) {
+        ArrayList<Estudiante> estudiantes = new ArrayList<>();
+        try {
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call LISTAR_ESTUDIANTES_X_GRADO(?)}");
+            cs.setInt("_id_ie", idGrado);
+            rs = cs.executeQuery();
+            while (rs.next()) {
+                Estudiante estudiante = new Estudiante();
+                estudiante.getApoderado().setDni(rs.getString("apdni"));
+                estudiante.getApoderado().setNombres(rs.getString("apnom"));
+                estudiante.getApoderado().setApellidoPaterno(rs.getString("apa"));
+                estudiante.getApoderado().setApellidoMaterno(rs.getString("ama"));
+                estudiante.getApoderado().setIdPersona(rs.getInt("apid"));
+                estudiante.getApoderado().setLengua(rs.getString("aplen"));
+                estudiante.getApoderado().setReligion(rs.getString("aprel"));
+                estudiante.getApoderado().setSexo(rs.getString("apsex").charAt(0));
+                estudiante.getApoderado().setDireccion(rs.getString("apdir"));
+                estudiante.getApoderado().setFechaNacimiento(rs.getDate("apfec"));
+                estudiante.setCantCursos(rs.getInt("cantidad_cursos"));
+                estudiante.setPromedio(rs.getDouble("promedio"));
+                estudiante.setCondicionesMedicas(rs.getString("condiciones_med"));
+                estudiante.setDiscapacidades(rs.getString("discapacidades"));
+                estudiante.setEstado(rs.getString("estado"));        
+                estudiante.setIdPersona(rs.getInt("fid_persona"));
+                estudiante.setDni(rs.getString("DNI"));
+                estudiante.setNombres(rs.getString("nombres"));
+                estudiante.setApellidoPaterno(rs.getString("apellido_paterno"));
+                estudiante.setApellidoMaterno(rs.getString("apellido_materno"));
+                estudiante.setFechaNacimiento(rs.getDate("fecha_nacimiento"));
+                estudiante.setLengua(rs.getString("lengua"));
+                estudiante.setReligion(rs.getString("religion"));
+                estudiante.setSexo(rs.getString("sexo").charAt(0));
+                estudiante.setDireccion(rs.getString("direccion"));
+                estudiante.setActivo(rs.getBoolean("activo"));
+                estudiantes.add(estudiante);
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            try {
+                con.close();
+            } catch (SQLException ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
+        return estudiantes;        
     }
 }

@@ -210,14 +210,15 @@ public class GradoMySQL implements GradoDAO {
     }
 
     @Override
-    public Grado obtenerPorIdIE(int idInstitucion) {
-        Grado grado = new Grado();
+    public ArrayList<Grado> obtenerPorIdIE(int idInstitucion) {
+        ArrayList<Grado> grados = new ArrayList<>();
         try {
             con = DBManager.getInstance().getConnection();
             cs = con.prepareCall("{call OBTENER_GRADO_POR_INSTITUCION(?)}");
             cs.setInt("_fid_institucion", idInstitucion);
             rs = cs.executeQuery();
             if (rs.next()) {
+                Grado grado = new Grado();
                 grado.setIdGrado(rs.getInt("id_Grado"));
                 grado.setAlumnosMatriculados(rs.getInt("num_matriculados"));
                 grado.setNivel(TipoNivel.valueOf(rs.getString("tipo_nivel")));
@@ -228,9 +229,10 @@ public class GradoMySQL implements GradoDAO {
                 grado.getInstitucion().setDireccion(rs.getString("direccion"));
                 grado.getInstitucion().setIdInstitucion(rs.getInt("id_Institucion_Educativa"));
                 grado.getInstitucion().setNombre(rs.getString("nombre"));
+                grados.add(grado);
             }
         } catch (SQLException ex) {
-            grado = null;
+            grados = null;
             System.out.println(ex.getMessage());
         } finally {
             try {
@@ -239,7 +241,7 @@ public class GradoMySQL implements GradoDAO {
                 System.out.println(ex.getMessage());
             }
         }
-        return grado;
+        return grados;
     }
 
     @Override
@@ -276,5 +278,5 @@ public class GradoMySQL implements GradoDAO {
         }
         return grados;        
     }
-
+    
 }

@@ -13,6 +13,6 @@ public interface GradoDAO {
     ArrayList<Grado> listarTodos();
     int insertarTodosLosGrados(int cantGrados,int fid_IE,TipoNivel tipo);
     Grado obtenerPorIdPlanEstudios(int idPlan);
-    Grado obtenerPorIdIE(int idPlan);
+    ArrayList<Grado> obtenerPorIdIE(int idInstitucion);
     ArrayList<Grado> listarTodosPorIdIE(int idInstitucion);
 }
