@@ -45,7 +45,7 @@
                 <asp:TemplateField HeaderText="Acciones" HeaderStyle-CssClass="grid-header">
                     <ItemStyle HorizontalAlign="Center" />
                     <ItemTemplate>
-                        <asp:LinkButton ID="lbModificar" runat="server" Text="<i class='fa-solid fa-pencil'></i>" CssClass="btn btn-warning" CommandName="Modificar" CommandArgument='<%# Eval("idPersona") %>' />
+                        <asp:LinkButton ID="lbModificar" runat="server" Text="<i class='fa-solid fa-pencil'></i>" CssClass="btn btn-warning" CommandName="Modificar" OnClick="lbModificar_Click" CommandArgument='<%# Eval("idPersona") %>' />
                         <asp:LinkButton runat="server" Text="<i class='fa-solid fa-trash'></i>" CssClass="btn btn-danger" OnClick="lbEliminar_Click" CommandArgument='<%# Eval("idPersona") %>'/>
                     </ItemTemplate>
                 </asp:TemplateField>

@@ -48,16 +48,6 @@
       <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="insertarDirector">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="director" type="tns:director" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="insertarDirectorResponse">
-    <xs:sequence>
-      <xs:element name="return" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="listarDirectoresDisponibles">
     <xs:sequence>
       <xs:element name="idDirector" type="xs:int" />
@@ -66,6 +56,16 @@
   <xs:complexType name="listarDirectoresDisponiblesResponse">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:director" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarDirector">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="director" type="tns:director" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarDirectorResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="buscarDirector">

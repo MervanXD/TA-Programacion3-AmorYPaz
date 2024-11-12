@@ -5,6 +5,12 @@
       <xsd:import schemaLocation="http://localhost:8080/SoftProgWSBL/AnioAcademicoWS?xsd=1" namespace="services.softprog.pucp.edu.pe" />
     </xsd:schema>
   </types>
+  <message name="modificarAnioAcademico">
+    <part name="parameters" element="tns:modificarAnioAcademico" />
+  </message>
+  <message name="modificarAnioAcademicoResponse">
+    <part name="parameters" element="tns:modificarAnioAcademicoResponse" />
+  </message>
   <message name="insertarAnioAcademico">
     <part name="parameters" element="tns:insertarAnioAcademico" />
   </message>
@@ -23,13 +29,11 @@
   <message name="obtenerAnioAcademicoResponse">
     <part name="parameters" element="tns:obtenerAnioAcademicoResponse" />
   </message>
-  <message name="modificarAnioAcademico">
-    <part name="parameters" element="tns:modificarAnioAcademico" />
-  </message>
-  <message name="modificarAnioAcademicoResponse">
-    <part name="parameters" element="tns:modificarAnioAcademicoResponse" />
-  </message>
   <portType name="AnioAcademicoWS">
+    <operation name="modificarAnioAcademico">
+      <input wsam:Action="services.softprog.pucp.edu.pe/AnioAcademicoWS/modificarAnioAcademicoRequest" message="tns:modificarAnioAcademico" />
+      <output wsam:Action="services.softprog.pucp.edu.pe/AnioAcademicoWS/modificarAnioAcademicoResponse" message="tns:modificarAnioAcademicoResponse" />
+    </operation>
     <operation name="insertarAnioAcademico">
       <input wsam:Action="services.softprog.pucp.edu.pe/AnioAcademicoWS/insertarAnioAcademicoRequest" message="tns:insertarAnioAcademico" />
       <output wsam:Action="services.softprog.pucp.edu.pe/AnioAcademicoWS/insertarAnioAcademicoResponse" message="tns:insertarAnioAcademicoResponse" />
@@ -42,13 +46,18 @@
       <input wsam:Action="services.softprog.pucp.edu.pe/AnioAcademicoWS/obtenerAnioAcademicoRequest" message="tns:obtenerAnioAcademico" />
       <output wsam:Action="services.softprog.pucp.edu.pe/AnioAcademicoWS/obtenerAnioAcademicoResponse" message="tns:obtenerAnioAcademicoResponse" />
     </operation>
-    <operation name="modificarAnioAcademico">
-      <input wsam:Action="services.softprog.pucp.edu.pe/AnioAcademicoWS/modificarAnioAcademicoRequest" message="tns:modificarAnioAcademico" />
-      <output wsam:Action="services.softprog.pucp.edu.pe/AnioAcademicoWS/modificarAnioAcademicoResponse" message="tns:modificarAnioAcademicoResponse" />
-    </operation>
   </portType>
   <binding name="AnioAcademicoWSPortBinding" type="tns:AnioAcademicoWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="modificarAnioAcademico">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="insertarAnioAcademico">
       <soap:operation soapAction="" />
       <input>
@@ -68,15 +77,6 @@
       </output>
     </operation>
     <operation name="obtenerAnioAcademico">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="modificarAnioAcademico">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
