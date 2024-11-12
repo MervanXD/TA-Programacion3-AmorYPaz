@@ -11,11 +11,11 @@
   <message name="listarPlanesDeEstudioPorIdIEResponse">
     <part name="parameters" element="tns:listarPlanesDeEstudioPorIdIEResponse" />
   </message>
-  <message name="listarPlanesDeEstudio">
-    <part name="parameters" element="tns:listarPlanesDeEstudio" />
+  <message name="modificarPlanDeEstudio">
+    <part name="parameters" element="tns:modificarPlanDeEstudio" />
   </message>
-  <message name="listarPlanesDeEstudioResponse">
-    <part name="parameters" element="tns:listarPlanesDeEstudioResponse" />
+  <message name="modificarPlanDeEstudioResponse">
+    <part name="parameters" element="tns:modificarPlanDeEstudioResponse" />
   </message>
   <message name="insertarPlanDeEstudio">
     <part name="parameters" element="tns:insertarPlanDeEstudio" />
@@ -23,38 +23,38 @@
   <message name="insertarPlanDeEstudioResponse">
     <part name="parameters" element="tns:insertarPlanDeEstudioResponse" />
   </message>
+  <message name="listarPlanesDeEstudio">
+    <part name="parameters" element="tns:listarPlanesDeEstudio" />
+  </message>
+  <message name="listarPlanesDeEstudioResponse">
+    <part name="parameters" element="tns:listarPlanesDeEstudioResponse" />
+  </message>
   <message name="eliminarPlanDeEstudio">
     <part name="parameters" element="tns:eliminarPlanDeEstudio" />
   </message>
   <message name="eliminarPlanDeEstudioResponse">
     <part name="parameters" element="tns:eliminarPlanDeEstudioResponse" />
   </message>
-  <message name="modificarPlanDeEstudio">
-    <part name="parameters" element="tns:modificarPlanDeEstudio" />
-  </message>
-  <message name="modificarPlanDeEstudioResponse">
-    <part name="parameters" element="tns:modificarPlanDeEstudioResponse" />
-  </message>
   <portType name="PlanDeEstudioWS">
     <operation name="listarPlanesDeEstudioPorIdIE">
       <input wsam:Action="services.softprog.pucp.edu.pe/PlanDeEstudioWS/listarPlanesDeEstudioPorIdIERequest" message="tns:listarPlanesDeEstudioPorIdIE" />
       <output wsam:Action="services.softprog.pucp.edu.pe/PlanDeEstudioWS/listarPlanesDeEstudioPorIdIEResponse" message="tns:listarPlanesDeEstudioPorIdIEResponse" />
     </operation>
-    <operation name="listarPlanesDeEstudio">
-      <input wsam:Action="services.softprog.pucp.edu.pe/PlanDeEstudioWS/listarPlanesDeEstudioRequest" message="tns:listarPlanesDeEstudio" />
-      <output wsam:Action="services.softprog.pucp.edu.pe/PlanDeEstudioWS/listarPlanesDeEstudioResponse" message="tns:listarPlanesDeEstudioResponse" />
+    <operation name="modificarPlanDeEstudio">
+      <input wsam:Action="services.softprog.pucp.edu.pe/PlanDeEstudioWS/modificarPlanDeEstudioRequest" message="tns:modificarPlanDeEstudio" />
+      <output wsam:Action="services.softprog.pucp.edu.pe/PlanDeEstudioWS/modificarPlanDeEstudioResponse" message="tns:modificarPlanDeEstudioResponse" />
     </operation>
     <operation name="insertarPlanDeEstudio">
       <input wsam:Action="services.softprog.pucp.edu.pe/PlanDeEstudioWS/insertarPlanDeEstudioRequest" message="tns:insertarPlanDeEstudio" />
       <output wsam:Action="services.softprog.pucp.edu.pe/PlanDeEstudioWS/insertarPlanDeEstudioResponse" message="tns:insertarPlanDeEstudioResponse" />
     </operation>
+    <operation name="listarPlanesDeEstudio">
+      <input wsam:Action="services.softprog.pucp.edu.pe/PlanDeEstudioWS/listarPlanesDeEstudioRequest" message="tns:listarPlanesDeEstudio" />
+      <output wsam:Action="services.softprog.pucp.edu.pe/PlanDeEstudioWS/listarPlanesDeEstudioResponse" message="tns:listarPlanesDeEstudioResponse" />
+    </operation>
     <operation name="eliminarPlanDeEstudio">
       <input wsam:Action="services.softprog.pucp.edu.pe/PlanDeEstudioWS/eliminarPlanDeEstudioRequest" message="tns:eliminarPlanDeEstudio" />
       <output wsam:Action="services.softprog.pucp.edu.pe/PlanDeEstudioWS/eliminarPlanDeEstudioResponse" message="tns:eliminarPlanDeEstudioResponse" />
-    </operation>
-    <operation name="modificarPlanDeEstudio">
-      <input wsam:Action="services.softprog.pucp.edu.pe/PlanDeEstudioWS/modificarPlanDeEstudioRequest" message="tns:modificarPlanDeEstudio" />
-      <output wsam:Action="services.softprog.pucp.edu.pe/PlanDeEstudioWS/modificarPlanDeEstudioResponse" message="tns:modificarPlanDeEstudioResponse" />
     </operation>
   </portType>
   <binding name="PlanDeEstudioWSPortBinding" type="tns:PlanDeEstudioWS">
@@ -68,7 +68,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="listarPlanesDeEstudio">
+    <operation name="modificarPlanDeEstudio">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -86,7 +86,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="eliminarPlanDeEstudio">
+    <operation name="listarPlanesDeEstudio">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -95,7 +95,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="modificarPlanDeEstudio">
+    <operation name="eliminarPlanDeEstudio">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

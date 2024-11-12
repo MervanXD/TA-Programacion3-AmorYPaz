@@ -212,6 +212,15 @@
     <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.modificarEstudianteResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.insertarCursoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.curso.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.listarPorIdNombreCursosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Connected Services\ServicioWS\AnioAcademicoWS.wsdl" />
     <None Include="Connected Services\ServicioWS\AnioAcademicoWS.xsd">
       <SubType>Designer</SubType>
@@ -219,6 +228,10 @@
     <None Include="Connected Services\ServicioWS\archivo.disco" />
     <None Include="Connected Services\ServicioWS\configuration91.svcinfo" />
     <None Include="Connected Services\ServicioWS\configuration.svcinfo" />
+    <None Include="Connected Services\ServicioWS\CursoWS.wsdl" />
+    <None Include="Connected Services\ServicioWS\CursoWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\ServicioWS\EstudianteWS.wsdl" />
     <None Include="Connected Services\ServicioWS\EstudianteWS.xsd">
       <SubType>Designer</SubType>
