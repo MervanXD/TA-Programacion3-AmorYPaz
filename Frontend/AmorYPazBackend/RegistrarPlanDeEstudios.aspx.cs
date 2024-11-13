@@ -98,13 +98,15 @@ namespace AmorYPazBackend
 
         protected void lbBuscarCursoModal_Click(object sender, EventArgs e)
         {
-            string script = "window.onload = function() { showModalForm() };";
-            ScriptManager.RegisterStartupScript(this, GetType(), "", script, true);
+            string script = "mostrarModalCursos();";
+            ScriptManager.RegisterStartupScript(this, GetType(), "MostrarModalCursos", script, true);
             string nombreCurso = txtNombreCursoModal.Text.Trim();
 
             // Llamar al método del servicio para obtener los cursos
+            daoCurso = new CursoWSClient();
             curso[] cursosArray = daoCurso.listarPorIdNombreCursos(nombreCurso);
-            cursos=cursosArray.ToList();
+            if (cursosArray == null) cursos = null;
+            else cursos = cursosArray.ToList();
 
             // Asignar la lista de cursos al GridView en el modal
             gvCursosModal.DataSource = cursos;
@@ -210,6 +212,21 @@ namespace AmorYPazBackend
         {
             string script = "showModalFormRegistrarCurso();"; // Llama directamente a la función
             ScriptManager.RegisterStartupScript(this, GetType(), "showModal", script, true);
+        }
+
+        protected void lbBuscarCurso_Click1(object sender, EventArgs e)
+        {
+            string script = "window.onload = function() { mostrarModalCursos() };";
+            ScriptManager.RegisterStartupScript(this, GetType(), "", script, true);
+            string nombreCurso = txtNombreCursoModal.Text.Trim();
+
+            // Llamar al método del servicio para obtener los cursos
+            curso[] cursosArray = daoCurso.listarPorIdNombreCursos(nombreCurso);
+            cursos = cursosArray.ToList();
+
+            // Asignar la lista de cursos al GridView en el modal
+            gvCursosModal.DataSource = cursos;
+            gvCursosModal.DataBind();
         }
     }
 }
