@@ -76,6 +76,7 @@ namespace AmorYPazBackend
                         else if (user.tipoUsuario == tipoUsuario.DIRECTOR_IE)
                             strRedirect = "MenuPrincipalDirectores.aspx";
                         Session["idDirector"] = user.director.idPersona;
+
                     }
                     Response.Redirect(strRedirect, true);
                 } 
