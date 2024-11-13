@@ -1,8 +1,9 @@
-﻿function showModalForm() {
+﻿function mostrarModalCursos() {
     console.log("mensaje");
     var modalForm = new bootstrap.Modal(document.getElementById('form-modal'));
     modalForm.toggle();
 }
+
 function showModalFormRegistrarCurso() {
     console.log("mensaje");
     var modalForm = new bootstrap.Modal(document.getElementById('crearCursoModal'));

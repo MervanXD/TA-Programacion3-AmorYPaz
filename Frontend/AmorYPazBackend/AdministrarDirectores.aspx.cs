@@ -53,11 +53,20 @@ namespace AmorYPazBackend
         }
         protected void lbBuscar_Click(object sender, EventArgs e)
         {
-            director = daoDirector.buscarDirector(Int32.Parse(txtNombreDNI.Text));
-            directores = new BindingList<director>();
-            directores.Add(director);
-            dgvDirectores.DataSource = directores;
-            dgvDirectores.DataBind();
+            if (txtNombreDNI.Text != "")
+            {
+                director = daoDirector.buscarDirector(Int32.Parse(txtNombreDNI.Text));
+                directores = new BindingList<director>();
+                directores.Add(director);
+                dgvDirectores.DataSource = directores;
+                dgvDirectores.DataBind();
+            }
+            else {
+                directores = new BindingList<director>(daoDirector.listarDirectoresTodas());
+                dgvDirectores.DataSource = directores;
+                dgvDirectores.DataBind();
+            }
+            
         }
         protected void lbModificar_Click(object sender, EventArgs e)
         {

@@ -24,6 +24,15 @@ namespace AmorYPazBackend
         protected global::System.Web.UI.ScriptManager ScriptManager1;
 
         /// <summary>
+        /// Control upContenedor.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel upContenedor;
+
+        /// <summary>
         /// Control lblNombreInstitucion.
         /// </summary>
         /// <remarks>
@@ -51,15 +60,6 @@ namespace AmorYPazBackend
         protected global::System.Web.UI.WebControls.DropDownList ddlAnio;
 
         /// <summary>
-        /// Control rfvAnio.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvAnio;
-
-        /// <summary>
         /// Control lblGrado.
         /// </summary>
         /// <remarks>
@@ -76,15 +76,6 @@ namespace AmorYPazBackend
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlGrado;
-
-        /// <summary>
-        /// Control rfvGrado.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvGrado;
 
         /// <summary>
         /// Control lblFechaInicio.
@@ -105,15 +96,6 @@ namespace AmorYPazBackend
         protected global::System.Web.UI.WebControls.TextBox txtFechaInicio;
 
         /// <summary>
-        /// Control rfvFechaInicio.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvFechaInicio;
-
-        /// <summary>
         /// Control lblFechaFin.
         /// </summary>
         /// <remarks>
@@ -132,15 +114,6 @@ namespace AmorYPazBackend
         protected global::System.Web.UI.WebControls.TextBox txtFechaFin;
 
         /// <summary>
-        /// Control rfvFechaFin.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvFechaFin;
-
-        /// <summary>
         /// Control lblDescripcion.
         /// </summary>
         /// <remarks>
@@ -157,15 +130,6 @@ namespace AmorYPazBackend
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDescripcion;
-
-        /// <summary>
-        /// Control rfvDescripcion.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvDescripcion;
 
         /// <summary>
         /// Control lblCurso.
@@ -238,24 +202,6 @@ namespace AmorYPazBackend
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBox1;
-
-        /// <summary>
-        /// Control rfvNombreCurso.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvNombreCurso;
-
-        /// <summary>
-        /// Control cvNombreCurso.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CustomValidator cvNombreCurso;
 
         /// <summary>
         /// Control btnGuardarCurso.
