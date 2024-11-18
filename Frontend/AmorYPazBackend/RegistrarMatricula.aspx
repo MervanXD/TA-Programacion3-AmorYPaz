@@ -53,6 +53,7 @@
                                     ValidationExpression="^[a-zA-Z\s]+$" 
                                     ErrorMessage="Solo se permiten letras en el nombre." ForeColor="Red">
                                 </asp:RegularExpressionValidator>
+                                <asp:Button ID="btnBuscar_Estudiante" runat="server" CssClass="btn btn-primary" Text="Buscar" OnClick="btnBuscar_Estudiante_Click" />
                             </div>
                         </div>
 

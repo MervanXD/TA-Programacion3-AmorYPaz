@@ -45,13 +45,6 @@ namespace AmorYPazBackend
                             }
                             gvMatriculas.DataSource = matriculas;
                             gvMatriculas.DataBind();
-
-
-
-                            gvMatriculas.DataBind();
-
-
-
                         }
                         catch (Exception ex)
                         {
@@ -89,7 +82,8 @@ namespace AmorYPazBackend
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
                 int idMatricula = Int32.Parse(DataBinder.Eval(e.Row.DataItem, "idMatricula").ToString());
-                grado grado;
+                daoGrado = new GradoWSClient();
+                
                 e.Row.Cells[0].Text = ((anioAcademico)DataBinder.Eval(e.Row.DataItem, "anioAcademico")).numero.ToString();
                 e.Row.Cells[1].Text = string.Format("{0} {1} {2}",
                     DataBinder.Eval(e.Row.DataItem, "estudiante.nombres"),

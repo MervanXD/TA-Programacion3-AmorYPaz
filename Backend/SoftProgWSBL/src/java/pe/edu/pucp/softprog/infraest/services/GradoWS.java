@@ -37,4 +37,31 @@ public class GradoWS {
         }
         return planes;
     }
+    
+    @WebMethod(operationName = "asignarPlan")
+    public int asignarPlan(@WebParam(name = "idGrado") int idGrado,
+            @WebParam(name = "idPlan") int idPlan) {
+        int resultado = 0;
+        try{
+            daoGrado = new GradoMySQL();
+            resultado = daoGrado.asignarPlan(idGrado, idPlan);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return resultado;
+    }
+    
+    @WebMethod(operationName = "obtenerPorIdGrado")
+    public Grado obtenerPorIdGrado(@WebParam(name = "idGrado") int idGrado) {
+        Grado grado;
+        try{
+            daoGrado = new GradoMySQL();
+            grado = daoGrado.obtenerPorId(idGrado);
+        }catch(Exception ex){
+            grado = null;
+            System.out.println(ex.getMessage());
+        }
+        return grado;
+    }
+    
 }
