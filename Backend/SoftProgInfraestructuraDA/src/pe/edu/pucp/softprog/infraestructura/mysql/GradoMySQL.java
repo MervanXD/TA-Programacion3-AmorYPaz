@@ -104,6 +104,7 @@ public class GradoMySQL implements GradoDAO {
                 grado.setAlumnosMatriculados(rs.getInt("num_matriculados"));
                 grado.setNivel(TipoNivel.valueOf(rs.getString("tipo_nivel")));
                 grado.setNumero(rs.getString("numero"));
+                grado.setVacantes(rs.getInt("vacantes"));
                 grado.setActivo(rs.getBoolean("gra_activo"));
                 grado.getInstitucion().setActivo(rs.getBoolean("ie_activo"));
                 grado.getInstitucion().setCantidadGrados(rs.getInt("cantidad_grados"));
@@ -277,6 +278,28 @@ public class GradoMySQL implements GradoDAO {
             }
         }
         return grados;        
+    }
+
+    @Override
+    public int asignarPlan(int idGrado, int idPlan) {
+        int resultado = 0;
+        try {
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call ASIGNAR_PLAN_ESTUDIO_GRADO(?,?)}");
+            cs.setInt("_id_grado", idGrado);
+            cs.setInt("_fid_plan_de_estudios", idPlan);
+            cs.executeUpdate();
+            resultado = 1;
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            try {
+                con.close();
+            } catch (SQLException ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
+        return resultado;
     }
     
 }

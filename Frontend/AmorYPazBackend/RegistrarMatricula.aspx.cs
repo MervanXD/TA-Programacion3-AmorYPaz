@@ -21,7 +21,7 @@ namespace AmorYPazBackend
         private MatriculaWSClient daoMatricula;
         private matricula matricula;
 
-        
+
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -65,7 +65,7 @@ namespace AmorYPazBackend
                             ddlGrado.DataBind();
 
                             dtpFecha.Value = DateTime.Now.ToString("yyyy-MM-dd");
-                            
+
 
                         }
                         catch (Exception ex)
@@ -79,7 +79,7 @@ namespace AmorYPazBackend
 
 
 
-            
+
         }
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
@@ -118,22 +118,23 @@ namespace AmorYPazBackend
 
                 estudiante estudiante = new estudiante();
                 estudiante.idPersona = 28;
-                matricula.estudiante = estudiante;
+
+                if (Session["alumnoEncontrado"] != null && (bool)Session["alumnoEncontrado"])
+                {
+                    if (Session["estudiantePosible"] != null)
+                        matricula.estudiante = (estudiante)Session["estudiantePosible"];
+                }
 
                 int resultado;
                 daoMatricula = new MatriculaWSClient();
                 resultado = daoMatricula.insertarMatricula(matricula);
                 String script = "";
                 if (resultado != 0)
-                {
                     script = "mostrarModal('Se registró con éxito', 'GestionarMatricula.aspx');";
-                }
                 else
-                {
                     script = "mostrarModal('No se pudo registrar', 'GestionarMatricula.aspx');";
-                }
+                
                 ClientScript.RegisterStartupScript(this.GetType(), "modal", script, true);
-
 
             }
         }
@@ -144,5 +145,63 @@ namespace AmorYPazBackend
             Response.Redirect("GestionarMatricula.aspx");
         }
 
+        private bool ValidarAlumno(string nombreCompleto)
+        {
+            // Suponiendo que tienes un servicio para obtener los alumnos por IE
+            EstudianteWSClient daoEstudiante = new EstudianteWSClient();
+            estudiante[] estudianteArray = daoEstudiante.listarEstudiantesPorIE(matricula.institucion.idInstitucion);
+            List<estudiante> alumnos = new List<estudiante>(estudianteArray);
+
+            // Dividir el nombre completo en partes
+            string[] partesNombre = nombreCompleto.Trim().Split(' ');
+
+            // Verificar si hay al menos 3 partes (nombres, apellido paterno y apellido materno)
+            if (partesNombre.Length < 3)
+            {
+                return false; // No se puede validar si no hay suficientes partes
+            }
+
+            string nombres = string.Join(" ", partesNombre.Take(partesNombre.Length - 2)); // Todos menos los últimos dos
+            string apellidoPaterno = partesNombre[partesNombre.Length - 2];
+            string apellidoMaterno = partesNombre[partesNombre.Length - 1];
+
+            // Buscar el alumno que coincide
+            var alumnoCoincidente = alumnos.FirstOrDefault(a =>
+                a.nombres.Equals(nombres, StringComparison.OrdinalIgnoreCase) &&
+                a.apellidoPaterno.Equals(apellidoPaterno, StringComparison.OrdinalIgnoreCase) &&
+                a.apellidoMaterno.Equals(apellidoMaterno, StringComparison.OrdinalIgnoreCase));
+
+            // Si se encontró un alumno coincidente, guardarlo en la sesión
+            if (alumnoCoincidente != null)
+            {
+                // Suponiendo que estás en un contexto donde puedes acceder a la sesión
+                HttpContext.Current.Session["estudiantePosible"] = alumnoCoincidente;
+                return true; // Se encontró un alumno y se guardó en la sesión
+            }
+
+            return false; // No se encontró ningún alumno coincidente
+        }
+
+        protected void btnBuscar_Estudiante_Click(object sender, EventArgs e)
+        {
+            string nombreAlumno = txtAlumno.Text.Trim();
+            Session["alumnoEncontrado"] = false;
+            if (string.IsNullOrEmpty(nombreAlumno))
+            {
+                // Mostrar mensaje de error si el campo está vacío
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Por favor, ingrese un nombre de alumno.');", true);
+                return;
+            }
+            // Validar si el alumno está registrado
+            if (!ValidarAlumno(nombreAlumno))
+            {
+                // Mostrar mensaje de error si el alumno no está registrado
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('El alumno no está registrado en la institución.');", true);
+            }
+            else
+            {
+                Session["alumnoEncontrado"] = true;
+            }
+        }
     }
 }

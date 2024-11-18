@@ -15,4 +15,5 @@ public interface GradoDAO {
     Grado obtenerPorIdPlanEstudios(int idPlan);
     ArrayList<Grado> obtenerPorIdIE(int idInstitucion);
     ArrayList<Grado> listarTodosPorIdIE(int idInstitucion);
+    int asignarPlan(int idGrado, int idPlan);
 }

@@ -86,13 +86,13 @@ namespace AmorYPazBackend
             }
             else if (accion == "modificar" && accion != null && Session["institucion"] != null)
             {
-                lblDirector.Text = "Director Asignado:"; //CAMBIOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+                lblDirector.Text = "Director Asignado:";
                 institucionEdu = (institucionEducativa)Session["institucion"];
                 estado = Estado.Modificar;
                 lblTitulo.Text = institucionEdu.ugel.codigo + " - Modificar Institución";
                 txtNombre.Text = institucionEdu.nombre;
                 txtDireccion.Text = institucionEdu.direccion;
-                ddlDirector.SelectedValue = institucionEdu.director.idPersona.ToString(); //CAMBIOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+                ddlDirector.SelectedValue = institucionEdu.director.idPersona.ToString();
                 txtTelefono.Text = institucionEdu.telefono;
                 txtEmail.Text = institucionEdu.correoElectronico;
 

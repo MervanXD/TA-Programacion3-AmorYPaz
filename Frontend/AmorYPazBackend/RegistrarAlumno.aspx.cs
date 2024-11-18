@@ -25,7 +25,7 @@ namespace AmorYPazBackend
             }
             else if (accion == "modificar" && Session["estudiante"] != null)
             {
-                lblTitulo.Text = "Modificar Director";
+                lblTitulo.Text = "Modificar Alumno";
                 estado = Estado.Modificar;
                 estudiante = (estudiante)Session["estudiante"];
                 txtDNI.Text = estudiante.dni;

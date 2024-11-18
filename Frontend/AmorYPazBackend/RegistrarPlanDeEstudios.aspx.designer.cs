@@ -33,13 +33,13 @@ namespace AmorYPazBackend
         protected global::System.Web.UI.UpdatePanel upContenedor;
 
         /// <summary>
-        /// Control lblNombreInstitucion.
+        /// Control lblTitulo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNombreInstitucion;
+        protected global::System.Web.UI.WebControls.Label lblTitulo;
 
         /// <summary>
         /// Control lblAnio.
@@ -78,42 +78,6 @@ namespace AmorYPazBackend
         protected global::System.Web.UI.WebControls.DropDownList ddlGrado;
 
         /// <summary>
-        /// Control lblFechaInicio.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblFechaInicio;
-
-        /// <summary>
-        /// Control txtFechaInicio.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFechaInicio;
-
-        /// <summary>
-        /// Control lblFechaFin.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblFechaFin;
-
-        /// <summary>
-        /// Control txtFechaFin.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFechaFin;
-
-        /// <summary>
         /// Control lblDescripcion.
         /// </summary>
         /// <remarks>
@@ -141,15 +105,6 @@ namespace AmorYPazBackend
         protected global::System.Web.UI.WebControls.Label lblCurso;
 
         /// <summary>
-        /// Control txtNombreCurso.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNombreCurso;
-
-        /// <summary>
         /// Control lbBuscarCurso.
         /// </summary>
         /// <remarks>
@@ -168,6 +123,15 @@ namespace AmorYPazBackend
         protected global::System.Web.UI.WebControls.LinkButton lbAgregarCurso;
 
         /// <summary>
+        /// Control upBuscarCursos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel upBuscarCursos;
+
+        /// <summary>
         /// Control gvCursos.
         /// </summary>
         /// <remarks>
@@ -175,15 +139,6 @@ namespace AmorYPazBackend
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gvCursos;
-
-        /// <summary>
-        /// Control lbGuardar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbGuardar;
 
         /// <summary>
         /// Control lbCancelar.
@@ -195,13 +150,22 @@ namespace AmorYPazBackend
         protected global::System.Web.UI.WebControls.LinkButton lbCancelar;
 
         /// <summary>
-        /// Control TextBox1.
+        /// Control lbGuardar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.LinkButton lbGuardar;
+
+        /// <summary>
+        /// Control txtRegistroCurso.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtRegistroCurso;
 
         /// <summary>
         /// Control btnGuardarCurso.
@@ -211,6 +175,15 @@ namespace AmorYPazBackend
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton btnGuardarCurso;
+
+        /// <summary>
+        /// Control upBusqCursos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel upBusqCursos;
 
         /// <summary>
         /// Control txtNombreCursoModal.

@@ -11,20 +11,60 @@
   <message name="insertarCursoResponse">
     <part name="parameters" element="tns:insertarCursoResponse" />
   </message>
+  <message name="listarPorIdPlan">
+    <part name="parameters" element="tns:listarPorIdPlan" />
+  </message>
+  <message name="listarPorIdPlanResponse">
+    <part name="parameters" element="tns:listarPorIdPlanResponse" />
+  </message>
+  <message name="insertarCursoEnPlan">
+    <part name="parameters" element="tns:insertarCursoEnPlan" />
+  </message>
+  <message name="insertarCursoEnPlanResponse">
+    <part name="parameters" element="tns:insertarCursoEnPlanResponse" />
+  </message>
+  <message name="listarCursosPorIdIE">
+    <part name="parameters" element="tns:listarCursosPorIdIE" />
+  </message>
+  <message name="listarCursosPorIdIEResponse">
+    <part name="parameters" element="tns:listarCursosPorIdIEResponse" />
+  </message>
   <message name="listarPorIdNombreCursos">
     <part name="parameters" element="tns:listarPorIdNombreCursos" />
   </message>
   <message name="listarPorIdNombreCursosResponse">
     <part name="parameters" element="tns:listarPorIdNombreCursosResponse" />
   </message>
+  <message name="eliminarCursoDePlan">
+    <part name="parameters" element="tns:eliminarCursoDePlan" />
+  </message>
+  <message name="eliminarCursoDePlanResponse">
+    <part name="parameters" element="tns:eliminarCursoDePlanResponse" />
+  </message>
   <portType name="CursoWS">
     <operation name="insertarCurso">
       <input wsam:Action="services.softprog.pucp.edu.pe/CursoWS/insertarCursoRequest" message="tns:insertarCurso" />
       <output wsam:Action="services.softprog.pucp.edu.pe/CursoWS/insertarCursoResponse" message="tns:insertarCursoResponse" />
     </operation>
+    <operation name="listarPorIdPlan">
+      <input wsam:Action="services.softprog.pucp.edu.pe/CursoWS/listarPorIdPlanRequest" message="tns:listarPorIdPlan" />
+      <output wsam:Action="services.softprog.pucp.edu.pe/CursoWS/listarPorIdPlanResponse" message="tns:listarPorIdPlanResponse" />
+    </operation>
+    <operation name="insertarCursoEnPlan">
+      <input wsam:Action="services.softprog.pucp.edu.pe/CursoWS/insertarCursoEnPlanRequest" message="tns:insertarCursoEnPlan" />
+      <output wsam:Action="services.softprog.pucp.edu.pe/CursoWS/insertarCursoEnPlanResponse" message="tns:insertarCursoEnPlanResponse" />
+    </operation>
+    <operation name="listarCursosPorIdIE">
+      <input wsam:Action="services.softprog.pucp.edu.pe/CursoWS/listarCursosPorIdIERequest" message="tns:listarCursosPorIdIE" />
+      <output wsam:Action="services.softprog.pucp.edu.pe/CursoWS/listarCursosPorIdIEResponse" message="tns:listarCursosPorIdIEResponse" />
+    </operation>
     <operation name="listarPorIdNombreCursos">
       <input wsam:Action="services.softprog.pucp.edu.pe/CursoWS/listarPorIdNombreCursosRequest" message="tns:listarPorIdNombreCursos" />
       <output wsam:Action="services.softprog.pucp.edu.pe/CursoWS/listarPorIdNombreCursosResponse" message="tns:listarPorIdNombreCursosResponse" />
+    </operation>
+    <operation name="eliminarCursoDePlan">
+      <input wsam:Action="services.softprog.pucp.edu.pe/CursoWS/eliminarCursoDePlanRequest" message="tns:eliminarCursoDePlan" />
+      <output wsam:Action="services.softprog.pucp.edu.pe/CursoWS/eliminarCursoDePlanResponse" message="tns:eliminarCursoDePlanResponse" />
     </operation>
   </portType>
   <binding name="CursoWSPortBinding" type="tns:CursoWS">
@@ -38,7 +78,43 @@
         <soap:body use="literal" />
       </output>
     </operation>
+    <operation name="listarPorIdPlan">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarCursoEnPlan">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarCursosPorIdIE">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="listarPorIdNombreCursos">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarCursoDePlan">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

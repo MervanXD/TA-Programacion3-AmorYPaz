@@ -132,6 +132,15 @@ namespace AmorYPazBackend
         protected global::System.Web.UI.WebControls.RegularExpressionValidator revAlumno;
 
         /// <summary>
+        /// Control btnBuscar_Estudiante.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnBuscar_Estudiante;
+
+        /// <summary>
         /// Control lblGrado.
         /// </summary>
         /// <remarks>

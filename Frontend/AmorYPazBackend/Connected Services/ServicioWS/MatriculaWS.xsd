@@ -10,16 +10,6 @@
   <xs:element name="listarMatriculasResponse" type="tns:listarMatriculasResponse" />
   <xs:element name="modificarMatricula" type="tns:modificarMatricula" />
   <xs:element name="modificarMatriculaResponse" type="tns:modificarMatriculaResponse" />
-  <xs:complexType name="eliminarMatricula">
-    <xs:sequence>
-      <xs:element name="matricula" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="eliminarMatriculaResponse">
-    <xs:sequence>
-      <xs:element name="return" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="listarMatriculas">
     <xs:sequence />
   </xs:complexType>
@@ -147,6 +137,16 @@
       <xs:element minOccurs="0" name="distrito" type="xs:string" />
       <xs:element name="idUgel" type="xs:int" />
       <xs:element minOccurs="0" maxOccurs="unbounded" name="institucionesEducativas" nillable="true" type="tns:institucionEducativa" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarMatricula">
+    <xs:sequence>
+      <xs:element name="matricula" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarMatriculaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="modificarMatricula">

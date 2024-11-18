@@ -4,7 +4,7 @@
     <link href="Content/estilosMasterPage.css" rel="stylesheet"/>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphTitulo" runat="server">
-    Registrar Alumno
+    Gestión de Alumnos
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cphContenido" runat="server">
     <asp:ScriptManager ID="smAlumno" runat="server" />

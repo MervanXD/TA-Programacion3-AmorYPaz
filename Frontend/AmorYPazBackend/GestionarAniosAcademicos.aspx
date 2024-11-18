@@ -12,12 +12,12 @@
             <!--<h1>Nombre de la Institución Educativa</h1>-->
             <asp:Label ID="lblInfoIE" runat="server" CssClass="label-title"></asp:Label>
             <div class="btn-group">
-                <asp:Button ID="btnActual" runat="server" Text="Actual" OnClick="btnActual_Click" CommandArgument="actual" CssClass="btn btn-primary button-bordered" />
+                <asp:Button ID="btnActual" runat="server" Text="Actuales" OnClick="btnActual_Click" CommandArgument="actual" CssClass="btn btn-primary button-bordered" />
                 <asp:Button ID="btnFinalizados" runat="server" Text="Finalizados" OnClick="btnActual_Click" CommandArgument="finalizados" CssClass="btn btn-primary button-bordered" />
             </div>
         </div>
         <div class="table-container">
-            <asp:GridView ID="gvAnios" runat="server" CssClass="table table-bordered gridview"  AllowPaging="true" PageSize="3" OnPageIndexChanging="gvAnios_PageIndexChanging"
+            <asp:GridView ID="gvAnios" runat="server" CssClass="table table-bordered gridview"  AllowPaging="true" PageSize="5" OnPageIndexChanging="gvAnios_PageIndexChanging"
                 AutoGenerateColumns="False" OnRowDataBound="gvAnios_RowDataBound" 
                 HeaderStyle-CssClass="grid-header">
                 <Columns>
@@ -25,7 +25,13 @@
                     <asp:BoundField HeaderText="Fecha Inicio" HeaderStyle-CssClass="grid-header" ItemStyle-CssClass="align-middle" ItemStyle-HorizontalAlign="Center" />
                     <asp:BoundField HeaderText="Fecha Fin" HeaderStyle-CssClass="grid-header" ItemStyle-CssClass="align-middle" ItemStyle-HorizontalAlign="Center" />
                     <asp:BoundField HeaderText="Estado" HeaderStyle-CssClass="grid-header" ItemStyle-CssClass="align-middle" ItemStyle-HorizontalAlign="Center" />
-                    <asp:TemplateField>
+                    <asp:TemplateField HeaderText = "Ver Planes">
+                        <ItemStyle HorizontalAlign="Center" />
+                        <ItemTemplate>
+                            <asp:LinkButton ID="lbVerPlanes" runat="server" Text="<i class='fa-solid fa-book'></i>" CssClass="btn btn-info" OnClick="lbVerPlanes_Click" CommandArgument='<%# Eval("idAnio") %>' />
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText = "Editar">
                         <ItemStyle HorizontalAlign="Center" />
                         <ItemTemplate>
                             <asp:LinkButton ID="lbModificar" runat="server" Text="<i class='fa-solid fa-pencil'></i>" CssClass="btn btn-warning" OnClick="lbModificar_Click" CommandArgument='<%# Eval("idAnio") %>' />

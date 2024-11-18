@@ -51,6 +51,7 @@ public class EstudianteWS {
         }
         return resultado;
     }
+    
     @WebMethod(operationName = "modificarEstudiante")
     public int modificarEstudiante(@WebParam(name = "estudiante") Estudiante estudiante){
         int resultado = 0;
@@ -62,4 +63,18 @@ public class EstudianteWS {
         }
         return resultado;
     }
+    
+    @WebMethod(operationName = "listarEstudiantesPorIE")
+    public ArrayList<Estudiante> listarEstudiantesPorIE(@WebParam(name = "idIE")
+            int idIE) {
+        ArrayList<Estudiante> estudiantes = null;
+        try{
+            daoEstudiante = new EstudianteMySQL();
+            estudiantes = daoEstudiante.listarEstudiantesPorIE(idIE);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return estudiantes;
+    }
+    
 }
