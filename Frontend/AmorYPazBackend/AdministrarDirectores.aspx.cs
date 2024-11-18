@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -14,6 +15,7 @@ namespace AmorYPazBackend
         private DirectorWSClient daoDirector;
         private BindingList<director> directores;
         private director director;
+        private InstitucionEducativaWSClient daoInstitucion;
         protected void Page_Load(object sender, EventArgs e)
         {
             daoDirector = new DirectorWSClient();
@@ -50,23 +52,15 @@ namespace AmorYPazBackend
         protected void dgvDirectores_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             dgvDirectores.PageIndex = e.NewPageIndex;
+            dgvDirectores.DataBind();
         }
         protected void lbBuscar_Click(object sender, EventArgs e)
         {
-            if (txtNombreDNI.Text != "")
-            {
-                director = daoDirector.buscarDirector(Int32.Parse(txtNombreDNI.Text));
-                directores = new BindingList<director>();
-                directores.Add(director);
-                dgvDirectores.DataSource = directores;
-                dgvDirectores.DataBind();
-            }
-            else {
-                directores = new BindingList<director>(daoDirector.listarDirectoresTodas());
-                dgvDirectores.DataSource = directores;
-                dgvDirectores.DataBind();
-            }
-            
+            director[] direct = daoDirector.listarDirectoresPorNombre(txtNombre.Text);
+            if (direct != null) directores = new BindingList<director>(direct);
+            else directores = null;
+            dgvDirectores.DataSource = directores;
+            dgvDirectores.DataBind();
         }
         protected void lbModificar_Click(object sender, EventArgs e)
         {
@@ -80,8 +74,22 @@ namespace AmorYPazBackend
         {
 
             int idDirector = Int32.Parse(((LinkButton)sender).CommandArgument);
-            daoDirector.eliminarDirector(idDirector);
+            daoInstitucion = new InstitucionEducativaWSClient();
 
+            institucionEducativa[] institus = daoInstitucion.listarPorNombreYUgel("", Int32.Parse(Session["idUGEL"].ToString()));
+            if (institus != null) {
+                BindingList<institucionEducativa> instituciones = new BindingList<institucionEducativa>(institus);
+                foreach (var institucion in instituciones)
+                {
+                    if (institucion.director.idPersona == idDirector)
+                    {
+                        string script = "mostrarModal('Debe asignar otro director a la Institución Educativa que lo necesite, antes de eliminar el director', 'AdministrarDirectores.aspx');";
+                        ScriptManager.RegisterStartupScript(this, GetType(), "modal", script, true);
+                        return;
+                    }
+                }
+            }
+            daoDirector.eliminarDirector(idDirector);
             Response.Redirect("AdministrarDirectores.aspx");
         }
 

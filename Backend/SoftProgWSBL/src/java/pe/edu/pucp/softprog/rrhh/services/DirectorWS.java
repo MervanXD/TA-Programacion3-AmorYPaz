@@ -36,6 +36,19 @@ public class DirectorWS {
         return directores;
     }
     
+    @WebMethod(operationName = "listarDirectoresPorNombre")
+    public ArrayList<Director> listarDirectoresPorNombre(@WebParam(name = "nombreDir")
+            String nombreDir) {
+        ArrayList<Director> directores = null;
+        try{
+            daoDirector = new DirectorMySQL();
+            directores = daoDirector.listarDirectoresPorNombre(nombreDir);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return directores;
+    }
+    
     @WebMethod(operationName = "insertarDirector")
     public int insertarEmpleado(@WebParam(name = "director")
             Director director){

@@ -242,6 +242,9 @@
     <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.eliminarCursoDePlanResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.listarDirectoresPorNombreResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Connected Services\ServicioWS\AnioAcademicoWS.wsdl" />
     <None Include="Connected Services\ServicioWS\AnioAcademicoWS.xsd">
       <SubType>Designer</SubType>
@@ -401,6 +404,7 @@
     <Content Include="Scripts\jquery-3.7.1.slim.min.js" />
     <Content Include="Scripts\scriptsGestionarPlanes.js" />
     <Content Include="Scripts\scriptsInicioSesion.js" />
+    <Content Include="Scripts\scriptsListarDirectores.js" />
     <Content Include="Scripts\scriptsMasterPage.js" />
     <Content Include="Scripts\scriptsRegistrarPlanes.js" />
     <Content Include="Web.config" />

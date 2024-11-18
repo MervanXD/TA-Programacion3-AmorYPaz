@@ -3,24 +3,32 @@
   "WorkspaceRootPath": "C:\\Programacion3\\TA-Programacion3-AmorYPaz\\Frontend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|c:\\programacion3\\ta-programacion3-amorypaz\\frontend\\amorypazbackend\\registrarplandeestudios.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|solutionrelative:amorypazbackend\\registrarplandeestudios.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|c:\\programacion3\\ta-programacion3-amorypaz\\frontend\\amorypazbackend\\administrardirectores.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|solutionrelative:amorypazbackend\\administrardirectores.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|C:\\Programacion3\\TA-Programacion3-AmorYPaz\\Frontend\\amorypazbackend\\registrarplandeestudios.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|solutionrelative:amorypazbackend\\registrarplandeestudios.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|c:\\programacion3\\ta-programacion3-amorypaz\\frontend\\amorypazbackend\\administrardirectores.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|solutionrelative:amorypazbackend\\administrardirectores.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|C:\\Programacion3\\TA-Programacion3-AmorYPaz\\Frontend\\amorypazbackend\\gestionarplanesestudio.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|solutionrelative:amorypazbackend\\gestionarplanesestudio.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|c:\\programacion3\\ta-programacion3-amorypaz\\frontend\\amorypazbackend\\gestionarinstituciones.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|solutionrelative:amorypazbackend\\gestionarinstituciones.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|C:\\Programacion3\\TA-Programacion3-AmorYPaz\\Frontend\\amorypazbackend\\gestionarplanesestudio.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|solutionrelative:amorypazbackend\\gestionarplanesestudio.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|c:\\programacion3\\ta-programacion3-amorypaz\\frontend\\amorypazbackend\\gestionarinstituciones.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|solutionrelative:amorypazbackend\\gestionarinstituciones.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|c:\\programacion3\\ta-programacion3-amorypaz\\frontend\\amorypazbackend\\gestionaraniosacademicos.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|solutionrelative:amorypazbackend\\gestionaraniosacademicos.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|c:\\programacion3\\ta-programacion3-amorypaz\\frontend\\amorypazbackend\\registraralumno.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|solutionrelative:amorypazbackend\\registraralumno.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|c:\\programacion3\\ta-programacion3-amorypaz\\frontend\\amorypazbackend\\registrardirector.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|solutionrelative:amorypazbackend\\registrardirector.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|c:\\programacion3\\ta-programacion3-amorypaz\\frontend\\amorypazbackend\\scripts\\scriptslistardirectores.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|solutionrelative:amorypazbackend\\scripts\\scriptslistardirectores.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,67 +58,93 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "RegistrarPlanDeEstudios.aspx.cs",
-              "DocumentMoniker": "C:\\Programacion3\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\RegistrarPlanDeEstudios.aspx.cs",
-              "RelativeDocumentMoniker": "AmorYPazBackend\\RegistrarPlanDeEstudios.aspx.cs",
-              "ToolTip": "C:\\Programacion3\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\RegistrarPlanDeEstudios.aspx.cs",
-              "RelativeToolTip": "AmorYPazBackend\\RegistrarPlanDeEstudios.aspx.cs",
-              "ViewState": "AgIAAH4AAAAAAAAAAAAWwIwAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T20:03:04.684Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "GestionarAniosAcademicos.aspx.cs",
-              "DocumentMoniker": "C:\\Programacion3\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\GestionarAniosAcademicos.aspx.cs",
-              "RelativeDocumentMoniker": "AmorYPazBackend\\GestionarAniosAcademicos.aspx.cs",
-              "ToolTip": "C:\\Programacion3\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\GestionarAniosAcademicos.aspx.cs",
-              "RelativeToolTip": "AmorYPazBackend\\GestionarAniosAcademicos.aspx.cs",
-              "ViewState": "AgIAAEwAAAAAAAAAAAAkwFUAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T20:03:44.706Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "RegistrarPlanDeEstudios.aspx",
-              "DocumentMoniker": "C:\\Programacion3\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\RegistrarPlanDeEstudios.aspx",
-              "RelativeDocumentMoniker": "AmorYPazBackend\\RegistrarPlanDeEstudios.aspx",
-              "ToolTip": "C:\\Programacion3\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\RegistrarPlanDeEstudios.aspx",
-              "RelativeToolTip": "AmorYPazBackend\\RegistrarPlanDeEstudios.aspx",
+              "Title": "AdministrarDirectores.aspx",
+              "DocumentMoniker": "C:\\Programacion3\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\AdministrarDirectores.aspx",
+              "RelativeDocumentMoniker": "AmorYPazBackend\\AdministrarDirectores.aspx",
+              "ToolTip": "C:\\Programacion3\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\AdministrarDirectores.aspx",
+              "RelativeToolTip": "AmorYPazBackend\\AdministrarDirectores.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-11-14T03:59:12.578Z",
+              "WhenOpened": "2024-11-18T01:01:17.066Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "GestionarPlanesEstudio.aspx",
-              "DocumentMoniker": "C:\\Programacion3\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\GestionarPlanesEstudio.aspx",
-              "RelativeDocumentMoniker": "AmorYPazBackend\\GestionarPlanesEstudio.aspx",
-              "ToolTip": "C:\\Programacion3\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\GestionarPlanesEstudio.aspx",
-              "RelativeToolTip": "AmorYPazBackend\\GestionarPlanesEstudio.aspx",
+              "Title": "GestionarInstituciones.aspx",
+              "DocumentMoniker": "C:\\Programacion3\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\GestionarInstituciones.aspx",
+              "RelativeDocumentMoniker": "AmorYPazBackend\\GestionarInstituciones.aspx",
+              "ToolTip": "C:\\Programacion3\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\GestionarInstituciones.aspx",
+              "RelativeToolTip": "AmorYPazBackend\\GestionarInstituciones.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-11-14T03:04:27.992Z",
+              "WhenOpened": "2024-11-18T03:16:14.364Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "GestionarPlanesEstudio.aspx.cs",
-              "DocumentMoniker": "C:\\Programacion3\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\GestionarPlanesEstudio.aspx.cs",
-              "RelativeDocumentMoniker": "AmorYPazBackend\\GestionarPlanesEstudio.aspx.cs",
-              "ToolTip": "C:\\Programacion3\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\GestionarPlanesEstudio.aspx.cs",
-              "RelativeToolTip": "AmorYPazBackend\\GestionarPlanesEstudio.aspx.cs",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAYwDEAAAAdAAAAAAAAAA==",
+              "Title": "GestionarInstituciones.aspx.cs",
+              "DocumentMoniker": "C:\\Programacion3\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\GestionarInstituciones.aspx.cs",
+              "RelativeDocumentMoniker": "AmorYPazBackend\\GestionarInstituciones.aspx.cs",
+              "ToolTip": "C:\\Programacion3\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\GestionarInstituciones.aspx.cs",
+              "RelativeToolTip": "AmorYPazBackend\\GestionarInstituciones.aspx.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAQwC0AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T03:04:28.935Z",
+              "WhenOpened": "2024-11-18T01:16:34.898Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AdministrarDirectores.aspx.cs",
+              "DocumentMoniker": "C:\\Programacion3\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\AdministrarDirectores.aspx.cs",
+              "RelativeDocumentMoniker": "AmorYPazBackend\\AdministrarDirectores.aspx.cs",
+              "ToolTip": "C:\\Programacion3\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\AdministrarDirectores.aspx.cs",
+              "RelativeToolTip": "AmorYPazBackend\\AdministrarDirectores.aspx.cs",
+              "ViewState": "AgIAADcAAAAAAAAAAAAiwDoAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T00:07:30.737Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "RegistrarAlumno.aspx",
+              "DocumentMoniker": "C:\\Programacion3\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\RegistrarAlumno.aspx",
+              "RelativeDocumentMoniker": "AmorYPazBackend\\RegistrarAlumno.aspx",
+              "ToolTip": "C:\\Programacion3\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\RegistrarAlumno.aspx",
+              "RelativeToolTip": "AmorYPazBackend\\RegistrarAlumno.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-11-18T03:25:19.676Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "RegistrarDirector.aspx",
+              "DocumentMoniker": "C:\\Programacion3\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\RegistrarDirector.aspx",
+              "RelativeDocumentMoniker": "AmorYPazBackend\\RegistrarDirector.aspx",
+              "ToolTip": "C:\\Programacion3\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\RegistrarDirector.aspx",
+              "RelativeToolTip": "AmorYPazBackend\\RegistrarDirector.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-11-18T03:25:48.483Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "scriptsListarDirectores.js",
+              "DocumentMoniker": "C:\\Programacion3\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\Scripts\\scriptsListarDirectores.js",
+              "RelativeDocumentMoniker": "AmorYPazBackend\\Scripts\\scriptsListarDirectores.js",
+              "ToolTip": "C:\\Programacion3\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\Scripts\\scriptsListarDirectores.js",
+              "RelativeToolTip": "AmorYPazBackend\\Scripts\\scriptsListarDirectores.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-11-18T01:40:02.313Z",
               "EditorCaption": ""
             }
           ]

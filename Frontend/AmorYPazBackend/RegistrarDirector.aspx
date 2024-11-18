@@ -17,7 +17,7 @@
                     </div>
                     <div class="card-body">
                         <div class="mb-3 row">
-                            <asp:Label id="lblDNI" runat="server" CssClass="col-sm-2 col-form-label" Text="DNI: "></asp:Label>
+                            <asp:Label id="lblDNI" runat="server" CssClass="col-sm-2 col-form-label" Text="DNI: <span class='text-danger'>*</span>"></asp:Label>
                             <div class="col-sm-8">
                                 <asp:TextBox id="txtDNI" runat="server" CssClass="form-control"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="rfvDNI" runat="server" ControlToValidate="txtDNI" ValidationGroup="GrupoGuardarD"
@@ -27,7 +27,7 @@
                             </div>
                         </div>
                         <div class="mb-3 row">
-                            <asp:Label id="lblNombre" runat="server" Text="Nombre: " CssClass="col-sm-2 col-form-label"></asp:Label>
+                            <asp:Label id="lblNombre" runat="server" Text="Nombre: <span class='text-danger'>*</span>" CssClass="col-sm-2 col-form-label"></asp:Label>
                             <div class="col-sm-8">
                                 <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="rfvNombre" runat="server" ControlToValidate="txtNombre" ValidationGroup="GrupoGuardarD"
@@ -37,7 +37,7 @@
                             </div>
                         </div>
                         <div class="mb-3 row">
-                            <asp:Label id="lblApellidoPaterno" runat="server" Text="Apellido Paterno: " CssClass="col-sm-2 col-form-label"></asp:Label>
+                            <asp:Label id="lblApellidoPaterno" runat="server" Text="Apellido Paterno: <span class='text-danger'>*</span>" CssClass="col-sm-2 col-form-label"></asp:Label>
                             <div class="col-sm-8">
                                 <asp:TextBox id="txtApellidoPaterno" runat="server" CssClass="form-control"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="rfvApellidoPaterno" runat="server" ControlToValidate="txtApellidoPaterno" ValidationGroup="GrupoGuardarD"
@@ -47,7 +47,7 @@
                             </div>
                         </div>
                         <div class="mb-3 row">
-                            <asp:Label id="lblApellidoMaterno" runat="server" Text="Apellido Materno: " CssClass="col-sm-2 col-form-label"></asp:Label>
+                            <asp:Label id="lblApellidoMaterno" runat="server" Text="Apellido Materno: <span class='text-danger'>*</span>" CssClass="col-sm-2 col-form-label"></asp:Label>
                             <div class="col-sm-8">
                                 <asp:TextBox id="txtApellidoMaterno" runat="server" CssClass="form-control"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="rfvApellidoMaterno" runat="server" ControlToValidate="txtApellidoMaterno" ValidationGroup="GrupoGuardarD"
@@ -60,8 +60,6 @@
                             <asp:Label id="lblDireccion" runat="server" Text="Direccion: " CssClass="col-sm-2 col-form-label"></asp:Label>
                             <div class="col-sm-8">
                                 <asp:TextBox id="txtDireccion" runat="server" CssClass="form-control"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="rfvDireccion" runat="server" ControlToValidate="txtDireccion" ValidationGroup="GrupoGuardarD"
-                                ErrorMessage="La direccion es obligatoria." ForeColor="Red"></asp:RequiredFieldValidator>
                             </div>
                         </div>
                         <div class="mb-3 row">
@@ -108,7 +106,7 @@
 
                   
                     <div class="mb-3 row">
-                        <asp:Label ID="lblEmail" runat="server" Text="Email: " CssClass="col-sm-2 col-form-label"></asp:Label>
+                        <asp:Label ID="lblEmail" runat="server" Text="Email: <span class='text-danger'>*</span>" CssClass="col-sm-2 col-form-label"></asp:Label>
                         <div class="col-sm-8">
                             <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="rfvEmail" runat="server" ControlToValidate="txtEmail" ValidationGroup="GrupoGuardarD"
