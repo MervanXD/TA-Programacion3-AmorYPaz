@@ -11,5 +11,6 @@ public interface DirectorDAO {
     int eliminar(int id);
     Director obtenerPorId(int id);
     ArrayList<Director> listarTodos();
+    ArrayList<Director> listarDirectoresPorNombre(String nombre);
     ArrayList<Director> listarTodosDisponibles(int idDirector);
 }

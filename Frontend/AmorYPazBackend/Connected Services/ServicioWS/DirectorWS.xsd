@@ -8,6 +8,8 @@
   <xs:element name="insertarDirectorResponse" type="tns:insertarDirectorResponse" />
   <xs:element name="listarDirectoresDisponibles" type="tns:listarDirectoresDisponibles" />
   <xs:element name="listarDirectoresDisponiblesResponse" type="tns:listarDirectoresDisponiblesResponse" />
+  <xs:element name="listarDirectoresPorNombre" type="tns:listarDirectoresPorNombre" />
+  <xs:element name="listarDirectoresPorNombreResponse" type="tns:listarDirectoresPorNombreResponse" />
   <xs:element name="listarDirectoresTodas" type="tns:listarDirectoresTodas" />
   <xs:element name="listarDirectoresTodasResponse" type="tns:listarDirectoresTodasResponse" />
   <xs:element name="modificarDirector" type="tns:modificarDirector" />
@@ -46,6 +48,16 @@
   <xs:complexType name="modificarDirectorResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarDirectoresPorNombre">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="nombreDir" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarDirectoresPorNombreResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:director" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="listarDirectoresDisponibles">

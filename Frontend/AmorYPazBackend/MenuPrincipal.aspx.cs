@@ -19,10 +19,10 @@ namespace AmorYPazBackend
                 {
                     daoUGEL = new UGELWSClient();
                     int idDirector = Int32.Parse(Session["idDirector"].ToString());
-                    ugel ug = daoUGEL.obtenerUGELPorIdDirector(idDirector); //revisar si es necesario ServicioUGEL o si se creo un servicio de más
-                    if (ug != null) {
+                    ugel ug = daoUGEL.obtenerUGELPorIdDirector(idDirector);
+                    Session["idUGEL"] = ug.idUgel;
+                    if (ug != null)
                         lblInfoUGEL.Text = $"{ug.codigo} - {ug.distrito}";
-                    }
                 }
                 else
                 {

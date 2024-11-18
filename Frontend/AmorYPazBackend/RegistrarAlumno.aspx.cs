@@ -57,12 +57,9 @@ namespace AmorYPazBackend
                 estudiante.direccion = txtDireccion.Text;
                 estudiante.religion = txtReligion.Text;
                 estudiante.lengua = txtLengua.Text;
-                if (rbMasculino.Checked)
-                    estudiante.sexo = 'M';
-                else
-                    estudiante.sexo = 'F';
-                estudiante.fechaNacimiento =
-                    DateTime.Parse(dtpFechaNacimiento.Value);
+                if (rbMasculino.Checked) estudiante.sexo = 'M';
+                else estudiante.sexo = 'F';
+                estudiante.fechaNacimiento = DateTime.Parse(dtpFechaNacimiento.Value);
                 estudiante.fechaNacimientoSpecified = true;
                 estudiante.condicionesMedicas = txtCondicionesMedicas.Text;
                 estudiante.discapacidades = txtDiscapacidad.Text;
@@ -73,7 +70,6 @@ namespace AmorYPazBackend
                 //Dependiendo de la acción registramos o modificamos
                 if (estado == Estado.Nuevo)
                     daoEstudiante.insertarEstudiante(estudiante);
-                
                 else if (estado == Estado.Modificar)
                 {
                     daoEstudiante.modificarEstudiante(estudiante);
@@ -95,7 +91,6 @@ namespace AmorYPazBackend
         }
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
-            // Lógica para cancelar (quizás limpiar los campos o redirigir a otra página)
             Response.Redirect("GestionarAlumnos.aspx");
         }
     }

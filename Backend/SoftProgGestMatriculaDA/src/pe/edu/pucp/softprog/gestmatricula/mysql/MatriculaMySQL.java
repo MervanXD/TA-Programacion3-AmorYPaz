@@ -6,7 +6,6 @@ import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.ResultSet;
-import java.util.Set;
 import pe.edu.pucp.softprog.config.DBManager;
 //import pe.edu.pucp.softprog.gestacademica.model.TipoMatricula;
 import pe.edu.pucp.softprog.gestcalendario.model.AnioAcademico;
