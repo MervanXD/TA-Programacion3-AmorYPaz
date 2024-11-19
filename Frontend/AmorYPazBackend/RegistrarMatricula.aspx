@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SoftProg.Master" AutoEventWireup="true" CodeBehind="RegistrarMatricula.aspx.cs" Inherits="AmorYPazBackend.RegistrarMatricula" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="cphHead" runat="server">
     <script src="Scripts/scriptsMasterPage.js"></script>
+    <script src="Scripts/scriptsRegMatricula.js"></script>
     <link href="Content/estilosMasterPage.css" rel="stylesheet"/>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphTitulo" runat="server">
@@ -44,15 +45,6 @@
                             <asp:Label ID="lblAlumno" runat="server" Text="Alumno: " CssClass="col-sm-2 col-form-label"></asp:Label>
                             <div class="col-sm-8">
                                 <asp:TextBox ID="txtAlumno" runat="server" CssClass="form-control"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="rfvAlumno" runat="server" 
-                                    ControlToValidate="txtAlumno" ValidationGroup="GrupoGuardarM"
-                                    ErrorMessage="El nombre del alumno es obligatorio." ForeColor="Red">
-                                </asp:RequiredFieldValidator>
-                                <asp:RegularExpressionValidator ID="revAlumno" runat="server" 
-                                    ControlToValidate="txtAlumno" ValidationGroup="GrupoGuardarM"
-                                    ValidationExpression="^[a-zA-Z\s]+$" 
-                                    ErrorMessage="Solo se permiten letras en el nombre." ForeColor="Red">
-                                </asp:RegularExpressionValidator>
                                 <asp:Button ID="btnBuscar_Estudiante" runat="server" CssClass="btn btn-primary" Text="Buscar" OnClick="btnBuscar_Estudiante_Click" />
                             </div>
                         </div>
@@ -124,6 +116,52 @@
                     </div>
                 </div>
             </div>
+
+            <div class="modal" id="form-modal">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Selección de Estudiante a matricular</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <asp:UpdatePanel ID="upBusqEstudiante" runat="server" UpdateMode="Conditional">
+                                <ContentTemplate>
+                                    <div class="container pb-3">
+                                        <div class="row align-items-center">
+                                            <div class="col-auto">
+                                                <asp:Label CssClass="col-form-label" runat="server" Text="Ingresar nombre o DNI del estudiante:"></asp:Label>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <asp:TextBox CssClass="form-control" ID="txtNombreEstudianteModal" runat="server"></asp:TextBox>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <asp:LinkButton ID="lbBuscarEstudianteModal" runat="server" CssClass="btn btn-info" Text="<i class='fa-solid fa-magnifying-glass pe-2'></i> Buscar" OnClick="lbBuscarEstudianteModal_Click" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="container">
+                                        <asp:GridView ID="gvEstudiantes" runat="server" AllowPaging="true" PageSize="10" AutoGenerateColumns="false" CssClass="table table-hover table-responsive table-striped" OnPageIndexChanging="gvEstudiantes_PageIndexChanging" HeaderStyle-CssClass="grid-header" OnRowDataBound="gvEstudiantes_RowDataBound">
+                                            <Columns>
+                                                <asp:BoundField HeaderText="DNI"/>
+                                                <asp:BoundField HeaderText="Nombres"/>
+                                                <asp:TemplateField>
+                                                    <ItemTemplate>
+                                                        <asp:LinkButton CssClass="btn btn-success" runat="server" Text="<i class='fa-solid fa-check'></i> Seleccionar"
+                                                            OnClick="SeleccionarEstudiante_Click" CommandArgument='<%# Eval("idPersona") %>' />
+                                                    </ItemTemplate>
+                                                </asp:TemplateField>
+                                            </Columns>
+                                        </asp:GridView>
+                                    </div>
+                                </ContentTemplate>
+                            </asp:UpdatePanel>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
         </ContentTemplate>
     </asp:UpdatePanel>
 </asp:Content>

@@ -276,6 +276,6 @@ public class DirectorMySQL implements DirectorDAO {
         }finally{
             try{con.close();}catch(SQLException ex){System.out.println(ex.getMessage());}
         }
-        return directores; 
+        return directores;
     }
 }

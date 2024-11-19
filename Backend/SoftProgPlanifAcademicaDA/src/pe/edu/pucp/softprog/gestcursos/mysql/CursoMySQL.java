@@ -270,4 +270,32 @@ public class CursoMySQL implements CursoDAO {
         return resultado;
     }
 
+    @Override
+    public ArrayList<Curso> listarPorIdGrado(int idGrado) {
+        ArrayList<Curso> cursos = new ArrayList<>();
+        try {
+            con = DBManager.getInstance().getConnection();
+            String sql = "{call LISTAR_CURSOS_POR_GRADO(?)}";
+            cs = con.prepareCall(sql);
+            cs.setInt("_fid_grado", idGrado);
+            rs = cs.executeQuery();
+            while (rs.next()) {
+                Curso curso = new Curso();
+                curso.setIdCurso(rs.getInt("id_curso"));
+                curso.setNombre(rs.getString("nombre"));
+                curso.setActivo(rs.getBoolean("activo"));
+                cursos.add(curso);
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            try {
+                con.close();
+            } catch (SQLException ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
+        return cursos;
+    }
+
 }

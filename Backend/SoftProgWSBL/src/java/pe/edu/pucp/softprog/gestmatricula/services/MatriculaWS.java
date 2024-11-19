@@ -61,7 +61,7 @@ public class MatriculaWS {
     }
     
     @WebMethod(operationName = "listarMatriculasPorIdIE")
-    public ArrayList<Matricula> listarMatriculasPorIdIE( int idInstitucion){
+    public ArrayList<Matricula> listarMatriculasPorIdIE(int idInstitucion){
         ArrayList<Matricula> matriculas = new ArrayList<>();
         try{
             daoMatricula = new MatriculaMySQL();
@@ -70,5 +70,17 @@ public class MatriculaWS {
             System.out.println(ex.getMessage());
         }
         return matriculas;
+    }
+    
+    @WebMethod(operationName = "obtenerPorCriterios")
+    public Matricula obtenerPorCriterios(int idAnio, int idGrado, int idPersona){
+        Matricula matricula = null;
+        try{
+            daoMatricula = new MatriculaMySQL();
+            matricula = daoMatricula.obtenerPorAnioGradoEstudiante(idAnio, idGrado, idPersona);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return matricula;
     }
 }

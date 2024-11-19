@@ -7,7 +7,7 @@ public interface MatriculaDAO {
     int insertar(Matricula matricula);
     int modificar(Matricula matricula);
     int eliminar(int id);
-//    Matricula obtenerPorId(int id);
+    Matricula obtenerPorAnioGradoEstudiante(int idAnio, int idGrado, int idEstudiante);
     ArrayList<Matricula> listarTodos(); 
     ArrayList<Matricula> listarPorIdIE(int idInstitucion);
 }

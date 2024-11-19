@@ -1,33 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="services.softprog.pucp.edu.pe" targetNamespace="services.softprog.pucp.edu.pe" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:element name="eliminarMatricula" type="tns:eliminarMatricula" />
-  <xs:element name="eliminarMatriculaResponse" type="tns:eliminarMatriculaResponse" />
-  <xs:element name="insertarMatricula" type="tns:insertarMatricula" />
-  <xs:element name="insertarMatriculaResponse" type="tns:insertarMatriculaResponse" />
-  <xs:element name="listarMatriculas" type="tns:listarMatriculas" />
-  <xs:element name="listarMatriculasPorIdIE" type="tns:listarMatriculasPorIdIE" />
-  <xs:element name="listarMatriculasPorIdIEResponse" type="tns:listarMatriculasPorIdIEResponse" />
-  <xs:element name="listarMatriculasResponse" type="tns:listarMatriculasResponse" />
-  <xs:element name="modificarMatricula" type="tns:modificarMatricula" />
-  <xs:element name="modificarMatriculaResponse" type="tns:modificarMatriculaResponse" />
-  <xs:element name="obtenerPorCriterios" type="tns:obtenerPorCriterios" />
-  <xs:element name="obtenerPorCriteriosResponse" type="tns:obtenerPorCriteriosResponse" />
-  <xs:complexType name="eliminarMatricula">
+  <xs:element name="insertarResultado" type="tns:insertarResultado" />
+  <xs:element name="insertarResultadoResponse" type="tns:insertarResultadoResponse" />
+  <xs:element name="listarPorIdMatricula" type="tns:listarPorIdMatricula" />
+  <xs:element name="listarPorIdMatriculaResponse" type="tns:listarPorIdMatriculaResponse" />
+  <xs:complexType name="listarPorIdMatricula">
     <xs:sequence>
-      <xs:element name="matricula" type="xs:int" />
+      <xs:element name="idMatricula" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="eliminarMatriculaResponse">
+  <xs:complexType name="listarPorIdMatriculaResponse">
     <xs:sequence>
-      <xs:element name="return" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:resultadoPorCurso" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="listarMatriculas">
-    <xs:sequence />
-  </xs:complexType>
-  <xs:complexType name="listarMatriculasResponse">
+  <xs:complexType name="resultadoPorCurso">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:matricula" />
+      <xs:element name="calificacion" type="xs:int" />
+      <xs:element minOccurs="0" name="curso" type="tns:curso" />
+      <xs:element minOccurs="0" name="matricula" type="tns:matricula" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="curso">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element name="idCurso" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="matricula">
@@ -62,13 +60,6 @@
       <xs:element minOccurs="0" name="descripcion" type="xs:string" />
       <xs:element name="idPlan" type="xs:int" />
       <xs:element name="numCursos" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="curso">
-    <xs:sequence>
-      <xs:element name="activo" type="xs:boolean" />
-      <xs:element name="idCurso" type="xs:int" />
-      <xs:element minOccurs="0" name="nombre" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="estudiante">
@@ -151,44 +142,12 @@
       <xs:element minOccurs="0" maxOccurs="unbounded" name="institucionesEducativas" nillable="true" type="tns:institucionEducativa" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="obtenerPorCriterios">
+  <xs:complexType name="insertarResultado">
     <xs:sequence>
-      <xs:element name="arg0" type="xs:int" />
-      <xs:element name="arg1" type="xs:int" />
-      <xs:element name="arg2" type="xs:int" />
+      <xs:element minOccurs="0" name="resultado" type="tns:resultadoPorCurso" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="obtenerPorCriteriosResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:matricula" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="modificarMatricula">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="matricula" type="tns:matricula" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="modificarMatriculaResponse">
-    <xs:sequence>
-      <xs:element name="return" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="listarMatriculasPorIdIE">
-    <xs:sequence>
-      <xs:element name="arg0" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="listarMatriculasPorIdIEResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:matricula" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="insertarMatricula">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="matricula" type="tns:matricula" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="insertarMatriculaResponse">
+  <xs:complexType name="insertarResultadoResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
     </xs:sequence>

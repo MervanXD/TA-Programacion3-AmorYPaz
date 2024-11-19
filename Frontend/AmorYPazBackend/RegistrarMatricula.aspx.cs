@@ -14,6 +14,7 @@ namespace AmorYPazBackend
         private BindingList<anioAcademico> aniosAcad;
         private AnioAcademicoWSClient daoAnioAcademico;
         private InstitucionEducativaWSClient daoInstitucion;
+        private EstudianteWSClient daoEstudiante;
 
         private GradoWSClient daoGrado;
         private BindingList<grado> grados;
@@ -41,10 +42,10 @@ namespace AmorYPazBackend
                             txtVacantes.Enabled = false;
                             daoAnioAcademico = new AnioAcademicoWSClient();
                             aniosAcad = new BindingList<anioAcademico>(daoAnioAcademico.listarAnioAcademicoPorIdIE(ie.idInstitucion));
-                            //int anioActual = DateTime.Now.Year;
+                            int anioActual = DateTime.Now.Year;
 
                             BindingList<anioAcademico> aniosFiltrados = new BindingList<anioAcademico>(
-                            aniosAcad.Where(a => a.estado == "Activo").ToList());
+                            aniosAcad.Where(a => a.numero == anioActual || a.numero == anioActual + +1).ToList());
 
                             ddlAnio.DataSource = aniosFiltrados;
                             ddlAnio.DataValueField = "idAnio";
@@ -66,7 +67,9 @@ namespace AmorYPazBackend
 
                             dtpFecha.Value = DateTime.Now.ToString("yyyy-MM-dd");
 
-
+                            int idGradoSeleccionado = Int32.Parse(ddlGrado.SelectedValue);
+                            grado aux = grados.FirstOrDefault(g => g.idGrado == idGradoSeleccionado);
+                            txtVacantes.Text = aux.vacantes.ToString();
                         }
                         catch (Exception ex)
                         {
@@ -171,10 +174,8 @@ namespace AmorYPazBackend
                 a.apellidoPaterno.Equals(apellidoPaterno, StringComparison.OrdinalIgnoreCase) &&
                 a.apellidoMaterno.Equals(apellidoMaterno, StringComparison.OrdinalIgnoreCase));
 
-            // Si se encontró un alumno coincidente, guardarlo en la sesión
             if (alumnoCoincidente != null)
             {
-                // Suponiendo que estás en un contexto donde puedes acceder a la sesión
                 HttpContext.Current.Session["estudiantePosible"] = alumnoCoincidente;
                 return true; // Se encontró un alumno y se guardó en la sesión
             }
@@ -184,23 +185,50 @@ namespace AmorYPazBackend
 
         protected void btnBuscar_Estudiante_Click(object sender, EventArgs e)
         {
-            string nombreAlumno = txtAlumno.Text.Trim();
-            Session["alumnoEncontrado"] = false;
-            if (string.IsNullOrEmpty(nombreAlumno))
+            string script = "mostrarModalCursos();";
+            ScriptManager.RegisterStartupScript(this, GetType(), "MostrarModalCursos", script, true);
+            int idDirector = Int32.Parse(Session["idDirector"].ToString());
+            daoInstitucion = new InstitucionEducativaWSClient();
+            daoEstudiante = new EstudianteWSClient();
+            institucionEducativa ie = daoInstitucion.obtenerIEPorIdDirector(idDirector);
+            BindingList<estudiante> estudiantes;
+            estudiante[] ests = daoEstudiante.listarEstudiantesPorIE(ie.idInstitucion);
+            estudiantes = new BindingList<estudiante>(ests);
+            gvEstudiantes.DataSource = estudiantes;
+            gvEstudiantes.DataBind();
+            ViewState["estudiantes"] = estudiantes;
+        }
+
+        protected void lbBuscarEstudianteModal_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void gvEstudiantes_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvEstudiantes.PageIndex = e.NewPageIndex;
+            gvEstudiantes.DataSource = (BindingList<estudiante>)ViewState["estudiantes"];
+            gvEstudiantes.DataBind();
+        }
+
+        protected void SeleccionarEstudiante_Click(object sender, EventArgs e)
+        {
+            LinkButton btn = (LinkButton)sender;
+            int idPersona = Int32.Parse(btn.CommandArgument);
+            BindingList<estudiante> estudiantes = (BindingList<estudiante>)ViewState["estudiantes"];
+            estudiante estudianteEncontrado = null;
+            if (estudiantes != null) estudianteEncontrado = estudiantes.FirstOrDefault(k => k.idPersona == idPersona);
+            txtAlumno.Text = estudianteEncontrado.dni.ToString() + " - " + estudianteEncontrado.nombres + " " + estudianteEncontrado.apellidoPaterno;
+            string script = @"$('#form-modal').modal('hide'); $('.modal-backdrop').remove();";
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "HideModal", script, true);
+        }
+
+        protected void gvEstudiantes_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
             {
-                // Mostrar mensaje de error si el campo está vacío
-                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Por favor, ingrese un nombre de alumno.');", true);
-                return;
-            }
-            // Validar si el alumno está registrado
-            if (!ValidarAlumno(nombreAlumno))
-            {
-                // Mostrar mensaje de error si el alumno no está registrado
-                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('El alumno no está registrado en la institución.');", true);
-            }
-            else
-            {
-                Session["alumnoEncontrado"] = true;
+                e.Row.Cells[0].Text = DataBinder.Eval(e.Row.DataItem, "dni").ToString();
+                e.Row.Cells[1].Text = DataBinder.Eval(e.Row.DataItem, "nombres").ToString() + " " + DataBinder.Eval(e.Row.DataItem, "apellidoPaterno").ToString() + " " + DataBinder.Eval(e.Row.DataItem, "apellidoMaterno").ToString();
             }
         }
     }

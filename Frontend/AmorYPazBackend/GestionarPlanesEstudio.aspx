@@ -33,7 +33,7 @@
                             <asp:LinkButton id="lbDetalle" runat="server" Text="<i class='fa-solid fa-note'></i>" CssClass="btn btn-primary" CommandName="MostrarDescripcion" CommandArgument='<%# Eval("descripcion") %>' />    
                         </itemtemplate>
                     </asp:TemplateField>
-                    <asp:TemplateField>
+                    <asp:TemplateField HeaderText="Ir" HeaderStyle-CssClass="grid-header">
                         <ItemStyle HorizontalAlign="Center" />
                         <ItemTemplate>
                             <asp:LinkButton ID="lbModificar" runat="server" Text="<i class='fa-solid fa-pencil'></i>" CssClass="btn btn-warning" OnClick="lbModificar_Click" CommandArgument='<%# Eval("idPlan") %>' />

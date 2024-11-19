@@ -28,15 +28,16 @@
                     <asp:BoundField HeaderText="Alumno" HeaderStyle-CssClass="grid-header" ItemStyle-CssClass="align-middle" ItemStyle-HorizontalAlign="Center"/>
                     <asp:BoundField HeaderText="Grado" HeaderStyle-CssClass="grid-header" ItemStyle-CssClass="align-middle" ItemStyle-HorizontalAlign="Center"/>
                     <asp:BoundField HeaderText="Fecha" HeaderStyle-CssClass="grid-header" ItemStyle-CssClass="align-middle" ItemStyle-HorizontalAlign="Center"/>
-                    <asp:TemplateField>
+                    <asp:TemplateField HeaderText="Resultados" HeaderStyle-CssClass="grid-header">
+                        <ItemStyle HorizontalAlign="Center" />
+                        <ItemTemplate>
+                            <asp:LinkButton ID="lbResultados" runat="server" Text="<i class='fa-solid fa-notebook'></i>" CssClass="btn btn-info" OnClick="lbResultados_Click" CommandArgument='<%# Eval("idMatricula") %>' />
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Acciones" HeaderStyle-CssClass="grid-header">
                         <ItemStyle HorizontalAlign="Center" />
                         <ItemTemplate>
                             <asp:LinkButton ID="lbModificar" runat="server" Text="<i class='fa-solid fa-pencil'></i>" CssClass="btn btn-warning" OnClick="lbModificar_Click" CommandArgument='<%# Eval("idMatricula") %>' />
-                        </ItemTemplate>
-                    </asp:TemplateField>
-                    <asp:TemplateField>
-                        <ItemStyle HorizontalAlign="Center" />
-                        <ItemTemplate>
                             <asp:LinkButton ID="lbEliminar" runat="server" Text="<i class='fa-solid fa-trash'></i>" CssClass="btn btn-danger" OnClick="lbEliminar_Click" CommandArgument='<%# Eval("idMatricula") %>' />
                         </ItemTemplate>
                     </asp:TemplateField>

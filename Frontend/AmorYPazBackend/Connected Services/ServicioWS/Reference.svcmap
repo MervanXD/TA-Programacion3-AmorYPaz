@@ -33,16 +33,18 @@
     <MetadataFile FileName="InstitucionEducativaWS.wsdl" MetadataType="Wsdl" ID="3afe6499-5da2-45e5-8f05-720ef8a4687d" SourceId="1" SourceUrl="http://localhost:8080/SoftProgWSBL/InstitucionEducativaWS?WSDL" />
     <MetadataFile FileName="EstudianteWS.xsd" MetadataType="Schema" ID="58c529fc-2d5e-438c-af13-f472f363c5d8" SourceId="1" SourceUrl="http://localhost:8080/SoftProgWSBL/EstudianteWS?xsd=1" />
     <MetadataFile FileName="GradoWS.xsd" MetadataType="Schema" ID="388d4eed-4a14-4769-b0bc-94fe41b2473c" SourceId="1" SourceUrl="http://localhost:8080/SoftProgWSBL/GradoWS?xsd=1" />
-    <MetadataFile FileName="InstitucionEducativaWS.xsd" MetadataType="Schema" ID="30599e13-b03f-4213-8028-3cf22abc9224" SourceId="1" SourceUrl="http://localhost:8080/SoftProgWSBL/InstitucionEducativaWS?xsd=1" />
+    <MetadataFile FileName="ResultadoPorCursoWS.wsdl" MetadataType="Wsdl" ID="3d18e49b-a65b-4b25-9fb0-a050bab52eab" SourceId="1" SourceUrl="http://localhost:8080/SoftProgWSBL/ResultadoPorCursoWS?WSDL" />
     <MetadataFile FileName="UsuarioWS.xsd" MetadataType="Schema" ID="0335d2ae-0741-4e5d-9fa8-82013acdee24" SourceId="1" SourceUrl="http://localhost:8080/SoftProgWSBL/UsuarioWS?xsd=1" />
     <MetadataFile FileName="CursoWS.xsd" MetadataType="Schema" ID="40cf960c-113f-4750-bc22-3708adb9eb7d" SourceId="1" SourceUrl="http://localhost:8080/SoftProgWSBL/CursoWS?xsd=1" />
     <MetadataFile FileName="UGELWS.xsd" MetadataType="Schema" ID="5dbe2ed9-a25c-459b-8755-5d972e7a312d" SourceId="1" SourceUrl="http://localhost:8080/SoftProgWSBL/UGELWS?xsd=1" />
     <MetadataFile FileName="DirectorWS.wsdl" MetadataType="Wsdl" ID="f09bc871-ca76-4b03-bd75-6246e7e33b5b" SourceId="1" SourceUrl="http://localhost:8080/SoftProgWSBL/DirectorWS?WSDL" />
+    <MetadataFile FileName="InstitucionEducativaWS.xsd" MetadataType="Schema" ID="30599e13-b03f-4213-8028-3cf22abc9224" SourceId="1" SourceUrl="http://localhost:8080/SoftProgWSBL/InstitucionEducativaWS?xsd=1" />
     <MetadataFile FileName="PlanDeEstudioWS.xsd" MetadataType="Schema" ID="0ed3e1c7-7708-43da-a647-7c218db94603" SourceId="1" SourceUrl="http://localhost:8080/SoftProgWSBL/PlanDeEstudioWS?xsd=1" />
     <MetadataFile FileName="GradoWS.wsdl" MetadataType="Wsdl" ID="28a3fa4c-84eb-4df7-aa3a-b38e75fa067d" SourceId="1" SourceUrl="http://localhost:8080/SoftProgWSBL/GradoWS?WSDL" />
     <MetadataFile FileName="UGELWS.wsdl" MetadataType="Wsdl" ID="8594bbc9-cce2-4591-8234-708b3f615d62" SourceId="1" SourceUrl="http://localhost:8080/SoftProgWSBL/UGELWS?WSDL" />
     <MetadataFile FileName="UsuarioWS.wsdl" MetadataType="Wsdl" ID="64568417-78ab-4261-8a00-6f965b620cc7" SourceId="1" SourceUrl="http://localhost:8080/SoftProgWSBL/UsuarioWS?WSDL" />
     <MetadataFile FileName="archivo.disco" MetadataType="Disco" ID="4088f33d-8224-4eab-84b0-342109ab0408" SourceId="1" SourceUrl="http://localhost:8080/SoftProgWSBL/archivo.disco" />
+    <MetadataFile FileName="ResultadoPorCursoWS.xsd" MetadataType="Schema" ID="7a5aa9b4-2d45-4e81-b937-3dd376aae990" SourceId="1" SourceUrl="http://localhost:8080/SoftProgWSBL/ResultadoPorCursoWS?xsd=1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -113,8 +113,6 @@ namespace AmorYPazBackend
             }
 
         }
-    
-
         protected void lbGuardar_Click(object sender, EventArgs e)
         {
             daoPlanEstudio = new PlanDeEstudioWSClient();

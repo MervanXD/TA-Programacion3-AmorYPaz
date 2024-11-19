@@ -9,5 +9,6 @@
   <contractRef ref="http://localhost:8080/SoftProgWSBL/AnioAcademicoWS?WSDL" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
   <contractRef ref="http://localhost:8080/SoftProgWSBL/GradoWS?WSDL" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
   <contractRef ref="http://localhost:8080/SoftProgWSBL/CursoWS?WSDL" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <contractRef ref="http://localhost:8080/SoftProgWSBL/ResultadoPorCursoWS?WSDL" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
   <contractRef ref="http://localhost:8080/SoftProgWSBL/EstudianteWS?WSDL" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
 </discovery>

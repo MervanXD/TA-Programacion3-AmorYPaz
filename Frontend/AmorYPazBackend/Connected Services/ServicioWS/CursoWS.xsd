@@ -6,6 +6,8 @@
   <xs:element name="insertarCursoEnPlan" type="tns:insertarCursoEnPlan" />
   <xs:element name="insertarCursoEnPlanResponse" type="tns:insertarCursoEnPlanResponse" />
   <xs:element name="insertarCursoResponse" type="tns:insertarCursoResponse" />
+  <xs:element name="listarCursosPorIdGrado" type="tns:listarCursosPorIdGrado" />
+  <xs:element name="listarCursosPorIdGradoResponse" type="tns:listarCursosPorIdGradoResponse" />
   <xs:element name="listarCursosPorIdIE" type="tns:listarCursosPorIdIE" />
   <xs:element name="listarCursosPorIdIEResponse" type="tns:listarCursosPorIdIEResponse" />
   <xs:element name="listarPorIdNombreCursos" type="tns:listarPorIdNombreCursos" />
@@ -59,6 +61,16 @@
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="listarPorIdNombreCursosResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:curso" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarCursosPorIdGrado">
+    <xs:sequence>
+      <xs:element name="idGrado" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarCursosPorIdGradoResponse">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:curso" />
     </xs:sequence>
