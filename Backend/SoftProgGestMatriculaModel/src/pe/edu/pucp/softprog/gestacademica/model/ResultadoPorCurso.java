@@ -4,21 +4,12 @@ import pe.edu.pucp.softprog.gestcursos.model.Curso;
 
 public class ResultadoPorCurso {
     private Curso curso;
-    private ResultadoAnual resultadoAnual;
+    private int calificacion;
+    private Matricula matricula;
 
-    public ResultadoPorCurso(Curso curso, ResultadoAnual resultadoAnual) {
-        this.curso = curso;
-        this.resultadoAnual = resultadoAnual;
+    public ResultadoPorCurso() {
     }
-
-    public ResultadoAnual getResultadoAnual() {
-        return resultadoAnual;
-    }
-
-    public void setResultadoAnual(ResultadoAnual resultadoAnual) {
-        this.resultadoAnual = resultadoAnual;
-    }
-
+    
     public Curso getCurso() {
         return curso;
     }
@@ -26,5 +17,23 @@ public class ResultadoPorCurso {
     public void setCurso(Curso curso) {
         this.curso = curso;
     }
+
+    public int getCalificacion() {
+        return calificacion;
+    }
+
+    public void setCalificacion(int calificacion) {
+        this.calificacion = calificacion;
+    }
+
+    public Matricula getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(Matricula matricula) {
+        this.matricula = matricula;
+    }
+    
+    
     
 }

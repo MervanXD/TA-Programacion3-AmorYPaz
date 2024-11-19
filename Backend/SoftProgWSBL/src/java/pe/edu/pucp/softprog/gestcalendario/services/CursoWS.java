@@ -65,6 +65,19 @@ public class CursoWS {
         return cursos;
     }
     
+    @WebMethod(operationName = "listarCursosPorIdGrado")
+    public ArrayList<Curso> listarCursosPorIdGrado(@WebParam(name = "idGrado")
+            int idGrado){
+        ArrayList<Curso> cursos = null;
+        try{
+            daoCurso = new CursoMySQL();
+            cursos = daoCurso.listarPorIdGrado(idGrado);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return cursos;
+    }
+    
     @WebMethod(operationName = "insertarCursoEnPlan")
     public int insertarCursoEnPlan(@WebParam(name = "idCurso")
             int idCurso, @WebParam(name = "idPlan") int idPlan){

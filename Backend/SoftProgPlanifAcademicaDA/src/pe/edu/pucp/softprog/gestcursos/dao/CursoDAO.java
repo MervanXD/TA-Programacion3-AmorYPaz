@@ -14,4 +14,5 @@ public interface CursoDAO {
     ArrayList<Curso> listarPorIdNombre(String idNombre, int idIE);
     ArrayList<Curso> listarPorIdIE(int idIE);
     ArrayList<Curso> listarPorIdPlan(int idPlan);
+    ArrayList<Curso> listarPorIdGrado(int idGrado);
 }
