@@ -44,7 +44,7 @@
                         <div class="mb-3 row">
                             <asp:Label ID="lblAlumno" runat="server" Text="Alumno: " CssClass="col-sm-2 col-form-label"></asp:Label>
                             <div class="col-sm-8">
-                                <asp:TextBox ID="txtAlumno" runat="server" CssClass="form-control"></asp:TextBox>
+                                <asp:TextBox ID="txtAlumno" Enabled="false" runat="server" CssClass="form-control"></asp:TextBox>
                                 <asp:Button ID="btnBuscar_Estudiante" runat="server" CssClass="btn btn-primary" Text="Buscar" OnClick="btnBuscar_Estudiante_Click" />
                             </div>
                         </div>
@@ -65,13 +65,6 @@
                             <asp:Label ID="lblVacantes" runat="server" Text="Vacantes Libres: " CssClass="col-sm-2 col-form-label"></asp:Label>
                             <div class="col-sm-8">
                                 <asp:TextBox ID="txtVacantes" runat="server" CssClass="form-control" ReadOnly="true"></asp:TextBox>
-                            </div>
-                        </div>
-
-                        <div class="mb-3 row">
-                            <asp:Label ID="lblObservacion" runat="server" Text="Observación: " CssClass="col-sm-2 col-form-label"></asp:Label>
-                            <div class="col-sm-8">
-                                <asp:TextBox ID="txtObservacion" runat="server" CssClass="form-control" TextMode="MultiLine" Rows="3"></asp:TextBox>
                             </div>
                         </div>
                     </div>

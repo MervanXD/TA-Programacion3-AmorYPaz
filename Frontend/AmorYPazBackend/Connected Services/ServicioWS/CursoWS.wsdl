@@ -5,17 +5,23 @@
       <xsd:import schemaLocation="http://localhost:8080/SoftProgWSBL/CursoWS?xsd=1" namespace="services.softprog.pucp.edu.pe" />
     </xsd:schema>
   </types>
-  <message name="insertarCurso">
-    <part name="parameters" element="tns:insertarCurso" />
+  <message name="listarCursosPorIdIE">
+    <part name="parameters" element="tns:listarCursosPorIdIE" />
   </message>
-  <message name="insertarCursoResponse">
-    <part name="parameters" element="tns:insertarCursoResponse" />
+  <message name="listarCursosPorIdIEResponse">
+    <part name="parameters" element="tns:listarCursosPorIdIEResponse" />
   </message>
-  <message name="listarPorIdPlan">
-    <part name="parameters" element="tns:listarPorIdPlan" />
+  <message name="insertarCursoEnPlan">
+    <part name="parameters" element="tns:insertarCursoEnPlan" />
   </message>
-  <message name="listarPorIdPlanResponse">
-    <part name="parameters" element="tns:listarPorIdPlanResponse" />
+  <message name="insertarCursoEnPlanResponse">
+    <part name="parameters" element="tns:insertarCursoEnPlanResponse" />
+  </message>
+  <message name="listarCursosPorIdGrado">
+    <part name="parameters" element="tns:listarCursosPorIdGrado" />
+  </message>
+  <message name="listarCursosPorIdGradoResponse">
+    <part name="parameters" element="tns:listarCursosPorIdGradoResponse" />
   </message>
   <message name="eliminarCursoDePlan">
     <part name="parameters" element="tns:eliminarCursoDePlan" />
@@ -29,32 +35,30 @@
   <message name="listarPorIdNombreCursosResponse">
     <part name="parameters" element="tns:listarPorIdNombreCursosResponse" />
   </message>
-  <message name="insertarCursoEnPlan">
-    <part name="parameters" element="tns:insertarCursoEnPlan" />
+  <message name="listarPorIdPlan">
+    <part name="parameters" element="tns:listarPorIdPlan" />
   </message>
-  <message name="insertarCursoEnPlanResponse">
-    <part name="parameters" element="tns:insertarCursoEnPlanResponse" />
+  <message name="listarPorIdPlanResponse">
+    <part name="parameters" element="tns:listarPorIdPlanResponse" />
   </message>
-  <message name="listarCursosPorIdIE">
-    <part name="parameters" element="tns:listarCursosPorIdIE" />
+  <message name="insertarCurso">
+    <part name="parameters" element="tns:insertarCurso" />
   </message>
-  <message name="listarCursosPorIdIEResponse">
-    <part name="parameters" element="tns:listarCursosPorIdIEResponse" />
-  </message>
-  <message name="listarCursosPorIdGrado">
-    <part name="parameters" element="tns:listarCursosPorIdGrado" />
-  </message>
-  <message name="listarCursosPorIdGradoResponse">
-    <part name="parameters" element="tns:listarCursosPorIdGradoResponse" />
+  <message name="insertarCursoResponse">
+    <part name="parameters" element="tns:insertarCursoResponse" />
   </message>
   <portType name="CursoWS">
-    <operation name="insertarCurso">
-      <input wsam:Action="services.softprog.pucp.edu.pe/CursoWS/insertarCursoRequest" message="tns:insertarCurso" />
-      <output wsam:Action="services.softprog.pucp.edu.pe/CursoWS/insertarCursoResponse" message="tns:insertarCursoResponse" />
+    <operation name="listarCursosPorIdIE">
+      <input wsam:Action="services.softprog.pucp.edu.pe/CursoWS/listarCursosPorIdIERequest" message="tns:listarCursosPorIdIE" />
+      <output wsam:Action="services.softprog.pucp.edu.pe/CursoWS/listarCursosPorIdIEResponse" message="tns:listarCursosPorIdIEResponse" />
     </operation>
-    <operation name="listarPorIdPlan">
-      <input wsam:Action="services.softprog.pucp.edu.pe/CursoWS/listarPorIdPlanRequest" message="tns:listarPorIdPlan" />
-      <output wsam:Action="services.softprog.pucp.edu.pe/CursoWS/listarPorIdPlanResponse" message="tns:listarPorIdPlanResponse" />
+    <operation name="insertarCursoEnPlan">
+      <input wsam:Action="services.softprog.pucp.edu.pe/CursoWS/insertarCursoEnPlanRequest" message="tns:insertarCursoEnPlan" />
+      <output wsam:Action="services.softprog.pucp.edu.pe/CursoWS/insertarCursoEnPlanResponse" message="tns:insertarCursoEnPlanResponse" />
+    </operation>
+    <operation name="listarCursosPorIdGrado">
+      <input wsam:Action="services.softprog.pucp.edu.pe/CursoWS/listarCursosPorIdGradoRequest" message="tns:listarCursosPorIdGrado" />
+      <output wsam:Action="services.softprog.pucp.edu.pe/CursoWS/listarCursosPorIdGradoResponse" message="tns:listarCursosPorIdGradoResponse" />
     </operation>
     <operation name="eliminarCursoDePlan">
       <input wsam:Action="services.softprog.pucp.edu.pe/CursoWS/eliminarCursoDePlanRequest" message="tns:eliminarCursoDePlan" />
@@ -64,22 +68,18 @@
       <input wsam:Action="services.softprog.pucp.edu.pe/CursoWS/listarPorIdNombreCursosRequest" message="tns:listarPorIdNombreCursos" />
       <output wsam:Action="services.softprog.pucp.edu.pe/CursoWS/listarPorIdNombreCursosResponse" message="tns:listarPorIdNombreCursosResponse" />
     </operation>
-    <operation name="insertarCursoEnPlan">
-      <input wsam:Action="services.softprog.pucp.edu.pe/CursoWS/insertarCursoEnPlanRequest" message="tns:insertarCursoEnPlan" />
-      <output wsam:Action="services.softprog.pucp.edu.pe/CursoWS/insertarCursoEnPlanResponse" message="tns:insertarCursoEnPlanResponse" />
+    <operation name="listarPorIdPlan">
+      <input wsam:Action="services.softprog.pucp.edu.pe/CursoWS/listarPorIdPlanRequest" message="tns:listarPorIdPlan" />
+      <output wsam:Action="services.softprog.pucp.edu.pe/CursoWS/listarPorIdPlanResponse" message="tns:listarPorIdPlanResponse" />
     </operation>
-    <operation name="listarCursosPorIdIE">
-      <input wsam:Action="services.softprog.pucp.edu.pe/CursoWS/listarCursosPorIdIERequest" message="tns:listarCursosPorIdIE" />
-      <output wsam:Action="services.softprog.pucp.edu.pe/CursoWS/listarCursosPorIdIEResponse" message="tns:listarCursosPorIdIEResponse" />
-    </operation>
-    <operation name="listarCursosPorIdGrado">
-      <input wsam:Action="services.softprog.pucp.edu.pe/CursoWS/listarCursosPorIdGradoRequest" message="tns:listarCursosPorIdGrado" />
-      <output wsam:Action="services.softprog.pucp.edu.pe/CursoWS/listarCursosPorIdGradoResponse" message="tns:listarCursosPorIdGradoResponse" />
+    <operation name="insertarCurso">
+      <input wsam:Action="services.softprog.pucp.edu.pe/CursoWS/insertarCursoRequest" message="tns:insertarCurso" />
+      <output wsam:Action="services.softprog.pucp.edu.pe/CursoWS/insertarCursoResponse" message="tns:insertarCursoResponse" />
     </operation>
   </portType>
   <binding name="CursoWSPortBinding" type="tns:CursoWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="insertarCurso">
+    <operation name="listarCursosPorIdIE">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -88,7 +88,16 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="listarPorIdPlan">
+    <operation name="insertarCursoEnPlan">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarCursosPorIdGrado">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -115,7 +124,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="insertarCursoEnPlan">
+    <operation name="listarPorIdPlan">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -124,16 +133,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="listarCursosPorIdIE">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="listarCursosPorIdGrado">
+    <operation name="insertarCurso">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

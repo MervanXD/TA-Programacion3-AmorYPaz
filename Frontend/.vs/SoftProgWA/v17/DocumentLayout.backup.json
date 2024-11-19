@@ -7,20 +7,20 @@
       "RelativeMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|solutionrelative:amorypazbackend\\registrarmatricula.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|c:\\programacion3\\ta-programacion3-amorypaz\\frontend\\amorypazbackend\\registrarmatricula.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "AbsoluteMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|C:\\Programacion3\\TA-Programacion3-AmorYPaz\\Frontend\\amorypazbackend\\registrarmatricula.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|solutionrelative:amorypazbackend\\registrarmatricula.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|c:\\programacion3\\ta-programacion3-amorypaz\\frontend\\amorypazbackend\\registrarplandeestudios.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|C:\\Programacion3\\TA-Programacion3-AmorYPaz\\Frontend\\amorypazbackend\\registrarplandeestudios.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|solutionrelative:amorypazbackend\\registrarplandeestudios.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|c:\\programacion3\\ta-programacion3-amorypaz\\frontend\\amorypazbackend\\registrarplandeestudios.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|solutionrelative:amorypazbackend\\registrarplandeestudios.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|C:\\Programacion3\\TA-Programacion3-AmorYPaz\\Frontend\\amorypazbackend\\scripts\\scriptsregmatricula.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|solutionrelative:amorypazbackend\\scripts\\scriptsregmatricula.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|c:\\programacion3\\ta-programacion3-amorypaz\\frontend\\amorypazbackend\\scripts\\scriptsregmatricula.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|solutionrelative:amorypazbackend\\scripts\\scriptsregmatricula.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|C:\\Programacion3\\TA-Programacion3-AmorYPaz\\Frontend\\amorypazbackend\\registrarplandeestudios.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}|AmorYPazBackend\\SoftProgWA.csproj|solutionrelative:amorypazbackend\\registrarplandeestudios.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     }
   ],
   "DocumentGroupContainers": [
@@ -56,7 +56,7 @@
               "RelativeDocumentMoniker": "AmorYPazBackend\\RegistrarPlanDeEstudios.aspx.cs",
               "ToolTip": "C:\\Programacion3\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\RegistrarPlanDeEstudios.aspx.cs",
               "RelativeToolTip": "AmorYPazBackend\\RegistrarPlanDeEstudios.aspx.cs",
-              "ViewState": "AgIAAM4AAAAAAAAAAAAswOIAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAFgBAAAAAAAAAAAUwGUBAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-19T09:30:52.577Z",
               "EditorCaption": ""
@@ -82,27 +82,27 @@
               "RelativeDocumentMoniker": "AmorYPazBackend\\RegistrarMatricula.aspx.cs",
               "ToolTip": "C:\\Programacion3\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\RegistrarMatricula.aspx.cs",
               "RelativeToolTip": "AmorYPazBackend\\RegistrarMatricula.aspx.cs",
-              "ViewState": "AgIAANMAAAAAAAAAAAAlwN0AAAA+AAAAAAAAAA==",
+              "ViewState": "AgIAAIMAAAAAAAAAAAAgwJEAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-19T09:52:28.927Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "scriptsRegMatricula.js",
               "DocumentMoniker": "C:\\Programacion3\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\Scripts\\scriptsRegMatricula.js",
               "RelativeDocumentMoniker": "AmorYPazBackend\\Scripts\\scriptsRegMatricula.js",
               "ToolTip": "C:\\Programacion3\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\Scripts\\scriptsRegMatricula.js",
               "RelativeToolTip": "AmorYPazBackend\\Scripts\\scriptsRegMatricula.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2024-11-19T10:49:04.475Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "RegistrarPlanDeEstudios.aspx",
               "DocumentMoniker": "C:\\Programacion3\\TA-Programacion3-AmorYPaz\\Frontend\\AmorYPazBackend\\RegistrarPlanDeEstudios.aspx",
               "RelativeDocumentMoniker": "AmorYPazBackend\\RegistrarPlanDeEstudios.aspx",
@@ -110,8 +110,7 @@
               "RelativeToolTip": "AmorYPazBackend\\RegistrarPlanDeEstudios.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-11-19T10:36:51.914Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-19T10:36:51.914Z"
             }
           ]
         }
