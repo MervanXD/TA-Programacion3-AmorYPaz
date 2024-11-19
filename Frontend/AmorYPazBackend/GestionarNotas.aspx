@@ -51,7 +51,7 @@
                             <div style="display: flex; align-items: center; justify-content: center;">
                                 <asp:TextBox ID="txtNotaCurso" runat="server" CssClass="form-control textbox-small" Style="text-align: center; width: 80px;" Enabled="false"></asp:TextBox>
                                 <asp:LinkButton ID="lbModificar" runat="server" Text="<i class='fa-solid fa-pencil'></i>" CssClass="btn btn-warning" Style="margin-left: 10px;" OnClick="lbModificar_Click"></asp:LinkButton>
-                                <asp:LinkButton ID="lbGuardar" runat="server" Text="<i class='fa-solid fa-save'></i>" CssClass="btn btn-info" Style="margin-left: 10px;" CommandArgument='<%# Eval("curso.idCurso") %>' OnClick="lbGuardar_Click"></asp:LinkButton>
+                                <asp:LinkButton ID="lbGuardar" runat="server" Text="<i class='fa-solid fa-lock'></i>" CssClass="btn btn-info" Style="margin-left: 10px;" CommandArgument='<%# Eval("curso.idCurso") %>' OnClick="lbGuardar_Click"></asp:LinkButton>
                             </div>
                         </ItemTemplate>
                     </asp:TemplateField>

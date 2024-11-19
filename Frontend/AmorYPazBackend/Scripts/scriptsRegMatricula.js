@@ -12,5 +12,5 @@ function mostrarModal(mensaje, redirectUrl) {
     setTimeout(function () {
         modal.hide();
         window.location.href = redirectUrl;
-    }, 4000);
+    }, 2500);
 }

@@ -168,24 +168,6 @@ namespace AmorYPazBackend
         protected global::System.Web.UI.WebControls.TextBox txtVacantes;
 
         /// <summary>
-        /// Control lblObservacion.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblObservacion;
-
-        /// <summary>
-        /// Control txtObservacion.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtObservacion;
-
-        /// <summary>
         /// Control btnCancelar.
         /// </summary>
         /// <remarks>
