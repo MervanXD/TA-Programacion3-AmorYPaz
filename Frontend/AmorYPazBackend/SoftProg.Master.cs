@@ -36,6 +36,7 @@ namespace AmorYPazBackend
         {
             List<(string Href, string IconClass, string Text)> itemsMenu = new List<(string, string, string)>();
             string tipoUsuario = Session["tipoUsuario"].ToString();
+            string currentPage = System.IO.Path.GetFileName(Request.Path);
             if (tipoUsuario == "DIRECTOR_IE")
             {
                 itemsMenu.Add(("MenuPrincipalDirectores.aspx", "fa-solid fa-school", "Menu Principal"));
@@ -56,7 +57,17 @@ namespace AmorYPazBackend
             foreach (var item in itemsMenu)
             {
                 HtmlGenericControl li = new HtmlGenericControl("li");
-                li.Attributes["class"] = "nav-item mb-1";
+
+                // Agregar la clase "active" si la página coincide con el enlace
+                if (currentPage == System.IO.Path.GetFileName(item.Href))
+                {
+                    li.Attributes["class"] = "nav-item mb-1 active"; // Clase "active" para resaltar
+                }
+                else
+                {
+                    li.Attributes["class"] = "nav-item mb-1";
+                }
+
                 HtmlAnchor anchor = new HtmlAnchor
                 {
                     HRef = item.Href

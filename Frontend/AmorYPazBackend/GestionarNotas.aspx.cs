@@ -34,10 +34,23 @@ namespace AmorYPazBackend
                 {
                     seleccionarDDLs(matric);
                     daoResultado = new ResultadoPorCursoWSClient();
-                    resultados = new BindingList<resultadoPorCurso>(daoResultado.listarPorIdMatricula(matric.idMatricula));
-                    gvNotas.DataSource = resultados;
-                    gvNotas.DataBind();
-                    ViewState["resultadosAnadir"] = new BindingList<resultadoPorCurso>();
+                    resultadoPorCurso[] aux = daoResultado.listarPorIdMatricula(matric.idMatricula);
+                    if(aux == null)
+                    {
+                        lblMensaje.Text = "No se encontraron matrículas correspondientes a los criterios ingresados.";
+                        lblMensaje.Visible = true;
+                        ViewState["resultadosAnadir"] = null;
+                        gvNotas.DataSource = null;
+                        gvNotas.DataBind();
+                    }else
+                    {
+                        resultados = new BindingList<resultadoPorCurso>(daoResultado.listarPorIdMatricula(matric.idMatricula));
+                        gvNotas.DataSource = resultados;
+                        gvNotas.DataBind();
+                        ViewState["resultadosAnadir"] = new BindingList<resultadoPorCurso>();
+                    }
+                    
+                    
                     ViewState["matricula"] = matric;
                     //Session["matricula"] = null;
                 }

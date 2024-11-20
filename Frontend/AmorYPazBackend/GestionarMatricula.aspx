@@ -19,6 +19,10 @@
                 <asp:Button ID="btnHistorial" runat="server" Text="Historial" OnClick="btnHistorial_Click" CommandArgument="historial" CssClass="btn btn-primary button-bordered" />
             </div>-->
         </div>
+        <div>
+            <asp:DropDownList ID="ddlGrados" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddlGrados_SelectedIndexChanged">
+            </asp:DropDownList>
+        </div>
         <div class="table-container">
             <asp:GridView ID="gvMatriculas" runat="server" CssClass="table table-bordered gridview"
                 AutoGenerateColumns="False" OnRowDataBound="gvMatriculas_RowDataBound"
