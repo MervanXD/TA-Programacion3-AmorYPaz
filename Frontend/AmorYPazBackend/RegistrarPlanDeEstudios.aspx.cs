@@ -257,6 +257,12 @@ namespace AmorYPazBackend
             ViewState["CursosSeleccionados"] = cursosSeleccionados;
             gvCursos.DataSource = cursosSeleccionados;
             gvCursos.DataBind();
+
+
+            // agregado Actualizar el grid del modal
+            gvCursosModal.DataSource = ViewState["cursosModal"];
+            gvCursosModal.DataBind();
+            upBusqCursos.Update();
         }
 
         protected void EliminarCurso_Click(object sender, EventArgs e)
@@ -370,6 +376,8 @@ namespace AmorYPazBackend
             gvCursosModal.DataSource = cursos;
             gvCursosModal.DataBind();
             ViewState["cursosModal"] = cursos;
+            //agregado
+            upBusqCursos.Update();
         }
 
         protected void gvCursos_RowDataBound(object sender, GridViewRowEventArgs e)
@@ -383,6 +391,17 @@ namespace AmorYPazBackend
                     lbEliminarCurso.Visible = false;
                 }
             }
+        }
+
+
+        //agregado para lo de seleccionar en el modal
+        protected bool EstaSeleccionado(string idCurso)
+        {
+            if (ViewState["CursosSeleccionados"] == null)
+                return false;
+
+            var cursosSeleccionados = (BindingList<curso>)ViewState["CursosSeleccionados"];
+            return cursosSeleccionados.Any(c => c.idCurso.ToString() == idCurso);
         }
     }
 }

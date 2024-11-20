@@ -229,4 +229,58 @@ public class MatriculaMySQL implements MatriculaDAO{
         
         return matriculas;
     }
+    
+    
+    @Override
+    public ArrayList<Matricula> listarMatriculasPorGrado(int idGrado){
+        ArrayList<Matricula> matriculas = new ArrayList<>();
+        try{
+           con = DBManager.getInstance().getConnection();
+            String sql = "{call LISTAR_MATRICULAS_X_GRADO(?)}";
+            cs = con.prepareCall(sql);
+            cs.setInt("_fid_grado", idGrado);
+            rs = cs.executeQuery(); 
+            while(rs.next()){
+                Matricula matricula = new Matricula();
+                matricula.setAnioAcademico(new AnioAcademico());
+                matricula.getAnioAcademico().setIdAnio(rs.getInt("fid_AnhoAcademico"));
+                matricula.getAnioAcademico().setNumero(rs.getInt("numero"));
+                matricula.setInstitucion(new InstitucionEducativa());
+                matricula.getInstitucion().setIdInstitucion(rs.getInt("fid_Institucion_Educativa"));
+                matricula.getInstitucion().setNombre(rs.getString("nombre"));
+                matricula.getInstitucion().setDireccion(rs.getString("direccion"));
+                matricula.getInstitucion().setCantidadGrados(rs.getInt("cantidad_grados"));
+                
+                matricula.setEstudiante(new Estudiante());
+                matricula.getEstudiante().setIdPersona(rs.getInt("fid_Estudiante"));
+                matricula.getEstudiante().setDni(rs.getString("dni"));
+                matricula.getEstudiante().setNombres(rs.getString("nombres"));
+                matricula.getEstudiante().setApellidoPaterno(rs.getString("apellido_paterno"));
+                matricula.getEstudiante().setApellidoMaterno(rs.getString("apellido_materno"));
+                matricula.setEstado(rs.getString("estado"));
+                
+                matricula.setGrado(new Grado());
+                matricula.getGrado().setIdGrado(rs.getInt("fid_Grado"));
+                matricula.getGrado().setNumero(rs.getString("numeroGrado"));
+                matricula.getGrado().setNivel(TipoNivel.valueOf(rs.getString("tipo_nivel")));
+                
+                matricula.setIdMatricula(rs.getInt("id_Matricula"));
+                matricula.setFecha(new java.util.Date(rs.getDate("fecha").getTime()));
+                matricula.setEstado(rs.getString("estado"));
+                matricula.setTipoMatricula(rs.getString("tipo"));
+                matriculas.add(matricula);
+                
+            }
+        }catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            try {
+                con.close();
+            } catch (SQLException ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
+        
+        return matriculas;
+    }
 }

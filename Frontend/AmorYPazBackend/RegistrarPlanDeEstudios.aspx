@@ -140,8 +140,12 @@
                                                 <asp:BoundField HeaderText="Nombre del Curso" DataField="nombre" />
                                                 <asp:TemplateField>
                                                     <ItemTemplate>
-                                                        <asp:LinkButton CssClass="btn btn-success" runat="server" Text="<i class='fa-solid fa-check'></i> Seleccionar"
-                                                            OnClick="SeleccionarCurso_Click" CommandArgument='<%# Eval("nombre") + "," + Eval("idCurso") %>' />
+                                                        <asp:LinkButton ID="lbSeleccionar" runat="server"
+                                                            CssClass='<%# EstaSeleccionado(Eval("idCurso").ToString()) ? "btn btn-secondary disabled" : "btn btn-success" %>'
+                                                            Text='<%# EstaSeleccionado(Eval("idCurso").ToString()) ? "<i class=\"fa-solid fa-check\"></i> Seleccionado" : "<i class=\"fa-solid fa-check\"></i> Seleccionar" %>'
+                                                            OnClick="SeleccionarCurso_Click"
+                                                            CommandArgument='<%# Eval("nombre") + "," + Eval("idCurso") %>'
+                                                            Enabled='<%# !EstaSeleccionado(Eval("idCurso").ToString()) %>' />
                                                     </ItemTemplate>
                                                 </asp:TemplateField>
                                             </Columns>

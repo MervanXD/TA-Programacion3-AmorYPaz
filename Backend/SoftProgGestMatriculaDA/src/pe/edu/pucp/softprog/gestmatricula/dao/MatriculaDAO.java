@@ -10,4 +10,5 @@ public interface MatriculaDAO {
     Matricula obtenerPorAnioGradoEstudiante(int idAnio, int idGrado, int idEstudiante);
     ArrayList<Matricula> listarTodos(); 
     ArrayList<Matricula> listarPorIdIE(int idInstitucion);
+    ArrayList<Matricula> listarMatriculasPorGrado(int idGrado);
 }
