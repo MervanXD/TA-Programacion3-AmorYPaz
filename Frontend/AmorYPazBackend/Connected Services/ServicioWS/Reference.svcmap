@@ -22,20 +22,21 @@
     <MetadataSource Address="http://localhost:8080/SoftProgWSBL/archivo.disco" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="AnioAcademicoWS.xsd" MetadataType="Schema" ID="4a1dfa83-26b4-4da6-9d33-7c2a1df10b87" SourceId="1" SourceUrl="http://localhost:8080/SoftProgWSBL/AnioAcademicoWS?xsd=1" />
     <MetadataFile FileName="MatriculaWS.xsd" MetadataType="Schema" ID="e582b4fe-cc50-4bb8-a5f1-0ac415b9fde2" SourceId="1" SourceUrl="http://localhost:8080/SoftProgWSBL/MatriculaWS?xsd=1" />
     <MetadataFile FileName="MatriculaWS.wsdl" MetadataType="Wsdl" ID="2b58a32c-b556-4c26-9876-b3336e39d463" SourceId="1" SourceUrl="http://localhost:8080/SoftProgWSBL/MatriculaWS?WSDL" />
     <MetadataFile FileName="EstudianteWS.wsdl" MetadataType="Wsdl" ID="7872a079-5e6b-45ed-994b-34515c9ff7ca" SourceId="1" SourceUrl="http://localhost:8080/SoftProgWSBL/EstudianteWS?WSDL" />
     <MetadataFile FileName="PlanDeEstudioWS.wsdl" MetadataType="Wsdl" ID="ab13ac12-7d7d-4985-944a-73a8c566ff47" SourceId="1" SourceUrl="http://localhost:8080/SoftProgWSBL/PlanDeEstudioWS?WSDL" />
     <MetadataFile FileName="CursoWS.wsdl" MetadataType="Wsdl" ID="898ce4ae-7998-4b31-b4d1-758160094767" SourceId="1" SourceUrl="http://localhost:8080/SoftProgWSBL/CursoWS?WSDL" />
     <MetadataFile FileName="AnioAcademicoWS.wsdl" MetadataType="Wsdl" ID="1d06bd6a-d62c-4b8b-b668-29200b432f10" SourceId="1" SourceUrl="http://localhost:8080/SoftProgWSBL/AnioAcademicoWS?WSDL" />
-    <MetadataFile FileName="DirectorWS.xsd" MetadataType="Schema" ID="b4242a96-30c4-463b-87c8-7b2e5b31746e" SourceId="1" SourceUrl="http://localhost:8080/SoftProgWSBL/DirectorWS?xsd=1" />
-    <MetadataFile FileName="InstitucionEducativaWS.wsdl" MetadataType="Wsdl" ID="3afe6499-5da2-45e5-8f05-720ef8a4687d" SourceId="1" SourceUrl="http://localhost:8080/SoftProgWSBL/InstitucionEducativaWS?WSDL" />
     <MetadataFile FileName="EstudianteWS.xsd" MetadataType="Schema" ID="58c529fc-2d5e-438c-af13-f472f363c5d8" SourceId="1" SourceUrl="http://localhost:8080/SoftProgWSBL/EstudianteWS?xsd=1" />
+    <MetadataFile FileName="InstitucionEducativaWS.wsdl" MetadataType="Wsdl" ID="3afe6499-5da2-45e5-8f05-720ef8a4687d" SourceId="1" SourceUrl="http://localhost:8080/SoftProgWSBL/InstitucionEducativaWS?WSDL" />
+    <MetadataFile FileName="DirectorWS.xsd" MetadataType="Schema" ID="b4242a96-30c4-463b-87c8-7b2e5b31746e" SourceId="1" SourceUrl="http://localhost:8080/SoftProgWSBL/DirectorWS?xsd=1" />
+    <MetadataFile FileName="ReporteMatriculaWS.xsd" MetadataType="Schema" ID="c382f3e1-a66a-4403-a088-7c7597451b00" SourceId="1" SourceUrl="http://localhost:8080/SoftProgWSBL/ReporteMatriculaWS?xsd=1" />
     <MetadataFile FileName="GradoWS.xsd" MetadataType="Schema" ID="388d4eed-4a14-4769-b0bc-94fe41b2473c" SourceId="1" SourceUrl="http://localhost:8080/SoftProgWSBL/GradoWS?xsd=1" />
     <MetadataFile FileName="ResultadoPorCursoWS.wsdl" MetadataType="Wsdl" ID="3d18e49b-a65b-4b25-9fb0-a050bab52eab" SourceId="1" SourceUrl="http://localhost:8080/SoftProgWSBL/ResultadoPorCursoWS?WSDL" />
     <MetadataFile FileName="UsuarioWS.xsd" MetadataType="Schema" ID="0335d2ae-0741-4e5d-9fa8-82013acdee24" SourceId="1" SourceUrl="http://localhost:8080/SoftProgWSBL/UsuarioWS?xsd=1" />
     <MetadataFile FileName="CursoWS.xsd" MetadataType="Schema" ID="40cf960c-113f-4750-bc22-3708adb9eb7d" SourceId="1" SourceUrl="http://localhost:8080/SoftProgWSBL/CursoWS?xsd=1" />
+    <MetadataFile FileName="ReporteMatriculaWS.wsdl" MetadataType="Wsdl" ID="85dbb099-0ab4-424c-83d0-2ba8c833719e" SourceId="1" SourceUrl="http://localhost:8080/SoftProgWSBL/ReporteMatriculaWS?WSDL" />
     <MetadataFile FileName="UGELWS.xsd" MetadataType="Schema" ID="5dbe2ed9-a25c-459b-8755-5d972e7a312d" SourceId="1" SourceUrl="http://localhost:8080/SoftProgWSBL/UGELWS?xsd=1" />
     <MetadataFile FileName="DirectorWS.wsdl" MetadataType="Wsdl" ID="f09bc871-ca76-4b03-bd75-6246e7e33b5b" SourceId="1" SourceUrl="http://localhost:8080/SoftProgWSBL/DirectorWS?WSDL" />
     <MetadataFile FileName="InstitucionEducativaWS.xsd" MetadataType="Schema" ID="30599e13-b03f-4213-8028-3cf22abc9224" SourceId="1" SourceUrl="http://localhost:8080/SoftProgWSBL/InstitucionEducativaWS?xsd=1" />
@@ -44,6 +45,7 @@
     <MetadataFile FileName="UGELWS.wsdl" MetadataType="Wsdl" ID="8594bbc9-cce2-4591-8234-708b3f615d62" SourceId="1" SourceUrl="http://localhost:8080/SoftProgWSBL/UGELWS?WSDL" />
     <MetadataFile FileName="UsuarioWS.wsdl" MetadataType="Wsdl" ID="64568417-78ab-4261-8a00-6f965b620cc7" SourceId="1" SourceUrl="http://localhost:8080/SoftProgWSBL/UsuarioWS?WSDL" />
     <MetadataFile FileName="archivo.disco" MetadataType="Disco" ID="4088f33d-8224-4eab-84b0-342109ab0408" SourceId="1" SourceUrl="http://localhost:8080/SoftProgWSBL/archivo.disco" />
+    <MetadataFile FileName="AnioAcademicoWS.xsd" MetadataType="Schema" ID="4a1dfa83-26b4-4da6-9d33-7c2a1df10b87" SourceId="1" SourceUrl="http://localhost:8080/SoftProgWSBL/AnioAcademicoWS?xsd=1" />
     <MetadataFile FileName="ResultadoPorCursoWS.xsd" MetadataType="Schema" ID="7a5aa9b4-2d45-4e81-b937-3dd376aae990" SourceId="1" SourceUrl="http://localhost:8080/SoftProgWSBL/ResultadoPorCursoWS?xsd=1" />
   </Metadata>
   <Extensions>

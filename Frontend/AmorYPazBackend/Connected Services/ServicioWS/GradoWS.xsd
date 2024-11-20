@@ -3,6 +3,8 @@
   <xs:element name="asignarPlan" type="tns:asignarPlan" />
   <xs:element name="asignarPlanResponse" type="tns:asignarPlanResponse" />
   <xs:element name="listarPorIdIE" type="tns:listarPorIdIE" />
+  <xs:element name="listarPorIdIENivel" type="tns:listarPorIdIENivel" />
+  <xs:element name="listarPorIdIENivelResponse" type="tns:listarPorIdIENivelResponse" />
   <xs:element name="listarPorIdIEResponse" type="tns:listarPorIdIEResponse" />
   <xs:element name="obtenerPorIdGrado" type="tns:obtenerPorIdGrado" />
   <xs:element name="obtenerPorIdGradoResponse" type="tns:obtenerPorIdGradoResponse" />
@@ -146,6 +148,17 @@
   <xs:complexType name="obtenerPorIdGradoResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="tns:grado" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarPorIdIENivel">
+    <xs:sequence>
+      <xs:element name="idInstitucion" type="xs:int" />
+      <xs:element minOccurs="0" name="nivel" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarPorIdIENivelResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:grado" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="obtenerPorIdPlanEstudios">
