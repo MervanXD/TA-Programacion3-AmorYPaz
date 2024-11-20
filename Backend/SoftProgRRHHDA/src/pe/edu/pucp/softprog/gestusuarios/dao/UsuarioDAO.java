@@ -11,5 +11,6 @@ public interface UsuarioDAO {
     Usuario verificar(Usuario usuario);
     int obtenerUgelDeUsuario (String nombreCuentaUsuario);
     int obtenerIEDeUsuario(int id);
+    Usuario obtenerPorIdDirector(int idDirector);
 }
 

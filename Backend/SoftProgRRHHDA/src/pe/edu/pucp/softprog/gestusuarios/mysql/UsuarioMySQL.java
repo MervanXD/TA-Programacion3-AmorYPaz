@@ -225,5 +225,32 @@ public class UsuarioMySQL implements UsuarioDAO {
         }
         return resultado;  
     }
-
+    @Override
+    public Usuario obtenerPorIdDirector(int idDirector) {
+        Usuario usuario = new Usuario();
+        try {
+            con = DBManager.getInstance().getConnection();
+            String sql = "{call OBTENER_USUARIO_POR_ID_DIRECTOR(?)}";
+            cs = con.prepareCall(sql);
+            cs.setInt("_fid_director", idDirector);
+            rs = cs.executeQuery();
+            if (rs.next()) {
+                usuario.setIdUsuario(rs.getInt("id_usuario"));
+                usuario.setUsername(rs.getString("nombre_usuario"));
+                usuario.setTipoUsuario(TipoUsuario.valueOf(rs.getString("tipo_usuario")));
+                usuario.setContrasena(rs.getString("contrasenha"));
+                usuario.setActivo(rs.getBoolean("activo"));
+            } else usuario = null;
+        } catch (SQLException ex) {
+            usuario = null;
+            System.out.println(ex.getMessage());
+        } finally {
+            try {
+                con.close();
+            } catch (SQLException ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
+        return usuario;
+    }
 }

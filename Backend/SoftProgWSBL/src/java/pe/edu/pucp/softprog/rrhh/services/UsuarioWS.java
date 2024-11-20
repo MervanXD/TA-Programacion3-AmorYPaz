@@ -60,5 +60,18 @@ public class UsuarioWS {
         }
         return id_IE;
     }
+    
+    @WebMethod(operationName = "obtenerPorIdDirector")
+    public Usuario obtenerPorIdDirector(@WebParam(name = "idDirector") int idDirector) {
+        Usuario nuevoUsuario = null;
+        try{
+            daoUsuario = new UsuarioMySQL();
+            nuevoUsuario = daoUsuario.obtenerPorIdDirector(idDirector);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return nuevoUsuario;
+    } 
+
    
 }
