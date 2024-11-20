@@ -16,14 +16,15 @@ public class CursoMySQL implements CursoDAO {
     private ResultSet rs;
 
     @Override
-    public int insertar(Curso curso) {
+    public int insertar(Curso curso, int idIE) {
         int resultado = 0;
         try {
             con = DBManager.getInstance().getConnection();
-            String sql = "{call INSERTAR_CURSO(?,?)}";
+            String sql = "{call INSERTAR_CURSO(?,?, ?)}";
             cs = con.prepareCall(sql);
             cs.registerOutParameter("_id_curso", java.sql.Types.INTEGER);
             cs.setString("_nombre", curso.getNombre());
+            cs.setInt("_fid_institucion", idIE);
             cs.executeUpdate();
             curso.setIdCurso(cs.getInt("_id_curso"));
             resultado = curso.getIdCurso();
@@ -138,13 +139,14 @@ public class CursoMySQL implements CursoDAO {
     }
     
     @Override
-    public ArrayList<Curso> listarPorIdNombre(String idNombre){
+    public ArrayList<Curso> listarPorIdNombre(String idNombre, int idIE){
         ArrayList<Curso> cursos = new ArrayList<>();
         try {
             con = DBManager.getInstance().getConnection();
-            String sql = "{call LISTAR_POR_ID_NOMBRE_CURSO(?)}";
+            String sql = "{call LISTAR_POR_ID_NOMBRE_CURSO(?, ?)}";
             cs = con.prepareCall(sql);
             cs.setString("_id_nombre", idNombre);
+            cs.setInt("_fid_institucion", idIE);
             rs = cs.executeQuery();
             while (rs.next()) {
                 Curso curso = new Curso();
@@ -162,7 +164,137 @@ public class CursoMySQL implements CursoDAO {
                 System.out.println(ex.getMessage());
             }
         }
-        
+        return cursos;
+    }
+
+    @Override
+    public ArrayList<Curso> listarPorIdIE(int idIE) {
+        ArrayList<Curso> cursos = new ArrayList<>();
+        try {
+            con = DBManager.getInstance().getConnection();
+            String sql = "{call LISTAR_CURSOS_POR_IE(?)}";
+            cs = con.prepareCall(sql);
+            cs.setInt("_fid_institucion", idIE);
+            rs = cs.executeQuery();
+            while (rs.next()) {
+                Curso curso = new Curso();
+                curso.setIdCurso(rs.getInt("id_curso"));
+                curso.setNombre(rs.getString("nombre"));
+                curso.setActivo(rs.getBoolean("activo"));
+                cursos.add(curso);
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            try {
+                con.close();
+            } catch (SQLException ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
+        return cursos;
+    }
+
+    @Override
+    public int insertarCursoPlanEstudios(int idCurso, int idPlan) {
+        int resultado = 0;
+        try {
+            con = DBManager.getInstance().getConnection();
+            String sql = "{call INSERTAR_CURSO_PLAN_ESTUDIO(?,?,?)}";
+            cs = con.prepareCall(sql);
+            cs.registerOutParameter("_id_Plan_Estudio_Curso", java.sql.Types.INTEGER);
+            cs.setInt("_fid_plan_estudio", idPlan);
+            cs.setInt("_fid_curso", idCurso);
+            cs.executeUpdate();
+            resultado = cs.getInt("_id_Plan_Estudio_Curso");
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            try {
+                con.close();
+            } catch (SQLException ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
+        return resultado;
+    }
+
+    @Override
+    public ArrayList<Curso> listarPorIdPlan(int idPlan) {
+        ArrayList<Curso> cursos = new ArrayList<>();
+        try {
+            con = DBManager.getInstance().getConnection();
+            String sql = "{call LISTAR_CURSOS_POR_ID_PLAN(?)}";
+            cs = con.prepareCall(sql);
+            cs.setInt("_fid_plan_de_estudio", idPlan);
+            rs = cs.executeQuery();
+            while (rs.next()) {
+                Curso curso = new Curso();
+                curso.setIdCurso(rs.getInt("id_curso"));
+                curso.setNombre(rs.getString("nombre"));
+                curso.setActivo(rs.getBoolean("activo"));
+                cursos.add(curso);
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            try {
+                con.close();
+            } catch (SQLException ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
+        return cursos;
+    }
+
+    @Override
+    public int eliminarCursoDePlanEstudios(int idCurso, int idPlan) {
+        int resultado = 0;
+        try {
+            con = DBManager.getInstance().getConnection();
+            String sql = "{call ElIMINAR_CURSO_PLAN_ESTUDIO(?,?)}";
+            cs = con.prepareCall(sql);
+            cs.setInt("_fid_plan_estudio", idPlan);
+            cs.setInt("_fid_curso", idCurso);
+            cs.executeUpdate();
+            resultado = 1;
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            try {
+                con.close();
+            } catch (SQLException ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
+        return resultado;
+    }
+
+    @Override
+    public ArrayList<Curso> listarPorIdGrado(int idGrado) {
+        ArrayList<Curso> cursos = new ArrayList<>();
+        try {
+            con = DBManager.getInstance().getConnection();
+            String sql = "{call LISTAR_CURSOS_POR_GRADO(?)}";
+            cs = con.prepareCall(sql);
+            cs.setInt("_fid_grado", idGrado);
+            rs = cs.executeQuery();
+            while (rs.next()) {
+                Curso curso = new Curso();
+                curso.setIdCurso(rs.getInt("id_curso"));
+                curso.setNombre(rs.getString("nombre"));
+                curso.setActivo(rs.getBoolean("activo"));
+                cursos.add(curso);
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            try {
+                con.close();
+            } catch (SQLException ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
         return cursos;
     }
 

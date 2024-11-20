@@ -4,7 +4,7 @@
     <link href="Content/estilosMasterPage.css" rel="stylesheet"/>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphTitulo" runat="server">
-    Registrar Alumno
+    Gestión de Alumnos
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cphContenido" runat="server">
     <asp:ScriptManager ID="smAlumno" runat="server" />
@@ -18,8 +18,9 @@
                         </h2>
                     </div>
                     <div class="card-body">
+
                         <div class="mb-3 row">
-                            <asp:Label ID="lblDNI" runat="server" CssClass="col-sm-2 col-form-label" Text="DNI: "></asp:Label>
+                            <asp:Label ID="lblDNI" runat="server" CssClass="col-sm-2 col-form-label" Text="DNI: <span class='text-danger'>*</span>"></asp:Label>
                             <div class="col-sm-8">
                                 <asp:TextBox ID="txtDNI" runat="server" CssClass="form-control"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="rfvDNI" runat="server" ControlToValidate="txtDNI" ValidationGroup="GrupoGuardarEs"
@@ -28,8 +29,9 @@
                                     ValidationExpression="^\d{8}$" ErrorMessage="El DNI debe contener solo 8 dígitos." ForeColor="Red"></asp:RegularExpressionValidator>
                             </div>
                         </div>
+
                         <div class="mb-3 row">
-                            <asp:Label ID="lblNombre" runat="server" Text="Nombre: " CssClass="col-sm-2 col-form-label"></asp:Label>
+                            <asp:Label ID="lblNombre" runat="server" Text="Nombre: <span class='text-danger'>*</span>" CssClass="col-sm-2 col-form-label"></asp:Label>
                             <div class="col-sm-8">
                                 <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="rfvNombre" runat="server" ControlToValidate="txtNombre" ValidationGroup="GrupoGuardarEs"
@@ -38,32 +40,33 @@
                                     ValidationExpression="^[a-zA-Z\s]+$" ErrorMessage="Solo se permiten letras en el nombre." ForeColor="Red"></asp:RegularExpressionValidator>
                             </div>
                         </div>
+
                         <div class="mb-3 row">
-                            <asp:Label ID="lblApellidoPaterno" runat="server" Text="Apellido Paterno: " CssClass="col-sm-2 col-form-label"></asp:Label>
+                            <asp:Label ID="lblApellidoPaterno" runat="server" Text="Apellido Paterno: <span class='text-danger'>*</span>" CssClass="col-sm-2 col-form-label"></asp:Label>
                             <div class="col-sm-8">
                                 <asp:TextBox ID="txtApellidoPaterno" runat="server" CssClass="form-control"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="rfvApellidoPaterno" runat="server" ControlToValidate="txtApellidoPaterno" ValidationGroup="GrupoGuardarEs"
                                     ErrorMessage="El apellido paterno es obligatorio." ForeColor="Red"></asp:RequiredFieldValidator>
                                 <asp:RegularExpressionValidator ID="revApellidoPaterno" runat="server" ControlToValidate="txtApellidoPaterno" ValidationGroup="GrupoGuardarEs"
-                                    ValidationExpression="^[a-zA-Z\s]+$" ErrorMessage="Solo se permiten letras en el nombre." ForeColor="Red"></asp:RegularExpressionValidator>
+                                    ValidationExpression="^[a-zA-Z\s]+$" ErrorMessage="Solo se permiten letras en el apellido." ForeColor="Red"></asp:RegularExpressionValidator>
                             </div>
                         </div>
+
                         <div class="mb-3 row">
-                            <asp:Label ID="lblApellidoMaterno" runat="server" Text="Apellido Materno: " CssClass="col-sm-2 col-form-label"></asp:Label>
+                            <asp:Label ID="lblApellidoMaterno" runat="server" Text="Apellido Materno: <span class='text-danger'>*</span>" CssClass="col-sm-2 col-form-label"></asp:Label>
                             <div class="col-sm-8">
                                 <asp:TextBox ID="txtApellidoMaterno" runat="server" CssClass="form-control"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="rfvApellidoMaterno" runat="server" ControlToValidate="txtApellidoMaterno" ValidationGroup="GrupoGuardarEs"
                                     ErrorMessage="El apellido materno es obligatorio." ForeColor="Red"></asp:RequiredFieldValidator>
                                 <asp:RegularExpressionValidator ID="revApellidoMaterno" runat="server" ControlToValidate="txtApellidoMaterno" ValidationGroup="GrupoGuardarEs"
-                                    ValidationExpression="^[a-zA-Z\s]+$" ErrorMessage="Solo se permiten letras en el nombre." ForeColor="Red"></asp:RegularExpressionValidator>
+                                    ValidationExpression="^[a-zA-Z\s]+$" ErrorMessage="Solo se permiten letras en el apellido." ForeColor="Red"></asp:RegularExpressionValidator>
                             </div>
                         </div>
+
                         <div class="mb-3 row">
                             <asp:Label ID="lblDireccion" runat="server" Text="Direccion: " CssClass="col-sm-2 col-form-label"></asp:Label>
                             <div class="col-sm-8">
                                 <asp:TextBox ID="txtDireccion" runat="server" CssClass="form-control"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="rfvDireccion" runat="server" ControlToValidate="txtDireccion" ValidationGroup="GrupoGuardarEs"
-                                    ErrorMessage="La direccion es obligatoria." ForeColor="Red"></asp:RequiredFieldValidator>
                             </div>
                         </div>
                         <div class="mb-3 row">

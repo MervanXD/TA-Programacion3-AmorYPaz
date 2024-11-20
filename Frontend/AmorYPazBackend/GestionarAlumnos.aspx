@@ -42,12 +42,12 @@
             <div class="table-container">
                 <asp:GridView ID="gvAlumnos" runat="server" CssClass="table table-bordered gridview"
                     AutoGenerateColumns="False" OnRowDataBound="gvAlumnos_RowDataBound"
-                    HeaderStyle-CssClass="grid-header" ShowHeaderWhenEmpty="True" EmptyDataText="No Records Found">
+                    HeaderStyle-CssClass="grid-header" ShowHeaderWhenEmpty="True" EmptyDataText="No se encontraron Alumnos">
                     <Columns>
-                        <asp:BoundField HeaderText="DNI" DataField="dni" HeaderStyle-CssClass="grid-header" ItemStyle-CssClass="align-middle" ItemStyle-HorizontalAlign="Center" />
-                        <asp:BoundField HeaderText="Nombres" DataField="nombres" HeaderStyle-CssClass="grid-header" ItemStyle-CssClass="align-middle" ItemStyle-HorizontalAlign="Center" />
-                        <asp:BoundField HeaderText="Apellido Paterno" DataField="apellidoPaterno" HeaderStyle-CssClass="grid-header" ItemStyle-CssClass="align-middle" ItemStyle-HorizontalAlign="Center" />
-                        <asp:BoundField HeaderText="Apellido Materno" DataField="apellidoMaterno" HeaderStyle-CssClass="grid-header" ItemStyle-CssClass="align-middle" ItemStyle-HorizontalAlign="Center" />
+                        <asp:BoundField HeaderText="DNI" HeaderStyle-CssClass="grid-header" ItemStyle-CssClass="align-middle" ItemStyle-HorizontalAlign="Center" />
+                        <asp:BoundField HeaderText="Nombres" HeaderStyle-CssClass="grid-header" ItemStyle-CssClass="align-middle" ItemStyle-HorizontalAlign="Center" />
+                        <asp:BoundField HeaderText="Apellido Paterno" HeaderStyle-CssClass="grid-header" ItemStyle-CssClass="align-middle" ItemStyle-HorizontalAlign="Center" />
+                        <asp:BoundField HeaderText="Apellido Materno" HeaderStyle-CssClass="grid-header" ItemStyle-CssClass="align-middle" ItemStyle-HorizontalAlign="Center" />
                         <asp:TemplateField HeaderText="Acciones" HeaderStyle-CssClass="grid-header">
                             <ItemStyle HorizontalAlign="Center" />
                             <ItemTemplate>

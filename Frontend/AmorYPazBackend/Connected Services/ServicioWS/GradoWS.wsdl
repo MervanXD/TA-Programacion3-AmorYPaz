@@ -11,6 +11,18 @@
   <message name="obtenerPorIdPlanEstudiosResponse">
     <part name="parameters" element="tns:obtenerPorIdPlanEstudiosResponse" />
   </message>
+  <message name="asignarPlan">
+    <part name="parameters" element="tns:asignarPlan" />
+  </message>
+  <message name="asignarPlanResponse">
+    <part name="parameters" element="tns:asignarPlanResponse" />
+  </message>
+  <message name="obtenerPorIdGrado">
+    <part name="parameters" element="tns:obtenerPorIdGrado" />
+  </message>
+  <message name="obtenerPorIdGradoResponse">
+    <part name="parameters" element="tns:obtenerPorIdGradoResponse" />
+  </message>
   <message name="listarPorIdIE">
     <part name="parameters" element="tns:listarPorIdIE" />
   </message>
@@ -22,6 +34,14 @@
       <input wsam:Action="services.softprog.pucp.edu.pe/GradoWS/obtenerPorIdPlanEstudiosRequest" message="tns:obtenerPorIdPlanEstudios" />
       <output wsam:Action="services.softprog.pucp.edu.pe/GradoWS/obtenerPorIdPlanEstudiosResponse" message="tns:obtenerPorIdPlanEstudiosResponse" />
     </operation>
+    <operation name="asignarPlan">
+      <input wsam:Action="services.softprog.pucp.edu.pe/GradoWS/asignarPlanRequest" message="tns:asignarPlan" />
+      <output wsam:Action="services.softprog.pucp.edu.pe/GradoWS/asignarPlanResponse" message="tns:asignarPlanResponse" />
+    </operation>
+    <operation name="obtenerPorIdGrado">
+      <input wsam:Action="services.softprog.pucp.edu.pe/GradoWS/obtenerPorIdGradoRequest" message="tns:obtenerPorIdGrado" />
+      <output wsam:Action="services.softprog.pucp.edu.pe/GradoWS/obtenerPorIdGradoResponse" message="tns:obtenerPorIdGradoResponse" />
+    </operation>
     <operation name="listarPorIdIE">
       <input wsam:Action="services.softprog.pucp.edu.pe/GradoWS/listarPorIdIERequest" message="tns:listarPorIdIE" />
       <output wsam:Action="services.softprog.pucp.edu.pe/GradoWS/listarPorIdIEResponse" message="tns:listarPorIdIEResponse" />
@@ -30,6 +50,24 @@
   <binding name="GradoWSPortBinding" type="tns:GradoWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <operation name="obtenerPorIdPlanEstudios">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="asignarPlan">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="obtenerPorIdGrado">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

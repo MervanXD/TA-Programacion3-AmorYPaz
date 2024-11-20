@@ -221,6 +221,45 @@
     <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.listarPorIdNombreCursosResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.listarCursosPorIdIEResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.insertarCursoEnPlanResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.asignarPlanResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.listarPorIdPlanResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.listarEstudiantesPorIEResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.obtenerPorIdGradoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.eliminarCursoDePlanResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.listarDirectoresPorNombreResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.listarCursosPorIdGradoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.obtenerPorCriteriosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.listarPorIdMatriculaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.resultadoPorCurso.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.insertarResultadoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Connected Services\ServicioWS\AnioAcademicoWS.wsdl" />
     <None Include="Connected Services\ServicioWS\AnioAcademicoWS.xsd">
       <SubType>Designer</SubType>
@@ -278,6 +317,7 @@
     <Content Include="Content\EstilosMostrarConsoAlum.css" />
     <Content Include="Content\estilosMostrarInstitucion.css" />
     <Content Include="Content\EstilosMostrarPlanDeEstudio.css" />
+    <Content Include="Content\estilosNotas.css" />
     <Content Include="Content\EstilosOpcionesReporte.css" />
     <Content Include="Content\EstilosRegisInsti.css" />
     <Content Include="Content\EstilosRegistrarPlanDeEstudios.css" />
@@ -309,6 +349,7 @@
     <Content Include="GestionarAniosAcademicos.aspx" />
     <Content Include="GestionarInstituciones.aspx" />
     <Content Include="GestionarMatricula.aspx" />
+    <Content Include="GestionarNotas.aspx" />
     <Content Include="GestionarPlanesEstudio.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Home.aspx" />
@@ -364,6 +405,10 @@
     <None Include="Connected Services\ServicioWS\InstitucionEducativaWS.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\ServicioWS\ResultadoPorCursoWS.wsdl" />
+    <None Include="Connected Services\ServicioWS\ResultadoPorCursoWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\ServicioWS\UGELWS.wsdl" />
     <None Include="Connected Services\ServicioWS\UGELWS.xsd">
       <SubType>Designer</SubType>
@@ -380,8 +425,11 @@
     <Content Include="Scripts\jquery-3.7.1.slim.min.js" />
     <Content Include="Scripts\scriptsGestionarPlanes.js" />
     <Content Include="Scripts\scriptsInicioSesion.js" />
+    <Content Include="Scripts\scriptsListarDirectores.js" />
     <Content Include="Scripts\scriptsMasterPage.js" />
+    <Content Include="Scripts\scriptsNotas.js" />
     <Content Include="Scripts\scriptsRegistrarPlanes.js" />
+    <Content Include="Scripts\scriptsRegMatricula.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -405,6 +453,7 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Estado.cs" />
+    <Compile Include="EstudianteItem.cs" />
     <Compile Include="GestionarAlumnos.aspx.cs">
       <DependentUpon>GestionarAlumnos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -432,6 +481,13 @@
     </Compile>
     <Compile Include="GestionarMatricula.aspx.designer.cs">
       <DependentUpon>GestionarMatricula.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GestionarNotas.aspx.cs">
+      <DependentUpon>GestionarNotas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GestionarNotas.aspx.designer.cs">
+      <DependentUpon>GestionarNotas.aspx</DependentUpon>
     </Compile>
     <Compile Include="GestionarPlanesEstudio.aspx.cs">
       <DependentUpon>GestionarPlanesEstudio.aspx</DependentUpon>

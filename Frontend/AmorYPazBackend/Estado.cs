@@ -7,6 +7,6 @@ namespace AmorYPazBackend
 {
     public enum Estado
     {
-        Nuevo, Modificar
+        Nuevo, Modificar, Visualizar
     }
 }

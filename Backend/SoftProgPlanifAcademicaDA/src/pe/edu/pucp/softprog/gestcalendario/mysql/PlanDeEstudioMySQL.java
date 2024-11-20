@@ -21,7 +21,7 @@ public class PlanDeEstudioMySQL implements PlanDeEstudioDAO {
         int resultado = 0;
         try {
             con = DBManager.getInstance().getConnection();
-            String sql = "{call INSERTAR_PLAN_DE_ESTUDIO(?,?,?,?,?,?,?,?)}";
+            String sql = "{call INSERTAR_PLAN_DE_ESTUDIO(?,?,?,?,?)}";
             cs = con.prepareCall(sql);
             cs.registerOutParameter("_id_Plan_Estudio", java.sql.Types.INTEGER);
             cs.setInt("_fid_Anio_Academico", plan.getAnioAcademico().getIdAnio());
@@ -48,16 +48,11 @@ public class PlanDeEstudioMySQL implements PlanDeEstudioDAO {
         int resultado = 0;
         try {
             con = DBManager.getInstance().getConnection();
-            String sql = "{call MODIFICAR_PLAN_DE_ESTUDIO(?,?,?,?,?,?,?,?)}";
+            String sql = "{call MODIFICAR_PLAN_DE_ESTUDIO(?,?,?)}";
             cs = con.prepareCall(sql);
             cs.setInt("_id_Plan_Estudio", plan.getIdPlan());
-            cs.setInt("_fid_Anio_Academico", plan.getAnioAcademico().getIdAnio());
             cs.setString("_descripcion", plan.getDescripcion());
             cs.setInt("_num_cursos", plan.getNumCursos());
-            cs.setInt("_numero", plan.getAnioAcademico().getNumero());
-            cs.setDate("_fecha_Inicio", new java.sql.Date(plan.getAnioAcademico().getFechaInicio().getTime()));
-            cs.setDate("_fecha_Fin", new java.sql.Date(plan.getAnioAcademico().getFechaFin().getTime()));
-            cs.setString("_estado", plan.getAnioAcademico().getEstado());
             cs.executeUpdate();
             resultado = plan.getIdPlan();
         } catch (SQLException ex) {

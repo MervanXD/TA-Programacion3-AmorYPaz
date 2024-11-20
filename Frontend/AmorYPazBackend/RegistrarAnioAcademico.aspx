@@ -10,12 +10,11 @@
     <div class="container">
         <div class="card">
             <div class="header">
-                <!--
-                <h1>-->
-                    <asp:Label ID="lblNombreInstitucion" runat="server" Text=""  CssClass="label-title"></asp:Label>
-                <!--
-                </h1>-->
-                <img alt="Logo de la Institución Educativa" height="50" src="https://storage.googleapis.com/a1aa/image/rKEbxFzSEeUiIqGTB0DFrWqe0yI4e3gpY6IJzfj25XyfUSudC.jpg" width="50" />
+                <img alt="Logo de la Institución Educativa" height="70" src="https://storage.googleapis.com/a1aa/image/rKEbxFzSEeUiIqGTB0DFrWqe0yI4e3gpY6IJzfj25XyfUSudC.jpg" width="70" class="float-end m-3 border" />
+                <!--<h1>-->
+                <asp:Label ID="lblNombreInstitucion" runat="server" Text="" CssClass="label-title ms-3 mb-3 d-block"></asp:Label>
+                <!--</h1>-->
+                <asp:Label ID="lblTipoOperacion" runat="server" CssClass="label-title ms-3 fs-5 d-block text-dark"></asp:Label>
             </div>
             <div class="card-body">
                 <div class="row mb-3">
@@ -34,8 +33,6 @@
                         <asp:RequiredFieldValidator ID="rfvFechaInicio" runat="server" ControlToValidate="dtpFechaInicio" ValidationGroup="ValidacionGuardar"
                             ErrorMessage="La fecha de inicio es obligatoria." ForeColor="Red"></asp:RequiredFieldValidator>
                     </div>
-
-
                 </div>
                 <div class="row mb-3">
                     <div class="col-md-6">

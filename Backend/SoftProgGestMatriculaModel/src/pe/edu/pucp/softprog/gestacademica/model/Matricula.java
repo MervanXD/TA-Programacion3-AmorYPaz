@@ -12,8 +12,8 @@ public class Matricula {
     private Date fecha;
     private String estado;
     private String tipoMatricula;
-    private Grado grado; //
-    private AnioAcademico anioAcademico; //
+    private Grado grado;
+    private AnioAcademico anioAcademico;
     private Estudiante estudiante;
     private InstitucionEducativa institucion;
 

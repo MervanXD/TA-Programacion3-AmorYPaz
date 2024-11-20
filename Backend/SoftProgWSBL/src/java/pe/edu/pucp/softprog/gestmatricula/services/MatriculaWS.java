@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/WebServices/WebService.java to edit this template
- */
 package pe.edu.pucp.softprog.gestmatricula.services;
 
 import jakarta.jws.WebService;
@@ -65,7 +61,7 @@ public class MatriculaWS {
     }
     
     @WebMethod(operationName = "listarMatriculasPorIdIE")
-    public ArrayList<Matricula> listarMatriculasPorIdIE( int idInstitucion){
+    public ArrayList<Matricula> listarMatriculasPorIdIE(int idInstitucion){
         ArrayList<Matricula> matriculas = new ArrayList<>();
         try{
             daoMatricula = new MatriculaMySQL();
@@ -74,5 +70,17 @@ public class MatriculaWS {
             System.out.println(ex.getMessage());
         }
         return matriculas;
+    }
+    
+    @WebMethod(operationName = "obtenerPorCriterios")
+    public Matricula obtenerPorCriterios(int idAnio, int idGrado, int idPersona){
+        Matricula matricula = null;
+        try{
+            daoMatricula = new MatriculaMySQL();
+            matricula = daoMatricula.obtenerPorAnioGradoEstudiante(idAnio, idGrado, idPersona);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return matricula;
     }
 }

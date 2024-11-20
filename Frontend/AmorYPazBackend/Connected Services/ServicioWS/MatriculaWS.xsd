@@ -10,22 +10,18 @@
   <xs:element name="listarMatriculasResponse" type="tns:listarMatriculasResponse" />
   <xs:element name="modificarMatricula" type="tns:modificarMatricula" />
   <xs:element name="modificarMatriculaResponse" type="tns:modificarMatriculaResponse" />
-  <xs:complexType name="eliminarMatricula">
+  <xs:element name="obtenerPorCriterios" type="tns:obtenerPorCriterios" />
+  <xs:element name="obtenerPorCriteriosResponse" type="tns:obtenerPorCriteriosResponse" />
+  <xs:complexType name="obtenerPorCriterios">
     <xs:sequence>
-      <xs:element name="matricula" type="xs:int" />
+      <xs:element name="arg0" type="xs:int" />
+      <xs:element name="arg1" type="xs:int" />
+      <xs:element name="arg2" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="eliminarMatriculaResponse">
+  <xs:complexType name="obtenerPorCriteriosResponse">
     <xs:sequence>
-      <xs:element name="return" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="listarMatriculas">
-    <xs:sequence />
-  </xs:complexType>
-  <xs:complexType name="listarMatriculasResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:matricula" />
+      <xs:element minOccurs="0" name="return" type="tns:matricula" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="matricula">
@@ -147,6 +143,24 @@
       <xs:element minOccurs="0" name="distrito" type="xs:string" />
       <xs:element name="idUgel" type="xs:int" />
       <xs:element minOccurs="0" maxOccurs="unbounded" name="institucionesEducativas" nillable="true" type="tns:institucionEducativa" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarMatricula">
+    <xs:sequence>
+      <xs:element name="matricula" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarMatriculaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarMatriculas">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarMatriculasResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:matricula" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="modificarMatricula">

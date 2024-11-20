@@ -19,16 +19,13 @@ namespace AmorYPazBackend
         {
             try
             {
-                if ((Session["idDirector"] != null))
+                if ((Session["idUGEL"] != null))
                 {
-                    int idDirector = Int32.Parse(Session["idDirector"].ToString());
-                    instituciones = new BindingList<institucionEducativa>(daoIEducativa.listarPorNombreYUgel("", idDirector));
+                    int idUGEL = Int32.Parse(Session["idUGEL"].ToString());
+                    instituciones = new BindingList<institucionEducativa>(daoIEducativa.listarPorNombreYUgel("", idUGEL));
                     gvInstituciones.DataSource = instituciones;
+                    gvInstituciones.DataBind();
                 }
-                else {
-                    gvInstituciones.DataSource = daoIEducativa.listarPorIdNombre("");
-                }
-                gvInstituciones.DataBind();
             }
             catch (Exception ex)
             {
@@ -41,15 +38,12 @@ namespace AmorYPazBackend
         {
             string idNombre = txtNombre.Text;
             if (idNombre == null) idNombre = "";
-            if ((Session["idDirector"] != null))
+            if ((Session["idUGEL"] != null))
             {
-                int idDirector = Int32.Parse(Session["idDirector"].ToString());
-                gvInstituciones.DataSource = daoIEducativa.listarPorNombreYUgel(idNombre, idDirector);
+                int idUGEL = Int32.Parse(Session["idUGEL"].ToString());
+                gvInstituciones.DataSource = daoIEducativa.listarPorNombreYUgel(idNombre, idUGEL);
+                gvInstituciones.DataBind();
             }
-            else {
-                gvInstituciones.DataSource = daoIEducativa.listarPorIdNombre(idNombre);
-            }
-            gvInstituciones.DataBind();
         }
 
         protected void lbRegistrar_Click(object sender, EventArgs e)

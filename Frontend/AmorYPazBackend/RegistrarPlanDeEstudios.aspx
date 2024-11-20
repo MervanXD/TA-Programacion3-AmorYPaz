@@ -8,7 +8,7 @@
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphTitulo" runat="server">
-    Registrar Plan de Estudios
+    Información del Plan de Estudios
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cphContenido" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server" />
@@ -17,32 +17,22 @@
             <div class="container">
                 <div class="header">
                     <h1>
-                        <asp:Label ID="lblNombreInstitucion" runat="server" Text="Registro de Plan de Estudios" CssClass="label-title"></asp:Label>
+                        <asp:Label ID="lblTitulo" runat="server" Text="Registro de Plan de Estudios" CssClass="label-title"></asp:Label>
                     </h1>
                 </div>
                 <div class="card-body">
                     <div class="row mb-3">
                         <div class="col-md-6">
                             <asp:Label ID="lblAnio" runat="server" Text="Año:" CssClass="col-form-label fw-bold"></asp:Label>
-                            <asp:DropDownList ID="ddlAnio" runat="server" CssClass="form-select">
+                            <asp:DropDownList ID="ddlAnio" runat="server" CssClass="form-select" AutoPostBack="true">
                                 <asp:ListItem Text="Seleccione el año" Value="0"></asp:ListItem>
                             </asp:DropDownList>
                         </div>
                         <div class="col-md-6">
                             <asp:Label ID="lblGrado" runat="server" Text="Grado:" CssClass="col-form-label fw-bold"></asp:Label>
-                            <asp:DropDownList ID="ddlGrado" runat="server" CssClass="form-select">
+                            <asp:DropDownList ID="ddlGrado" runat="server" CssClass="form-select" AutoPostBack="true">
                                 <asp:ListItem Text="Seleccione el grado y nivel" Value="0"></asp:ListItem>
                             </asp:DropDownList>
-                        </div>
-                    </div>
-                    <div class="row mb-3">
-                        <div class="col-md-6">
-                            <asp:Label ID="lblFechaInicio" runat="server" Text="Fecha de Inicio:" CssClass="col-form-label fw-bold"></asp:Label>
-                            <asp:TextBox ID="txtFechaInicio" runat="server" CssClass="form-control" TextMode="Date"></asp:TextBox>
-                        </div>
-                        <div class="col-md-6">
-                            <asp:Label ID="lblFechaFin" runat="server" Text="Fecha de Fin:" CssClass="col-form-label fw-bold"></asp:Label>
-                            <asp:TextBox ID="txtFechaFin" runat="server" CssClass="form-control" TextMode="Date"></asp:TextBox>
                         </div>
                     </div>
                     <div class="row mb-3">
@@ -60,30 +50,27 @@
                     <div class="card-body">
                         <div class="row align-items-center pb-3">
                             <div class="col-auto">
-                                <asp:Label ID="lblCurso" CssClass="form-label" runat="server" Text="Curso:"></asp:Label>
+                                <asp:Label ID="lblCurso" CssClass="form-label" runat="server" Text="Elija o registre los cursos que contendrá el Plan de Estudios:"></asp:Label>
                             </div>
-                            <div class="col-sm-4">
-                                <asp:TextBox ID="txtNombreCurso" CssClass="form-control" runat="server" Enabled="false"></asp:TextBox>
-                            </div>
-                            <div class="col-sm-2">
+                            <div class="col text-end">
                                 <asp:LinkButton ID="lbBuscarCurso" runat="server"
                                     CssClass="btn btn-info" Text="<i class='fa-solid fa-magnifying-glass pe-2'></i> Buscar" OnClick="lbBuscarCursoModal_Click"/>
                             </div>
-                            <div class="col text-end">
-                                <asp:LinkButton ID="lbAgregarCurso" runat="server" CssClass="btn btn-success" Text="<i class='fa-solid fa-plus pe-2'></i> Agregar" OnClick="lbAgregarCurso_Click1" />
+                            <div class="col sm-2">
+                                <asp:LinkButton ID="lbAgregarCurso" runat="server" CssClass="btn btn-success" Text="<i class='fa-solid fa-plus pe-2'></i> Registrar Nuevo" OnClick="lbAgregarCurso_Click1" />
                             </div>
                         </div>
-                        <asp:UpdatePanel runat="server">
+                        <asp:UpdatePanel id="upBuscarCursos" runat ="server">
                             <ContentTemplate>
                                 <div class="row">
                                     <asp:GridView ID="gvCursos" runat="server" AllowPaging="true" PageSize="5" AutoGenerateColumns="false" CssClass="table table-hover table-responsive table-striped"
-                                        OnPageIndexChanging="gvCursos_PageIndexChanging" ShowHeaderWhenEmpty="true" HeaderStyle-CssClass="grid-header">
+                                        OnPageIndexChanging="gvCursos_PageIndexChanging" ShowHeaderWhenEmpty="true" HeaderStyle-CssClass="grid-header" OnRowDataBound="gvCursos_RowDataBound">
                                         <Columns>
-                                            <asp:BoundField HeaderText="Nombre del Curso" />
+                                            <asp:BoundField HeaderText="Nombre del Curso" ItemStyle-HorizontalAlign="Center"/>
                                             <asp:TemplateField>
                                                 <ItemTemplate>
-                                                    <asp:LinkButton runat="server" Text="<i class='fa-solid fa-trash'></i>"
-                                                        OnClick="EliminarCurso_Click" CommandArgument='<%# Eval("nombre") %>' />
+                                                    <asp:LinkButton ID="lbEliminarCurso" runat="server" Text="<i class='fa-solid fa-trash'></i>"
+                                                        OnClick="EliminarCurso_Click" CommandArgument='<%# Eval("idCurso") %>'/>
                                                 </ItemTemplate>
                                             </asp:TemplateField>
                                         </Columns>
@@ -96,8 +83,8 @@
 
 
                 <div class="card-footer text-center">
-                    <asp:LinkButton ID="lbGuardar" runat="server" Text="Guardar" CssClass="btn btn-primary" OnClick="lbGuardar_Click" />
                     <asp:LinkButton ID="lbCancelar" runat="server" Text="Cancelar" CssClass="btn btn-secondary" OnClick="lbCancelar_Click" />
+                    <asp:LinkButton ID="lbGuardar" runat="server" Text="Guardar" CssClass="btn btn-primary" OnClick="lbGuardar_Click" />
                 </div>
             </div>
 
@@ -112,7 +99,7 @@
                         <div class="modal-body">
                             <div class="mb-3">
                                 <asp:Label runat="server" Text="Nombre del Curso:" CssClass="form-label"></asp:Label>
-                                <asp:TextBox runat="server" ID="TextBox1" CssClass="form-control"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txtRegistroCurso" CssClass="form-control"></asp:TextBox>
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -123,6 +110,7 @@
                 </div>
             </div>
 
+
             <div class="modal" id="form-modal">
                 <div class="modal-dialog modal-xl">
                     <div class="modal-content">
@@ -131,7 +119,7 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <asp:UpdatePanel runat="server">
+                            <asp:UpdatePanel ID="upBusqCursos" runat="server" UpdateMode="Conditional">
                                 <ContentTemplate>
                                     <div class="container pb-3">
                                         <div class="row align-items-center">
@@ -142,7 +130,7 @@
                                                 <asp:TextBox CssClass="form-control" ID="txtNombreCursoModal" runat="server"></asp:TextBox>
                                             </div>
                                             <div class="col-sm-2">
-                                                <asp:LinkButton ID="lbBuscarCursoModal" runat="server" CssClass="btn btn-info" Text="<i class='fa-solid fa-magnifying-glass pe-2'></i> Buscar" />
+                                                <asp:LinkButton ID="lbBuscarCursoModal" runat="server" CssClass="btn btn-info" Text="<i class='fa-solid fa-magnifying-glass pe-2'></i> Buscar" OnClick="lbBuscarCursoModal_Click1"/>
                                             </div>
                                         </div>
                                     </div>
@@ -153,7 +141,7 @@
                                                 <asp:TemplateField>
                                                     <ItemTemplate>
                                                         <asp:LinkButton CssClass="btn btn-success" runat="server" Text="<i class='fa-solid fa-check'></i> Seleccionar"
-                                                            OnClick="SeleccionarCurso_Click" CommandArgument='<%# Eval("nombre") %>' />
+                                                            OnClick="SeleccionarCurso_Click" CommandArgument='<%# Eval("nombre") + "," + Eval("idCurso") %>' />
                                                     </ItemTemplate>
                                                 </asp:TemplateField>
                                             </Columns>
@@ -179,6 +167,7 @@
                     </div>
                 </div>
             </div>
+
             </ContentTemplate>
     </asp:UpdatePanel>
 </asp:Content>  

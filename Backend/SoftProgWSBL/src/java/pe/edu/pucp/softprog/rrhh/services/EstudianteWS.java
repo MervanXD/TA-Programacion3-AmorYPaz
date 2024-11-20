@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/WebServices/WebService.java to edit this template
- */
 package pe.edu.pucp.softprog.rrhh.services;
 
 import jakarta.jws.WebService;
@@ -51,6 +47,7 @@ public class EstudianteWS {
         }
         return resultado;
     }
+    
     @WebMethod(operationName = "modificarEstudiante")
     public int modificarEstudiante(@WebParam(name = "estudiante") Estudiante estudiante){
         int resultado = 0;
@@ -61,5 +58,31 @@ public class EstudianteWS {
             System.out.println(ex.getMessage());
         }
         return resultado;
+    }
+    
+    @WebMethod(operationName = "listarEstudiantesPorIE")
+    public ArrayList<Estudiante> listarEstudiantesPorIE(@WebParam(name = "idIE")
+            int idIE) {
+        ArrayList<Estudiante> estudiantes = null;
+        try{
+            daoEstudiante = new EstudianteMySQL();
+            estudiantes = daoEstudiante.listarEstudiantesPorIE(idIE);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return estudiantes;
+    }
+    
+    @WebMethod(operationName = "listarEstPorIEYNombreDNI")
+    public ArrayList<Estudiante> listarEstPorIEYNombreDNI(@WebParam(name = "idIE")
+            int idIE, @WebParam(name = "nombreDNI") String nombreDNI) {
+        ArrayList<Estudiante> estudiantes = null;
+        try{
+            daoEstudiante = new EstudianteMySQL();
+            estudiantes = daoEstudiante.listarEstPorIEYNombreDNI(idIE, nombreDNI);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return estudiantes;
     }
 }
