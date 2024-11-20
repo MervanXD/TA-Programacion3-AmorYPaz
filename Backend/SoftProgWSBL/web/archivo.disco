@@ -11,4 +11,5 @@
     <contractRef xmlns="http://schemas.xmlsoap.org/disco/scl/" ref="http://localhost:8080/SoftProgWSBL/ResultadoPorCursoWS?WSDL"/>
     <contractRef xmlns="http://schemas.xmlsoap.org/disco/scl/" ref="http://localhost:8080/SoftProgWSBL/EstudianteWS?WSDL"/>
     <contractRef xmlns="http://schemas.xmlsoap.org/disco/scl/" ref="http://localhost:8080/SoftProgWSBL/ReporteMatriculaWS?WSDL"/>
+<contractRef xmlns="http://schemas.xmlsoap.org/disco/scl/" ref="http://localhost:8080/SoftProgWSBL/InstitucionEducativaReporteWS?WSDL"/>
 </discovery>
