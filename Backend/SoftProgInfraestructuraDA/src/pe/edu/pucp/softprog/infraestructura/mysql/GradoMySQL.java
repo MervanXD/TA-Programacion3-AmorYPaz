@@ -302,4 +302,31 @@ public class GradoMySQL implements GradoDAO {
         return resultado;
     }
     
+    @Override
+    public ArrayList<Grado> listarTodosPorIdIENivel(int idInstitucion, String nivel) {
+        ArrayList<Grado> grados = new ArrayList<>();
+        try {
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call LISTAR_GRADOS_POR_IE_y_Nivel(?, ?)}");
+            cs.setInt("_fid_institucion", idInstitucion);
+            cs.setString("_nombre_nivel", nivel);
+            rs = cs.executeQuery();
+            while (rs.next()) {
+                Grado grado = new Grado();
+                grado.setIdGrado(rs.getInt("id_Grado"));
+                grado.setNumero(rs.getString("numero_de_grado"));
+                grados.add(grado);
+            }
+        }
+         catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            try {
+                con.close();
+            } catch (SQLException ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
+        return grados;    
+    }
 }

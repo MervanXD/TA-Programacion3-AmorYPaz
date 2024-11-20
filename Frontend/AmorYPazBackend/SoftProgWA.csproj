@@ -266,6 +266,12 @@
     <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.listarMatriculaPorGradoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.listarPorIdIENivelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.devolverReporteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Connected Services\ServicioWS\AnioAcademicoWS.wsdl" />
     <None Include="Connected Services\ServicioWS\AnioAcademicoWS.xsd">
       <SubType>Designer</SubType>
@@ -377,6 +383,7 @@
     <Content Include="RegistrarInstitucion.aspx" />
     <Content Include="RegistrarMatricula.aspx" />
     <Content Include="RegistrarPlanDeEstudios.aspx" />
+    <Content Include="ReporteMatriculas.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -411,6 +418,10 @@
     <None Include="Connected Services\ServicioWS\InstitucionEducativaWS.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\ServicioWS\ReporteMatriculaWS.wsdl" />
+    <None Include="Connected Services\ServicioWS\ReporteMatriculaWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\ServicioWS\ResultadoPorCursoWS.wsdl" />
     <None Include="Connected Services\ServicioWS\ResultadoPorCursoWS.xsd">
       <SubType>Designer</SubType>
@@ -425,6 +436,7 @@
     </None>
     <None Include="Scripts\jquery-3.7.1.intellisense.js" />
     <Content Include="Scripts\cierreSesion.js" />
+    <Content Include="Scripts\scriptsReporteMatricula.js" />
     <Content Include="Scripts\jquery-3.7.1.js" />
     <Content Include="Scripts\jquery-3.7.1.min.js" />
     <Content Include="Scripts\jquery-3.7.1.slim.js" />
@@ -618,6 +630,13 @@
     </Compile>
     <Compile Include="RegistrarPlanDeEstudios.aspx.designer.cs">
       <DependentUpon>RegistrarPlanDeEstudios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteMatriculas.aspx.cs">
+      <DependentUpon>ReporteMatriculas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReporteMatriculas.aspx.designer.cs">
+      <DependentUpon>ReporteMatriculas.aspx</DependentUpon>
     </Compile>
     <Compile Include="SoftProg.Master.cs">
       <DependentUpon>SoftProg.Master</DependentUpon>
