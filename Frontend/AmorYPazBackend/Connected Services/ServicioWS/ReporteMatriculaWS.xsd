@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://services.gestmatricula.softprog.pucp.edu.pe/" targetNamespace="http://services.gestmatricula.softprog.pucp.edu.pe/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="devolverReporte" type="tns:devolverReporte" />
+  <xs:element name="devolverReporteResponse" type="tns:devolverReporteResponse" />
+  <xs:complexType name="devolverReporte">
+    <xs:sequence>
+      <xs:element name="idAnioAcademico" type="xs:int" />
+      <xs:element name="idInstitucion" type="xs:int" />
+      <xs:element name="idGrado" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="devolverReporteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" nillable="true" type="xs:base64Binary" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

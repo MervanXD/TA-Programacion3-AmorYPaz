@@ -64,4 +64,17 @@ public class GradoWS {
         return grado;
     }
     
+    @WebMethod(operationName = "listarPorIdIENivel")
+    public ArrayList<Grado> listarPorIdIENivel(@WebParam(name = "idInstitucion") int idInstitucion, 
+        @WebParam(name = "nivel") String nivel) {
+        ArrayList<Grado> planes = null;
+        try{
+            daoGrado = new GradoMySQL();
+            planes = daoGrado.listarTodosPorIdIENivel(idInstitucion, nivel);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return planes;
+    }
+    
 }

@@ -5,31 +5,31 @@
       <xsd:import schemaLocation="http://localhost:8080/SoftProgWSBL/ResultadoPorCursoWS?xsd=1" namespace="services.softprog.pucp.edu.pe" />
     </xsd:schema>
   </types>
-  <message name="listarPorIdMatricula">
-    <part name="parameters" element="tns:listarPorIdMatricula" />
-  </message>
-  <message name="listarPorIdMatriculaResponse">
-    <part name="parameters" element="tns:listarPorIdMatriculaResponse" />
-  </message>
   <message name="insertarResultado">
     <part name="parameters" element="tns:insertarResultado" />
   </message>
   <message name="insertarResultadoResponse">
     <part name="parameters" element="tns:insertarResultadoResponse" />
   </message>
+  <message name="listarPorIdMatricula">
+    <part name="parameters" element="tns:listarPorIdMatricula" />
+  </message>
+  <message name="listarPorIdMatriculaResponse">
+    <part name="parameters" element="tns:listarPorIdMatriculaResponse" />
+  </message>
   <portType name="ResultadoPorCursoWS">
-    <operation name="listarPorIdMatricula">
-      <input wsam:Action="services.softprog.pucp.edu.pe/ResultadoPorCursoWS/listarPorIdMatriculaRequest" message="tns:listarPorIdMatricula" />
-      <output wsam:Action="services.softprog.pucp.edu.pe/ResultadoPorCursoWS/listarPorIdMatriculaResponse" message="tns:listarPorIdMatriculaResponse" />
-    </operation>
     <operation name="insertarResultado">
       <input wsam:Action="services.softprog.pucp.edu.pe/ResultadoPorCursoWS/insertarResultadoRequest" message="tns:insertarResultado" />
       <output wsam:Action="services.softprog.pucp.edu.pe/ResultadoPorCursoWS/insertarResultadoResponse" message="tns:insertarResultadoResponse" />
     </operation>
+    <operation name="listarPorIdMatricula">
+      <input wsam:Action="services.softprog.pucp.edu.pe/ResultadoPorCursoWS/listarPorIdMatriculaRequest" message="tns:listarPorIdMatricula" />
+      <output wsam:Action="services.softprog.pucp.edu.pe/ResultadoPorCursoWS/listarPorIdMatriculaResponse" message="tns:listarPorIdMatriculaResponse" />
+    </operation>
   </portType>
   <binding name="ResultadoPorCursoWSPortBinding" type="tns:ResultadoPorCursoWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="listarPorIdMatricula">
+    <operation name="insertarResultado">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -38,7 +38,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="insertarResultado">
+    <operation name="listarPorIdMatricula">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

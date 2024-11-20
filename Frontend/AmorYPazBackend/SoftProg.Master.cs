@@ -44,7 +44,7 @@ namespace AmorYPazBackend
                 itemsMenu.Add(("GestionarPlanesEstudio.aspx", "fa-solid fa-calendar-lines-pen", "Planes de Estudio"));
                 itemsMenu.Add(("GestionarAlumnos.aspx", "fa-solid fa-person", "Alumnos"));
                 itemsMenu.Add(("GestionarMatricula.aspx", "fa-solid fa-graduation-cap", "Matrícula"));
-                itemsMenu.Add(("MenuPrincipalDirectores.aspx", "fa-solid fa-chart-line", "Reportes"));
+                itemsMenu.Add(("OpcionesReporte.aspx", "fa-solid fa-chart-line", "Reportes"));
             }
             else if (tipoUsuario == "DIRECTOR_UGEL")
             {
