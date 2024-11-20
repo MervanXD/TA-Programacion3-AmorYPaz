@@ -5,17 +5,23 @@
       <xsd:import schemaLocation="http://localhost:8080/SoftProgWSBL/MatriculaWS?xsd=1" namespace="services.softprog.pucp.edu.pe" />
     </xsd:schema>
   </types>
+  <message name="obtenerPorCriterios">
+    <part name="parameters" element="tns:obtenerPorCriterios" />
+  </message>
+  <message name="obtenerPorCriteriosResponse">
+    <part name="parameters" element="tns:obtenerPorCriteriosResponse" />
+  </message>
   <message name="listarMatriculasPorIdIE">
     <part name="parameters" element="tns:listarMatriculasPorIdIE" />
   </message>
   <message name="listarMatriculasPorIdIEResponse">
     <part name="parameters" element="tns:listarMatriculasPorIdIEResponse" />
   </message>
-  <message name="obtenerPorCriterios">
-    <part name="parameters" element="tns:obtenerPorCriterios" />
+  <message name="insertarMatricula">
+    <part name="parameters" element="tns:insertarMatricula" />
   </message>
-  <message name="obtenerPorCriteriosResponse">
-    <part name="parameters" element="tns:obtenerPorCriteriosResponse" />
+  <message name="insertarMatriculaResponse">
+    <part name="parameters" element="tns:insertarMatriculaResponse" />
   </message>
   <message name="eliminarMatricula">
     <part name="parameters" element="tns:eliminarMatricula" />
@@ -35,20 +41,24 @@
   <message name="listarMatriculasResponse">
     <part name="parameters" element="tns:listarMatriculasResponse" />
   </message>
-  <message name="insertarMatricula">
-    <part name="parameters" element="tns:insertarMatricula" />
+  <message name="listarMatriculaPorGrado">
+    <part name="parameters" element="tns:listarMatriculaPorGrado" />
   </message>
-  <message name="insertarMatriculaResponse">
-    <part name="parameters" element="tns:insertarMatriculaResponse" />
+  <message name="listarMatriculaPorGradoResponse">
+    <part name="parameters" element="tns:listarMatriculaPorGradoResponse" />
   </message>
   <portType name="MatriculaWS">
+    <operation name="obtenerPorCriterios">
+      <input wsam:Action="services.softprog.pucp.edu.pe/MatriculaWS/obtenerPorCriteriosRequest" message="tns:obtenerPorCriterios" />
+      <output wsam:Action="services.softprog.pucp.edu.pe/MatriculaWS/obtenerPorCriteriosResponse" message="tns:obtenerPorCriteriosResponse" />
+    </operation>
     <operation name="listarMatriculasPorIdIE">
       <input wsam:Action="services.softprog.pucp.edu.pe/MatriculaWS/listarMatriculasPorIdIERequest" message="tns:listarMatriculasPorIdIE" />
       <output wsam:Action="services.softprog.pucp.edu.pe/MatriculaWS/listarMatriculasPorIdIEResponse" message="tns:listarMatriculasPorIdIEResponse" />
     </operation>
-    <operation name="obtenerPorCriterios">
-      <input wsam:Action="services.softprog.pucp.edu.pe/MatriculaWS/obtenerPorCriteriosRequest" message="tns:obtenerPorCriterios" />
-      <output wsam:Action="services.softprog.pucp.edu.pe/MatriculaWS/obtenerPorCriteriosResponse" message="tns:obtenerPorCriteriosResponse" />
+    <operation name="insertarMatricula">
+      <input wsam:Action="services.softprog.pucp.edu.pe/MatriculaWS/insertarMatriculaRequest" message="tns:insertarMatricula" />
+      <output wsam:Action="services.softprog.pucp.edu.pe/MatriculaWS/insertarMatriculaResponse" message="tns:insertarMatriculaResponse" />
     </operation>
     <operation name="eliminarMatricula">
       <input wsam:Action="services.softprog.pucp.edu.pe/MatriculaWS/eliminarMatriculaRequest" message="tns:eliminarMatricula" />
@@ -62,13 +72,22 @@
       <input wsam:Action="services.softprog.pucp.edu.pe/MatriculaWS/listarMatriculasRequest" message="tns:listarMatriculas" />
       <output wsam:Action="services.softprog.pucp.edu.pe/MatriculaWS/listarMatriculasResponse" message="tns:listarMatriculasResponse" />
     </operation>
-    <operation name="insertarMatricula">
-      <input wsam:Action="services.softprog.pucp.edu.pe/MatriculaWS/insertarMatriculaRequest" message="tns:insertarMatricula" />
-      <output wsam:Action="services.softprog.pucp.edu.pe/MatriculaWS/insertarMatriculaResponse" message="tns:insertarMatriculaResponse" />
+    <operation name="listarMatriculaPorGrado">
+      <input wsam:Action="services.softprog.pucp.edu.pe/MatriculaWS/listarMatriculaPorGradoRequest" message="tns:listarMatriculaPorGrado" />
+      <output wsam:Action="services.softprog.pucp.edu.pe/MatriculaWS/listarMatriculaPorGradoResponse" message="tns:listarMatriculaPorGradoResponse" />
     </operation>
   </portType>
   <binding name="MatriculaWSPortBinding" type="tns:MatriculaWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="obtenerPorCriterios">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="listarMatriculasPorIdIE">
       <soap:operation soapAction="" />
       <input>
@@ -78,7 +97,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="obtenerPorCriterios">
+    <operation name="insertarMatricula">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -114,7 +133,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="insertarMatricula">
+    <operation name="listarMatriculaPorGrado">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

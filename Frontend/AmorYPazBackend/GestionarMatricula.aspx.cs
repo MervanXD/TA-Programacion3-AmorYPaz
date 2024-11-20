@@ -28,6 +28,32 @@ namespace AmorYPazBackend
                     daoInstitucion = new InstitucionEducativaWSClient();
                     int idDirector = Int32.Parse(Session["idDirector"].ToString());
                     institucionEducativa ie = daoInstitucion.obtenerIEPorIdDirector(idDirector);
+
+                    daoGrado = new GradoWSClient();
+                    ie.grados = daoGrado.listarPorIdIE(ie.idInstitucion);
+                    if (ie.grados != null)
+                    {
+                        //Formatear una lista
+                        var gradosCompletos = ie.grados.Select(g => new {
+                            gradoCompleto = g.numero + "° " + g.nivel,
+                            idGrado = g.idGrado
+                        }).ToList();
+
+                        if (!IsPostBack)
+                        {
+                            gradosCompletos.Insert(0, new { gradoCompleto = "Selecciona un grado", idGrado = 0 });
+                            ddlGrados.DataSource = gradosCompletos;
+                            ddlGrados.DataTextField = "gradoCompleto";
+                            ddlGrados.DataValueField = "idGrado";
+                            ddlGrados.DataBind();
+                        }
+                    }
+                    else
+                    {
+                        ddlGrados.Items.Clear();
+                        ddlGrados.Items.Add(new ListItem("No hay grados disponibles", "0"));
+                    }
+
                     if (ie != null)
                     {
                         try
@@ -110,6 +136,37 @@ namespace AmorYPazBackend
             matricula matriculaSeleccionada = matriculas.FirstOrDefault(m => m.idMatricula == idMatricula);
             Session["matricula"] = matriculaSeleccionada;
             Response.Redirect("GestionarNotas.aspx");
+        }
+
+        protected void ddlGrados_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            daoMatricula = new MatriculaWSClient();
+
+            if (Int32.Parse(ddlGrados.SelectedValue) == 0) // Si selecciona "Selecciona un grado"
+            {
+                // Restaura las matrículas originales guardadas en ViewState
+                matriculas = (BindingList<matricula>)ViewState["matriculas"];
+                gvMatriculas.DataSource = matriculas;
+                gvMatriculas.EmptyDataText = string.Empty;
+            }
+            else
+            {
+                // Filtra las matrículas según el grado seleccionado
+                matricula[] filtrados = daoMatricula.listarMatriculaPorGrado(Int32.Parse(ddlGrados.SelectedValue));
+                if (filtrados != null)
+                {
+                    matriculas = new BindingList<matricula>(filtrados);
+                    gvMatriculas.EmptyDataText = string.Empty;
+                }
+                else
+                {
+                    matriculas = null;
+                    gvMatriculas.EmptyDataText = "No hay matriculas para el grado seleccionado.";
+                }
+                gvMatriculas.DataSource = matriculas;
+            }
+
+            gvMatriculas.DataBind();
         }
     }
 }

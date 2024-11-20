@@ -83,4 +83,18 @@ public class MatriculaWS {
         }
         return matricula;
     }
+    
+    @WebMethod(operationName = "listarMatriculaPorGrado")
+    public ArrayList<Matricula> listarMatriculasPorGrado(@WebParam(name = "idGrado")
+            int idGrado) {
+        ArrayList<Matricula> matriculas = null;
+        try{
+            daoMatricula = new MatriculaMySQL();
+            matriculas = daoMatricula.listarMatriculasPorGrado(idGrado);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return matriculas;
+    }
+    
 }

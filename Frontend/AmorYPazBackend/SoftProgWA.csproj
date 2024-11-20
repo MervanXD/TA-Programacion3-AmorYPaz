@@ -260,6 +260,12 @@
     <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.insertarResultadoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.listarEstPorIEYNombreDNIResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.listarMatriculaPorGradoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Connected Services\ServicioWS\AnioAcademicoWS.wsdl" />
     <None Include="Connected Services\ServicioWS\AnioAcademicoWS.xsd">
       <SubType>Designer</SubType>
