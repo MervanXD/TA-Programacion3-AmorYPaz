@@ -1,0 +1,752 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6FE27EC4-7EF5-4F72-BC0C-8118FAD61172}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AmorYPazBackend</RootNamespace>
+    <AssemblyName>AmorYPazBackend</AssemblyName>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AdministrarDirectores.aspx" />
+    <Content Include="CerrarSesion.aspx" />
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.buscarDirectorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.director.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.eliminarDirectorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.insertarDirectorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.insertarInstitucionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.institucionEducativa.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.listarDirectoresTodasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.listarPorIdNombreResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.listarPorNombreYUgelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.modificarDirectorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.modificarInstitucionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.obtenerIEDeUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.obtenerIEPorIdDirectorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.obtenerPorIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.obtenerTipoUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.obtenerUgelDeUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.obtenerUGELPorIdDirectorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.ugel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.usuario.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.verificarUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.eliminarMatriculaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.eliminarPlanDeEstudioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.insertarMatriculaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.insertarPlanDeEstudioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.listarDirectoresDisponiblesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.listarMatriculasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.listarPlanesDeEstudioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.matricula.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.modificarMatriculaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.modificarPlanDeEstudioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.planDeEstudio.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.insertarAnioAcademicoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.anioAcademico.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.grado.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.obtenerPorIdPlanEstudiosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.listarAnioAcademicoPorIdIEResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.listarPorIdIEResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.listarPlanesDeEstudioPorIdIEResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.modificarAnioAcademicoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.obtenerAnioAcademicoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.listarMatriculasPorIdIEResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.eliminarEstudianteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.estudiante.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.insertarEstudianteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.listarEstudiantesPorGradoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.modificarEstudianteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.insertarCursoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.curso.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.listarPorIdNombreCursosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.listarCursosPorIdIEResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.insertarCursoEnPlanResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.asignarPlanResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.listarPorIdPlanResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.listarEstudiantesPorIEResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.obtenerPorIdGradoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.eliminarCursoDePlanResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.listarDirectoresPorNombreResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.listarCursosPorIdGradoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.obtenerPorCriteriosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.listarPorIdMatriculaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.resultadoPorCurso.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.insertarResultadoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.listarEstPorIEYNombreDNIResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.listarMatriculaPorGradoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.listarPorIdIENivelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.devolverReporteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.devolverReporteTodosGradosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.obtenerPorIdDirectorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.modificarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\ServicioWS\AnioAcademicoWS.wsdl" />
+    <None Include="Connected Services\ServicioWS\AnioAcademicoWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServicioWS\archivo.disco" />
+    <None Include="Connected Services\ServicioWS\configuration91.svcinfo" />
+    <None Include="Connected Services\ServicioWS\configuration.svcinfo" />
+    <None Include="Connected Services\ServicioWS\CursoWS.wsdl" />
+    <None Include="Connected Services\ServicioWS\CursoWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServicioWS\EstudianteWS.wsdl" />
+    <None Include="Connected Services\ServicioWS\EstudianteWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServicioWS\GradoReporteWS.wsdl" />
+    <None Include="Connected Services\ServicioWS\GradoReporteWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServicioWS\GradoWS.wsdl" />
+    <None Include="Connected Services\ServicioWS\GradoWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServicioWS\MatriculaWS.wsdl" />
+    <None Include="Connected Services\ServicioWS\MatriculaWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServicioWS\PlanDeEstudioWS.wsdl" />
+    <None Include="Connected Services\ServicioWS\PlanDeEstudioWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServicioWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-grid.rtl.css" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Content\bootstrap-utilities.css" />
+    <Content Include="Content\bootstrap-utilities.min.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.rtl.css" />
+    <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\estilos.css" />
+    <Content Include="Content\EstilosGestionarAniosAcademicos.css" />
+    <Content Include="Content\EstilosGestionarPlanesEstudio.css" />
+    <Content Include="Content\estilosInicioSesion.css" />
+    <Content Include="Content\EstilosListaConsolidadoAlumnos.css" />
+    <Content Include="Content\estilosMasterPage.css" />
+    <Content Include="Content\EstilosMenuDirector.css" />
+    <Content Include="Content\EstilosMostrarConsoAlum.css" />
+    <Content Include="Content\estilosMostrarInstitucion.css" />
+    <Content Include="Content\EstilosMostrarPlanDeEstudio.css" />
+    <Content Include="Content\estilosNotas.css" />
+    <Content Include="Content\EstilosOpcionesReporte.css" />
+    <Content Include="Content\EstilosRegisInsti.css" />
+    <Content Include="Content\EstilosRegistrarPlanDeEstudios.css" />
+    <Content Include="Content\Fonts\css\all.css" />
+    <Content Include="Content\Fonts\css\all.min.css" />
+    <Content Include="Content\Fonts\css\brands.css" />
+    <Content Include="Content\Fonts\css\brands.min.css" />
+    <Content Include="Content\Fonts\css\duotone.css" />
+    <Content Include="Content\Fonts\css\duotone.min.css" />
+    <Content Include="Content\Fonts\css\fontawesome.css" />
+    <Content Include="Content\Fonts\css\fontawesome.min.css" />
+    <Content Include="Content\Fonts\css\light.css" />
+    <Content Include="Content\Fonts\css\light.min.css" />
+    <Content Include="Content\Fonts\css\regular.css" />
+    <Content Include="Content\Fonts\css\regular.min.css" />
+    <Content Include="Content\Fonts\css\solid.css" />
+    <Content Include="Content\Fonts\css\solid.min.css" />
+    <Content Include="Content\Fonts\css\svg-with-js.css" />
+    <Content Include="Content\Fonts\css\svg-with-js.min.css" />
+    <Content Include="Content\Fonts\css\thin.css" />
+    <Content Include="Content\Fonts\css\thin.min.css" />
+    <Content Include="Content\Fonts\css\v4-font-face.css" />
+    <Content Include="Content\Fonts\css\v4-font-face.min.css" />
+    <Content Include="Content\Fonts\css\v4-shims.css" />
+    <Content Include="Content\Fonts\css\v4-shims.min.css" />
+    <Content Include="Content\Fonts\css\v5-font-face.css" />
+    <Content Include="Content\Fonts\css\v5-font-face.min.css" />
+    <Content Include="GestionarAlumnos.aspx" />
+    <Content Include="GestionarAniosAcademicos.aspx" />
+    <Content Include="GestionarInstituciones.aspx" />
+    <Content Include="GestionarMatricula.aspx" />
+    <Content Include="GestionarNotas.aspx" />
+    <Content Include="GestionarPlanesEstudio.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Home.aspx" />
+    <Content Include="img\img1.PNG" />
+    <Content Include="img\img2.PNG" />
+    <Content Include="img\img3.PNG" />
+    <Content Include="InicioSesion.aspx" />
+    <Content Include="ListaConsolidadoAlumnos.aspx" />
+    <Content Include="MenuPrincipal.aspx" />
+    <Content Include="MenuPrincipalDirectores.aspx" />
+    <Content Include="MostrarConsolidadoAlumno.aspx" />
+    <Content Include="MostrarInstitucion.aspx" />
+    <Content Include="MostrarPlanDeEstudio.aspx" />
+    <Content Include="OpcionesReporte.aspx" />
+    <Content Include="PerfilUsuario.aspx" />
+    <Content Include="RegistrarAlumno.aspx" />
+    <Content Include="RegistrarAnioAcademico.aspx" />
+    <Content Include="RegistrarDirector.aspx" />
+    <Content Include="RegistrarInstitucion.aspx" />
+    <Content Include="RegistrarMatricula.aspx" />
+    <Content Include="RegistrarPlanDeEstudios.aspx" />
+    <Content Include="ReporteGeneral.aspx" />
+    <Content Include="ReporteMatriculas.aspx" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.esm.js" />
+    <Content Include="Scripts\bootstrap.esm.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\Fonts\webfonts\fa-brands-400.ttf" />
+    <Content Include="Content\Fonts\webfonts\fa-brands-400.woff" />
+    <Content Include="Content\Fonts\webfonts\fa-brands-400.woff2" />
+    <Content Include="Content\Fonts\webfonts\fa-duotone-900.ttf" />
+    <Content Include="Content\Fonts\webfonts\fa-duotone-900.woff" />
+    <Content Include="Content\Fonts\webfonts\fa-duotone-900.woff2" />
+    <Content Include="Content\Fonts\webfonts\fa-light-300.ttf" />
+    <Content Include="Content\Fonts\webfonts\fa-light-300.woff" />
+    <Content Include="Content\Fonts\webfonts\fa-light-300.woff2" />
+    <Content Include="Content\Fonts\webfonts\fa-regular-400.ttf" />
+    <Content Include="Content\Fonts\webfonts\fa-regular-400.woff" />
+    <Content Include="Content\Fonts\webfonts\fa-regular-400.woff2" />
+    <Content Include="Content\Fonts\webfonts\fa-solid-900.ttf" />
+    <Content Include="Content\Fonts\webfonts\fa-solid-900.woff" />
+    <Content Include="Content\Fonts\webfonts\fa-solid-900.woff2" />
+    <Content Include="Content\Fonts\webfonts\fa-thin-100.ttf" />
+    <Content Include="Content\Fonts\webfonts\fa-thin-100.woff" />
+    <Content Include="Content\Fonts\webfonts\fa-thin-100.woff2" />
+    <Content Include="Content\Fonts\webfonts\fa-v4compatibility.ttf" />
+    <Content Include="Content\Fonts\webfonts\fa-v4compatibility.woff2" />
+    <None Include="Connected Services\ServicioWS\DirectorWS.wsdl" />
+    <None Include="Connected Services\ServicioWS\DirectorWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServicioWS\InstitucionEducativaWS.wsdl" />
+    <None Include="Connected Services\ServicioWS\InstitucionEducativaWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServicioWS\ReporteMatriculaWS.wsdl" />
+    <None Include="Connected Services\ServicioWS\ReporteMatriculaWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServicioWS\ResultadoPorCursoWS.wsdl" />
+    <None Include="Connected Services\ServicioWS\ResultadoPorCursoWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServicioWS\UGELWS.wsdl" />
+    <None Include="Connected Services\ServicioWS\UGELWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServicioWS\UsuarioWS.wsdl" />
+    <None Include="Connected Services\ServicioWS\UsuarioWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Scripts\jquery-3.7.1.intellisense.js" />
+    <Content Include="Scripts\cierreSesion.js" />
+    <Content Include="Scripts\scriptsPerfil.js" />
+    <Content Include="Scripts\scriptsReporteMatricula.js" />
+    <Content Include="Scripts\jquery-3.7.1.js" />
+    <Content Include="Scripts\jquery-3.7.1.min.js" />
+    <Content Include="Scripts\jquery-3.7.1.slim.js" />
+    <Content Include="Scripts\jquery-3.7.1.slim.min.js" />
+    <Content Include="Scripts\scriptsGestionarPlanes.js" />
+    <Content Include="Scripts\scriptsInicioSesion.js" />
+    <Content Include="Scripts\scriptsListarDirectores.js" />
+    <Content Include="Scripts\scriptsMasterPage.js" />
+    <Content Include="Scripts\scriptsNotas.js" />
+    <Content Include="Scripts\scriptsRegistrarPlanes.js" />
+    <Content Include="Scripts\scriptsRegMatricula.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdministrarDirectores.aspx.cs">
+      <DependentUpon>AdministrarDirectores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdministrarDirectores.aspx.designer.cs">
+      <DependentUpon>AdministrarDirectores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CerrarSesion.aspx.cs">
+      <DependentUpon>CerrarSesion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CerrarSesion.aspx.designer.cs">
+      <DependentUpon>CerrarSesion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ServicioWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Estado.cs" />
+    <Compile Include="EstudianteItem.cs" />
+    <Compile Include="GestionarAlumnos.aspx.cs">
+      <DependentUpon>GestionarAlumnos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GestionarAlumnos.aspx.designer.cs">
+      <DependentUpon>GestionarAlumnos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GestionarAniosAcademicos.aspx.cs">
+      <DependentUpon>GestionarAniosAcademicos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GestionarAniosAcademicos.aspx.designer.cs">
+      <DependentUpon>GestionarAniosAcademicos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GestionarInstituciones.aspx.cs">
+      <DependentUpon>GestionarInstituciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GestionarInstituciones.aspx.designer.cs">
+      <DependentUpon>GestionarInstituciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GestionarMatricula.aspx.cs">
+      <DependentUpon>GestionarMatricula.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GestionarMatricula.aspx.designer.cs">
+      <DependentUpon>GestionarMatricula.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GestionarNotas.aspx.cs">
+      <DependentUpon>GestionarNotas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GestionarNotas.aspx.designer.cs">
+      <DependentUpon>GestionarNotas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GestionarPlanesEstudio.aspx.cs">
+      <DependentUpon>GestionarPlanesEstudio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GestionarPlanesEstudio.aspx.designer.cs">
+      <DependentUpon>GestionarPlanesEstudio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="GradoNivelItem.cs" />
+    <Compile Include="Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InicioSesion.aspx.cs">
+      <DependentUpon>InicioSesion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InicioSesion.aspx.designer.cs">
+      <DependentUpon>InicioSesion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListaConsolidadoAlumnos.aspx.cs">
+      <DependentUpon>ListaConsolidadoAlumnos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListaConsolidadoAlumnos.aspx.designer.cs">
+      <DependentUpon>ListaConsolidadoAlumnos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MenuPrincipal.aspx.cs">
+      <DependentUpon>MenuPrincipal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MenuPrincipal.aspx.designer.cs">
+      <DependentUpon>MenuPrincipal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MenuPrincipalDirectores.aspx.cs">
+      <DependentUpon>MenuPrincipalDirectores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MenuPrincipalDirectores.aspx.designer.cs">
+      <DependentUpon>MenuPrincipalDirectores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MostrarConsolidadoAlumno.aspx.cs">
+      <DependentUpon>MostrarConsolidadoAlumno.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MostrarConsolidadoAlumno.aspx.designer.cs">
+      <DependentUpon>MostrarConsolidadoAlumno.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MostrarInstitucion.aspx.cs">
+      <DependentUpon>MostrarInstitucion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MostrarInstitucion.aspx.designer.cs">
+      <DependentUpon>MostrarInstitucion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MostrarPlanDeEstudio.aspx.cs">
+      <DependentUpon>MostrarPlanDeEstudio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MostrarPlanDeEstudio.aspx.designer.cs">
+      <DependentUpon>MostrarPlanDeEstudio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OpcionesReporte.aspx.cs">
+      <DependentUpon>OpcionesReporte.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OpcionesReporte.aspx.designer.cs">
+      <DependentUpon>OpcionesReporte.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PerfilUsuario.aspx.cs">
+      <DependentUpon>PerfilUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PerfilUsuario.aspx.designer.cs">
+      <DependentUpon>PerfilUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegistrarAlumno.aspx.cs">
+      <DependentUpon>RegistrarAlumno.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistrarAlumno.aspx.designer.cs">
+      <DependentUpon>RegistrarAlumno.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrarAnioAcademico.aspx.cs">
+      <DependentUpon>RegistrarAnioAcademico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistrarAnioAcademico.aspx.designer.cs">
+      <DependentUpon>RegistrarAnioAcademico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrarDirector.aspx.cs">
+      <DependentUpon>RegistrarDirector.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistrarDirector.aspx.designer.cs">
+      <DependentUpon>RegistrarDirector.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrarInstitucion.aspx.cs">
+      <DependentUpon>RegistrarInstitucion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistrarInstitucion.aspx.designer.cs">
+      <DependentUpon>RegistrarInstitucion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrarMatricula.aspx.cs">
+      <DependentUpon>RegistrarMatricula.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistrarMatricula.aspx.designer.cs">
+      <DependentUpon>RegistrarMatricula.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrarPlanDeEstudios.aspx.cs">
+      <DependentUpon>RegistrarPlanDeEstudios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistrarPlanDeEstudios.aspx.designer.cs">
+      <DependentUpon>RegistrarPlanDeEstudios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteGeneral.aspx.cs">
+      <DependentUpon>ReporteGeneral.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReporteGeneral.aspx.designer.cs">
+      <DependentUpon>ReporteGeneral.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteMatriculas.aspx.cs">
+      <DependentUpon>ReporteMatriculas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReporteMatriculas.aspx.designer.cs">
+      <DependentUpon>ReporteMatriculas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SoftProg.Master.cs">
+      <DependentUpon>SoftProg.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SoftProg.Master.designer.cs">
+      <DependentUpon>SoftProg.Master</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.rtl.min.css.map" />
+    <Content Include="Content\bootstrap.rtl.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Content\bootstrap-utilities.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <None Include="packages.config" />
+    <Content Include="SoftProg.Master" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.esm.min.js.map" />
+    <Content Include="Scripts\bootstrap.esm.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Scripts\jquery-3.7.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.7.1.min.map" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Uploads\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ServicioWS\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50647</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50647/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

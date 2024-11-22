@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://services.infraest.softprog.pucp.edu.pe/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="GradoReporteWS" targetNamespace="http://services.infraest.softprog.pucp.edu.pe/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8080/SoftProgWSBL/GradoReporteWS?xsd=1" namespace="http://services.infraest.softprog.pucp.edu.pe/" />
+    </xsd:schema>
+  </types>
+  <message name="devolverReporteTodosGrados">
+    <part name="parameters" element="tns:devolverReporteTodosGrados" />
+  </message>
+  <message name="devolverReporteTodosGradosResponse">
+    <part name="parameters" element="tns:devolverReporteTodosGradosResponse" />
+  </message>
+  <portType name="GradoReporteWS">
+    <operation name="devolverReporteTodosGrados">
+      <input wsam:Action="http://services.infraest.softprog.pucp.edu.pe/GradoReporteWS/devolverReporteTodosGradosRequest" message="tns:devolverReporteTodosGrados" />
+      <output wsam:Action="http://services.infraest.softprog.pucp.edu.pe/GradoReporteWS/devolverReporteTodosGradosResponse" message="tns:devolverReporteTodosGradosResponse" />
+    </operation>
+  </portType>
+  <binding name="GradoReporteWSPortBinding" type="tns:GradoReporteWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="devolverReporteTodosGrados">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="GradoReporteWS">
+    <port name="GradoReporteWSPort" binding="tns:GradoReporteWSPortBinding">
+      <soap:address location="http://localhost:8080/SoftProgWSBL/GradoReporteWS" />
+    </port>
+  </service>
+</definitions>

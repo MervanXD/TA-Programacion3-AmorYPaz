@@ -1,0 +1,15 @@
+<discovery xmlns="http://schemas.xmlsoap.org/disco/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
+    <contractRef xmlns="http://schemas.xmlsoap.org/disco/scl/" ref="http://localhost:8080/SoftProgWSBL/UGELWS?WSDL"/>
+    <contractRef xmlns="http://schemas.xmlsoap.org/disco/scl/" ref="http://localhost:8080/SoftProgWSBL/InstitucionEducativaWS?WSDL"/>
+    <contractRef xmlns="http://schemas.xmlsoap.org/disco/scl/" ref="http://localhost:8080/SoftProgWSBL/DirectorWS?WSDL"/>
+    <contractRef xmlns="http://schemas.xmlsoap.org/disco/scl/" ref="http://localhost:8080/SoftProgWSBL/UsuarioWS?WSDL"/>
+    <contractRef xmlns="http://schemas.xmlsoap.org/disco/scl/" ref="http://localhost:8080/SoftProgWSBL/PlanDeEstudioWS?WSDL"/>
+    <contractRef xmlns="http://schemas.xmlsoap.org/disco/scl/" ref="http://localhost:8080/SoftProgWSBL/MatriculaWS?WSDL"/>
+    <contractRef xmlns="http://schemas.xmlsoap.org/disco/scl/" ref="http://localhost:8080/SoftProgWSBL/AnioAcademicoWS?WSDL"/>
+    <contractRef xmlns="http://schemas.xmlsoap.org/disco/scl/" ref="http://localhost:8080/SoftProgWSBL/GradoWS?WSDL"/>
+    <contractRef xmlns="http://schemas.xmlsoap.org/disco/scl/" ref="http://localhost:8080/SoftProgWSBL/CursoWS?WSDL"/>
+    <contractRef xmlns="http://schemas.xmlsoap.org/disco/scl/" ref="http://localhost:8080/SoftProgWSBL/ResultadoPorCursoWS?WSDL"/>
+    <contractRef xmlns="http://schemas.xmlsoap.org/disco/scl/" ref="http://localhost:8080/SoftProgWSBL/EstudianteWS?WSDL"/>
+    <contractRef xmlns="http://schemas.xmlsoap.org/disco/scl/" ref="http://localhost:8080/SoftProgWSBL/ReporteMatriculaWS?WSDL"/>
+    <contractRef xmlns="http://schemas.xmlsoap.org/disco/scl/" ref="http://localhost:8080/SoftProgWSBL/GradoReporteWS?WSDL"/>
+</discovery>
