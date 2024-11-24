@@ -116,6 +116,7 @@
           <xs:element minOccurs="0" name="condicionesMedicas" type="xs:string" />
           <xs:element minOccurs="0" name="discapacidades" type="xs:string" />
           <xs:element minOccurs="0" name="estado" type="xs:string" />
+          <xs:element name="idInst" type="xs:int" />
           <xs:element name="promedio" type="xs:double" />
         </xs:sequence>
       </xs:extension>

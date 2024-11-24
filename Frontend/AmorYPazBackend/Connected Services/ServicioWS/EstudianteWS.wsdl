@@ -5,11 +5,17 @@
       <xsd:import schemaLocation="http://localhost:8080/SoftProgWSBL/EstudianteWS?xsd=1" namespace="services.softprog.pucp.edu.pe" />
     </xsd:schema>
   </types>
-  <message name="insertarEstudiante">
-    <part name="parameters" element="tns:insertarEstudiante" />
+  <message name="listarEstudiantesPorInstitucionEducativa">
+    <part name="parameters" element="tns:listarEstudiantesPorInstitucionEducativa" />
   </message>
-  <message name="insertarEstudianteResponse">
-    <part name="parameters" element="tns:insertarEstudianteResponse" />
+  <message name="listarEstudiantesPorInstitucionEducativaResponse">
+    <part name="parameters" element="tns:listarEstudiantesPorInstitucionEducativaResponse" />
+  </message>
+  <message name="listarEstudiantesParaMatricula">
+    <part name="parameters" element="tns:listarEstudiantesParaMatricula" />
+  </message>
+  <message name="listarEstudiantesParaMatriculaResponse">
+    <part name="parameters" element="tns:listarEstudiantesParaMatriculaResponse" />
   </message>
   <message name="eliminarEstudiante">
     <part name="parameters" element="tns:eliminarEstudiante" />
@@ -17,11 +23,11 @@
   <message name="eliminarEstudianteResponse">
     <part name="parameters" element="tns:eliminarEstudianteResponse" />
   </message>
-  <message name="listarEstudiantesPorIE">
-    <part name="parameters" element="tns:listarEstudiantesPorIE" />
+  <message name="insertarEstudiante">
+    <part name="parameters" element="tns:insertarEstudiante" />
   </message>
-  <message name="listarEstudiantesPorIEResponse">
-    <part name="parameters" element="tns:listarEstudiantesPorIEResponse" />
+  <message name="insertarEstudianteResponse">
+    <part name="parameters" element="tns:insertarEstudianteResponse" />
   </message>
   <message name="listarEstudiantesPorGrado">
     <part name="parameters" element="tns:listarEstudiantesPorGrado" />
@@ -29,47 +35,70 @@
   <message name="listarEstudiantesPorGradoResponse">
     <part name="parameters" element="tns:listarEstudiantesPorGradoResponse" />
   </message>
-  <message name="listarEstPorIEYNombreDNI">
-    <part name="parameters" element="tns:listarEstPorIEYNombreDNI" />
-  </message>
-  <message name="listarEstPorIEYNombreDNIResponse">
-    <part name="parameters" element="tns:listarEstPorIEYNombreDNIResponse" />
-  </message>
   <message name="modificarEstudiante">
     <part name="parameters" element="tns:modificarEstudiante" />
   </message>
   <message name="modificarEstudianteResponse">
     <part name="parameters" element="tns:modificarEstudianteResponse" />
   </message>
+  <message name="listarEstPorIEYNombreDNI">
+    <part name="parameters" element="tns:listarEstPorIEYNombreDNI" />
+  </message>
+  <message name="listarEstPorIEYNombreDNIResponse">
+    <part name="parameters" element="tns:listarEstPorIEYNombreDNIResponse" />
+  </message>
+  <message name="listarEstudiantesPorIE">
+    <part name="parameters" element="tns:listarEstudiantesPorIE" />
+  </message>
+  <message name="listarEstudiantesPorIEResponse">
+    <part name="parameters" element="tns:listarEstudiantesPorIEResponse" />
+  </message>
   <portType name="EstudianteWS">
-    <operation name="insertarEstudiante">
-      <input wsam:Action="services.softprog.pucp.edu.pe/EstudianteWS/insertarEstudianteRequest" message="tns:insertarEstudiante" />
-      <output wsam:Action="services.softprog.pucp.edu.pe/EstudianteWS/insertarEstudianteResponse" message="tns:insertarEstudianteResponse" />
+    <operation name="listarEstudiantesPorInstitucionEducativa">
+      <input wsam:Action="services.softprog.pucp.edu.pe/EstudianteWS/listarEstudiantesPorInstitucionEducativaRequest" message="tns:listarEstudiantesPorInstitucionEducativa" />
+      <output wsam:Action="services.softprog.pucp.edu.pe/EstudianteWS/listarEstudiantesPorInstitucionEducativaResponse" message="tns:listarEstudiantesPorInstitucionEducativaResponse" />
+    </operation>
+    <operation name="listarEstudiantesParaMatricula">
+      <input wsam:Action="services.softprog.pucp.edu.pe/EstudianteWS/listarEstudiantesParaMatriculaRequest" message="tns:listarEstudiantesParaMatricula" />
+      <output wsam:Action="services.softprog.pucp.edu.pe/EstudianteWS/listarEstudiantesParaMatriculaResponse" message="tns:listarEstudiantesParaMatriculaResponse" />
     </operation>
     <operation name="eliminarEstudiante">
       <input wsam:Action="services.softprog.pucp.edu.pe/EstudianteWS/eliminarEstudianteRequest" message="tns:eliminarEstudiante" />
       <output wsam:Action="services.softprog.pucp.edu.pe/EstudianteWS/eliminarEstudianteResponse" message="tns:eliminarEstudianteResponse" />
     </operation>
-    <operation name="listarEstudiantesPorIE">
-      <input wsam:Action="services.softprog.pucp.edu.pe/EstudianteWS/listarEstudiantesPorIERequest" message="tns:listarEstudiantesPorIE" />
-      <output wsam:Action="services.softprog.pucp.edu.pe/EstudianteWS/listarEstudiantesPorIEResponse" message="tns:listarEstudiantesPorIEResponse" />
+    <operation name="insertarEstudiante">
+      <input wsam:Action="services.softprog.pucp.edu.pe/EstudianteWS/insertarEstudianteRequest" message="tns:insertarEstudiante" />
+      <output wsam:Action="services.softprog.pucp.edu.pe/EstudianteWS/insertarEstudianteResponse" message="tns:insertarEstudianteResponse" />
     </operation>
     <operation name="listarEstudiantesPorGrado">
       <input wsam:Action="services.softprog.pucp.edu.pe/EstudianteWS/listarEstudiantesPorGradoRequest" message="tns:listarEstudiantesPorGrado" />
       <output wsam:Action="services.softprog.pucp.edu.pe/EstudianteWS/listarEstudiantesPorGradoResponse" message="tns:listarEstudiantesPorGradoResponse" />
     </operation>
-    <operation name="listarEstPorIEYNombreDNI">
-      <input wsam:Action="services.softprog.pucp.edu.pe/EstudianteWS/listarEstPorIEYNombreDNIRequest" message="tns:listarEstPorIEYNombreDNI" />
-      <output wsam:Action="services.softprog.pucp.edu.pe/EstudianteWS/listarEstPorIEYNombreDNIResponse" message="tns:listarEstPorIEYNombreDNIResponse" />
-    </operation>
     <operation name="modificarEstudiante">
       <input wsam:Action="services.softprog.pucp.edu.pe/EstudianteWS/modificarEstudianteRequest" message="tns:modificarEstudiante" />
       <output wsam:Action="services.softprog.pucp.edu.pe/EstudianteWS/modificarEstudianteResponse" message="tns:modificarEstudianteResponse" />
     </operation>
+    <operation name="listarEstPorIEYNombreDNI">
+      <input wsam:Action="services.softprog.pucp.edu.pe/EstudianteWS/listarEstPorIEYNombreDNIRequest" message="tns:listarEstPorIEYNombreDNI" />
+      <output wsam:Action="services.softprog.pucp.edu.pe/EstudianteWS/listarEstPorIEYNombreDNIResponse" message="tns:listarEstPorIEYNombreDNIResponse" />
+    </operation>
+    <operation name="listarEstudiantesPorIE">
+      <input wsam:Action="services.softprog.pucp.edu.pe/EstudianteWS/listarEstudiantesPorIERequest" message="tns:listarEstudiantesPorIE" />
+      <output wsam:Action="services.softprog.pucp.edu.pe/EstudianteWS/listarEstudiantesPorIEResponse" message="tns:listarEstudiantesPorIEResponse" />
+    </operation>
   </portType>
   <binding name="EstudianteWSPortBinding" type="tns:EstudianteWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="insertarEstudiante">
+    <operation name="listarEstudiantesPorInstitucionEducativa">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarEstudiantesParaMatricula">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -87,7 +116,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="listarEstudiantesPorIE">
+    <operation name="insertarEstudiante">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -105,6 +134,15 @@
         <soap:body use="literal" />
       </output>
     </operation>
+    <operation name="modificarEstudiante">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="listarEstPorIEYNombreDNI">
       <soap:operation soapAction="" />
       <input>
@@ -114,7 +152,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="modificarEstudiante">
+    <operation name="listarEstudiantesPorIE">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

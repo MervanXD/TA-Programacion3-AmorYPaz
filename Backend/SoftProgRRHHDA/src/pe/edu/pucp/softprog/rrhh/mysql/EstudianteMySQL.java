@@ -23,7 +23,7 @@ public class EstudianteMySQL implements EstudianteDAO {
         int resultado = 0;
         try {
             con = DBManager.getInstance().getConnection();
-            String sql = "{call INSERTAR_ESTUDIANTE(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}";
+            String sql = "{call INSERTAR_ESTUDIANTE(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}";
             cs = con.prepareCall(sql);
             cs.registerOutParameter("_fid_Persona", java.sql.Types.INTEGER);
             cs.setInt("_cantidad_cursos", estudiante.getCantCursos());
@@ -41,8 +41,10 @@ public class EstudianteMySQL implements EstudianteDAO {
             cs.setString("_religion", estudiante.getReligion());
             cs.setString("_sexo", String.valueOf(estudiante.getSexo()));
             cs.setString("_direccion", estudiante.getDireccion());
+            cs.setInt("_fid_IE", estudiante.getIdInst());
             cs.executeUpdate();
             estudiante.setIdPersona(cs.getInt("_fid_Persona"));
+            
             resultado = estudiante.getIdPersona();
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
@@ -355,5 +357,85 @@ public class EstudianteMySQL implements EstudianteDAO {
             }
         }
         return estudiantes;
+    }
+    
+    @Override
+    public ArrayList<Estudiante> listarEstudiantesPorInstitucionEducativa(int idIE) {
+        ArrayList<Estudiante> estudiantes = new ArrayList<>();
+        try {
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call LISTAR_ESTUDIANTES_X_NOMBRE_INSTITUCION_EDUCATIVA(?)}");
+            cs.setInt("_id_ie", idIE);
+            rs = cs.executeQuery();
+            while (rs.next()) {
+                Estudiante estudiante = new Estudiante();
+                estudiante.setCantCursos(rs.getInt("cantidad_cursos"));
+                estudiante.setPromedio(rs.getDouble("promedio"));
+                estudiante.setCondicionesMedicas(rs.getString("condiciones_med"));
+                estudiante.setDiscapacidades(rs.getString("discapacidades"));
+                estudiante.setEstado(rs.getString("estado"));        
+                estudiante.setIdPersona(rs.getInt("fid_persona"));
+                estudiante.setDni(rs.getString("DNI"));
+                estudiante.setNombres(rs.getString("nombres"));
+                estudiante.setApellidoPaterno(rs.getString("apellido_paterno"));
+                estudiante.setApellidoMaterno(rs.getString("apellido_materno"));
+                estudiante.setFechaNacimiento(rs.getDate("fecha_nacimiento"));
+                estudiante.setLengua(rs.getString("lengua"));
+                estudiante.setReligion(rs.getString("religion"));
+                estudiante.setSexo(rs.getString("sexo").charAt(0));
+                estudiante.setDireccion(rs.getString("direccion"));
+                estudiante.setActivo(rs.getBoolean("activo"));
+                estudiantes.add(estudiante);
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            try {
+                con.close();
+            } catch (SQLException ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
+        return estudiantes;        
+    }
+    
+    @Override
+    public ArrayList<Estudiante> listarEstudiantesParaMatricula(int idIE) {
+        ArrayList<Estudiante> estudiantes = new ArrayList<>();
+        try {
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call LISTAR_ESTUDIANTES_PARA_MATRICULAR_X_IE(?)}");
+            cs.setInt("_id_ie", idIE);
+            rs = cs.executeQuery();
+            while (rs.next()) {
+                Estudiante estudiante = new Estudiante();
+                estudiante.setCantCursos(rs.getInt("cantidad_cursos"));
+                estudiante.setPromedio(rs.getDouble("promedio"));
+                estudiante.setCondicionesMedicas(rs.getString("condiciones_med"));
+                estudiante.setDiscapacidades(rs.getString("discapacidades"));
+                estudiante.setEstado(rs.getString("estado"));        
+                estudiante.setIdPersona(rs.getInt("fid_persona"));
+                estudiante.setDni(rs.getString("DNI"));
+                estudiante.setNombres(rs.getString("nombres"));
+                estudiante.setApellidoPaterno(rs.getString("apellido_paterno"));
+                estudiante.setApellidoMaterno(rs.getString("apellido_materno"));
+                estudiante.setFechaNacimiento(rs.getDate("fecha_nacimiento"));
+                estudiante.setLengua(rs.getString("lengua"));
+                estudiante.setReligion(rs.getString("religion"));
+                estudiante.setSexo(rs.getString("sexo").charAt(0));
+                estudiante.setDireccion(rs.getString("direccion"));
+                estudiante.setActivo(rs.getBoolean("activo"));
+                estudiantes.add(estudiante);
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            try {
+                con.close();
+            } catch (SQLException ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
+        return estudiantes;        
     }
 }

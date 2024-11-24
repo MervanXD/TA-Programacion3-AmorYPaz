@@ -1,6 +1,7 @@
 ﻿using AmorYPazBackend.ServicioWS;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.EnterpriseServices;
 using System.Linq;
 using System.Web;
@@ -11,11 +12,13 @@ namespace AmorYPazBackend
 {
     public partial class RegistrarAlumno : System.Web.UI.Page
     {
+        private InstitucionEducativaWSClient daoInstitucion;
         private estudiante estudiante;
         private EstudianteWSClient daoEstudiante;
         private Estado estado;
         protected void Page_Init(object sender, EventArgs e)
         {
+            
             string accion = Request.QueryString["accion"];
             if (accion == null)
             {
@@ -46,7 +49,10 @@ namespace AmorYPazBackend
         {
             if (Page.IsValid)
             {
-                
+                daoInstitucion = new InstitucionEducativaWSClient();
+                int idDirector = Int32.Parse(Session["idDirector"].ToString());
+                institucionEducativa ie = daoInstitucion.obtenerIEPorIdDirector(idDirector);
+
                 //Inicializamos las variables
                 daoEstudiante = new EstudianteWSClient();
                 //Asignamos los valores
@@ -66,6 +72,7 @@ namespace AmorYPazBackend
                 estudiante.estado = "NO MATRICULADO";
                 estudiante.cantCursos = 0;
                 estudiante.promedio = 0;
+                estudiante.idInst = ie.idInstitucion;
                 estudiante.activo = true;
                 //Dependiendo de la acción registramos o modificamos
                 if (estado == Estado.Nuevo)
