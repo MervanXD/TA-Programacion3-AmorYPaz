@@ -5,17 +5,17 @@
       <xsd:import schemaLocation="http://localhost:8080/SoftProgWSBL/UsuarioWS?xsd=1" namespace="services.softprog.pucp.edu.pe" />
     </xsd:schema>
   </types>
+  <message name="modificar">
+    <part name="parameters" element="tns:modificar" />
+  </message>
+  <message name="modificarResponse">
+    <part name="parameters" element="tns:modificarResponse" />
+  </message>
   <message name="obtenerTipoUsuario">
     <part name="parameters" element="tns:obtenerTipoUsuario" />
   </message>
   <message name="obtenerTipoUsuarioResponse">
     <part name="parameters" element="tns:obtenerTipoUsuarioResponse" />
-  </message>
-  <message name="verificarUsuario">
-    <part name="parameters" element="tns:verificarUsuario" />
-  </message>
-  <message name="verificarUsuarioResponse">
-    <part name="parameters" element="tns:verificarUsuarioResponse" />
   </message>
   <message name="obtenerIEDeUsuario">
     <part name="parameters" element="tns:obtenerIEDeUsuario" />
@@ -29,11 +29,11 @@
   <message name="obtenerUgelDeUsuarioResponse">
     <part name="parameters" element="tns:obtenerUgelDeUsuarioResponse" />
   </message>
-  <message name="modificar">
-    <part name="parameters" element="tns:modificar" />
+  <message name="verificarUsuario">
+    <part name="parameters" element="tns:verificarUsuario" />
   </message>
-  <message name="modificarResponse">
-    <part name="parameters" element="tns:modificarResponse" />
+  <message name="verificarUsuarioResponse">
+    <part name="parameters" element="tns:verificarUsuarioResponse" />
   </message>
   <message name="obtenerPorIdDirector">
     <part name="parameters" element="tns:obtenerPorIdDirector" />
@@ -42,13 +42,13 @@
     <part name="parameters" element="tns:obtenerPorIdDirectorResponse" />
   </message>
   <portType name="UsuarioWS">
+    <operation name="modificar">
+      <input wsam:Action="services.softprog.pucp.edu.pe/UsuarioWS/modificarRequest" message="tns:modificar" />
+      <output wsam:Action="services.softprog.pucp.edu.pe/UsuarioWS/modificarResponse" message="tns:modificarResponse" />
+    </operation>
     <operation name="obtenerTipoUsuario">
       <input wsam:Action="services.softprog.pucp.edu.pe/UsuarioWS/obtenerTipoUsuarioRequest" message="tns:obtenerTipoUsuario" />
       <output wsam:Action="services.softprog.pucp.edu.pe/UsuarioWS/obtenerTipoUsuarioResponse" message="tns:obtenerTipoUsuarioResponse" />
-    </operation>
-    <operation name="verificarUsuario">
-      <input wsam:Action="services.softprog.pucp.edu.pe/UsuarioWS/verificarUsuarioRequest" message="tns:verificarUsuario" />
-      <output wsam:Action="services.softprog.pucp.edu.pe/UsuarioWS/verificarUsuarioResponse" message="tns:verificarUsuarioResponse" />
     </operation>
     <operation name="obtenerIEDeUsuario">
       <input wsam:Action="services.softprog.pucp.edu.pe/UsuarioWS/obtenerIEDeUsuarioRequest" message="tns:obtenerIEDeUsuario" />
@@ -58,9 +58,9 @@
       <input wsam:Action="services.softprog.pucp.edu.pe/UsuarioWS/obtenerUgelDeUsuarioRequest" message="tns:obtenerUgelDeUsuario" />
       <output wsam:Action="services.softprog.pucp.edu.pe/UsuarioWS/obtenerUgelDeUsuarioResponse" message="tns:obtenerUgelDeUsuarioResponse" />
     </operation>
-    <operation name="modificar">
-      <input wsam:Action="services.softprog.pucp.edu.pe/UsuarioWS/modificarRequest" message="tns:modificar" />
-      <output wsam:Action="services.softprog.pucp.edu.pe/UsuarioWS/modificarResponse" message="tns:modificarResponse" />
+    <operation name="verificarUsuario">
+      <input wsam:Action="services.softprog.pucp.edu.pe/UsuarioWS/verificarUsuarioRequest" message="tns:verificarUsuario" />
+      <output wsam:Action="services.softprog.pucp.edu.pe/UsuarioWS/verificarUsuarioResponse" message="tns:verificarUsuarioResponse" />
     </operation>
     <operation name="obtenerPorIdDirector">
       <input wsam:Action="services.softprog.pucp.edu.pe/UsuarioWS/obtenerPorIdDirectorRequest" message="tns:obtenerPorIdDirector" />
@@ -69,7 +69,7 @@
   </portType>
   <binding name="UsuarioWSPortBinding" type="tns:UsuarioWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="obtenerTipoUsuario">
+    <operation name="modificar">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -78,7 +78,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="verificarUsuario">
+    <operation name="obtenerTipoUsuario">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -105,7 +105,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="modificar">
+    <operation name="verificarUsuario">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

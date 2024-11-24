@@ -53,7 +53,7 @@ namespace AmorYPazBackend
                     try
                     {
                         lblInfoIE.Text = $"{ie.nombre}";
-                        estudiantes = new BindingList<estudiante>(daoEstudiante.listarEstudiantesPorIE(ie.idInstitucion));
+                        estudiantes = new BindingList<estudiante>(daoEstudiante.listarEstudiantesPorInstitucionEducativa(ie.idInstitucion));
                         gvAlumnos.DataSource = estudiantes;
                         gvAlumnos.DataBind();
                     }

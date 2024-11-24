@@ -15,6 +15,7 @@
             <div class="btn-group">
                 <asp:Button ID="btnActual" runat="server" Text="Actual" OnClick="btnFiltrar_Click" CommandArgument="actual" CssClass="btn btn-primary button-bordered" />
                 <asp:Button ID="btnFinalizados" runat="server" Text="Finalizados" OnClick="btnFiltrar_Click" CommandArgument="finalizados" CssClass="btn btn-primary button-bordered" />
+                <asp:Button ID="btnPlanificados" runat="server" Text="Planificados" OnClick="btnFiltrar_Click" CommandArgument="planificados" CssClass="btn btn-primary button-bordered" />
             </div>
         </div>
         <div class="table-container">

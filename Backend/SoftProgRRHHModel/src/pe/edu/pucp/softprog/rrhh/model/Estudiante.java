@@ -9,6 +9,7 @@ public class Estudiante extends Persona {
     private String discapacidades;
     private String estado;
     private boolean activo;
+    private int idInst;
    /* private Persona apoderado;*/
     
     public Estudiante() {
@@ -17,7 +18,7 @@ public class Estudiante extends Persona {
         this.promedio = 0;
     }
     
-    public Estudiante(/*Persona apoderado, */String condicionesMedicas, String estado, String discapacidades, String dni, String nombres, String apellidoPaterno, String apellidoMaterno, Date fechaNacimiento, String lengua, String religion, char sexo, String direccion) {
+    public Estudiante(/*Persona apoderado, */String condicionesMedicas, String estado, String discapacidades, String dni, String nombres, String apellidoPaterno, String apellidoMaterno, Date fechaNacimiento, String lengua, String religion, char sexo, String direccion, int idInst) {
         super(dni, nombres, apellidoPaterno, apellidoMaterno, fechaNacimiento, lengua, religion, sexo, direccion);
         /*this.apoderado = apoderado;*/
         this.condicionesMedicas = condicionesMedicas;
@@ -25,6 +26,7 @@ public class Estudiante extends Persona {
         this.discapacidades = discapacidades;
         this.cantCursos = 0;
         this.promedio = 0;
+        this.idInst = 0;
     }
 
     public int getCantCursos() {
@@ -84,4 +86,10 @@ public class Estudiante extends Persona {
         this.activo = activo;
     }
     
+    public void setIdInst(int id){
+        this.idInst = id;
+    }
+    public int getIdInst(){
+        return idInst;
+    }
 }

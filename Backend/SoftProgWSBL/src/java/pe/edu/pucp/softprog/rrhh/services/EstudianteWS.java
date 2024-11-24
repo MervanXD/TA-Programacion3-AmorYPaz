@@ -85,4 +85,30 @@ public class EstudianteWS {
         }
         return estudiantes;
     }
+    
+    @WebMethod(operationName = "listarEstudiantesPorInstitucionEducativa")
+    public ArrayList<Estudiante> listarEstudiantesPorInstitucionEducativa(@WebParam(name = "idIE")
+            int idIE) {
+        ArrayList<Estudiante> estudiantes = null;
+        try{
+            daoEstudiante = new EstudianteMySQL();
+            estudiantes = daoEstudiante.listarEstudiantesPorInstitucionEducativa(idIE);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return estudiantes;
+    }
+    
+    @WebMethod(operationName = "listarEstudiantesParaMatricula")
+    public ArrayList<Estudiante> listarEstudiantesParaMatricula(@WebParam(name = "idIE")
+            int idIE) {
+        ArrayList<Estudiante> estudiantes = null;
+        try{
+            daoEstudiante = new EstudianteMySQL();
+            estudiantes = daoEstudiante.listarEstudiantesParaMatricula(idIE);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return estudiantes;
+    }
 }

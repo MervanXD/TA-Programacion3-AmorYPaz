@@ -48,11 +48,14 @@ namespace AmorYPazBackend
                             string idAnioString = Request.QueryString["idAnioAcademico"];
                             if (idAnioString == null)
                             {
-                                planesIni = FiltrarPlanesEstudio("actual");
-                                btnActual.CssClass = "btn btn-primary active";
+                                planesIni = new BindingList<planDeEstudio>(planes.ToList());
+                                // No activar ningún botón inicialmente
+                                btnActual.CssClass = "btn btn-primary";
                                 btnFinalizados.CssClass = "btn btn-primary";
+                                btnPlanificados.CssClass = "btn btn-primary";
                             }
-                            else {
+                            else
+                            {
                                 int idAnioAcademico = Int32.Parse(idAnioString);
                                 planesIni = new BindingList<planDeEstudio>(planes.Where(plan => plan.anioAcademico.idAnio == idAnioAcademico).ToList());
                             }
@@ -68,7 +71,8 @@ namespace AmorYPazBackend
                     }
                 }
             }
-            else {
+            else
+            {
                 gvPlanes.DataSource = planes;
                 gvPlanes.DataBind();
             }
@@ -149,15 +153,21 @@ namespace AmorYPazBackend
             gvPlanes.DataBind();
             ViewState["planesFiltrados"] = planesFiltrados;
 
-            if (tipoFiltro == "actual")
+            btnActual.CssClass = "btn btn-primary";
+            btnFinalizados.CssClass = "btn btn-primary";
+            btnPlanificados.CssClass = "btn btn-primary";
+
+            switch (tipoFiltro)
             {
-                btnActual.CssClass = "btn btn-primary active";
-                btnFinalizados.CssClass = "btn btn-primary";
-            }
-            else if (tipoFiltro == "finalizados")
-            {
-                btnActual.CssClass = "btn btn-primary";
-                btnFinalizados.CssClass = "btn btn-primary active";
+                case "actual":
+                    btnActual.CssClass = "btn btn-primary active";
+                    break;
+                case "finalizados":
+                    btnFinalizados.CssClass = "btn btn-primary active";
+                    break;
+                case "planificados":
+                    btnPlanificados.CssClass = "btn btn-primary active";
+                    break;
             }
         }
 
@@ -170,6 +180,8 @@ namespace AmorYPazBackend
                 planesFiltrados = planes.Where(p => p.anioAcademico.fechaInicio <= DateTime.Now && p.anioAcademico.fechaFin >= DateTime.Now).ToList();
             else if (tipoFiltro == "finalizados")
                 planesFiltrados = planes.Where(p => p.anioAcademico.fechaFin < DateTime.Now).ToList();
+            else if (tipoFiltro == "planificados")
+                planesFiltrados = planes.Where(p => p.anioAcademico.fechaFin > DateTime.Now).ToList();
             else
                 planesFiltrados = new List<planDeEstudio>();
 

@@ -200,7 +200,7 @@ namespace AmorYPazBackend
             daoEstudiante = new EstudianteWSClient();
             institucionEducativa ie = daoInstitucion.obtenerIEPorIdDirector(idDirector);
             BindingList<estudiante> estudiantes;
-            estudiante[] ests = daoEstudiante.listarEstudiantesPorIE(ie.idInstitucion);
+            estudiante[] ests = daoEstudiante.listarEstudiantesParaMatricula(ie.idInstitucion);
             estudiantes = new BindingList<estudiante>(ests);
             gvEstudiantes.DataSource = estudiantes;
             gvEstudiantes.DataBind();
