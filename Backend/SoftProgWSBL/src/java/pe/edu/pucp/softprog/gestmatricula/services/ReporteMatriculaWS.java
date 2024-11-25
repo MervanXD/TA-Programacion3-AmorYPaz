@@ -1,16 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/WebServices/WebService.java to edit this template
- */
 package pe.edu.pucp.softprog.gestmatricula.services;
 
 import jakarta.jws.WebService;
 import jakarta.jws.WebMethod;
 import jakarta.jws.WebParam;
 import java.awt.Image;
+import java.io.File;
 import java.net.URL;
 import java.net.URLDecoder;
 import java.util.HashMap;
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import net.sf.jasperreports.engine.JasperExportManager;
 import net.sf.jasperreports.engine.JasperFillManager;
@@ -45,19 +43,11 @@ public class ReporteMatriculaWS {
         try {
             JasperReport jr = (JasperReport) JRLoader.loadObject(Reporte.class.getResource(
                     "/pe/edu/pucp/softprog/reportes/Reporte1.jasper"));
-            //Parametros de entrada
-            URL rutaLogo = Reporte.class.getResource("/pe/edu/pucp/softprog/img/logo.PNG");
-            String rutaArchivoLogo = URLDecoder.decode(rutaLogo.getPath(),"UTF-8");
-            Image logo = (new ImageIcon(rutaArchivoLogo).getImage());
-            
-            URL rutaImagenTop = Reporte.class.getResource("/pe/edu/pucp/softprog/img/bordesup.png");
-            String rutaArchivoImagenTop = URLDecoder.decode(rutaImagenTop.getPath(),"UTF-8");
-            Image ImagenTop = (new ImageIcon(rutaArchivoImagenTop).getImage());
-            
-             URL rutaSubreporteEmpleados = Reporte.class.getResource("/pe/edu/pucp/softprog/reportes/SubReporteRetirados.jasper");
+
+            URL rutaSubreporteEmpleados = Reporte.class.getResource("/pe/edu/pucp/softprog/reportes/SubReporteRetirados.jasper");
             String rutaArchivoSubreporteEmpleados = URLDecoder.decode(rutaSubreporteEmpleados.getPath(), "UTF-8");
             
-             URL rutaSubreporteGrafico = Reporte.class.getResource("/pe/edu/pucp/softprog/reportes/GraficoMatriculados.jasper");
+            URL rutaSubreporteGrafico = Reporte.class.getResource("/pe/edu/pucp/softprog/reportes/GraficoMatriculados.jasper");
             String rutaArchivoSubreporteGrafico = URLDecoder.decode(rutaSubreporteGrafico.getPath(), "UTF-8");
             
             HashMap parametros = new HashMap();
@@ -66,8 +56,8 @@ public class ReporteMatriculaWS {
             parametros.put("idInstitucionEdu", idInstitucion);
             parametros.put("rutaSubreporteGrafico", rutaArchivoSubreporteGrafico);
             parametros.put("rutaSubreporteRetirados", rutaArchivoSubreporteEmpleados);
-            parametros.put("logo", logo);
-            parametros.put("imagenTop", ImagenTop);
+            parametros.put("logo", ImageIO.read(new File(getFileResource("logov2.png"))));
+            parametros.put("imagenTop", ImageIO.read(new File(getFileResource("bordesup.png"))));
             //parametros.put();
             //Poblar el reporte con los datos
             JasperPrint jp = JasperFillManager.fillReport(jr, parametros, DBManager.getInstance().getConnection());
@@ -76,5 +66,12 @@ public class ReporteMatriculaWS {
             System.out.println(ex.getMessage());
         }
         return reporte;
+    }
+    
+    private String getFileResource(String fileName){
+        String filePath = ReporteMatriculaWS.class.getResource("/pe/edu/pucp/softprog/img/"+
+                fileName).getPath();
+        filePath = filePath.replace("%20", "");
+        return filePath;
     }
 }

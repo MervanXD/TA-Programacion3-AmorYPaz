@@ -4,6 +4,7 @@
     <script src="Scripts/scriptsMasterPage.js"></script>
     <link href="Content/EstilosGestionarPlanesEstudio.css" rel="stylesheet" />
     <script src="Scripts/scriptsGestionarPlanes.js"></script>
+    <script src="Scripts/scriptsGestionarMatricula.js"></script>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="cphTitulo" runat="server">
@@ -32,6 +33,7 @@
                     <asp:BoundField HeaderText="Alumno" HeaderStyle-CssClass="grid-header" ItemStyle-CssClass="align-middle" ItemStyle-HorizontalAlign="Center"/>
                     <asp:BoundField HeaderText="Grado" HeaderStyle-CssClass="grid-header" ItemStyle-CssClass="align-middle" ItemStyle-HorizontalAlign="Center"/>
                     <asp:BoundField HeaderText="Fecha" HeaderStyle-CssClass="grid-header" ItemStyle-CssClass="align-middle" ItemStyle-HorizontalAlign="Center"/>
+                    <asp:BoundField HeaderText="Estado" HeaderStyle-CssClass="grid-header" ItemStyle-CssClass="align-middle" ItemStyle-HorizontalAlign="Center"/>
                     <asp:TemplateField HeaderText="Resultados" HeaderStyle-CssClass="grid-header">
                         <ItemStyle HorizontalAlign="Center" />
                         <ItemTemplate>
@@ -43,8 +45,10 @@
                         <ItemTemplate>
                             <asp:LinkButton ID="lbModificar" runat="server" Text="<i class='fa-solid fa-pencil'></i>" CssClass="btn btn-warning" OnClick="lbModificar_Click" CommandArgument='<%# Eval("idMatricula") %>' />
                             <asp:LinkButton ID="lbEliminar" runat="server" Text="<i class='fa-solid fa-trash'></i>" CssClass="btn btn-danger" OnClick="lbEliminar_Click" CommandArgument='<%# Eval("idMatricula") %>' />
+                            <asp:Button ID="btnAcciones" runat="server" Text="+" CssClass="btn btn-primary" OnClientClick='<%# "showModal(" + Eval("idMatricula") + "); return false;" %>' />
                         </ItemTemplate>
                     </asp:TemplateField>
+
                 </Columns>
             </asp:GridView>
             <asp:Button ID="btnAgregar" runat="server" Text="Añadir" CssClass="btn btn-primary btn-add" OnClick="btnAgregar_Click" />
@@ -65,6 +69,26 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
                     <asp:Button ID="btnConfirmarEliminar" runat="server" Text="Eliminar" CssClass="btn btn-danger" OnClick="btnConfirmarEliminar_Click" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalAcciones" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-custom-width">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalLabel">Acciones</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p id="modalMensaje">Seleccione una acción para el estudiante.</p>
+                    <input type="hidden" id="hiddenIdMatricula" runat="server"/>
+                    <div class="d-flex justify-content-around flex-wrap">
+                        <asp:Button ID="btnReincorporar" runat="server" Text="Reincorporar" CssClass="btn btn-success m-2" OnClick="btnAccion_Click" CommandArgument="Reincorporar" />
+                    <asp:Button ID="btnRetirar" runat="server" Text="Retirar" CssClass="btn btn-warning m-2" OnClick="btnAccion_Click" CommandArgument="Retirar" />
+                    <asp:Button ID="btnExpulsar" runat="server" Text="Expulsar" CssClass="btn btn-danger m-2" OnClick="btnAccion_Click" CommandArgument="Expulsar" />
+                    </div>
                 </div>
             </div>
         </div>

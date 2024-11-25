@@ -83,6 +83,8 @@
                                         <div class="mb-3">
                                             <asp:Label ID="lblAnioAcademico" runat="server" CssClass="col-form-label fw-bold" Text="Seleccione un Año Académico"></asp:Label>
                                             <asp:DropDownList ID="ddlAnioAcademico" runat="server" CssClass="form-select" Style="max-width: 300px;"></asp:DropDownList>
+                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="ddlAnioAcademico" ValidationGroup="GrupoGuardarI"
+                                                InitialValue="0" ErrorMessage="Seleccione un año académico." ForeColor="Red"></asp:RequiredFieldValidator>
                                         </div>
                                         <div class="mb-3 mt-4">
                                             <asp:Label ID="lblNiveles" runat="server" CssClass="col-form-label fw-bold" Text="Seleccione un Nivel"></asp:Label>
@@ -93,6 +95,8 @@
                                                 <asp:ListItem Value="SECUNDARIA" Text="SECUNDARIA"></asp:ListItem>
                                             </asp:DropDownList>
                                         </div>
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="ddlNiveles" ValidationGroup="GrupoGuardarI"
+                                            InitialValue="0" ErrorMessage="Seleccione un nivel." ForeColor="Red"></asp:RequiredFieldValidator>
                                     </div>
                                     <!-- Segunda columna: Grado -->
                                     <div class="col-md-6">
@@ -102,6 +106,8 @@
                                                 <asp:ListItem Value="0" Text="Seleccione un grado"></asp:ListItem>
                                             </asp:DropDownList>
                                         </div>
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="ddlMatricula" ValidationGroup="GrupoGuardarI"
+                                            InitialValue="0" ErrorMessage="Seleccione un grado." ForeColor="Red"></asp:RequiredFieldValidator>
                                     </div>
                                 </div>
                             </ContentTemplate>

@@ -14,4 +14,5 @@ public interface EstudianteDAO {
     ArrayList<Estudiante> listarEstPorIEYNombreDNI(int idIE, String nombreDNI);
     ArrayList<Estudiante> listarEstudiantesPorInstitucionEducativa(int idIE);
     ArrayList<Estudiante> listarEstudiantesParaMatricula(int idIE);
+    ArrayList<Estudiante> listarEstudiantesPorMatriculaIE(int idIE);
 }

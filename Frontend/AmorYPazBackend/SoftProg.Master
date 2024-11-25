@@ -28,7 +28,6 @@
 </head>
 <body>
     <div class="container-fluid d-flex p-0 h-100">
-        <!--Menu Lateral-->
 
         <div id="bdSidebar" class="d-flex flex-column flex-shrink-0 p-3 bg-secondary text-white offcanvas-md offcanvas-start">
             <div class="text-center mb-3" style="max-width: 170px; background-color: white; border-radius: 80%;">
@@ -57,16 +56,14 @@
                 </form>
             </div>
         </div>
-        <!--Contenido de la Derecha-->
         <div class="bg-light flex-fill overflow-auto">
-            <!-- Barra superior para dispositivos móviles -->
+            
             <div class="p-2 d-md-none d-flex text-white bg-secondary">
                 <a data-bs-toggle="offcanvas" data-bs-target="#bdSidebar" class="text-white" href="#">
                     <i class="fa-solid fa-bars"></i>
                 </a>
             </div>
            
-            <!-- Contenido de las Pags-->
             <div class="p-4">
                 <form runat="server">
                     <asp:ContentPlaceHolder ID="cphContenido" runat="server"></asp:ContentPlaceHolder>

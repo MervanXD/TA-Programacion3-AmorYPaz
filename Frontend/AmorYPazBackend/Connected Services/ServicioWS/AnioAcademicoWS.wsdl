@@ -11,12 +11,6 @@
   <message name="insertarAnioAcademicoResponse">
     <part name="parameters" element="tns:insertarAnioAcademicoResponse" />
   </message>
-  <message name="listarAnioAcademicoPorIdIE">
-    <part name="parameters" element="tns:listarAnioAcademicoPorIdIE" />
-  </message>
-  <message name="listarAnioAcademicoPorIdIEResponse">
-    <part name="parameters" element="tns:listarAnioAcademicoPorIdIEResponse" />
-  </message>
   <message name="modificarAnioAcademico">
     <part name="parameters" element="tns:modificarAnioAcademico" />
   </message>
@@ -29,14 +23,16 @@
   <message name="obtenerAnioAcademicoResponse">
     <part name="parameters" element="tns:obtenerAnioAcademicoResponse" />
   </message>
+  <message name="listarAnioAcademicoPorIdIE">
+    <part name="parameters" element="tns:listarAnioAcademicoPorIdIE" />
+  </message>
+  <message name="listarAnioAcademicoPorIdIEResponse">
+    <part name="parameters" element="tns:listarAnioAcademicoPorIdIEResponse" />
+  </message>
   <portType name="AnioAcademicoWS">
     <operation name="insertarAnioAcademico">
       <input wsam:Action="services.softprog.pucp.edu.pe/AnioAcademicoWS/insertarAnioAcademicoRequest" message="tns:insertarAnioAcademico" />
       <output wsam:Action="services.softprog.pucp.edu.pe/AnioAcademicoWS/insertarAnioAcademicoResponse" message="tns:insertarAnioAcademicoResponse" />
-    </operation>
-    <operation name="listarAnioAcademicoPorIdIE">
-      <input wsam:Action="services.softprog.pucp.edu.pe/AnioAcademicoWS/listarAnioAcademicoPorIdIERequest" message="tns:listarAnioAcademicoPorIdIE" />
-      <output wsam:Action="services.softprog.pucp.edu.pe/AnioAcademicoWS/listarAnioAcademicoPorIdIEResponse" message="tns:listarAnioAcademicoPorIdIEResponse" />
     </operation>
     <operation name="modificarAnioAcademico">
       <input wsam:Action="services.softprog.pucp.edu.pe/AnioAcademicoWS/modificarAnioAcademicoRequest" message="tns:modificarAnioAcademico" />
@@ -45,6 +41,10 @@
     <operation name="obtenerAnioAcademico">
       <input wsam:Action="services.softprog.pucp.edu.pe/AnioAcademicoWS/obtenerAnioAcademicoRequest" message="tns:obtenerAnioAcademico" />
       <output wsam:Action="services.softprog.pucp.edu.pe/AnioAcademicoWS/obtenerAnioAcademicoResponse" message="tns:obtenerAnioAcademicoResponse" />
+    </operation>
+    <operation name="listarAnioAcademicoPorIdIE">
+      <input wsam:Action="services.softprog.pucp.edu.pe/AnioAcademicoWS/listarAnioAcademicoPorIdIERequest" message="tns:listarAnioAcademicoPorIdIE" />
+      <output wsam:Action="services.softprog.pucp.edu.pe/AnioAcademicoWS/listarAnioAcademicoPorIdIEResponse" message="tns:listarAnioAcademicoPorIdIEResponse" />
     </operation>
   </portType>
   <binding name="AnioAcademicoWSPortBinding" type="tns:AnioAcademicoWS">
@@ -58,15 +58,6 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="listarAnioAcademicoPorIdIE">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
     <operation name="modificarAnioAcademico">
       <soap:operation soapAction="" />
       <input>
@@ -77,6 +68,15 @@
       </output>
     </operation>
     <operation name="obtenerAnioAcademico">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarAnioAcademicoPorIdIE">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

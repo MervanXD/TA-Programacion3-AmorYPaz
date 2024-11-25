@@ -12,7 +12,6 @@ namespace AmorYPazBackend
 {
     public partial class GestionarNotas : System.Web.UI.Page
     {
-        private CursoWSClient daoCurso;
         private AnioAcademicoWSClient daoAnios;
         private EstudianteWSClient daoEstudiante;
         private MatriculaWSClient daoMatricula;
@@ -20,44 +19,43 @@ namespace AmorYPazBackend
         private ResultadoPorCursoWSClient daoResultado;
         private BindingList<resultadoPorCurso> resultados;
         private BindingList<resultadoPorCurso> resultadosAnadir;
-        private BindingList<curso> cursos;
         private BindingList<anioAcademico> aniosAcad;
         private BindingList<grado> grados;
         private BindingList<estudiante> estudiantes;
         private matricula matric;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack) {
+            if (!IsPostBack)
+            {
                 matric = (matricula)Session["matricula"];
                 cargarDDLs();
                 if (matric != null)
                 {
                     seleccionarDDLs(matric);
                     daoResultado = new ResultadoPorCursoWSClient();
-                    resultadoPorCurso[] aux = daoResultado.listarPorIdMatricula(matric.idMatricula);
-                    if(aux == null)
+                    resultadoPorCurso[] results = daoResultado.listarPorIdMatricula(matric.idMatricula);
+                    if (results != null)
                     {
-                        lblMensaje.Text = "No se encontraron matrículas correspondientes a los criterios ingresados.";
+                        resultados = new BindingList<resultadoPorCurso>(results);
+                        gvNotas.DataSource = resultados;
+                        gvNotas.DataBind();
+                        ViewState["resultadosAnadir"] = new BindingList<resultadoPorCurso>();
+                        ViewState["matricula"] = matric;
+                    }
+                    else
+                    {
+                        lblMensaje.Text = "No se encontraron registros correspondientes a los criterios ingresados.";
                         lblMensaje.Visible = true;
                         ViewState["resultadosAnadir"] = null;
                         gvNotas.DataSource = null;
                         gvNotas.DataBind();
-                    }else
-                    {
-                        resultados = new BindingList<resultadoPorCurso>(daoResultado.listarPorIdMatricula(matric.idMatricula));
-                        gvNotas.DataSource = resultados;
-                        gvNotas.DataBind();
-                        ViewState["resultadosAnadir"] = new BindingList<resultadoPorCurso>();
                     }
-                    
-                    
-                    ViewState["matricula"] = matric;
-                    //Session["matricula"] = null;
                 }
             }
         }
 
-        private void cargarDDLs() {
+        private void cargarDDLs()
+        {
             //cargando los años
             daoAnios = new AnioAcademicoWSClient();
             aniosAcad = new BindingList<anioAcademico>(daoAnios.listarAnioAcademicoPorIdIE(matric.institucion.idInstitucion));
@@ -80,7 +78,7 @@ namespace AmorYPazBackend
             ddlGrado.DataBind();
             //cargando los estudiantes
             daoEstudiante = new EstudianteWSClient();
-            estudiantes = new BindingList<estudiante>(daoEstudiante.listarEstudiantesPorIE(matric.institucion.idInstitucion));
+            estudiantes = new BindingList<estudiante>(daoEstudiante.listarEstudiantesPorMatriculasIE(matric.institucion.idInstitucion));
             List<EstudianteItem> estudiantesTransformados = estudiantes.Select(e => new EstudianteItem
             {
                 IdPersona = e.idPersona,
@@ -92,7 +90,8 @@ namespace AmorYPazBackend
             ddlEstudiante.DataBind();
         }
 
-        private void seleccionarDDLs(matricula matric) {
+        private void seleccionarDDLs(matricula matric)
+        {
             ddlAnio.SelectedValue = matric.anioAcademico.idAnio.ToString();
             ddlGrado.SelectedValue = matric.grado.idGrado.ToString();
             ddlEstudiante.SelectedValue = matric.estudiante.idPersona.ToString();
@@ -122,7 +121,7 @@ namespace AmorYPazBackend
             {
                 resultadosAnadir = (BindingList<resultadoPorCurso>)ViewState["resultadosAnadir"];
                 foreach (resultadoPorCurso res in resultadosAnadir)
-                    if(daoResultado.insertarResultado(res) == 0) break;
+                    if (daoResultado.insertarResultado(res) == 0) break;
             }
             string script = "mostrarModal('Se realizó el registro de notas con éxito.', 'GestionarMatricula.aspx');";
             ScriptManager.RegisterStartupScript(this, GetType(), "modal", script, true);
@@ -145,8 +144,9 @@ namespace AmorYPazBackend
                 lblMensaje.Text = "";
                 lblMensaje.Visible = false;
             }
-            else {
-                lblMensaje.Text = "No se encontraron matrículas correspondientes a los criterios ingresados.";
+            else
+            {
+                lblMensaje.Text = "No se encontraron registros correspondientes a los criterios ingresados.";
                 lblMensaje.Visible = true;
                 ViewState["resultadosAnadir"] = null;
                 gvNotas.DataSource = null;
@@ -180,7 +180,7 @@ namespace AmorYPazBackend
             resultado.curso.nombre = row.Cells[0].Text;
             resultado.calificacion = Int32.Parse(txtNotaCurso.Text);
 
-            resultadoPorCurso existente = resultadosAnadir.FirstOrDefault(r => r.curso.idCurso == resultado.curso.idCurso && 
+            resultadoPorCurso existente = resultadosAnadir.FirstOrDefault(r => r.curso.idCurso == resultado.curso.idCurso &&
                 r.matricula.idMatricula == resultado.matricula.idMatricula);
             if (existente != null) resultadosAnadir.Remove(existente);
 

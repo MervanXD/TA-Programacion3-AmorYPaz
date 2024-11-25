@@ -14,24 +14,16 @@
   <xs:element name="listarEstudiantesPorIEResponse" type="tns:listarEstudiantesPorIEResponse" />
   <xs:element name="listarEstudiantesPorInstitucionEducativa" type="tns:listarEstudiantesPorInstitucionEducativa" />
   <xs:element name="listarEstudiantesPorInstitucionEducativaResponse" type="tns:listarEstudiantesPorInstitucionEducativaResponse" />
+  <xs:element name="listarEstudiantesPorMatriculasIE" type="tns:listarEstudiantesPorMatriculasIE" />
+  <xs:element name="listarEstudiantesPorMatriculasIEResponse" type="tns:listarEstudiantesPorMatriculasIEResponse" />
   <xs:element name="modificarEstudiante" type="tns:modificarEstudiante" />
   <xs:element name="modificarEstudianteResponse" type="tns:modificarEstudianteResponse" />
-  <xs:complexType name="eliminarEstudiante">
+  <xs:complexType name="listarEstudiantesPorMatriculasIE">
     <xs:sequence>
-      <xs:element name="idEstudiante" type="xs:int" />
+      <xs:element name="idIE" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="eliminarEstudianteResponse">
-    <xs:sequence>
-      <xs:element name="return" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="listarEstudiantesPorGrado">
-    <xs:sequence>
-      <xs:element name="idGrado" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="listarEstudiantesPorGradoResponse">
+  <xs:complexType name="listarEstudiantesPorMatriculasIEResponse">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:estudiante" />
     </xs:sequence>
@@ -65,6 +57,26 @@
       <xs:element name="sexo" type="xs:unsignedShort" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="eliminarEstudiante">
+    <xs:sequence>
+      <xs:element name="idEstudiante" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarEstudianteResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarEstudiantesPorGrado">
+    <xs:sequence>
+      <xs:element name="idGrado" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarEstudiantesPorGradoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:estudiante" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="modificarEstudiante">
     <xs:sequence>
       <xs:element minOccurs="0" name="estudiante" type="tns:estudiante" />
@@ -75,22 +87,22 @@
       <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="listarEstudiantesPorInstitucionEducativa">
-    <xs:sequence>
-      <xs:element name="idIE" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="listarEstudiantesPorInstitucionEducativaResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:estudiante" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="listarEstudiantesPorIE">
     <xs:sequence>
       <xs:element name="idIE" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="listarEstudiantesPorIEResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:estudiante" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarEstudiantesPorInstitucionEducativa">
+    <xs:sequence>
+      <xs:element name="idIE" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarEstudiantesPorInstitucionEducativaResponse">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:estudiante" />
     </xs:sequence>

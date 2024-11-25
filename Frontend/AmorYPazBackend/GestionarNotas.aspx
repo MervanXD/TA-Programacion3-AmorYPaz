@@ -17,19 +17,19 @@
             </div>
             
             <div style="display: flex; align-items: center; gap: 20px; margin-top: 10px;">
-                <!-- Año Académico -->
+                
                 <div style="display: flex; align-items: center; gap: 10px; margin-right: 20px;">
                     <label for="ddlAnio" style="font-weight: bold;">Año Académico:</label>
                     <asp:DropDownList ID="ddlAnio" runat="server" CssClass="form-control" Style="width: 150px;" AutoPostBack="true" OnSelectedIndexChanged="ddl_SelectedIndexChanged"></asp:DropDownList>
                 </div>
 
-                <!-- Grado y Nivel -->
+                
                 <div style="display: flex; align-items: center; gap: 10px; margin-right: 20px;">
                     <label for="ddlGrado" style="font-weight: bold;">Grado y Nivel:</label>
                     <asp:DropDownList ID="ddlGrado" runat="server" CssClass="form-control" Style="width: 150px;" AutoPostBack="true" OnSelectedIndexChanged="ddl_SelectedIndexChanged"></asp:DropDownList>
                 </div>
 
-                <!-- Nombre del Estudiante -->
+                
                 <div style="display: flex; align-items: center; gap: 10px;">
                     <label for="ddlEstudiante" style="font-weight: bold;">Nombre del Estudiante:</label>
                     <asp:DropDownList ID="ddlEstudiante" runat="server" CssClass="form-control" Style="width: 200px;" AutoPostBack="true" OnSelectedIndexChanged="ddl_SelectedIndexChanged"></asp:DropDownList>

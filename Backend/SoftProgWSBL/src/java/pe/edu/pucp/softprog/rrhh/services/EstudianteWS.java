@@ -111,4 +111,17 @@ public class EstudianteWS {
         }
         return estudiantes;
     }
+    
+    @WebMethod(operationName = "listarEstudiantesPorMatriculasIE")
+    public ArrayList<Estudiante> listarEstudiantesPorMatriculasIE(@WebParam(name = "idIE")
+            int idIE) {
+        ArrayList<Estudiante> estudiantes = null;
+        try{
+            daoEstudiante = new EstudianteMySQL();
+            estudiantes = daoEstudiante.listarEstudiantesPorMatriculaIE(idIE);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return estudiantes;
+    }
 }
