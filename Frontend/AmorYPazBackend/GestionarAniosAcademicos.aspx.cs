@@ -11,7 +11,6 @@ namespace AmorYPazBackend
 {
     public partial class GestionarAniosAcademicos : System.Web.UI.Page
     {
-        private anioAcademico anio;
         private AnioAcademicoWSClient daoAnioAcademico;
         private BindingList<anioAcademico> anios;
         private InstitucionEducativaWSClient daoInstitucion;
@@ -37,6 +36,7 @@ namespace AmorYPazBackend
                     }
                     catch (Exception ex)
                     {
+                        Console.WriteLine(ex.Message);
                         gvAnios.DataBind();
                     }
                 }

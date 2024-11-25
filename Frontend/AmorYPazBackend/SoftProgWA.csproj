@@ -287,6 +287,12 @@
     <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.listarEstudiantesParaMatriculaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.obtenerDirectorPorIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmorYPazBackend.ServicioWS.listarEstudiantesPorMatriculasIEResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Connected Services\ServicioWS\AnioAcademicoWS.wsdl" />
     <None Include="Connected Services\ServicioWS\AnioAcademicoWS.xsd">
       <SubType>Designer</SubType>
@@ -456,6 +462,7 @@
     </None>
     <None Include="Scripts\jquery-3.7.1.intellisense.js" />
     <Content Include="Scripts\cierreSesion.js" />
+    <Content Include="Scripts\scriptsGestionarMatricula.js" />
     <Content Include="Scripts\scriptsPerfil.js" />
     <Content Include="Scripts\scriptsReporteMatricula.js" />
     <Content Include="Scripts\jquery-3.7.1.js" />

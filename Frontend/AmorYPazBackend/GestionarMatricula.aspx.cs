@@ -13,9 +13,7 @@ namespace AmorYPazBackend
     {
         private InstitucionEducativaWSClient daoInstitucion;
         private BindingList<matricula> matriculas;
-
         private MatriculaWSClient daoMatricula;
-
         private GradoWSClient daoGrado = new GradoWSClient();
 
         protected void Page_Load(object sender, EventArgs e)
@@ -73,6 +71,7 @@ namespace AmorYPazBackend
                             matriculas = new BindingList<matricula>();
                             gvMatriculas.DataSource = matriculas;
                             gvMatriculas.DataBind();
+                            Console.WriteLine(ex.Message);
                         }
                     }
                 }
@@ -105,11 +104,11 @@ namespace AmorYPazBackend
             {
                 int idMatricula = Int32.Parse(DataBinder.Eval(e.Row.DataItem, "idMatricula").ToString());
                 daoGrado = new GradoWSClient();
-                
                 e.Row.Cells[0].Text = ((anioAcademico)DataBinder.Eval(e.Row.DataItem, "anioAcademico")).numero.ToString();
                 e.Row.Cells[1].Text = ((estudiante)DataBinder.Eval(e.Row.DataItem, "estudiante")).nombres + " " + ((estudiante)DataBinder.Eval(e.Row.DataItem, "estudiante")).apellidoPaterno + " " + ((estudiante)DataBinder.Eval(e.Row.DataItem, "estudiante")).apellidoMaterno;
                 e.Row.Cells[2].Text = ((grado)DataBinder.Eval(e.Row.DataItem, "grado")).numero + "° - " + ((grado)DataBinder.Eval(e.Row.DataItem, "grado")).nivel;
                 e.Row.Cells[3].Text = ((DateTime)DataBinder.Eval(e.Row.DataItem, "fecha")).ToString("dd/MM/yyyy");
+                e.Row.Cells[4].Text = DataBinder.Eval(e.Row.DataItem, "estado").ToString();
             }
         }
 
@@ -168,5 +167,36 @@ namespace AmorYPazBackend
 
             gvMatriculas.DataBind();
         }
+
+        protected void btnAccion_Click(object sender, EventArgs e)
+        {
+            string accion = (sender as Button).CommandArgument;
+            string idMatricula = hiddenIdMatricula.Value;
+            daoMatricula = new MatriculaWSClient();
+            matricula matr = null;
+            //matricula matr = daoMatricula.obtenerPorId(idMatricula);
+            if (matr != null) {
+                switch (accion)
+                {
+                    case "Reincorporar":
+                        matr.estado = "REINCORPORADO";
+                        break;
+
+                    case "Retirar":
+                        matr.estado = "REINCORPORADO";
+                        break;
+
+                    case "Expulsar":
+
+                        break;
+                }
+
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Acción realizada correctamente');", true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "closeModal", "$('#modalAcciones').modal('hide');", true);
+            }
+
+        }
+
+
     }
 }

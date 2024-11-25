@@ -34,13 +34,13 @@ namespace AmorYPazBackend
 
         protected void btnInicioSesion_Click(object sender, EventArgs e)
         {
-            //string captchaResponse = Request.Form["g-recaptcha-response"];
+            string captchaResponse = Request.Form["g-recaptcha-response"];
 
-            //if (string.IsNullOrEmpty(captchaResponse))
-            //{
-            //    lblCaptchaError.Visible = true; // Mostrar mensaje de error si el CAPTCHA no está marcado
-            //    return;
-            //}
+            if (string.IsNullOrEmpty(captchaResponse))
+            {
+                lblCaptchaError.Visible = true; // Mostrar mensaje de error si el CAPTCHA no está marcado
+                return;
+            }
             //Si está validado el CAPTCHA recién se procede a llamar al back del proyecto
             daoUsuario = new UsuarioWSClient();
             usuario user = new usuario();
@@ -50,7 +50,7 @@ namespace AmorYPazBackend
 
             if (user.director != null)
             {
-                if (true/*IsReCaptchValid()*/){
+                if (IsReCaptchValid()){
                     Session["NombreUsuario"] = user.director.nombres + " " +
                         user.director.apellidoPaterno;
                     Session["idDirector"] = user.director.idPersona;
@@ -90,8 +90,6 @@ namespace AmorYPazBackend
                 Response.Redirect("InicioSesion.aspx?error=Usuario o contraseña incorrectos.", true);
             }
         }
-
-        //Método para validar Captcha
         public bool IsReCaptchValid()
         {
             var result = false;

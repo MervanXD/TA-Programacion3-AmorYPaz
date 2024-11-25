@@ -14,7 +14,6 @@ namespace AmorYPazBackend
     {
         private DirectorWSClient daoDirector;
         private BindingList<director> directores;
-        private director director;
         private InstitucionEducativaWSClient daoInstitucion;
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -28,6 +27,7 @@ namespace AmorYPazBackend
             catch (Exception ex)
             {
                 dgvDirectores.DataBind();
+                Console.WriteLine(ex.Message);
             }
         }
         protected void dgvDirectores_RowDataBound(object sender, GridViewRowEventArgs e)

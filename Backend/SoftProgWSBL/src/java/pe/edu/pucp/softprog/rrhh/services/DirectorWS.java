@@ -96,5 +96,16 @@ public class DirectorWS {
         }
         return resultado;
     }
-    
+    @WebMethod(operationName = "obtenerDirectorPorId")
+    public Director obtenerDirectorPorId(@WebParam(name = "idDirector") int idDirector){
+        Director director = null;
+        try{
+            daoDirector = new DirectorMySQL();
+            director = daoDirector.obtenerPorId(idDirector);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return director;
+    }
+
 }

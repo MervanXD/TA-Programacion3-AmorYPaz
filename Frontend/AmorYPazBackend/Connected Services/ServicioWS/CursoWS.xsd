@@ -54,6 +54,16 @@
       <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="listarCursosPorIdGrado">
+    <xs:sequence>
+      <xs:element name="idGrado" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarCursosPorIdGradoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:curso" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="listarPorIdNombreCursos">
     <xs:sequence>
       <xs:element minOccurs="0" name="idNombre" type="xs:string" />
@@ -61,16 +71,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="listarPorIdNombreCursosResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:curso" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="listarCursosPorIdGrado">
-    <xs:sequence>
-      <xs:element name="idGrado" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="listarCursosPorIdGradoResponse">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:curso" />
     </xs:sequence>

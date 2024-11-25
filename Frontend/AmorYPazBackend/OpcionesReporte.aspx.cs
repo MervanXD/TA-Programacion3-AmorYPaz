@@ -13,7 +13,6 @@ namespace AmorYPazBackend
         private GradoWSClient daoGrado = new GradoWSClient();
         private AnioAcademicoWSClient daoAnioAcademico = new AnioAcademicoWSClient();
         private InstitucionEducativaWSClient daoInstitucion = new InstitucionEducativaWSClient();
-        private grado grd;
         private int idDirector;
         private int idInstitucionE;
         protected void Page_Load(object sender, EventArgs e)

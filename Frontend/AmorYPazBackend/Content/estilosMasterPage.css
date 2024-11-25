@@ -14,3 +14,7 @@
      margin-right: 10px; /* Espaciado entre ícono y texto */
      font-size: 20px; /* Tamaño del ícono */
 }
+
+.modal-custom-width {
+    max-width: 1200px; /* O el valor que desees */
+}

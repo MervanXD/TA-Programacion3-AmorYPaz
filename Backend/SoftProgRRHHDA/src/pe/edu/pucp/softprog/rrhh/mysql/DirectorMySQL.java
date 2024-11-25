@@ -162,8 +162,9 @@ public class DirectorMySQL implements DirectorDAO {
                 director.setReligion(rs.getString("religion"));
                 director.setSexo(rs.getString("sexo").charAt(0));
                 director.setDireccion(rs.getString("direccion"));
-            }
+            } else director = null;
         } catch (SQLException ex) {
+            director = null;
             System.out.println(ex.getMessage());
         } finally {
             try {

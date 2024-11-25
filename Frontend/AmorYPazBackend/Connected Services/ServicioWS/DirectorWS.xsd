@@ -14,6 +14,8 @@
   <xs:element name="listarDirectoresTodasResponse" type="tns:listarDirectoresTodasResponse" />
   <xs:element name="modificarDirector" type="tns:modificarDirector" />
   <xs:element name="modificarDirectorResponse" type="tns:modificarDirectorResponse" />
+  <xs:element name="obtenerDirectorPorId" type="tns:obtenerDirectorPorId" />
+  <xs:element name="obtenerDirectorPorIdResponse" type="tns:obtenerDirectorPorIdResponse" />
   <xs:complexType name="modificarDirector">
     <xs:sequence>
       <xs:element minOccurs="0" name="director" type="tns:director" />
@@ -50,22 +52,22 @@
       <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="obtenerDirectorPorId">
+    <xs:sequence>
+      <xs:element name="idDirector" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtenerDirectorPorIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:director" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="listarDirectoresPorNombre">
     <xs:sequence>
       <xs:element minOccurs="0" name="nombreDir" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="listarDirectoresPorNombreResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:director" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="listarDirectoresDisponibles">
-    <xs:sequence>
-      <xs:element name="idDirector" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="listarDirectoresDisponiblesResponse">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:director" />
     </xs:sequence>
@@ -78,6 +80,16 @@
   <xs:complexType name="insertarDirectorResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarDirectoresDisponibles">
+    <xs:sequence>
+      <xs:element name="idDirector" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarDirectoresDisponiblesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:director" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="buscarDirector">
